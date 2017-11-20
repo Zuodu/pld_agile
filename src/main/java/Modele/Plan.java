@@ -1,12 +1,13 @@
 package Modele;
 
 import java.util.HashSet;
+import java.util.Observable;
 import java.util.Set;
 
 /**
  * Created by flavi on 2017/11/18.
  */
-public class Plan {
+public class Plan extends Observable {
     protected Set<Troncon> listeTroncons;
     protected Set<Noeud> listeNoeuds;
 

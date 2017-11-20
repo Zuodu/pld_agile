@@ -12,12 +12,26 @@ import java.util.List;
  * Created by flavi on 2017/11/18.
  */
 public class Controleur {
+
     private Plan plan;
     private List<PointLivraison> pointLivraisons;
     private Tournee tournee;
     private static Controleur instance;
 
-    private static Controleur getInstance () {
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public List<PointLivraison> getPointLivraisons() {
+        return pointLivraisons;
+    }
+
+    public Tournee getTournee() {
+        return tournee;
+    }
+
+    public static Controleur getInstance () {
         if (instance==null) instance=new Controleur();
         return instance;
     }
