@@ -15,11 +15,13 @@ public class Plan extends Observable {
         listeTroncons=new HashSet<Troncon>();
         listeNoeuds=new HashSet<Noeud>();
 
+
     }
 
 
     public void addTroncon (Troncon troncon) {
         listeTroncons.add(troncon);
+
     }
     public void addNoeud(Noeud noeud) {listeNoeuds.add(noeud);}
 
@@ -29,5 +31,10 @@ public class Plan extends Observable {
 
     public Set<Noeud> getListeNoeuds() {
         return listeNoeuds;
+    }
+
+    public void signalerFin() {
+        setChanged();
+        notifyObservers(this);
     }
 }
