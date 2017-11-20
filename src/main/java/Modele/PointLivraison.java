@@ -27,4 +27,14 @@ public class PointLivraison extends Noeud {
     public double getDuree() {
         return duree;
     }
+
+    public String toString() {
+        return "Point livraison " +
+                id + " " +
+                x + " " +
+                y + " " +
+                duree + " " +
+                debutPlage + " " +
+                finPlage + " ";
+    }
 }

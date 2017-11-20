@@ -33,6 +33,7 @@ public class ChargeurLivraison {
         pointLivraisons=new ArrayList<PointLivraison>();
     }
 
+
     public List<PointLivraison> getPointLivraisons() {
         return pointLivraisons;
     }
@@ -94,7 +95,6 @@ public class ChargeurLivraison {
 
                     if (x == 0 && y == 0) return false;
 
-                    System.out.println(debutPlage);
                     pointLivraisons.add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
                 }
             }

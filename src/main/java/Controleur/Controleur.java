@@ -2,9 +2,7 @@ package Controleur;
 
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
-import Modele.Plan;
-import Modele.PointLivraison;
-import Modele.Tournee;
+import Modele.*;
 
 import java.util.List;
 
@@ -43,11 +41,21 @@ public class Controleur {
     {
         ChargeurPlan.getInstance().parse(filePath);
         plan=ChargeurPlan.getInstance().getPlan();
+        for (Noeud noeud : plan.getListeNoeuds()) {
+            System.out.println(noeud);
+        }
+
+        for (Troncon troncon : plan.getListeTroncons()) {
+            System.out.println(troncon);
+        }
     }
 
     public void chargerLivraison (String filePath){
         ChargeurLivraison.getInstance().parse(filePath);
         pointLivraisons=ChargeurLivraison.getInstance().getPointLivraisons();
+        for (PointLivraison pointLivraison : pointLivraisons) {
+            System.out.println(pointLivraison);
+        }
 
     }
 

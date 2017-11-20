@@ -32,4 +32,8 @@ public class Troncon {
         this.longueur = longueur;
         this.nomRue = nomRue;
     }
+
+    public String toString() {
+        return "Troncon " + origine.getId() + " " + destination.getId() + " " + nomRue + " " + longueur;
+    }
 }

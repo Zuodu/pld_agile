@@ -4,9 +4,9 @@ package Modele;
  * Created by flavi on 2017/11/18.
  */
 public class Noeud {
-    private Long id;
-    private int x;
-    private int y;
+    protected Long id;
+    protected int x;
+    protected int y;
 
     public Noeud(Long id, int x, int y) {
         this.id = id;
@@ -24,5 +24,9 @@ public class Noeud {
 
     public int getY() {
         return y;
+    }
+
+    public String toString() {
+        return "Noeud" + " " + id + " " + x + " " + y;
     }
 }
