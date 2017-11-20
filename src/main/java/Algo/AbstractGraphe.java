@@ -5,44 +5,45 @@ import Modele.Plan;
 import Modele.PointLivraison;
 import Modele.Troncon;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * Created by flavi on 2017/11/18.
  */
 public class AbstractGraphe {
-    private Plan plan;
-    private List<PointLivraison> pointLivraisons;
-    private Map<Long, Map<Long, Double>> matPlan;
+    private HashMap<Noeud, Vertex> vertexMap;
+    private HashMap<Noeud, Set<Troncon>> tronconsMap;
     private Map<Long, Map<Integer, Double>> matAbstrait;
 
-    public AbstractGraphe(Plan plan, List<PointLivraison> pointLivraisons) {
-        this.plan = plan;
-        this.pointLivraisons = pointLivraisons;
-        Set<Troncon> troncons = plan.getListeTroncons();
-        Set<Noeud> noeuds = plan.getListeNoeuds();
-
-        matPlan=new HashMap<Long, Map<Long, Double>>();
-        matAbstrait=new HashMap<Long, Map<Integer, Double>>();
+    public AbstractGraphe(Plan plan, List<Noeud> noeuds) {
 
 
-        for (Noeud noeud:noeuds) {
-            matPlan.put(noeud.getId(),new HashMap<Long, Double>());
-        }
-
-        for (Troncon troncon:troncons) {
-            matPlan.get(troncon.getOrigine().getId()).put(troncon.getDestination().getId(),troncon.getLongueur());
-        }
-
-        for (PointLivraison pointLivraison:pointLivraisons) {
-            matAbstrait.put(pointLivraison.getId(),new HashMap<Integer, Double>());
-        }
     }
 
-    public void abstraireGraphe() {
 
+    private void addVertex(Noeud noeud) {
+        Vertex vertex = new Vertex(noeud);
+        for(Troncon neighborTroncon: tronconsMap.get(noeud)) {
+            Noeud neighborNoeud=neighborTroncon.getDestination();
+            if (vertexMap.containsKey(neighborNoeud)) {
+                vertex.addNeighbor(new Edge(vertexMap.get(neighborNoeud), neighborTroncon.getLongueur()));
+            } else {
+                Vertex neighborVetex = new Vertex(neighborNoeud);
+                vertex.addNeighbor(new Edge(neighborVetex, neighborTroncon.getLongueur()));
+                vertexMap.put(neighborNoeud, neighborVetex);
+            }
+        }
+
+    }
+
+    private void generateTronconMap(Plan plan) {
+        tronconsMap = new HashMap<Noeud, Set<Troncon>>();
+        for (Troncon troncon : plan.getListeTroncons()) {
+            if (tronconsMap.containsKey(troncon.getOrigine()))
+                tronconsMap.get(troncon.getOrigine()).add(troncon);
+            else
+                tronconsMap.put(troncon.getOrigine(),new HashSet<Troncon>(Arrays.asList(troncon)));
+        }
     }
 }
