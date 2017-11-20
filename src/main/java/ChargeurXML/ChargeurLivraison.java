@@ -36,6 +36,7 @@ public class ChargeurLivraison {
 
 
     public boolean parse(ListePointLivraisons pointLivraisons, String filePath) {
+        this.pointLivraisons=pointLivraisons;
         if (ChargeurPlan.getInstance().getPlan().getListeNoeuds().size() == 0) return false;
 
 
@@ -104,5 +105,9 @@ public class ChargeurLivraison {
         }
 
         return true;
+    }
+
+    public ListePointLivraisons getPointLivraisons() {
+        return pointLivraisons;
     }
 }

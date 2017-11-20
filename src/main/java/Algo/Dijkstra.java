@@ -1,5 +1,9 @@
 package Algo;
 
+import Modele.Noeud;
+import Modele.Troncon;
+import jdk.nashorn.internal.objects.annotations.Function;
+
 import java.util.*;
 
 /**
@@ -7,50 +11,60 @@ import java.util.*;
  */
 @SuppressWarnings("ALL")
 public class Dijkstra {
-    private HashMap<Vertex, Vertex> parent;
-    private HashMap<Vertex, Double> distance;
-    private LinkedList<Vertex> result;
+    private HashMap<Noeud, Map.Entry<Noeud, Troncon>> parent;
+    private HashMap<Noeud, Double> distance;
+    private LinkedList<Noeud> resultListNoeud;
+    private LinkedList<Troncon> resultListTroncon;
+    private double minDistance;
 
     public Dijkstra() {
-        this.parent = new HashMap<Vertex, Vertex>();
-        this.distance = new HashMap<Vertex, Double>();
-        this.result = new LinkedList<Vertex>();
+        this.parent = new HashMap<Noeud, Map.Entry<Noeud, Troncon>>();
+        this.distance = new HashMap<Noeud, Double>();
+        this.resultListNoeud = new LinkedList<Noeud>();
+        this.resultListTroncon = new LinkedList<Troncon>();
+        minDistance = 0;
     }
 
-    public void chercheSolution(Vertex src, Vertex target) {
+    public void chercheDistanceMin(Noeud src, Noeud target) {
 
-        parent.put(src, src);
+        parent.put(src, new AbstractMap.SimpleEntry<Noeud, Troncon>(src, null));
 
         distance.put(src, 0d);
 
-        Set<Vertex> x = new HashSet<Vertex>();
+        Set<Noeud> x = new HashSet<Noeud>();
 
-        Queue<Edge> y = new PriorityQueue<Edge>(10, longueurComparator);
+        Queue<Map.Entry<Double, Noeud>> y = new PriorityQueue<Map.Entry<Double, Noeud>>(10, (Comparator<Map.Entry<Double, Noeud>>) longueurComparator);
 
-        y.add(new Edge(src, 0));
+        y.add(new AbstractMap.SimpleEntry<Double, Noeud>(0D, src));
         x.add(src);
 
         while (!y.isEmpty()) {
-            Vertex vertex = y.remove().getVertexAdjacent();
-            if (vertex == target) {
-                while (vertex != src) {
-                    result.addFirst(vertex);
-                    vertex = parent.get(vertex);
+            Map.Entry<Double, Noeud> entry = y.remove();
+            Noeud noeud = entry.getValue();
+            if (noeud == target) {
+                while (noeud != src) {
+                    resultListNoeud.addFirst(noeud);
+                    noeud = parent.get(noeud).getKey();
                 }
-                result.addFirst(src);
+                resultListNoeud.addFirst(src);
+                minDistance = entry.getKey();
                 return;
             }
 
-            x.add(vertex);
+            x.add(noeud);
 
-            for(Edge edge:vertex.getNeighbors()){
-                if(x.contains(edge.getVertexAdjacent())){
+            for (Troncon troncon : noeud.getNeighbors()) {
+                if (x.contains(troncon.getDestination())) {
                     continue;
                 }
-                if(getDistance(edge.getVertexAdjacent())>distance.get(vertex)+edge.getLongueur()){
-                    distance.replace(edge.getVertexAdjacent(),distance.get(vertex)+edge.getLongueur());
-                    parent.replace(edge.getVertexAdjacent(),vertex);
-                    y.add(new Edge(edge.getVertexAdjacent(),distance.get(edge.getVertexAdjacent())));
+                if (getDistance(troncon.getDestination()) > distance.get(noeud) + troncon.getLongueur()) {
+                    distance.replace(troncon.getDestination(), distance.get(noeud) + troncon.getLongueur());
+                    if (parent.containsKey(troncon.getDestination())) {
+                        parent.replace(troncon.getDestination(), new AbstractMap.SimpleEntry<Noeud, Troncon>(noeud, troncon));
+                    }else{
+                        parent.put(troncon.getDestination(),new AbstractMap.SimpleEntry<Noeud, Troncon>(noeud, troncon));
+                    }
+                    y.add(new AbstractMap.SimpleEntry<Double, Noeud>(distance.get(troncon.getDestination()), troncon.getDestination()));
                 }
             }
         }
@@ -58,16 +72,29 @@ public class Dijkstra {
 
     }
 
-    private Double getDistance(Vertex vertex) {
-        if (distance.containsKey(vertex)) {
-            return distance.get(vertex);
+    public double getMinDistance() {
+        return minDistance;
+    }
+
+    private Double getDistance(Noeud noeud) {
+        if (distance.containsKey(noeud)) {
+            return distance.get(noeud);
         }
+        distance.put(noeud, Double.MAX_VALUE);
         return Double.MAX_VALUE;
     }
 
-    public static Comparator<Edge> longueurComparator = new Comparator<Edge>() {
-        public int compare(Edge o1, Edge o2) {
-            return (int) (o1.getLongueur() - o2.getLongueur());
+    public LinkedList<Noeud> getResultListNoeud() {
+        return resultListNoeud;
+    }
+
+    public LinkedList<Troncon> getResultListTroncon() {
+        return resultListTroncon;
+    }
+
+    public static Comparator<Map.Entry<Double, Noeud>> longueurComparator = new Comparator<Map.Entry<Double, Noeud>>() {
+        public int compare(Map.Entry<Double, Noeud> o1, Map.Entry<Double, Noeud> o2) {
+            return (int) (o1.getKey() - o2.getKey());
         }
     };
 }

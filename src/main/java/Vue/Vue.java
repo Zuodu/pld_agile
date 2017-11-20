@@ -1,9 +1,15 @@
 package Vue;
 
+import Algo.AbstractGraphe;
+import Algo.Dijkstra;
 import Algo.Edge;
 import Algo.Vertex;
+import ChargeurXML.ChargeurLivraison;
+import ChargeurXML.ChargeurPlan;
+import Modele.*;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -12,21 +18,29 @@ import java.util.Queue;
  */
 public class Vue {
     public static void main(String[] args) {
-        Queue<Edge> queue=new PriorityQueue<Edge>(10,longueurComparator);
-        queue.add(new Edge(new Vertex(1),10));
-        queue.add(new Edge(new Vertex(2),9));
-        queue.add(new Edge(new Vertex(3),8));
-        queue.add(new Edge(new Vertex(4),50));
-        queue.add(new Edge(new Vertex(5),12));
-        while (queue.size() != 0)
-        {
-            System.out.println(queue.remove());
-        }
+//        ChargeurPlan chargeurPlan = ChargeurPlan.getInstance();
+//        chargeurPlan.parse(new Plan(), "target/planLyonPetit.xml");
+//        ChargeurLivraison chargeurLivraison = ChargeurLivraison.getInstance();
+//        chargeurLivraison.parse(new ListePointLivraisons(), "target/DLpetit3.xml");
+//        AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getPointLivraisons().getPointLivraisons());
+//        List<PointLivraison> res = abstractGraphe.getItineraire();
+//        System.out.println(res);
+//        Noeud noeud1=new Noeud(1L,1,1);
+//        Noeud noeud2=new Noeud(2L,1,1);
+//        Noeud noeud3=new Noeud(3L,1,1);
+//        Noeud noeud0=new Noeud(0L,1,1);
+//        Noeud noeud4=new Noeud(4L,1,1);
+//        noeud0.addNeighbor(new Troncon(noeud0,noeud1,100,""));
+//        noeud0.addNeighbor(new Troncon(noeud0,noeud2,30,""));
+//        noeud0.addNeighbor(new Troncon(noeud0,noeud4,10,""));
+//        noeud2.addNeighbor(new Troncon(noeud2,noeud1,60,""));
+//        noeud2.addNeighbor(new Troncon(noeud2,noeud3,60,""));
+//        noeud3.addNeighbor(new Troncon(noeud3,noeud1,10,""));
+//        noeud4.addNeighbor(new Troncon(noeud4,noeud3,50,""));
+//        Dijkstra dijkstra=new Dijkstra();
+//        dijkstra.chercheDistanceMin(noeud0,noeud3);
+//        System.out.println(dijkstra.getResultListNoeud());
+//        System.out.println(dijkstra.getMinDistance());
     }
 
-    public static Comparator<Edge> longueurComparator=new Comparator<Edge>() {
-        public int compare(Edge o1, Edge o2) {
-            return (int)(o1.getLongueur() - o2.getLongueur());
-        }
-    };
 }
