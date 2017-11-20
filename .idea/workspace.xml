@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java" afterPath="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/Troncon.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Troncon.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,8 +88,8 @@
             <state relative-caret-position="176">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+              <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -114,10 +109,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Troncon.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="616">
-              <caret line="36" column="90" lean-forward="false" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+              <caret line="36" column="104" lean-forward="false" selection-start-line="36" selection-start-column="104" selection-end-line="36" selection-end-column="104" />
               <folding>
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#831#832#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Modele/Troncon.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
         <option value="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
       </list>
     </option>
   </component>
@@ -797,7 +792,7 @@
       <option name="presentableId" value="Default" />
       <updated>1511171268231</updated>
       <workItem from="1511171269558" duration="1848000" />
-      <workItem from="1511186243867" duration="2457000" />
+      <workItem from="1511186243867" duration="2509000" />
     </task>
     <task id="LOCAL-00001" summary="Chargeur XML integrated">
       <created>1511188380506</created>
@@ -806,11 +801,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511188380506</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Noeud, troncon, pointlivraison toString methods added&amp; output in Controler">
+      <created>1511189709214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1511189709214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4305000" />
+    <option name="totallyTimeSpent" value="4357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
@@ -855,7 +857,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Chargeur XML integrated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chargeur XML integrated" />
+    <MESSAGE value="Noeud, troncon, pointlivraison toString methods added&amp; output in Controler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Noeud, troncon, pointlivraison toString methods added&amp; output in Controler" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -998,10 +1001,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Troncon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
-          <caret line="36" column="90" lean-forward="false" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
+          <caret line="36" column="104" lean-forward="false" selection-start-line="36" selection-start-column="104" selection-end-line="36" selection-end-column="104" />
           <folding>
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1022,8 +1025,8 @@
         <state relative-caret-position="176">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1031,7 +1034,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding />
         </state>
       </provider>
