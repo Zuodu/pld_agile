@@ -1,20 +1,24 @@
 package Modele;
 
-
-import java.util.Observable;
+import java.util.Set;
 
 /**
  * Created by flavi on 2017/11/18.
  */
-public class Noeud extends Observable {
-    protected Long id;
-    protected int x;
-    protected int y;
+public class Noeud{
+    private Long id;
+    private int x;
+    private int y;
+    private Set<Troncon> neighbors;
 
     public Noeud(Long id, int x, int y) {
         this.id = id;
         this.x = x;
         this.y = y;
+    }
+
+    public void addNeighbor(Troncon neighbor){
+        neighbors.add(neighbor);
     }
 
     public Long getId() {
@@ -29,7 +33,16 @@ public class Noeud extends Observable {
         return y;
     }
 
+    public Set<Troncon> getNeighbors() {
+        return neighbors;
+    }
+
+    @Override
     public String toString() {
-        return "Noeud" + " " + id + " " + x + " " + y;
+        return "Noeud{" +
+                "id=" + id +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

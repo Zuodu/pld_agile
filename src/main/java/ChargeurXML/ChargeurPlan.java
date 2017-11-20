@@ -90,8 +90,9 @@ public class ChargeurPlan {
                         }
                         if (noeudOrigine != null && noeudDestination != null) break;
                     }
-
-                    plan.addTroncon(new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt));
+                    Troncon troncon=new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt);
+                    noeudOrigine.addNeighbor(troncon);
+                    plan.addTroncon(troncon);
                 }
             }
             plan.signalerFin();
