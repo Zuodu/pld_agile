@@ -2,6 +2,8 @@ package Vue;
 
 import Algo.Edge;
 import Algo.Vertex;
+import ChargeurXML.ChargeurLivraison;
+import ChargeurXML.ChargeurPlan;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -22,6 +24,12 @@ public class Vue {
         {
             System.out.println(queue.remove());
         }
+        
+        System.out.println("--------------------------");
+       
+        ChargeurPlan.getInstance().parse("C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonMoyen.xml");
+        System.out.println(ChargeurPlan.getInstance().getPlan().getListeTroncons().size());
+        ChargeurLivraison.getInstance().parse("C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLmoyen5TW4.xml");
     }
 
     public static Comparator<Edge> longueurComparator=new Comparator<Edge>() {
