@@ -1,5 +1,6 @@
 package Modele;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -15,6 +16,7 @@ public class Noeud{
         this.id = id;
         this.x = x;
         this.y = y;
+        this.neighbors=new HashSet<Troncon>();
     }
 
     public void addNeighbor(Troncon neighbor){

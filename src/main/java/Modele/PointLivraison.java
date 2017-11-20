@@ -30,13 +30,13 @@ public class PointLivraison extends Noeud {
         return duree;
     }
 
+    @Override
     public String toString() {
-        return "Point livraison " +
-                id + " " +
-                x + " " +
-                y + " " +
-                duree + " " +
-                debutPlage + " " +
-                finPlage + " ";
+        return "PointLivraison{" +
+                "debutPlage=" + debutPlage +
+                ", finPlage=" + finPlage +
+                ", duree=" + duree +
+                '}';
     }
+
 }
