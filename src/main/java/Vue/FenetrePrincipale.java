@@ -21,6 +21,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private JButton buttonCalculerTournee;
 	private ButtonChargerLivraisonsListener buttonChargerLivraisonsListener;
 	private ButtonChargerPlanListener buttonChargerPlanListener;
+	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +54,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonChargerLivraisonsListener=new ButtonChargerLivraisonsListener();
 		buttonChargerPlanListener=new ButtonChargerPlanListener();
+		buttonCalculerTourneeListener = new ButtonCalculerTourneeListener();
 		
 		buttonChargerPlan = new JButton("Charger Plan");
 		buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);
@@ -66,6 +68,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		
 		buttonCalculerTournee = new JButton("Calculer Tournee");
 		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
+		buttonCalculerTournee.addActionListener(buttonCalculerTourneeListener);
 		panel.add(buttonCalculerTournee);
 	}
 
