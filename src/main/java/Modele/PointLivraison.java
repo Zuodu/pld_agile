@@ -1,5 +1,7 @@
 package Modele;
 
+import javafx.beans.Observable;
+
 /**
  * Created by flavi on 2017/11/18.
  */

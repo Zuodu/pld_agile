@@ -28,10 +28,11 @@ public class ChargeurPlan {
     }
 
     public ChargeurPlan() {
-        plan = new Plan();
+
     }
 
-    public void parse(String filePath) {
+    public void parse(Plan plan, String filePath) {
+        this.plan = plan;
         File xmlPlan = new File(filePath);
 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -93,6 +94,7 @@ public class ChargeurPlan {
                     plan.addTroncon(new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt));
                 }
             }
+            plan.signalerFin();
 
         } catch (SAXException e) {
             e.printStackTrace();

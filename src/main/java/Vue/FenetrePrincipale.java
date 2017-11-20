@@ -1,5 +1,9 @@
 package Vue;
 
+import Modele.ListePointLivraisons;
+import Modele.Plan;
+import Modele.PointLivraison;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -12,6 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 public class FenetrePrincipale extends JFrame implements Observer {
 
@@ -22,26 +27,19 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private ButtonChargerLivraisonsListener buttonChargerLivraisonsListener;
 	private ButtonChargerPlanListener buttonChargerPlanListener;
 	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FenetrePrincipale frame = new FenetrePrincipale();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
+	private Plan plan;
+	private ListePointLivraisons pointLivraisons;
 	/**
 	 * Create the frame.
 	 */
-	public FenetrePrincipale() {
+	public FenetrePrincipale(Plan plan, ListePointLivraisons pointLivraisons) {
+		this.plan = plan;
+		plan.addObserver(this);
+		this.pointLivraisons = pointLivraisons;
+		pointLivraisons.addObserver(this);
+
+		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -74,6 +72,19 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
+		VuePlan vuePlan = new VuePlan();
+		if (o instanceof Plan) {
+
+			JFrame frame = new JFrame();
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setBounds(100, 100, 800, 600);
+			frame.setVisible(true);
+			frame.setContentPane(vuePlan);
+			vuePlan.addPlan((Plan) o);
+		} else if (o instanceof ListePointLivraisons) {
+			vuePlan.addPointLivraisons((ListePointLivraisons) o);
+		}
+
 
 	}
 }

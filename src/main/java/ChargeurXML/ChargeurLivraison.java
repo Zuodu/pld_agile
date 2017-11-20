@@ -1,5 +1,6 @@
 package ChargeurXML;
 
+import Modele.ListePointLivraisons;
 import Modele.Noeud;
 import Modele.PointLivraison;
 import Modele.Troncon;
@@ -19,7 +20,7 @@ import org.xml.sax.SAXException;
  * Created by flavi on 2017/11/18.
  */
 public class ChargeurLivraison {
-    private List<PointLivraison> pointLivraisons;
+    private ListePointLivraisons pointLivraisons;
     private static ChargeurLivraison instance;
 
     public static ChargeurLivraison getInstance() {
@@ -30,15 +31,11 @@ public class ChargeurLivraison {
     }
 
     public ChargeurLivraison() {
-        pointLivraisons=new ArrayList<PointLivraison>();
+
     }
 
 
-    public List<PointLivraison> getPointLivraisons() {
-        return pointLivraisons;
-    }
-
-    public boolean parse(String filePath) {
+    public boolean parse(ListePointLivraisons pointLivraisons, String filePath) {
         if (ChargeurPlan.getInstance().getPlan().getListeNoeuds().size() == 0) return false;
 
 
@@ -95,11 +92,11 @@ public class ChargeurLivraison {
 
                     if (x == 0 && y == 0) return false;
 
-                    pointLivraisons.add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
+                    pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
                 }
             }
 
-
+            pointLivraisons.SignalerFin();
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {

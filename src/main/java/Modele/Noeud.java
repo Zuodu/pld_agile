@@ -1,9 +1,12 @@
 package Modele;
 
+
+import java.util.Observable;
+
 /**
  * Created by flavi on 2017/11/18.
  */
-public class Noeud {
+public class Noeud extends Observable {
     protected Long id;
     protected int x;
     protected int y;

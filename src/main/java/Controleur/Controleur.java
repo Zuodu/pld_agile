@@ -3,31 +3,23 @@ package Controleur;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
 import Modele.*;
+import Vue.FenetrePrincipale;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by flavi on 2017/11/18.
  */
 public class Controleur {
-
+    private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
-    private List<PointLivraison> pointLivraisons;
+    private ListePointLivraisons pointLivraisons;
     private Tournee tournee;
     private static Controleur instance;
 
 
-    public Plan getPlan() {
-        return plan;
-    }
-
-    public List<PointLivraison> getPointLivraisons() {
-        return pointLivraisons;
-    }
-
-    public Tournee getTournee() {
-        return tournee;
-    }
 
     public static Controleur getInstance () {
         if (instance==null) instance=new Controleur();
@@ -35,14 +27,17 @@ public class Controleur {
     }
 
     private Controleur() {
+        plan = new Plan();
+        pointLivraisons = new ListePointLivraisons();
+        fenetrePrincipale = new FenetrePrincipale(plan, pointLivraisons);
     }
 
     public void chargerPlan (String filePath)
     {
-        ChargeurPlan.getInstance().parse(filePath);
-        plan=ChargeurPlan.getInstance().getPlan();
+        ChargeurPlan.getInstance().parse(plan, filePath);
+        // plan=ChargeurPlan.getInstance().getPlan();
         for (Noeud noeud : plan.getListeNoeuds()) {
-            System.out.println(noeud);
+            //System.out.println(noeud);
         }
 
         for (Troncon troncon : plan.getListeTroncons()) {
@@ -51,9 +46,9 @@ public class Controleur {
     }
 
     public void chargerLivraison (String filePath){
-        ChargeurLivraison.getInstance().parse(filePath);
-        pointLivraisons=ChargeurLivraison.getInstance().getPointLivraisons();
-        for (PointLivraison pointLivraison : pointLivraisons) {
+        ChargeurLivraison.getInstance().parse(pointLivraisons, filePath);
+
+        for (PointLivraison pointLivraison : pointLivraisons.getPointLivraisons()) {
             System.out.println(pointLivraison);
         }
 
