@@ -1,5 +1,7 @@
 package Modele;
 
+import java.util.List;
+
 /**
  * Created by flavi on 2017/11/18.
  */
@@ -39,6 +41,11 @@ public class Itineraire extends Plan {
 
     public double getLongueurTotale() {
         return longueurTotale;
+    }
+
+    @Override
+    public List<Troncon> getListeTroncons() {
+        return super.getListeTroncons();
     }
 
     @Override

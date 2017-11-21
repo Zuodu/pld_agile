@@ -1,4 +1,4 @@
-package Vue;
+package Main;
 
 import Algo.AbstractGraphe;
 import Algo.Dijkstra;
@@ -16,15 +16,15 @@ import java.util.Queue;
 /**
  * Created by flavi on 2017/11/18.
  */
-public class Vue {
+public class Test {
     public static void main(String[] args) {
         ChargeurPlan chargeurPlan = ChargeurPlan.getInstance();
-        chargeurPlan.parse(new Plan(), "planLyonPetit.xml");
+        chargeurPlan.parse(new Plan(), "aaaa.xml");
         ChargeurLivraison chargeurLivraison = ChargeurLivraison.getInstance();
-        chargeurLivraison.parse(new Tournee(), "DLpetit3.xml");
+        chargeurLivraison.parse(new Tournee(), "bbbbb.xml");
         AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getTournee());
         abstractGraphe.getItineraire();
-        System.out.println(abstractGraphe.getTournee().getListeItineraires());
+        System.out.println(abstractGraphe.getTournee().getListeItineraires().get(0));
 //        PointLivraison noeud1=new PointLivraison(1L,1,1,1D);
 //        PointLivraison noeud2=new PointLivraison(2L,1,1,1D);
 //        PointLivraison noeud3=new PointLivraison(3L,1,1,1D);

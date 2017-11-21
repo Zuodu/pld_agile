@@ -64,6 +64,17 @@ public class VuePlan extends JPanel {
                     (int) (tournee.getEntrepot().getY() - 20000) / 40 - 10,
                     40,
                     40);
+            for (Itineraire itineraire : tournee.getListeItineraires()) {
+                for (Troncon troncon : itineraire.getListeTroncons()) {
+                    g2d.drawLine((troncon.getOrigine().getX() - 12000) / 15,
+                            (troncon.getOrigine().getY() - 20000) / 40,
+                            (troncon.getDestination().getX() - 12000) / 15,
+                            (troncon.getDestination().getY() - 20000) / 40
+
+                    );
+                    System.out.println("drawed");
+                }
+            }
         }
 
     }

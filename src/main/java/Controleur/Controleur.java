@@ -1,5 +1,6 @@
 package Controleur;
 
+import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
 import Modele.*;
@@ -54,6 +55,10 @@ public class Controleur {
     }
 
     public void calculerTournee () {
+        AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
+        abstractGraphe.getItineraire();
+        tournee.SignalerFinDajoutPointsLivraisons();
+        System.out.println(abstractGraphe.getTournee().getListeItineraires());
 
     }
 

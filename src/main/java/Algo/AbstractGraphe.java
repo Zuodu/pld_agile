@@ -37,9 +37,12 @@ public class AbstractGraphe {
     public void generateTableCount() {
         for (int m = 0; m < cout.length; m++) {
             for (int n = 0; n < cout[m].length; n++) {
+                if (m == n) {
+                    cout[m][n] = 0;
+                    continue;
+                }
                 Dijkstra dijkstra = new Dijkstra();
                 dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
-
                 itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
                 cout[m][n] = (int) dijkstra.getMeilleurItineraire().getLongueurTotale();
             }
@@ -56,7 +59,7 @@ public class AbstractGraphe {
         TSP tsp = new TSP1();
         tsp.chercheSolution(1000, nbSommets, cout, duree);
         for (int i = 0; i < nbSommets - 1; i++) {
-            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i)))));
+            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)))));
         }
     }
 

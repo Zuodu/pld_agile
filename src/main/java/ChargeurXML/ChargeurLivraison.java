@@ -137,16 +137,19 @@ public class ChargeurLivraison {
 
 
         List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
+        Set<Troncon> neighbors = null;
         for (Noeud noeud : noeuds) {
             if (noeud.getId() == Long.parseLong(adr)) {
                 x = noeud.getX();
                 y = noeud.getY();
+                neighbors = noeud.getNeighbors();
                 break;
             }
 
         }
-
-        tournee.setEntrepot(new PointLivraison(Long.parseLong(adr), x, y, 0D));
+        PointLivraison pointLivraison = new PointLivraison(Long.parseLong(adr), x, y, 0D);
+        pointLivraison.setNeighbors(neighbors);
+        tournee.setEntrepot(pointLivraison);
         System.out.println("entrepot:" + tournee.getEntrepot());
 
         tournee.setHeureDeDepart(heuredepart);
