@@ -12,11 +12,17 @@ public class Itineraire extends Plan {
 
     public Itineraire() {
         super();
+        longueurTotale = 0;
+        temps = 0;
     }
 
     public void addTroncon(Troncon troncon) {
-        listeTroncons.add(troncon);
+        super.addTroncon(troncon);
         longueurTotale += troncon.getLongueur();
+    }
+
+    public void addNoeud(Noeud noeud) {
+        super.addNoeud(noeud);
     }
 
     public void setPointLivraisonOrigine(PointLivraison pointLivraisonOrigine) {
@@ -27,11 +33,4 @@ public class Itineraire extends Plan {
         this.pointLivraisonDestination = pointLivraisonDestination;
     }
 
-    public void setLongueurTotale(double longueurTotale) {
-        this.longueurTotale = longueurTotale;
-    }
-
-    public void setTemps(double temps) {
-        this.temps = temps;
-    }
 }
