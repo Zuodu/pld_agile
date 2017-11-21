@@ -33,6 +33,14 @@ public class Tournee extends Observable {
         return listeItineraires;
     }
 
+    public void setHeureDeDepart(double heureDeDepart) {
+        this.heureDeDepart = heureDeDepart;
+    }
+
+    public void setEntrepot(Noeud entrepot) {
+        this.entrepot = entrepot;
+    }
+
     public Noeud getEntrepot() {
         return entrepot;
     }

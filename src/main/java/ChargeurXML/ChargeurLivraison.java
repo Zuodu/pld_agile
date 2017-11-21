@@ -22,8 +22,8 @@ public class ChargeurLivraison {
     private static ChargeurLivraison instance;
 
     public static ChargeurLivraison getInstance() {
-        if (instance==null) {
-            instance=new ChargeurLivraison();
+        if (instance == null) {
+            instance = new ChargeurLivraison();
         }
         return instance;
     }
@@ -53,6 +53,7 @@ public class ChargeurLivraison {
             Document documentPlan = builder.parse(xmlPlan);
             Element rootElement = documentPlan.getDocumentElement();
 
+            parseEntrepot(rootElement);
             NodeList nodes = rootElement.getElementsByTagName("livraison");
 
             for (int i = 0; i < nodes.getLength(); i++) {
@@ -65,7 +66,7 @@ public class ChargeurLivraison {
                     String debutAtt = child.getAttribute("debutPlage");
                     String finAtt = child.getAttribute("finPlage");
                     System.out.println(debutAtt + " " + finAtt);
-                    double debutPlage=-1, finPlage=-1;
+                    double debutPlage = -1, finPlage = -1;
                     if (!debutAtt.isEmpty()) {
                         debutPlage = Double.parseDouble(debutAtt.substring(0, debutAtt.indexOf(':'))) * 3600
                                 + Double.parseDouble(debutAtt.substring(debutAtt.indexOf(':') + 1, debutAtt.indexOf(':', debutAtt.indexOf(':') + 1))) * 60
@@ -91,7 +92,7 @@ public class ChargeurLivraison {
 
                     if (x == 0 && y == 0) return false;
 
-                    if(debutPlage!=-1&&finPlage!=-1)
+                    if (debutPlage != -1 && finPlage != -1)
                         tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
                     else
                         tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, debutPlage));
@@ -110,5 +111,35 @@ public class ChargeurLivraison {
 
     public Tournee getTournee() {
         return tournee;
+    }
+
+    private void parseEntrepot(Element rootElement) {
+        NodeList entrepotNodeListe = rootElement.getElementsByTagName("entrepot");
+
+        Node nodeEntrepot = entrepotNodeListe.item(0);
+        Element nodeChild = (Element) nodeEntrepot;
+        String adr = nodeChild.getAttribute("adresse");
+        String hd = nodeChild.getAttribute("heureDepart");
+        int x = 0;
+        int y = 0;
+        Double heuredepart = Double.parseDouble(hd.substring(0, hd.indexOf(':'))) * 3600
+                + Double.parseDouble(hd.substring(hd.indexOf(':') + 1, hd.indexOf(':', hd.indexOf(':') + 1))) * 60
+                + Double.parseDouble(hd.substring(hd.lastIndexOf(':') + 1, hd.length()));
+
+
+        List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
+        for (Noeud noeud : noeuds) {
+            if (noeud.getId() == Long.parseLong(adr)) {
+                x = noeud.getX();
+                y = noeud.getY();
+                break;
+            }
+
+        }
+        tournee.setEntrepot(new Noeud(Long.parseLong(adr), x, y));
+        System.out.println(tournee.getEntrepot());
+
+        tournee.setHeureDeDepart(heuredepart);
+
     }
 }

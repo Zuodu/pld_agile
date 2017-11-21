@@ -60,6 +60,10 @@ public class VuePlan extends JPanel {
                         20);
                 ;
             }
+            g2d.fillOval((int) (tournee.getEntrepot().getX() - 12000) / 15 - 10,
+                    (int) (tournee.getEntrepot().getY() - 20000) / 40 - 10,
+                    40,
+                    40);
         }
 
     }
