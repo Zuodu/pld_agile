@@ -17,10 +17,10 @@ public class Plan extends Observable {
 
 
     public void addTroncon (Troncon troncon) {
-        listeTroncons.add(troncon);
+        listeTroncons.addFirst(troncon);
 
     }
-    public void addNoeud(Noeud noeud) {listeNoeuds.add(noeud);}
+    public void addNoeud(Noeud noeud) {listeNoeuds.addFirst(noeud);}
 
     public List<Troncon> getListeTroncons() {
         return listeTroncons;

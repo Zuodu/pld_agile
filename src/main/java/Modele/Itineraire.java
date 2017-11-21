@@ -10,15 +10,28 @@ public class Itineraire extends Plan {
     private double temps;
 
 
-    public Itineraire(PointLivraison pointLivraisonOrigine, PointLivraison pointLivraisonDestination) {
+    public Itineraire() {
         super();
-        this.pointLivraisonDestination=pointLivraisonDestination;
-        this.pointLivraisonOrigine=pointLivraisonOrigine;
     }
 
     public void addTroncon(Troncon troncon) {
         listeTroncons.add(troncon);
-        longueurTotale+=troncon.getLongueur();
+        longueurTotale += troncon.getLongueur();
     }
 
+    public void setPointLivraisonOrigine(PointLivraison pointLivraisonOrigine) {
+        this.pointLivraisonOrigine = pointLivraisonOrigine;
+    }
+
+    public void setPointLivraisonDestination(PointLivraison pointLivraisonDestination) {
+        this.pointLivraisonDestination = pointLivraisonDestination;
+    }
+
+    public void setLongueurTotale(double longueurTotale) {
+        this.longueurTotale = longueurTotale;
+    }
+
+    public void setTemps(double temps) {
+        this.temps = temps;
+    }
 }
