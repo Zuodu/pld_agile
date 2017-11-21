@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class VuePlan extends JPanel {
     private Plan plan;
-    private ListePointLivraisons pointLivraisons;
+    private Tournee tournee;
 
     public VuePlan() {
 
@@ -22,17 +22,17 @@ public class VuePlan extends JPanel {
         repaint();
     }
 
-    public void addPointLivraisons(ListePointLivraisons listePointLivraisons) {
-        this.pointLivraisons = listePointLivraisons;
+    public void addTournee(Tournee tournee) {
+        this.tournee = tournee;
         repaint();
     }
 
     public void paint(Graphics g) {
-
+        System.out.println("called");
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.RED);
+        g2d.setColor(Color.BLACK);
 /**
  for (Noeud noeud:plan.getListeNoeuds()) {
  g2d.drawOval((int)(noeud.getX()-12000)/15,
@@ -50,13 +50,14 @@ public class VuePlan extends JPanel {
 
             );
         }
-
-        if (pointLivraisons != null) {
-            for (PointLivraison pointLivraison : pointLivraisons.getPointLivraisons()) {
-                g2d.drawOval((int) (pointLivraison.getX() - 12000) / 15,
-                        (int) (pointLivraison.getY() - 20000) / 40,
-                        5,
-                        5)
+        g2d.setColor(Color.RED);
+        if (tournee != null) {
+            System.out.println("not null");
+            for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
+                g2d.fillOval((int) (pointLivraison.getX() - 12000) / 15 - 10,
+                        (int) (pointLivraison.getY() - 20000) / 40 - 10,
+                        20,
+                        20);
                 ;
             }
         }

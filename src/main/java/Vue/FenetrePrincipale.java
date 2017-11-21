@@ -1,22 +1,17 @@
 package Vue;
 
-import Modele.ListePointLivraisons;
 import Modele.Plan;
-import Modele.PointLivraison;
+import Modele.Tournee;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Set;
 
 public class FenetrePrincipale extends JFrame implements Observer {
 
@@ -29,15 +24,15 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
 
 	private Plan plan;
-	private ListePointLivraisons pointLivraisons;
+	private Tournee tournee;
 	/**
 	 * Create the frame.
 	 */
-	public FenetrePrincipale(Plan plan, ListePointLivraisons pointLivraisons) {
+	public FenetrePrincipale(Plan plan, Tournee tournee) {
 		this.plan = plan;
 		plan.addObserver(this);
-		this.pointLivraisons = pointLivraisons;
-		pointLivraisons.addObserver(this);
+		this.tournee = tournee;
+		tournee.addObserver(this);
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,18 +68,16 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		VuePlan vuePlan = new VuePlan();
-		if (o instanceof Plan) {
+
 
 			JFrame frame = new JFrame();
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setBounds(100, 100, 800, 600);
 			frame.setVisible(true);
 			frame.setContentPane(vuePlan);
-			vuePlan.addPlan((Plan) o);
-		} else if (o instanceof ListePointLivraisons) {
-			vuePlan.addPointLivraisons((ListePointLivraisons) o);
+		vuePlan.addPlan(plan);
+		vuePlan.addTournee(tournee);
 		}
 
 
-	}
 }

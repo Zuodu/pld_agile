@@ -7,10 +7,10 @@ import java.util.Set;
  * Created by flavi on 2017/11/18.
  */
 public class Noeud{
-    private Long id;
-    private int x;
-    private int y;
-    private Set<Troncon> neighbors;
+    protected Long id;
+    protected int x;
+    protected int y;
+    protected Set<Troncon> neighbors;
 
     public Noeud(Long id, int x, int y) {
         this.id = id;

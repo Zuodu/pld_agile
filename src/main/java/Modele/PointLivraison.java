@@ -1,6 +1,5 @@
 package Modele;
 
-import javafx.beans.Observable;
 
 /**
  * Created by flavi on 2017/11/18.
@@ -38,6 +37,7 @@ public class PointLivraison extends Noeud {
     @Override
     public String toString() {
         return "PointLivraison{" +
+                "id=" + id +
                 "debutPlage=" + debutPlage +
                 ", finPlage=" + finPlage +
                 ", duree=" + duree +

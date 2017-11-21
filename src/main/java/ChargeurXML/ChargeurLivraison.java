@@ -1,18 +1,16 @@
 package ChargeurXML;
 
-import Modele.ListePointLivraisons;
 import Modele.Noeud;
 import Modele.PointLivraison;
-import Modele.Troncon;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.xml.parsers.*;
 
+import Modele.Tournee;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -20,7 +18,7 @@ import org.xml.sax.SAXException;
  * Created by flavi on 2017/11/18.
  */
 public class ChargeurLivraison {
-    private ListePointLivraisons pointLivraisons;
+    private Tournee tournee;
     private static ChargeurLivraison instance;
 
     public static ChargeurLivraison getInstance() {
@@ -35,8 +33,8 @@ public class ChargeurLivraison {
     }
 
 
-    public boolean parse(ListePointLivraisons pointLivraisons, String filePath) {
-        this.pointLivraisons=pointLivraisons;
+    public boolean parse(Tournee tournee, String filePath) {
+        this.tournee = tournee;
         if (ChargeurPlan.getInstance().getPlan().getListeNoeuds().size() == 0) return false;
 
 
@@ -66,7 +64,7 @@ public class ChargeurLivraison {
                     String dureeAtt = child.getAttribute("duree");
                     String debutAtt = child.getAttribute("debutPlage");
                     String finAtt = child.getAttribute("finPlage");
-
+                    System.out.println(debutAtt + " " + finAtt);
                     double debutPlage=-1, finPlage=-1;
                     if (!debutAtt.isEmpty()) {
                         debutPlage = Double.parseDouble(debutAtt.substring(0, debutAtt.indexOf(':'))) * 3600
@@ -81,7 +79,7 @@ public class ChargeurLivraison {
 
                     int x = 0, y = 0;
 
-                    HashSet<Noeud> noeuds = (HashSet<Noeud>) ChargeurPlan.getInstance().getPlan().getListeNoeuds();
+                    List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
                     Iterator iterator = noeuds.iterator();
                     while (iterator.hasNext()) {
                         Noeud n = (Noeud) iterator.next();
@@ -94,13 +92,13 @@ public class ChargeurLivraison {
                     if (x == 0 && y == 0) return false;
 
                     if(debutPlage!=-1&&finPlage!=-1)
-                        pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
+                        tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
                     else
-                        pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt),x,y,Double.parseDouble(debutAtt)));
+                        tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, debutPlage));
                 }
             }
 
-            pointLivraisons.SignalerFin();
+            tournee.SignalerFinDajoutPointsLivraisons();
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -110,7 +108,7 @@ public class ChargeurLivraison {
         return true;
     }
 
-    public ListePointLivraisons getPointLivraisons() {
-        return pointLivraisons;
+    public Tournee getTournee() {
+        return tournee;
     }
 }

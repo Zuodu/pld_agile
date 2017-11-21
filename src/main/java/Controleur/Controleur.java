@@ -15,7 +15,6 @@ import java.util.Set;
 public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
-    private ListePointLivraisons pointLivraisons;
     private Tournee tournee;
     private static Controleur instance;
 
@@ -28,8 +27,8 @@ public class Controleur {
 
     private Controleur() {
         plan = new Plan();
-        pointLivraisons = new ListePointLivraisons();
-        fenetrePrincipale = new FenetrePrincipale(plan, pointLivraisons);
+        tournee = new Tournee();
+        fenetrePrincipale = new FenetrePrincipale(plan, tournee);
     }
 
     public void chargerPlan (String filePath)
@@ -46,9 +45,9 @@ public class Controleur {
     }
 
     public void chargerLivraison (String filePath){
-        ChargeurLivraison.getInstance().parse(pointLivraisons, filePath);
+        ChargeurLivraison.getInstance().parse(tournee, filePath);
 
-        for (PointLivraison pointLivraison : pointLivraisons.getPointLivraisons()) {
+        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
             System.out.println(pointLivraison);
         }
 
