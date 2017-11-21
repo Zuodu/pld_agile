@@ -12,18 +12,23 @@ public class AbstractGraphe {
     private int[][] cout;
     private int[] duree;
     HashMap<Integer, PointLivraison> pointLivraisonMap;
-    HashMap<Map.Entry<PointLivraison,PointLivraison>,Itineraire> itinerairesMap;
+    HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
+    Tournee tournee;
     int nbSommets;
 
-    public AbstractGraphe(Plan plan, Set<PointLivraison> pointLivraisons) {
+    public AbstractGraphe(Plan plan, Tournee tournee) {
+        this.tournee = tournee;
+        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.pointLivraisonMap = new HashMap<Integer, PointLivraison>();
-        this.nbSommets = pointLivraisons.size();
-        this.cout = new int[nbSommets][nbSommets];
-        this.duree = new int[nbSommets];
         int i = 0;
-        for (PointLivraison pointLivraison : pointLivraisons) {
+        pointLivraisonMap.put(i++, tournee.getEntrepot());
+        //TODO:区分entrepot和pointlivraison
+        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
             pointLivraisonMap.put(i++, pointLivraison);
         }
+        this.nbSommets = pointLivraisonMap.size();
+        this.cout = new int[nbSommets][nbSommets];
+        this.duree = new int[nbSommets];
         generateTableCount();
         generateTableDuree();
 
@@ -34,6 +39,8 @@ public class AbstractGraphe {
             for (int n = 0; n < cout[m].length; n++) {
                 Dijkstra dijkstra = new Dijkstra();
                 dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
+
+                itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
                 cout[m][n] = (int) dijkstra.getMeilleurItineraire().getLongueurTotale();
             }
         }
@@ -45,13 +52,15 @@ public class AbstractGraphe {
         }
     }
 
-    public List<PointLivraison> getItineraire() {
+    public void getItineraire() {
         TSP tsp = new TSP1();
         tsp.chercheSolution(1000, nbSommets, cout, duree);
-        List<PointLivraison> pointLivraisons = new ArrayList<PointLivraison>();
-        for (int i = 0; i < nbSommets; i++) {
-            pointLivraisons.add(pointLivraisonMap.get(tsp.getMeilleureSolution(i)));
+        for (int i = 0; i < nbSommets - 1; i++) {
+            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i)))));
         }
-        return pointLivraisons;
+    }
+
+    public Tournee getTournee() {
+        return tournee;
     }
 }

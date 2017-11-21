@@ -4,8 +4,8 @@ package Modele;
  * Created by flavi on 2017/11/18.
  */
 public class Itineraire extends Plan {
-    private PointLivraison pointLivraisonOrigine;
-    private PointLivraison pointLivraisonDestination;
+    private Noeud noeudOrigine;
+    private Noeud noeudDestination;
     private double longueurTotale;
     private double temps;
 
@@ -21,12 +21,20 @@ public class Itineraire extends Plan {
         longueurTotale += troncon.getLongueur();
     }
 
-    public void setPointLivraisonOrigine(PointLivraison pointLivraisonOrigine) {
-        this.pointLivraisonOrigine = pointLivraisonOrigine;
+    public Noeud getNoeudOrigine() {
+        return noeudOrigine;
     }
 
-    public void setPointLivraisonDestination(PointLivraison pointLivraisonDestination) {
-        this.pointLivraisonDestination = pointLivraisonDestination;
+    public void setNoeudOrigine(Noeud noeudOrigine) {
+        this.noeudOrigine = noeudOrigine;
+    }
+
+    public Noeud getNoeudDestination() {
+        return noeudDestination;
+    }
+
+    public void setNoeudDestination(Noeud noeudDestination) {
+        this.noeudDestination = noeudDestination;
     }
 
     public double getLongueurTotale() {
@@ -36,8 +44,8 @@ public class Itineraire extends Plan {
     @Override
     public String toString() {
         return "Itineraire{" +
-                "pointLivraisonOrigine=" + pointLivraisonOrigine +
-                ", pointLivraisonDestination=" + pointLivraisonDestination +
+                "noeudOrigine=" + noeudOrigine +
+                ", noeudDestination=" + noeudDestination +
                 ", longueurTotale=" + longueurTotale +
                 ", temps=" + temps +
                 '}';

@@ -35,6 +35,10 @@ public class Noeud{
         return y;
     }
 
+    public void setNeighbors(Set<Troncon> neighbors) {
+        this.neighbors = neighbors;
+    }
+
     public Set<Troncon> getNeighbors() {
         return neighbors;
     }

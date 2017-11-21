@@ -9,11 +9,11 @@ import java.util.Observable;
  */
 public class Tournee extends Observable {
     private List<Itineraire> listeItineraires;
-    private Noeud entrepot;
+    private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
 
-    public Tournee(Noeud entrepot, double heureDeDepart) {
+    public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
         listeItineraires=new ArrayList<Itineraire>();
@@ -33,15 +33,19 @@ public class Tournee extends Observable {
         return listeItineraires;
     }
 
+    public void addItineraire(Itineraire itineraire) {
+        listeItineraires.add(itineraire);
+    }
+
     public void setHeureDeDepart(double heureDeDepart) {
         this.heureDeDepart = heureDeDepart;
     }
 
-    public void setEntrepot(Noeud entrepot) {
+    public void setEntrepot(PointLivraison entrepot) {
         this.entrepot = entrepot;
     }
 
-    public Noeud getEntrepot() {
+    public PointLivraison getEntrepot() {
         return entrepot;
     }
 

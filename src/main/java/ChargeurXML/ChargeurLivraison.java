@@ -7,10 +7,12 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.xml.parsers.*;
 
 import Modele.Tournee;
+import Modele.Troncon;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -79,6 +81,7 @@ public class ChargeurLivraison {
                     }
 
                     int x = 0, y = 0;
+                    Set<Troncon> neighbors = null;
 
                     List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
                     Iterator iterator = noeuds.iterator();
@@ -87,15 +90,21 @@ public class ChargeurLivraison {
                         if (n.getId() == Long.parseLong(idAtt)) {
                             x = n.getX();
                             y = n.getY();
+                            neighbors = n.getNeighbors();
                         }
                     }
 
                     if (x == 0 && y == 0) return false;
 
-                    if (debutPlage != -1 && finPlage != -1)
-                        tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
-                    else
-                        tournee.getListePointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, debutPlage));
+                    if (debutPlage != -1 && finPlage != -1) {
+                        PointLivraison pointLivraison = new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage);
+                        pointLivraison.setNeighbors(neighbors);
+                        tournee.getListePointLivraisons().add(pointLivraison);
+                    } else {
+                        PointLivraison pointLivraison = new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt));
+                        pointLivraison.setNeighbors(neighbors);
+                        tournee.getListePointLivraisons().add(pointLivraison);
+                    }
                 }
             }
 
@@ -136,8 +145,9 @@ public class ChargeurLivraison {
             }
 
         }
-        tournee.setEntrepot(new Noeud(Long.parseLong(adr), x, y));
-        System.out.println(tournee.getEntrepot());
+
+        tournee.setEntrepot(new PointLivraison(Long.parseLong(adr), x, y, 0D));
+        System.out.println("entrepot:" + tournee.getEntrepot());
 
         tournee.setHeureDeDepart(heuredepart);
 

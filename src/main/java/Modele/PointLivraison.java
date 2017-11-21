@@ -17,6 +17,7 @@ public class PointLivraison extends Noeud {
         return finPlage;
     }
 
+
     public PointLivraison(Long id, int x, int y, double duree,double debutPlage, double finPlage) {
 
         super(id, x, y);

@@ -15,20 +15,18 @@ import java.util.*;
 public class Dijkstra {
     private HashMap<Noeud, Map.Entry<Noeud, Troncon>> parent;
     private HashMap<Noeud, Double> distance;
-    private double minDistance;
     private Itineraire meilleurItineraire;
 
     public Dijkstra() {
         this.parent = new HashMap<Noeud, Map.Entry<Noeud, Troncon>>();
         this.distance = new HashMap<Noeud, Double>();
         this.meilleurItineraire = new Itineraire();
-        minDistance = 0;
     }
 
-    public void chercheDistanceMin(PointLivraison src, PointLivraison target) {
+    public void chercheDistanceMin(Noeud src, Noeud target) {
 
-        meilleurItineraire.setPointLivraisonOrigine(src);
-        meilleurItineraire.setPointLivraisonDestination(target);
+        meilleurItineraire.setNoeudOrigine(src);
+        meilleurItineraire.setNoeudDestination(target);
 
         parent.put(src, new AbstractMap.SimpleEntry<Noeud, Troncon>(src, null));
 
@@ -51,8 +49,6 @@ public class Dijkstra {
                     noeud = parent.get(noeud).getKey();
                 }
                 meilleurItineraire.addNoeud(src);
-                minDistance = entry.getKey();
-
                 return;
             }
 
