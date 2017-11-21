@@ -21,10 +21,6 @@ public class Itineraire extends Plan {
         longueurTotale += troncon.getLongueur();
     }
 
-    public void addNoeud(Noeud noeud) {
-        super.addNoeud(noeud);
-    }
-
     public void setPointLivraisonOrigine(PointLivraison pointLivraisonOrigine) {
         this.pointLivraisonOrigine = pointLivraisonOrigine;
     }

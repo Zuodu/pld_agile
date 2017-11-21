@@ -25,10 +25,10 @@ public class Vue {
 //        AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getPointLivraisons().getPointLivraisons());
 //        List<PointLivraison> res = abstractGraphe.getItineraire();
 //        System.out.println(res);
-        PointLivraison noeud1=new PointLivraison(1L,1,1,1D,0,0);
-        PointLivraison noeud2=new PointLivraison(2L,1,1,1D,0,0);
-        PointLivraison noeud3=new PointLivraison(3L,1,1,1D,0,0);
-        PointLivraison noeud0=new PointLivraison(0L,1,1,1D,0,0);
+        PointLivraison noeud1=new PointLivraison(1L,1,1,1D);
+        PointLivraison noeud2=new PointLivraison(2L,1,1,1D);
+        PointLivraison noeud3=new PointLivraison(3L,1,1,1D);
+        PointLivraison noeud0=new PointLivraison(0L,1,1,1D);
         Noeud noeud4=new Noeud(4L,1,1);
         noeud0.addNeighbor(new Troncon(noeud0,noeud1,100,""));
         noeud0.addNeighbor(new Troncon(noeud0,noeud2,30,""));

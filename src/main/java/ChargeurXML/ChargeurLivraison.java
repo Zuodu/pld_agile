@@ -67,7 +67,7 @@ public class ChargeurLivraison {
                     String debutAtt = child.getAttribute("debutPlage");
                     String finAtt = child.getAttribute("finPlage");
 
-                    double debutPlage = 0, finPlage = 0;
+                    double debutPlage=-1, finPlage=-1;
                     if (!debutAtt.isEmpty()) {
                         debutPlage = Double.parseDouble(debutAtt.substring(0, debutAtt.indexOf(':'))) * 3600
                                 + Double.parseDouble(debutAtt.substring(debutAtt.indexOf(':') + 1, debutAtt.indexOf(':', debutAtt.indexOf(':') + 1))) * 60
@@ -93,7 +93,10 @@ public class ChargeurLivraison {
 
                     if (x == 0 && y == 0) return false;
 
-                    pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
+                    if(debutPlage!=-1&&finPlage!=-1)
+                        pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt), x, y, Double.parseDouble(dureeAtt), debutPlage, finPlage));
+                    else
+                        pointLivraisons.getPointLivraisons().add(new PointLivraison(Long.parseLong(idAtt),x,y,Double.parseDouble(debutAtt)));
                 }
             }
 
