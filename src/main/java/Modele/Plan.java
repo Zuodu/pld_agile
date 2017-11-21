@@ -6,12 +6,12 @@ import java.util.*;
  * Created by flavi on 2017/11/18.
  */
 public class Plan extends Observable {
-    protected List<Troncon> listeTroncons;
-    protected List<Noeud> listeNoeuds;
+    protected LinkedList<Troncon> listeTroncons;
+    protected LinkedList<Noeud> listeNoeuds;
 
     public Plan () {
-        listeTroncons=new ArrayList<Troncon>();
-        listeNoeuds=new ArrayList<Noeud>();
+        listeTroncons= new LinkedList<Troncon>();
+        listeNoeuds= new LinkedList<Noeud>();
 
     }
 
