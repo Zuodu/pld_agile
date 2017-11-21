@@ -38,5 +38,5 @@ public class PointLivraison extends Noeud {
                 ", duree=" + duree +
                 '}';
     }
-
 }
+

@@ -33,4 +33,17 @@ public class Itineraire extends Plan {
         this.pointLivraisonDestination = pointLivraisonDestination;
     }
 
+    public double getLongueurTotale() {
+        return longueurTotale;
+    }
+
+    @Override
+    public String toString() {
+        return "Itineraire{" +
+                "pointLivraisonOrigine=" + pointLivraisonOrigine +
+                ", pointLivraisonDestination=" + pointLivraisonDestination +
+                ", longueurTotale=" + longueurTotale +
+                ", temps=" + temps +
+                '}';
+    }
 }

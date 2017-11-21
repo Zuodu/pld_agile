@@ -25,22 +25,22 @@ public class Vue {
 //        AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getPointLivraisons().getPointLivraisons());
 //        List<PointLivraison> res = abstractGraphe.getItineraire();
 //        System.out.println(res);
-//        Noeud noeud1=new Noeud(1L,1,1);
-//        Noeud noeud2=new Noeud(2L,1,1);
-//        Noeud noeud3=new Noeud(3L,1,1);
-//        Noeud noeud0=new Noeud(0L,1,1);
-//        Noeud noeud4=new Noeud(4L,1,1);
-//        noeud0.addNeighbor(new Troncon(noeud0,noeud1,100,""));
-//        noeud0.addNeighbor(new Troncon(noeud0,noeud2,30,""));
-//        noeud0.addNeighbor(new Troncon(noeud0,noeud4,10,""));
-//        noeud2.addNeighbor(new Troncon(noeud2,noeud1,60,""));
-//        noeud2.addNeighbor(new Troncon(noeud2,noeud3,60,""));
-//        noeud3.addNeighbor(new Troncon(noeud3,noeud1,10,""));
-//        noeud4.addNeighbor(new Troncon(noeud4,noeud3,50,""));
-//        Dijkstra dijkstra=new Dijkstra();
-//        dijkstra.chercheDistanceMin(noeud0,noeud3);
-//        System.out.println(dijkstra.getResultListNoeud());
-//        System.out.println(dijkstra.getMinDistance());
+        PointLivraison noeud1=new PointLivraison(1L,1,1,1D,0,0);
+        PointLivraison noeud2=new PointLivraison(2L,1,1,1D,0,0);
+        PointLivraison noeud3=new PointLivraison(3L,1,1,1D,0,0);
+        PointLivraison noeud0=new PointLivraison(0L,1,1,1D,0,0);
+        Noeud noeud4=new Noeud(4L,1,1);
+        noeud0.addNeighbor(new Troncon(noeud0,noeud1,100,""));
+        noeud0.addNeighbor(new Troncon(noeud0,noeud2,30,""));
+        noeud0.addNeighbor(new Troncon(noeud0,noeud4,10,""));
+        noeud2.addNeighbor(new Troncon(noeud2,noeud1,60,""));
+        noeud2.addNeighbor(new Troncon(noeud2,noeud3,60,""));
+        noeud3.addNeighbor(new Troncon(noeud3,noeud1,10,""));
+        noeud4.addNeighbor(new Troncon(noeud4,noeud3,50,""));
+        Dijkstra dijkstra=new Dijkstra();
+        dijkstra.chercheDistanceMin(noeud0,noeud3);
+        System.out.println(dijkstra.getMeilleurItineraire());
+
     }
 
 }

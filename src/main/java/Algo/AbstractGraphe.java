@@ -12,6 +12,7 @@ public class AbstractGraphe {
     private int[][] cout;
     private int[] duree;
     HashMap<Integer, PointLivraison> pointLivraisonMap;
+    HashMap<Map.Entry<PointLivraison,PointLivraison>,Itineraire> itinerairesMap;
     int nbSommets;
 
     public AbstractGraphe(Plan plan, Set<PointLivraison> pointLivraisons) {
@@ -33,7 +34,7 @@ public class AbstractGraphe {
             for (int n = 0; n < cout[m].length; n++) {
                 Dijkstra dijkstra = new Dijkstra();
                 dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
-                cout[m][n] = (int) dijkstra.getMinDistance();
+                cout[m][n] = (int) dijkstra.getMeilleurItineraire().getLongueurTotale();
             }
         }
     }

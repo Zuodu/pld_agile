@@ -1,6 +1,8 @@
 package Algo;
 
+import Modele.Itineraire;
 import Modele.Noeud;
+import Modele.PointLivraison;
 import Modele.Troncon;
 import jdk.nashorn.internal.objects.annotations.Function;
 
@@ -13,19 +15,20 @@ import java.util.*;
 public class Dijkstra {
     private HashMap<Noeud, Map.Entry<Noeud, Troncon>> parent;
     private HashMap<Noeud, Double> distance;
-    private LinkedList<Noeud> resultListNoeud;
-    private LinkedList<Troncon> resultListTroncon;
     private double minDistance;
+    private Itineraire meilleurItineraire;
 
     public Dijkstra() {
         this.parent = new HashMap<Noeud, Map.Entry<Noeud, Troncon>>();
         this.distance = new HashMap<Noeud, Double>();
-        this.resultListNoeud = new LinkedList<Noeud>();
-        this.resultListTroncon = new LinkedList<Troncon>();
+        this.meilleurItineraire = new Itineraire();
         minDistance = 0;
     }
 
-    public void chercheDistanceMin(Noeud src, Noeud target) {
+    public void chercheDistanceMin(PointLivraison src, PointLivraison target) {
+
+        meilleurItineraire.setPointLivraisonOrigine(src);
+        meilleurItineraire.setPointLivraisonDestination(target);
 
         parent.put(src, new AbstractMap.SimpleEntry<Noeud, Troncon>(src, null));
 
@@ -43,11 +46,13 @@ public class Dijkstra {
             Noeud noeud = entry.getValue();
             if (noeud == target) {
                 while (noeud != src) {
-                    resultListNoeud.addFirst(noeud);
+                    meilleurItineraire.addNoeud(noeud);
+                    meilleurItineraire.addTroncon(parent.get(noeud).getValue());
                     noeud = parent.get(noeud).getKey();
                 }
-                resultListNoeud.addFirst(src);
+                meilleurItineraire.addNoeud(src);
                 minDistance = entry.getKey();
+
                 return;
             }
 
@@ -61,8 +66,8 @@ public class Dijkstra {
                     distance.replace(troncon.getDestination(), distance.get(noeud) + troncon.getLongueur());
                     if (parent.containsKey(troncon.getDestination())) {
                         parent.replace(troncon.getDestination(), new AbstractMap.SimpleEntry<Noeud, Troncon>(noeud, troncon));
-                    }else{
-                        parent.put(troncon.getDestination(),new AbstractMap.SimpleEntry<Noeud, Troncon>(noeud, troncon));
+                    } else {
+                        parent.put(troncon.getDestination(), new AbstractMap.SimpleEntry<Noeud, Troncon>(noeud, troncon));
                     }
                     y.add(new AbstractMap.SimpleEntry<Double, Noeud>(distance.get(troncon.getDestination()), troncon.getDestination()));
                 }
@@ -72,8 +77,8 @@ public class Dijkstra {
 
     }
 
-    public double getMinDistance() {
-        return minDistance;
+    public Itineraire getMeilleurItineraire() {
+        return meilleurItineraire;
     }
 
     private Double getDistance(Noeud noeud) {
@@ -84,13 +89,6 @@ public class Dijkstra {
         return Double.MAX_VALUE;
     }
 
-    public LinkedList<Noeud> getResultListNoeud() {
-        return resultListNoeud;
-    }
-
-    public LinkedList<Troncon> getResultListTroncon() {
-        return resultListTroncon;
-    }
 
     public static Comparator<Map.Entry<Double, Noeud>> longueurComparator = new Comparator<Map.Entry<Double, Noeud>>() {
         public int compare(Map.Entry<Double, Noeud> o1, Map.Entry<Double, Noeud> o2) {
