@@ -1,20 +1,17 @@
 package Modele;
 
-import java.util.HashSet;
-import java.util.Observable;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by flavi on 2017/11/18.
  */
 public class Plan extends Observable {
-    protected Set<Troncon> listeTroncons;
-    protected Set<Noeud> listeNoeuds;
+    protected List<Troncon> listeTroncons;
+    protected List<Noeud> listeNoeuds;
 
     public Plan () {
-        listeTroncons=new HashSet<Troncon>();
-        listeNoeuds=new HashSet<Noeud>();
-
+        listeTroncons=new ArrayList<Troncon>();
+        listeNoeuds=new ArrayList<Noeud>();
 
     }
 
@@ -25,11 +22,11 @@ public class Plan extends Observable {
     }
     public void addNoeud(Noeud noeud) {listeNoeuds.add(noeud);}
 
-    public Set<Troncon> getListeTroncons() {
+    public List<Troncon> getListeTroncons() {
         return listeTroncons;
     }
 
-    public Set<Noeud> getListeNoeuds() {
+    public List<Noeud> getListeNoeuds() {
         return listeNoeuds;
     }
 
