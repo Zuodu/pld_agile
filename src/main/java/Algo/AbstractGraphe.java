@@ -64,6 +64,15 @@ public class AbstractGraphe {
         tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
     }
 
+    public void getItineraireGlouton() {
+        Glouton glouton = new Glouton(nbSommets);
+        glouton.chercheSolution(cout, duree);
+        for (int i = 0; i < nbSommets - 1; i++) {
+            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(glouton.getMeilleureSolution(i)), pointLivraisonMap.get(glouton.getMeilleureSolution(i + 1)))));
+        }
+        tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(glouton.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
+    }
+
     public Tournee getTournee() {
         return tournee;
     }

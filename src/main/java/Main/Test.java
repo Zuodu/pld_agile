@@ -19,9 +19,9 @@ import java.util.Queue;
 public class Test {
     public static void main(String[] args) {
         ChargeurPlan chargeurPlan = ChargeurPlan.getInstance();
-        chargeurPlan.parse(new Plan(), "aaaa.xml");
+        chargeurPlan.parse(new Plan(), "planLyonPetit.xml");
         ChargeurLivraison chargeurLivraison = ChargeurLivraison.getInstance();
-        chargeurLivraison.parse(new Tournee(), "bbbbb.xml");
+        chargeurLivraison.parse(new Tournee(), "DLpetit3.xml");
         AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getTournee());
         abstractGraphe.getItineraire();
         System.out.println(abstractGraphe.getTournee().getListeItineraires().get(0));
