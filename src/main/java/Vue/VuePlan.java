@@ -49,19 +49,20 @@ public class VuePlan extends JPanel {
 
             );
         }
-        g2d.setColor(Color.RED);
+        g2d.setColor(Color.GREEN);
         if (tournee != null) {
             for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-                g2d.fillOval((int) (pointLivraison.getX() - 12000) / 15 - 10,
-                        (int) (pointLivraison.getY() - 20000) / 40 - 10,
-                        20,
-                        20);
+                g2d.fillOval((int) (pointLivraison.getX() - 12000) / 15 - 5,
+                        (int) (pointLivraison.getY() - 20000) / 40 - 5,
+                        10,
+                        10);
                 ;
             }
             g2d.fillOval((int) (tournee.getEntrepot().getX() - 12000) / 15 - 10,
                     (int) (tournee.getEntrepot().getY() - 20000) / 40 - 10,
-                    40,
-                    40);
+                    20,
+                    20);
+            g2d.setColor(Color.RED);
             for (Itineraire itineraire : tournee.getListeItineraires()) {
                 for (Troncon troncon : itineraire.getListeTroncons()) {
                     g2d.drawLine((troncon.getOrigine().getX() - 12000) / 15,

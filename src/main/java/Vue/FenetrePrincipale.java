@@ -42,6 +42,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		vuePlan = new VuePlan();
+		contentPane.add(vuePlan);
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.SOUTH);
@@ -64,24 +66,30 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
 		buttonCalculerTournee.addActionListener(buttonCalculerTourneeListener);
 		panel.add(buttonCalculerTournee);
-		vuePlan = new VuePlan();
+
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
 
+/**
 
-
-			JFrame frame = new JFrame();
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setBounds(100, 100, 800, 600);
-			frame.setVisible(true);
-			frame.setContentPane(vuePlan);
+ JFrame frame = new JFrame();
+ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ frame.setBounds(100, 100, 800, 600);
+ frame.setVisible(true);
+ frame.setContentPane(vuePlan);
+ if (o instanceof Plan)
+ vuePlan.addPlan(plan);
+ else if (o instanceof Tournee)
+ vuePlan.addTournee(tournee);
+ }
+ **/
 		if (o instanceof Plan)
 			vuePlan.addPlan(plan);
 		else if (o instanceof Tournee)
 			vuePlan.addTournee(tournee);
-		}
+	}
 
 
 }
