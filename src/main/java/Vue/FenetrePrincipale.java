@@ -37,7 +37,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		setBounds(500, 200, 800, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -46,7 +46,6 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		contentPane.add(vuePlan);
 		
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.SOUTH);
 
 		buttonChargerLivraisonsListener=new ButtonChargerLivraisonsListener();
 		buttonChargerPlanListener=new ButtonChargerPlanListener();
@@ -66,7 +65,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
 		buttonCalculerTournee.addActionListener(buttonCalculerTourneeListener);
 		panel.add(buttonCalculerTournee);
-
+		contentPane.add(panel, BorderLayout.SOUTH);
 	}
 
 	@Override
