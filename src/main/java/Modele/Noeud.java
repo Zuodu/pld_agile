@@ -45,10 +45,9 @@ public class Noeud{
 
     @Override
     public String toString() {
-        return "Noeud{" +
+        return
                 "id=" + id +
                 ", x=" + x +
-                ", y=" + y +
-                '}';
+                        ", y=" + y;
     }
 }

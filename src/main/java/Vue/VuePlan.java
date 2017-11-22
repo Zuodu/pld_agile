@@ -28,7 +28,6 @@ public class VuePlan extends JPanel {
     }
 
     public void paint(Graphics g) {
-        System.out.println("called");
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
 
@@ -52,7 +51,6 @@ public class VuePlan extends JPanel {
         }
         g2d.setColor(Color.RED);
         if (tournee != null) {
-            System.out.println("not null");
             for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
                 g2d.fillOval((int) (pointLivraison.getX() - 12000) / 15 - 10,
                         (int) (pointLivraison.getY() - 20000) / 40 - 10,
@@ -72,7 +70,6 @@ public class VuePlan extends JPanel {
                             (troncon.getDestination().getY() - 20000) / 40
 
                     );
-                    System.out.println("drawed");
                 }
             }
         }

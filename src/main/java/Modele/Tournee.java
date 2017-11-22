@@ -61,4 +61,13 @@ public class Tournee extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    @Override
+    public String toString() {
+        String toReturn = "";
+        for (Itineraire itineraire : listeItineraires) {
+            toReturn += itineraire.toString();
+        }
+        return toReturn;
+    }
 }

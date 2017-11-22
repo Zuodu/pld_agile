@@ -54,7 +54,7 @@ public class Itineraire extends Plan {
                 "noeudOrigine=" + noeudOrigine +
                 ", noeudDestination=" + noeudDestination +
                 ", longueurTotale=" + longueurTotale +
-                ", temps=" + temps +
-                '}';
+
+                "}\r\n";
     }
 }

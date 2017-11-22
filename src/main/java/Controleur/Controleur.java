@@ -58,7 +58,7 @@ public class Controleur {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
         abstractGraphe.getItineraire();
         tournee.SignalerFinDajoutPointsLivraisons();
-        System.out.println(abstractGraphe.getTournee().getListeItineraires());
+        System.out.println(abstractGraphe.getTournee());
 
     }
 

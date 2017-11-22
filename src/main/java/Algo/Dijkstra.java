@@ -42,7 +42,7 @@ public class Dijkstra {
         while (!y.isEmpty()) {
             Map.Entry<Double, Noeud> entry = y.remove();
             Noeud noeud = entry.getValue();
-            if (noeud.getId() == target.getId()) {
+            if (noeud.getId().equals(target.getId())) {
                 while (noeud != src) {
                     meilleurItineraire.addNoeud(noeud);
                     meilleurItineraire.addTroncon(parent.get(noeud).getValue());
@@ -74,7 +74,9 @@ public class Dijkstra {
     }
 
     public Itineraire getMeilleurItineraire() {
+        System.out.println(meilleurItineraire);
         return meilleurItineraire;
+
     }
 
     private Double getDistance(Noeud noeud) {
