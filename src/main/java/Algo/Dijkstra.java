@@ -44,11 +44,9 @@ public class Dijkstra {
             Noeud noeud = entry.getValue();
             if (noeud.getId().equals(target.getId())) {
                 while (noeud != src) {
-                    meilleurItineraire.addNoeud(noeud);
                     meilleurItineraire.addTroncon(parent.get(noeud).getValue());
                     noeud = parent.get(noeud).getKey();
                 }
-                meilleurItineraire.addNoeud(src);
                 return;
             }
 

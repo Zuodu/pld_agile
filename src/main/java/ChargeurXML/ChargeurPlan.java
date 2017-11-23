@@ -5,10 +5,7 @@ import Modele.Plan;
 import Modele.Troncon;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 import javax.xml.parsers.*;
 
@@ -79,7 +76,7 @@ public class ChargeurPlan {
 
                     Noeud noeudOrigine = null, noeudDestination = null;
 
-                    List noeuds = plan.getListeNoeuds();
+                    Set noeuds = plan.getListeNoeuds();
 
                     Iterator iterator = noeuds.iterator();
                     while (iterator.hasNext()) {

@@ -23,7 +23,7 @@ public class Test {
         ChargeurLivraison chargeurLivraison = ChargeurLivraison.getInstance();
         chargeurLivraison.parse(new Tournee(), "DLpetit3.xml");
         AbstractGraphe abstractGraphe = new AbstractGraphe(chargeurPlan.getPlan(), chargeurLivraison.getTournee());
-        abstractGraphe.getItineraire();
+        abstractGraphe.getItineraireGlouton();
         System.out.println(abstractGraphe.getTournee().getListeItineraires().get(0));
 //        PointLivraison noeud1=new PointLivraison(1L,1,1,1D);
 //        PointLivraison noeud2=new PointLivraison(2L,1,1,1D);

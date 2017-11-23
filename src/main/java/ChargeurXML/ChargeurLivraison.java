@@ -83,7 +83,7 @@ public class ChargeurLivraison {
                     int x = 0, y = 0;
                     Set<Troncon> neighbors = null;
 
-                    List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
+                    Set<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
                     Iterator iterator = noeuds.iterator();
                     while (iterator.hasNext()) {
                         Noeud n = (Noeud) iterator.next();
@@ -136,7 +136,7 @@ public class ChargeurLivraison {
                 + Double.parseDouble(hd.substring(hd.lastIndexOf(':') + 1, hd.length()));
 
 
-        List<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
+        Set<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
         Set<Troncon> neighbors = null;
         for (Noeud noeud : noeuds) {
             if (noeud.getId() == Long.parseLong(adr)) {

@@ -1,25 +1,27 @@
 package Modele;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by flavi on 2017/11/18.
  */
-public class Itineraire extends Plan {
+public class Itineraire {
     private Noeud noeudOrigine;
     private Noeud noeudDestination;
+    private LinkedList<Troncon> listeTroncons;
     private double longueurTotale;
     private double temps;
 
 
     public Itineraire() {
-        super();
+        listeTroncons = new LinkedList<Troncon>();
         longueurTotale = 0;
         temps = 0;
     }
 
     public void addTroncon(Troncon troncon) {
-        super.addTroncon(troncon);
+        listeTroncons.addFirst(troncon);
         longueurTotale += troncon.getLongueur();
     }
 
@@ -43,9 +45,8 @@ public class Itineraire extends Plan {
         return longueurTotale;
     }
 
-    @Override
-    public List<Troncon> getListeTroncons() {
-        return super.getListeTroncons();
+    public LinkedList<Troncon> getListeTroncons() {
+        return listeTroncons;
     }
 
     @Override
