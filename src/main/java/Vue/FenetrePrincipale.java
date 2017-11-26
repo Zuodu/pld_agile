@@ -1,5 +1,6 @@
 package Vue;
 
+import Controleur.Controleur;
 import Modele.Plan;
 import Modele.Tournee;
 
@@ -23,17 +24,19 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private ButtonChargerPlanListener buttonChargerPlanListener;
 	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
 	VuePlan vuePlan;
-
+	private Controleur controleur;
 	private Plan plan;
 	private Tournee tournee;
 	/**
 	 * Create the frame.
 	 */
-	public FenetrePrincipale(Plan plan, Tournee tournee) {
+	public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
 		this.plan = plan;
 		plan.addObserver(this);
 		this.tournee = tournee;
 		tournee.addObserver(this);
+
+		this.controleur = controleur;
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,9 +50,9 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		
 		JPanel panel = new JPanel();
 
-		buttonChargerLivraisonsListener=new ButtonChargerLivraisonsListener();
-		buttonChargerPlanListener=new ButtonChargerPlanListener();
-		buttonCalculerTourneeListener = new ButtonCalculerTourneeListener();
+		buttonChargerLivraisonsListener = new ButtonChargerLivraisonsListener(controleur);
+		buttonChargerPlanListener = new ButtonChargerPlanListener(controleur);
+		buttonCalculerTourneeListener = new ButtonCalculerTourneeListener(controleur);
 		
 		buttonChargerPlan = new JButton("Charger Plan");
 		buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);

@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 public class ButtonChargerPlanListener implements ActionListener {
-
+	Controleur controleur;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JFileChooser jfc=new JFileChooser();
@@ -17,13 +17,14 @@ public class ButtonChargerPlanListener implements ActionListener {
 
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = jfc.getSelectedFile();
-			Controleur.getInstance().chargerPlan(selectedFile.getAbsolutePath());
+			controleur.chargerPlan(selectedFile.getAbsolutePath());
 			System.out.println(selectedFile.getAbsolutePath());
 		}
 
 
 	}
 
-	public ButtonChargerPlanListener() {
+	public ButtonChargerPlanListener(Controleur controleur) {
+		this.controleur = controleur;
 	}
 }

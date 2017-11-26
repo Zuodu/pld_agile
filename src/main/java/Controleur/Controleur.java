@@ -17,19 +17,18 @@ public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
     private Tournee tournee;
-    private static Controleur instance;
+    //private static Controleur instance;
 
 
-
-    public static Controleur getInstance () {
+    /** public static Controleur getInstance () {
         if (instance==null) instance=new Controleur();
         return instance;
-    }
+     }**/
 
-    private Controleur() {
+    public Controleur() {
         plan = new Plan();
         tournee = new Tournee();
-        fenetrePrincipale = new FenetrePrincipale(plan, tournee);
+        fenetrePrincipale = new FenetrePrincipale(plan, tournee, this);
     }
 
     public void chargerPlan (String filePath)

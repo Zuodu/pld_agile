@@ -11,6 +11,7 @@ import java.io.File;
  * Created by qifan on 2017/11/20.
  */
 public class ButtonChargerLivraisonsListener implements ActionListener {
+    Controleur controleur;
     @Override
     public void actionPerformed(ActionEvent e) {
         JFileChooser jfc=new JFileChooser();
@@ -19,14 +20,15 @@ public class ButtonChargerLivraisonsListener implements ActionListener {
 
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             File selectedFile = jfc.getSelectedFile();
-            Controleur.getInstance().chargerLivraison(selectedFile.getAbsolutePath());
+            controleur.chargerLivraison(selectedFile.getAbsolutePath());
             System.out.println(selectedFile.getAbsolutePath());
         }
 
 
     }
 
-    public ButtonChargerLivraisonsListener() {
+    public ButtonChargerLivraisonsListener(Controleur controleur) {
+        this.controleur = controleur;
     }
 }
 

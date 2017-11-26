@@ -7,6 +7,6 @@ import Controleur.Controleur;
  */
 public class main {
     public static void main(String args[]) {
-        Controleur controleur = Controleur.getInstance();
+        Controleur controleur = new Controleur();
     }
 }
