@@ -15,14 +15,16 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class FenetrePrincipale extends JFrame implements Observer {
+	public static final String CHARGER_PLAN = "Charger Plan";
+	public static final String CHARGER_LIVRAISONS = "Charger Livraisons";
+	public static final String CALCULER_TOURNEE = "Calculer Tournee";
 
 	private JPanel contentPane;
 	private JButton buttonChargerLivraisons;
 	private JButton buttonChargerPlan;
 	private JButton buttonCalculerTournee;
-	private ButtonChargerLivraisonsListener buttonChargerLivraisonsListener;
-	private ButtonChargerPlanListener buttonChargerPlanListener;
-	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
+
+	private ButtonListener buttonListener;
 	VuePlan vuePlan;
 	private Controleur controleur;
 	private Plan plan;
@@ -50,23 +52,22 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		
 		JPanel panel = new JPanel();
 
-		buttonChargerLivraisonsListener = new ButtonChargerLivraisonsListener(controleur);
-		buttonChargerPlanListener = new ButtonChargerPlanListener(controleur);
-		buttonCalculerTourneeListener = new ButtonCalculerTourneeListener(controleur);
-		
-		buttonChargerPlan = new JButton("Charger Plan");
+
+		buttonListener = new ButtonListener(controleur);
+
+		buttonChargerPlan = new JButton(CHARGER_PLAN);
 		buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonChargerPlan.addActionListener(buttonChargerPlanListener);
+		buttonChargerPlan.addActionListener(buttonListener);
 		panel.add(buttonChargerPlan);
-		
-		buttonChargerLivraisons = new JButton("Charger Livraisons");
+
+		buttonChargerLivraisons = new JButton(CHARGER_LIVRAISONS);
 		buttonChargerLivraisons.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonChargerLivraisons.addActionListener(buttonChargerLivraisonsListener);
+		buttonChargerLivraisons.addActionListener(buttonListener);
 		panel.add(buttonChargerLivraisons);
-		
-		buttonCalculerTournee = new JButton("Calculer Tournee");
+
+		buttonCalculerTournee = new JButton(CALCULER_TOURNEE);
 		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonCalculerTournee.addActionListener(buttonCalculerTourneeListener);
+		buttonCalculerTournee.addActionListener(buttonListener);
 		panel.add(buttonCalculerTournee);
 		contentPane.add(panel, BorderLayout.SOUTH);
 	}
