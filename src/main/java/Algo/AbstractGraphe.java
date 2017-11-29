@@ -45,7 +45,7 @@ public class AbstractGraphe {
 
     public void getItineraire() {
         TSP tsp = new TSP1();
-        tsp.chercheSolution(1000, tournee.getVitesse(), nbSommets, listPointLivraisons, itinerairesMap);
+        tsp.chercheSolution(1000, tournee.getHeureDeDepart(), tournee.getVitesse(), nbSommets, listPointLivraisons, itinerairesMap);
         for (int i = 0; i < nbSommets - 1; i++) {
             tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tsp.getMeilleureSolution(i), tsp.getMeilleureSolution(i + 1))));
         }
