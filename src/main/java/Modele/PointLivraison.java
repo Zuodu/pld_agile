@@ -8,6 +8,8 @@ public class PointLivraison extends Noeud {
     private double debutPlage;
     private double finPlage;
     private double duree;
+    private double heureDepart;
+    private double heureArrivee;
 
     public double getDebutPlage() {
         return debutPlage;
@@ -17,8 +19,23 @@ public class PointLivraison extends Noeud {
         return finPlage;
     }
 
+    public double getHeureDepart() {
+        return heureDepart;
+    }
 
-    public PointLivraison(Long id, int x, int y, double duree,double debutPlage, double finPlage) {
+    public void setHeureDepart(double heureDepart) {
+        this.heureDepart = heureDepart;
+    }
+
+    public double getHeureArrivee() {
+        return heureArrivee;
+    }
+
+    public void setHeureArrivee(double heureArrivee) {
+        this.heureArrivee = heureArrivee;
+    }
+
+    public PointLivraison(Long id, int x, int y, double duree, double debutPlage, double finPlage) {
 
         super(id, x, y);
         this.duree=duree;

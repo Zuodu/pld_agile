@@ -15,7 +15,7 @@ public abstract class TemplateTSP implements Algo.TSP {
         return tempsLimiteAtteint;
     }
 
-    public void chercheSolution(int tpsLimite, double vitesse, int nbSommets, ArrayList<PointLivraison> listPointLivraisons, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+    public void chercheSolution(int tpsLimite, double heureDepart, double vitesse, int nbSommets, ArrayList<PointLivraison> listPointLivraisons, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
         tempsLimiteAtteint = false;
         coutMeilleureSolution = Integer.MAX_VALUE;
         meilleureSolution = new PointLivraison[nbSommets];
@@ -23,7 +23,7 @@ public abstract class TemplateTSP implements Algo.TSP {
         for (int i = 1; i < listPointLivraisons.size(); i++) nonVus.add(listPointLivraisons.get(i));
         ArrayList<PointLivraison> vus = new ArrayList<PointLivraison>(nbSommets);
         vus.add(listPointLivraisons.get(0)); // le premier sommet visite est 0
-        branchAndBound(vitesse, listPointLivraisons.get(0), nonVus, vus, 0, itinerairesMap, System.currentTimeMillis(), tpsLimite);
+        branchAndBound(vitesse, heureDepart, listPointLivraisons.get(0), nonVus, vus, 0, itinerairesMap, System.currentTimeMillis(), tpsLimite);
     }
 
     public PointLivraison getMeilleureSolution(int i) {
@@ -66,7 +66,7 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @param tpsDebut       : moment ou la resolution a commence
      * @param tpsLimite      : limite de temps pour la resolution
      */
-    void branchAndBound(double vitesse, PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, ArrayList<PointLivraison> vus, double coutVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap, long tpsDebut, int tpsLimite) {
+    void branchAndBound(double vitesse, double heureDepart, PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, ArrayList<PointLivraison> vus, double coutVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap, long tpsDebut, int tpsLimite) {
         if (System.currentTimeMillis() - tpsDebut > tpsLimite) {
             tempsLimiteAtteint = true;
             return;
@@ -83,7 +83,9 @@ public abstract class TemplateTSP implements Algo.TSP {
                 PointLivraison prochainSommet = it.next();
                 vus.add(prochainSommet);
                 nonVus.remove(prochainSommet);
-                branchAndBound(vitesse, prochainSommet, nonVus, vus, (double) (coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree()), itinerairesMap, tpsDebut, tpsLimite);
+                prochainSommet.setHeureArrivee(coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + heureDepart);
+                prochainSommet.setHeureDepart(coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart);
+                branchAndBound(vitesse, heureDepart, prochainSommet, nonVus, vus, (double) (coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree()), itinerairesMap, tpsDebut, tpsLimite);
                 vus.remove(prochainSommet);
                 nonVus.add(prochainSommet);
             }

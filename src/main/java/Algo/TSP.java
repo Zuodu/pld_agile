@@ -23,7 +23,7 @@ public interface TSP {
      * @param itinerairesMap      : itinerairesMap.get(Map.Entry<point1,point2>) = duree pour aller de point1 à point2
      * @param listPointLivraisons : liste de points de livraison sachant que le premier concerne l'entrepôt de livraison
      */
-    public void chercheSolution(int tpsLimite, double vitesse, int nbSommets, ArrayList<PointLivraison> listPointLivraisons, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap);
+    public void chercheSolution(int tpsLimite, double heureDepart, double vitesse, int nbSommets, ArrayList<PointLivraison> listPointLivraisons, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap);
 
     /**
      * @param i
