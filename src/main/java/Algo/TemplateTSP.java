@@ -81,11 +81,14 @@ public abstract class TemplateTSP implements Algo.TSP {
             Iterator<PointLivraison> it = iterator(sommetCrt, nonVus, itinerairesMap);
             while (it.hasNext()) {
                 PointLivraison prochainSommet = it.next();
-                double depart = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart;
-                double arrivee = depart + prochainSommet.getDuree();
+                double arrivee = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart;
+                double depart = arrivee + prochainSommet.getDuree();
                 if (prochainSommet.getDebutPlage() != -1d && prochainSommet.getFinPlage() != -1d) {
                     if (depart > prochainSommet.getFinPlage() || arrivee < prochainSommet.getDebutPlage()) {
-                        continue;
+                        if (nonVus.indexOf(prochainSommet) >= 1) {
+                            Collections.swap(nonVus, nonVus.indexOf(prochainSommet), nonVus.indexOf(prochainSommet) - 1);
+                            prochainSommet = nonVus.get(nonVus.indexOf(prochainSommet) + 1);
+                        }
                     }
                 }
                 vus.add(prochainSommet);
