@@ -8,5 +8,8 @@ import Controleur.Controleur;
 public class main {
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
+        controleur.chargerPlan("planLyonMoyen.xml");
+        controleur.chargerLivraison("DLmoyen5TW1.xml");
+        controleur.calculerTournee();
     }
 }

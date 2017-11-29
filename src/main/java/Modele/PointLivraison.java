@@ -46,6 +46,8 @@ public class PointLivraison extends Noeud {
     public PointLivraison(Long id, int x, int y, double duree) {
         super(id, x, y);
         this.duree = duree;
+        this.debutPlage = -1;
+        this.finPlage = -1;
     }
 
     public double getDuree() {

@@ -83,9 +83,16 @@ public abstract class TemplateTSP implements Algo.TSP {
                 PointLivraison prochainSommet = it.next();
                 vus.add(prochainSommet);
                 nonVus.remove(prochainSommet);
-                prochainSommet.setHeureArrivee(coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + heureDepart);
-                prochainSommet.setHeureDepart(coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart);
-                branchAndBound(vitesse, heureDepart, prochainSommet, nonVus, vus, (double) (coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree()), itinerairesMap, tpsDebut, tpsLimite);
+                double depart = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart;
+                double arrivee = depart + prochainSommet.getDuree();
+                if (prochainSommet.getDebutPlage() != -1d && prochainSommet.getFinPlage() != -1d) {
+                    if (depart > prochainSommet.getFinPlage() || arrivee < prochainSommet.getDebutPlage()) {
+                        vus.remove(prochainSommet);
+                        nonVus.add(prochainSommet);
+                        continue;
+                    }
+                }
+                branchAndBound(vitesse, heureDepart, prochainSommet, nonVus, vus, coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree(), itinerairesMap, tpsDebut, tpsLimite);
                 vus.remove(prochainSommet);
                 nonVus.add(prochainSommet);
             }
