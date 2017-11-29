@@ -8,6 +8,7 @@ import java.util.Observable;
  * Created by flavi on 2017/11/18.
  */
 public class Tournee extends Observable {
+    private static final double vitesse = 15 * 1000 / 60 / 60;
     private List<Itineraire> listeItineraires;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
@@ -16,8 +17,8 @@ public class Tournee extends Observable {
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
-        listeItineraires=new ArrayList<Itineraire>();
-        listePointLivraisons=new ArrayList<PointLivraison>();
+        listeItineraires = new ArrayList<Itineraire>();
+        listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
     public Tournee() {
@@ -25,7 +26,11 @@ public class Tournee extends Observable {
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
-    public void addPointLivraisons (PointLivraison pointLivraison) {
+    public static double getVitesse() {
+        return vitesse;
+    }
+
+    public void addPointLivraisons(PointLivraison pointLivraison) {
         listePointLivraisons.add(pointLivraison);
     }
 

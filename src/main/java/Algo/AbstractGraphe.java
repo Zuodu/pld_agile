@@ -2,6 +2,7 @@ package Algo;
 
 import Modele.*;
 
+import javax.swing.text.html.parser.Entity;
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -11,7 +12,7 @@ import java.util.*;
 public class AbstractGraphe {
     private int[][] cout;
     private int[] duree;
-    HashMap<Integer, PointLivraison> pointLivraisonMap;
+    ArrayList<PointLivraison> listPointLivraisons;
     HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
     Tournee tournee;
     int nbSommets;
@@ -19,58 +20,44 @@ public class AbstractGraphe {
     public AbstractGraphe(Plan plan, Tournee tournee) {
         this.tournee = tournee;
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
-        this.pointLivraisonMap = new HashMap<Integer, PointLivraison>();
+        this.listPointLivraisons = new ArrayList<PointLivraison>();
         int i = 0;
-        pointLivraisonMap.put(i++, tournee.getEntrepot());
+        listPointLivraisons.add(tournee.getEntrepot());
         //TODO:区分entrepot和pointlivraison
         for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-            pointLivraisonMap.put(i++, pointLivraison);
+            listPointLivraisons.add(pointLivraison);
         }
-        this.nbSommets = pointLivraisonMap.size();
-        this.cout = new int[nbSommets][nbSommets];
-        this.duree = new int[nbSommets];
-        generateTableCount();
-        generateTableDuree();
-
-    }
-
-    public void generateTableCount() {
-        for (int m = 0; m < cout.length; m++) {
-            for (int n = 0; n < cout[m].length; n++) {
-                if (m == n) {
-                    cout[m][n] = 0;
+        this.nbSommets = listPointLivraisons.size();
+        for (PointLivraison pointLivraison1 : listPointLivraisons) {
+            for (PointLivraison pointLivraison2 : listPointLivraisons) {
+                if (pointLivraison1.getId().equals(pointLivraison2.getId())) {
                     continue;
                 }
                 Dijkstra dijkstra = new Dijkstra();
-                dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
-                itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
-                cout[m][n] = (int) dijkstra.getMeilleurItineraire().getLongueurTotale();
+                dijkstra.chercheDistanceMin(pointLivraison1, pointLivraison2);
+                itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraison2), dijkstra.getMeilleurItineraire());
             }
         }
-    }
+//        generateTableCout();
+//        generateTableDuree();
 
-    public void generateTableDuree() {
-        for (int i = 0; i < cout.length; i++) {
-            duree[i] = (int) pointLivraisonMap.get(i).getDuree();
-        }
     }
 
     public void getItineraire() {
         TSP tsp = new TSP1();
-        tsp.chercheSolution(1000, nbSommets, cout, duree);
+        tsp.chercheSolution(1000, tournee.getVitesse(), nbSommets, listPointLivraisons, itinerairesMap);
         for (int i = 0; i < nbSommets - 1; i++) {
-            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)))));
+            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tsp.getMeilleureSolution(i), tsp.getMeilleureSolution(i + 1))));
         }
-        tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
+        tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tsp.getMeilleureSolution(nbSommets - 1), listPointLivraisons.get(0))));
     }
-
     public void getItineraireGlouton() {
-        Glouton glouton = new Glouton(nbSommets);
-        glouton.chercheSolution(cout, duree);
+        Glouton glouton = new Glouton(itinerairesMap);
+        glouton.chercheSolution(listPointLivraisons);
         for (int i = 0; i < nbSommets - 1; i++) {
-            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(glouton.getMeilleureSolution(i)), pointLivraisonMap.get(glouton.getMeilleureSolution(i + 1)))));
+            tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(glouton.getMeilleureSolution(i), glouton.getMeilleureSolution(i + 1))));
         }
-        tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(glouton.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
+        tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(glouton.getMeilleureSolution(nbSommets - 1), listPointLivraisons.get(0))));
     }
 
     public Tournee getTournee() {

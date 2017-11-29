@@ -1,63 +1,71 @@
 package Algo;
 
+import Modele.Itineraire;
+import Modele.PointLivraison;
+
 import java.util.*;
 
 /**
  * Created by siyingjiang on 2017/11/22.
  */
 public class Glouton {
-    private Integer[] meilleureSolution;
-    private int coutMeilleureSolution = 0;
+    private PointLivraison[] meilleureSolution;
+    private double coutMeilleureSolution = 0;
+    private HashMap<PointLivraison, HashMap<PointLivraison, Double>> neiborsDistanceMap;
 
-    public Integer getMeilleureSolution(int i) {
+    public PointLivraison getMeilleureSolution(int i) {
         if ((meilleureSolution == null) || (i < 0) || (i >= meilleureSolution.length))
             return null;
         return meilleureSolution[i];
     }
 
-    public Glouton(int nbSommet) {
-        this.meilleureSolution = new Integer[nbSommet];
+    public Glouton(HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+        neiborsDistanceMap = new HashMap<PointLivraison, HashMap<PointLivraison, Double>>();
+        for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : itinerairesMap.entrySet()) {
+            if (neiborsDistanceMap.containsKey(entry.getKey().getKey())) {
+                neiborsDistanceMap.get(entry.getKey().getKey()).put(entry.getKey().getValue(), entry.getValue().getLongueurTotale());
+            } else {
+                neiborsDistanceMap.put(entry.getKey().getKey(), new HashMap<PointLivraison, Double>());
+                neiborsDistanceMap.get(entry.getKey().getKey()).put(entry.getKey().getValue(), entry.getValue().getLongueurTotale());
+            }
+        }
         this.coutMeilleureSolution = 0;
     }
 
-    public int getCoutMeilleureSolution() {
+    public double getCoutMeilleureSolution() {
         return coutMeilleureSolution;
     }
 
-    public List<Integer> chercheSolution(int[][] cout, int[] duree) {
-        List<Integer> res = new ArrayList<Integer>();
-        Set<Integer> visited = new HashSet<Integer>();
-        int numNodes = cout.length;
-        int distanceMin;
-        int nextPos = 0;
+    public void chercheSolution(ArrayList<PointLivraison> listPointLivraisons) {
+        meilleureSolution = new PointLivraison[listPointLivraisons.size()];
+        List<PointLivraison> visited = new ArrayList<PointLivraison>();
+        int numNodes = listPointLivraisons.size();
+        double distanceMin;
+        PointLivraison nextPos = null;
         int distance = 0;
-        int posCurrent = 0;
+        PointLivraison posCurrent = listPointLivraisons.get(0);
         visited.add(posCurrent);
-        res.add(posCurrent);
         while (visited.size() < numNodes) {
-            int[] neighborDistance = cout[posCurrent];
-            distanceMin = Integer.MAX_VALUE;
-            for (int i = 0; i < numNodes; i++) {
-                int neighbor = i;
+            HashMap<PointLivraison, Double> neighborsDistance = neiborsDistanceMap.get(posCurrent);
+            distanceMin = Double.MAX_VALUE;
+            for (Map.Entry<PointLivraison, Double> neighbor : neighborsDistance.entrySet()) {
                 if (visited.contains(neighbor)) {
                     continue;
                 } else {
-                    int dNei = cout[posCurrent][i];
+                    double dNei = neighbor.getValue();
                     if (dNei < distanceMin) {
                         distanceMin = dNei;
-                        nextPos = neighbor;
+                        nextPos = neighbor.getKey();
                     }
                 }
             }
             distance += distanceMin;
             posCurrent = nextPos;
             visited.add(posCurrent);
-            res.add(posCurrent);
         }
         visited.toArray(meilleureSolution);
         coutMeilleureSolution = distance;
         System.out.println(distance);
-        return res;
     }
 
 }
