@@ -1,5 +1,7 @@
 package Main;
 
+import Algo.TSP;
+import Algo.TSP2;
 import Controleur.Controleur;
 
 /**
@@ -7,9 +9,11 @@ import Controleur.Controleur;
  */
 public class main {
     public static void main(String args[]) {
-        Controleur controleur = new Controleur();
-        controleur.chargerPlan("planLyonMoyen.xml");
-        controleur.chargerLivraison("DLmoyen5TW1.xml");
-        controleur.calculerTournee();
+//        Controleur controleur = new Controleur();
+//        controleur.chargerPlan("planLyonMoyen.xml");
+//        controleur.chargerLivraison("DLmoyen10TW3.xml");
+//        controleur.calculerTournee();
+
+
     }
 }

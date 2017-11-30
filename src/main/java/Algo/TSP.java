@@ -35,4 +35,9 @@ public interface TSP {
      * @return la duree de la solution calculee par chercheSolution
      */
     public double getCoutMeilleureSolution();
+
+    /**
+     * @return l'horaire de chaque livraison
+     */
+    public ArrayList<Map.Entry<Double, Double>> getHoraireMeilleureSolution();
 }

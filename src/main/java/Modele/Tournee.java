@@ -2,6 +2,7 @@ package Modele;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
 /**
@@ -13,6 +14,7 @@ public class Tournee extends Observable {
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
+    private ArrayList<Map.Entry<Double, Double>> horaireMeilleureSolution;
 
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
@@ -60,6 +62,14 @@ public class Tournee extends Observable {
 
     public double getHeureDeDepart() {
         return heureDeDepart;
+    }
+
+    public ArrayList<Map.Entry<Double, Double>> getHoraireMeilleureSolution() {
+        return horaireMeilleureSolution;
+    }
+
+    public void setHoraireMeilleureSolution(ArrayList<Map.Entry<Double, Double>> horaireMeilleureSolution) {
+        this.horaireMeilleureSolution = horaireMeilleureSolution;
     }
 
     public void SignalerFinDajoutPointsLivraisons() {

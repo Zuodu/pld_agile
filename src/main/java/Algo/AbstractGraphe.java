@@ -50,7 +50,16 @@ public class AbstractGraphe {
             tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tsp.getMeilleureSolution(i), tsp.getMeilleureSolution(i + 1))));
         }
         tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tsp.getMeilleureSolution(nbSommets - 1), listPointLivraisons.get(0))));
+        tournee.setHoraireMeilleureSolution(tsp.getHoraireMeilleureSolution());
+        for (Map.Entry<Double, Double> entry : tournee.getHoraireMeilleureSolution()) {
+            System.out.println("horaire:" + entry);
+        }
+        if (tsp.getTempsLimiteAtteint()) {
+            System.out.println("Temps limite atteint");
+        }
     }
+
+
     public void getItineraireGlouton() {
         Glouton glouton = new Glouton(itinerairesMap);
         glouton.chercheSolution(listPointLivraisons);

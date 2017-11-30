@@ -10,13 +10,15 @@ import java.util.Map;
 
 public class TSP1 extends TemplateTSP {
 
-	@Override
-	protected Iterator<PointLivraison> iterator(PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
-		return new IteratorSeq(nonVus, sommetCrt);
-	}
+    @Override
+    protected Iterator<PointLivraison> iterator(PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+        return new IteratorSeq(nonVus, sommetCrt);
+    }
 
-	@Override
-	protected int bound(PointLivraison sommetCourant, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
-		return 0;
-	}
+    @Override
+    protected double bound(double vitesse, PointLivraison sommetCourant, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+        return 0;
+    }
+
+
 }

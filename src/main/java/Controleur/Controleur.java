@@ -39,9 +39,9 @@ public class Controleur {
             //System.out.println(noeud);
         }
 
-        for (Troncon troncon : plan.getListeTroncons()) {
-            System.out.println(troncon);
-        }
+//        for (Troncon troncon : plan.getListeTroncons()) {
+//            System.out.println(troncon);
+//        }
     }
 
     public void chargerLivraison (String filePath){
@@ -57,8 +57,6 @@ public class Controleur {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
         abstractGraphe.getItineraire();
         tournee.SignalerFinDajoutPointsLivraisons();
-        System.out.println(abstractGraphe.getTournee());
-
     }
 
     public void afficherPlan() {

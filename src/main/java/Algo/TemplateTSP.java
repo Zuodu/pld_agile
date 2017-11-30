@@ -8,8 +8,9 @@ import java.util.*;
 public abstract class TemplateTSP implements Algo.TSP {
 
     private PointLivraison[] meilleureSolution;
-    private double coutMeilleureSolution = 0;
+    private double coutMeilleureSolution;
     private Boolean tempsLimiteAtteint;
+    private ArrayList<Map.Entry<Double, Double>> horaireMeilleureSolution;
 
     public Boolean getTempsLimiteAtteint() {
         return tempsLimiteAtteint;
@@ -19,11 +20,14 @@ public abstract class TemplateTSP implements Algo.TSP {
         tempsLimiteAtteint = false;
         coutMeilleureSolution = Integer.MAX_VALUE;
         meilleureSolution = new PointLivraison[nbSommets];
+        horaireMeilleureSolution = null;
         ArrayList<PointLivraison> nonVus = new ArrayList<PointLivraison>();
         for (int i = 1; i < listPointLivraisons.size(); i++) nonVus.add(listPointLivraisons.get(i));
         ArrayList<PointLivraison> vus = new ArrayList<PointLivraison>(nbSommets);
+        ArrayList<Map.Entry<Double, Double>> heureLivraison = new ArrayList<Map.Entry<Double, Double>>();
         vus.add(listPointLivraisons.get(0)); // le premier sommet visite est 0
-        branchAndBound(vitesse, heureDepart, listPointLivraisons.get(0), nonVus, vus, 0, itinerairesMap, System.currentTimeMillis(), tpsLimite);
+        heureLivraison.add(new AbstractMap.SimpleEntry<Double, Double>(heureDepart, heureDepart));
+        branchAndBound(vitesse, listPointLivraisons.get(0), nonVus, vus, heureLivraison, heureDepart, itinerairesMap, System.currentTimeMillis(), tpsLimite);
     }
 
     public PointLivraison getMeilleureSolution(int i) {
@@ -36,6 +40,10 @@ public abstract class TemplateTSP implements Algo.TSP {
         return coutMeilleureSolution;
     }
 
+    public ArrayList<Map.Entry<Double, Double>> getHoraireMeilleureSolution() {
+        return horaireMeilleureSolution;
+    }
+
     /**
      * Methode devant etre redefinie par les sous-classes de TemplateTSP
      *
@@ -44,7 +52,7 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @return une borne inferieure du cout des permutations commencant par sommetCourant,
      * contenant chaque sommet de nonVus exactement une fois et terminant par le sommet 0
      */
-    protected abstract int bound(PointLivraison sommetCourant, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap);
+    protected abstract double bound(double vitesse, PointLivraison sommetCourant, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap);
 
     /**
      * Methode devant etre redefinie par les sous-classes de TemplateTSP
@@ -66,7 +74,7 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @param tpsDebut       : moment ou la resolution a commence
      * @param tpsLimite      : limite de temps pour la resolution
      */
-    void branchAndBound(double vitesse, double heureDepart, PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, ArrayList<PointLivraison> vus, double coutVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap, long tpsDebut, int tpsLimite) {
+    void branchAndBound(double vitesse, PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, ArrayList<PointLivraison> vus, ArrayList<Map.Entry<Double, Double>> heureLivraison, double coutVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap, long tpsDebut, int tpsLimite) {
         if (System.currentTimeMillis() - tpsDebut > tpsLimite) {
             tempsLimiteAtteint = true;
             return;
@@ -75,31 +83,35 @@ public abstract class TemplateTSP implements Algo.TSP {
             coutVus += itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, vus.get(0))).getLongueurTotale();
             if (coutVus < coutMeilleureSolution) { // on a trouve une solution meilleure que meilleureSolution
                 vus.toArray(meilleureSolution);
-                coutMeilleureSolution = coutVus;
+                horaireMeilleureSolution = new ArrayList<Map.Entry<Double, Double>>(heureLivraison);
+                coutMeilleureSolution = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, vus.get(0))).getLongueurTotale() / vitesse;
             }
-        } else if (coutVus + bound(sommetCrt, nonVus, itinerairesMap) < coutMeilleureSolution) {
+        } else if (coutVus + bound(vitesse, sommetCrt, nonVus, itinerairesMap) < coutMeilleureSolution) {
             Iterator<PointLivraison> it = iterator(sommetCrt, nonVus, itinerairesMap);
             while (it.hasNext()) {
                 PointLivraison prochainSommet = it.next();
-                double arrivee = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree() + heureDepart;
+                double arrivee = coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree();
                 double depart = arrivee + prochainSommet.getDuree();
-                if (prochainSommet.getDebutPlage() != -1d && prochainSommet.getFinPlage() != -1d) {
-                    if (depart > prochainSommet.getFinPlage() || arrivee < prochainSommet.getDebutPlage()) {
-                        if (nonVus.indexOf(prochainSommet) >= 1) {
-                            Collections.swap(nonVus, nonVus.indexOf(prochainSommet), nonVus.indexOf(prochainSommet) - 1);
-                            prochainSommet = nonVus.get(nonVus.indexOf(prochainSommet) + 1);
-                        }
-                    }
-                }
+//                if (prochainSommet.getDebutPlage() != -1d && prochainSommet.getFinPlage() != -1d) {
+//                    if (arrivee < prochainSommet.getDebutPlage()) {
+//                        arrivee = prochainSommet.getDebutPlage();
+//                    }
+//                    depart = arrivee + prochainSommet.getDuree();
+//                    if (depart > prochainSommet.getFinPlage()) {
+//                        continue;
+//                    }
+//                }
+                AbstractMap.SimpleEntry<Double, Double> entry = new AbstractMap.SimpleEntry<Double, Double>(arrivee, depart);
+                heureLivraison.add(entry);
                 vus.add(prochainSommet);
                 nonVus.remove(prochainSommet);
-
-
-                branchAndBound(vitesse, heureDepart, prochainSommet, nonVus, vus, coutVus + itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(sommetCrt, prochainSommet)).getLongueurTotale() / vitesse + prochainSommet.getDuree(), itinerairesMap, tpsDebut, tpsLimite);
+                branchAndBound(vitesse, prochainSommet, nonVus, vus, heureLivraison, depart, itinerairesMap, tpsDebut, tpsLimite);
                 vus.remove(prochainSommet);
                 nonVus.add(prochainSommet);
+                heureLivraison.remove(entry);
             }
         }
     }
 }
+
 

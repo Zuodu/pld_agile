@@ -72,7 +72,6 @@ public class Dijkstra {
     }
 
     public Itineraire getMeilleurItineraire() {
-        System.out.println(meilleurItineraire);
         return meilleurItineraire;
 
     }
