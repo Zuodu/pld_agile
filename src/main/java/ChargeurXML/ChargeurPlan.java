@@ -13,7 +13,8 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ * Classe permettant le chargement du fichier xml contenant le plan
  */
 public class ChargeurPlan {
     private Plan plan;
@@ -30,6 +31,11 @@ public class ChargeurPlan {
 
     }
 
+    /**
+     * Méthode parsant le fichier xml
+     * @param plan le plan auquel on ajoute les noeuds et tronçons
+     * @param filePath Le chemin d'accès au fichier xml
+     */
     public void parse(Plan plan, String filePath) {
         this.plan = plan;
         File xmlPlan = new File(filePath);
@@ -103,6 +109,9 @@ public class ChargeurPlan {
         }
     }
 
+    /**
+     * @return le plan
+     */
     public Plan getPlan() {
         return plan;
     }

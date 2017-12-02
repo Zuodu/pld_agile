@@ -1,7 +1,8 @@
 package Modele;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ * Classe représentant l'élément Tronçon d'un plan, ne contient que des Get.
  */
 public class Troncon {
     private Noeud origine;
@@ -9,22 +10,45 @@ public class Troncon {
     private double longueur;
     private String nomRue;
 
+    /**
+     * Get
+     * @return origine
+     */
     public Noeud getOrigine() {
         return origine;
     }
 
+    /**
+     * Get
+     * @return destination
+     */
     public Noeud getDestination() {
         return destination;
     }
 
+    /**
+     * Get
+     * @return longueur
+     */
     public double getLongueur() {
         return longueur;
     }
 
+    /**
+     * Get
+     * @return nomRue
+     */
     public String getNomRue() {
         return nomRue;
     }
 
+    /**
+     * Constructeur 
+     * @param origine
+     * @param destination
+     * @param longueur
+     * @param nomRue
+     */
     public Troncon(Noeud origine, Noeud destination, double longueur, String nomRue) {
 
         this.origine = origine;

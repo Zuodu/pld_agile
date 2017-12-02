@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ * Classe Contr�leur du logiciel
  */
 public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
@@ -31,6 +32,10 @@ public class Controleur {
         fenetrePrincipale = new FenetrePrincipale(plan, tournee, this);
     }
 
+    /**
+     * M�thode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
+     * @param filePath Le chemin d'acc�s au fichier xml
+     */
     public void chargerPlan (String filePath)
     {
         ChargeurPlan.getInstance().parse(plan, filePath);
@@ -44,6 +49,10 @@ public class Controleur {
         }
     }
 
+    /**
+     * M�thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+     * @param filePath Le chemin d'acc�s au fichier xml
+     */
     public void chargerLivraison (String filePath){
         ChargeurLivraison.getInstance().parse(tournee, filePath);
 
@@ -53,6 +62,9 @@ public class Controleur {
 
     }
 
+    /**
+     * M�thode lan�ant le calcul de la tourn�e
+     */
     public void calculerTournee () {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
         abstractGraphe.getItineraire();
@@ -69,6 +81,16 @@ public class Controleur {
 
     }
     public void afficherTournee() {
+
+    }
+
+    public void clickedOnPoint(PointLivraison pointLivraison) {
+        String toShow = "";
+        toShow += pointLivraison.getId() + "\r\n";
+        toShow += pointLivraison.getDebutPlage() + "\r\n";
+        toShow += pointLivraison.getFinPlage() + "\r\n";
+        toShow += pointLivraison.getDuree() + "\r\n";
+        fenetrePrincipale.getVuePlan().getTextPane().setText(toShow);
 
     }
 }
