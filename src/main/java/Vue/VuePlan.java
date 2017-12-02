@@ -19,8 +19,11 @@ public class VuePlan extends JPanel {
     int ymax=0;
     double xScale;
     double yScale;
+    private JTextPane textPane;
 
     public VuePlan() {
+        textPane=new JTextPane();
+        this.add(textPane);
 
     }
 
@@ -31,7 +34,13 @@ public class VuePlan extends JPanel {
 
     public void addTournee(Tournee tournee) {
         this.tournee = tournee;
+        textPane.setText("");
+        for (Itineraire itineraire : tournee.getListeItineraires()) {
+            textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
+        }
+        textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
+
     }
 
     public void paint(Graphics g) {
@@ -90,6 +99,8 @@ public class VuePlan extends JPanel {
                     20);
             g2d.setColor(Color.RED);
             for (Itineraire itineraire : tournee.getListeItineraires()) {
+
+
                 for (Troncon troncon : itineraire.getListeTroncons()) {
                     int x1=(int)((troncon.getOrigine().getX() - xmin) / xScale)+30;
                     int y1=(int)((troncon.getOrigine().getY() - ymin) / yScale)+20;

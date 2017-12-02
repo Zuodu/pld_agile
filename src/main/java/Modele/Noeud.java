@@ -12,6 +12,7 @@ public class Noeud{
     protected int y;
     protected Set<Troncon> neighbors;
 
+
     public Noeud(Long id, int x, int y) {
         this.id = id;
         this.x = x;
@@ -19,6 +20,10 @@ public class Noeud{
         this.neighbors=new HashSet<Troncon>();
     }
 
+
+    /**
+     * @param neighbor
+     */
     public void addNeighbor(Troncon neighbor){
         neighbors.add(neighbor);
     }

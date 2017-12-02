@@ -9,14 +9,17 @@ import java.util.Iterator;
 
 /**
  * Created by flavi on 2017/11/20.
- public class main {
+ * public class main {
  */
+public class main {
     public static void main(String args[]) {
-     Controleur controleur = new Controleur();
+        Controleur controleur = new Controleur();
         controleur.chargerPlan("planLyonGrand.xml");
         controleur.chargerLivraison("DLgrand15.xml");
         controleur.calculerTournee();
-        //Collection<Integer> nonVus, int sommetCrt, double[][] cout;
+    }
+}
+//Collection<Integer> nonVus, int sommetCrt, double[][] cout;
 //        Collection<Integer> nonVus=new ArrayList<Integer>();
 //        nonVus.add(1);
 //        nonVus.add(2);
@@ -36,8 +39,6 @@ import java.util.Iterator;
 //        while (it.hasNext()){
 //            System.out.println(it.next());
 //        }
-    }
-}
 
 //package Algo;
 //

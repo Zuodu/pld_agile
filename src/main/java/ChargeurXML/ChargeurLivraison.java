@@ -150,7 +150,6 @@ public class ChargeurLivraison {
         PointLivraison pointLivraison = new PointLivraison(Long.parseLong(adr), x, y, 0D);
         pointLivraison.setNeighbors(neighbors);
         tournee.setEntrepot(pointLivraison);
-        System.out.println("entrepot:" + tournee.getEntrepot());
 
         tournee.setHeureDeDepart(heuredepart);
 
