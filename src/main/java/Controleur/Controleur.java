@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ * Classe Contrôleur du logiciel
  */
 public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
@@ -31,6 +32,10 @@ public class Controleur {
         fenetrePrincipale = new FenetrePrincipale(plan, tournee, this);
     }
 
+    /**
+     * Méthode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
+     * @param filePath Le chemin d'accès au fichier xml
+     */
     public void chargerPlan (String filePath)
     {
         ChargeurPlan.getInstance().parse(plan, filePath);
@@ -44,6 +49,10 @@ public class Controleur {
         }
     }
 
+    /**
+     * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+     * @param filePath Le chemin d'accès au fichier xml
+     */
     public void chargerLivraison (String filePath){
         ChargeurLivraison.getInstance().parse(tournee, filePath);
 
@@ -53,6 +62,9 @@ public class Controleur {
 
     }
 
+    /**
+     * Méthode lançant le calcul de la tournée
+     */
     public void calculerTournee () {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
         abstractGraphe.getItineraire();

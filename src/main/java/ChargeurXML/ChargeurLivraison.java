@@ -17,7 +17,8 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ * Classe permettant le chargement du fichier xml contenant les livraisons
  */
 public class ChargeurLivraison {
     private Tournee tournee;
@@ -34,7 +35,12 @@ public class ChargeurLivraison {
 
     }
 
-
+    /**
+     * Méthode parsant le fichier xml
+     * @param tournee La tournée à laquelle on ajoute les points de livraison
+     * @param filePath Le chemin d'accès au fichier xml
+     * @return return true si l'execution se déroule bien
+     */
     public boolean parse(Tournee tournee, String filePath) {
         this.tournee = tournee;
         if (ChargeurPlan.getInstance().getPlan().getListeNoeuds().size() == 0) return false;
@@ -118,10 +124,17 @@ public class ChargeurLivraison {
         return true;
     }
 
+    /**
+     * @return la tournée
+     */
     public Tournee getTournee() {
         return tournee;
     }
 
+    /**
+     * Méthode qui parse l'entrepôt à part des autres points de livraison
+     * @param rootElement 
+     */
     private void parseEntrepot(Element rootElement) {
         NodeList entrepotNodeListe = rootElement.getElementsByTagName("entrepot");
 

@@ -14,6 +14,11 @@ import javax.swing.SwingConstants;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * 
+ * @author H4401
+ *	Classe de la fenêtre principale de l'application
+ */
 public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CHARGER_PLAN = "Charger Plan";
 	public static final String CHARGER_LIVRAISONS = "Charger Livraisons";
@@ -29,8 +34,12 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private Controleur controleur;
 	private Plan plan;
 	private Tournee tournee;
+	
 	/**
-	 * Create the frame.
+	 * Crée la fenetre principale
+	 * @param plan Le plan chargé ou non
+	 * @param tournee La tournée, chargée ou non
+	 * @param controleur Le contrôleur
 	 */
 	public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
 		this.plan = plan;
@@ -71,7 +80,11 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		panel.add(buttonCalculerTournee);
 		contentPane.add(panel, BorderLayout.SOUTH);
 	}
-
+	/**
+	 * Met à jour lorsque que le plan et la tournée sont chargés
+	 * @param o
+	 * @param arg 
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 

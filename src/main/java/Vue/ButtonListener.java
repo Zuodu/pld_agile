@@ -9,7 +9,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 /**
- * Created by qifan on 2017/11/20.
+ * @author H4401
+ * Classe implements ActionListener prmettant aux boutons de l'interface de communiquer avec le logiciel
  */
 public class ButtonListener implements ActionListener {
     Controleur controleur;
@@ -18,6 +19,10 @@ public class ButtonListener implements ActionListener {
         this.controleur = controleur;
     }
 
+    /**
+     * Méthode appelant les méthodes adéquates après avoir appuyé sur un bouton de l'interface
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
