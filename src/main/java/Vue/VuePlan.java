@@ -105,6 +105,8 @@ public class VuePlan extends JPanel {
                         10,
                         10);
                 ;
+                System.out.println(pointLivraison.getX());
+                System.out.println(pointLivraison.getY());
             }
             g2d.fillOval((int)( (tournee.getEntrepot().getX() - xmin) / xScale) +20,
                     (int)((tournee.getEntrepot().getY() - ymin) / yScale )+10,
@@ -126,6 +128,42 @@ public class VuePlan extends JPanel {
             }
         }
 
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public Tournee getTournee() {
+        return tournee;
+    }
+
+    public int getXmin() {
+        return xmin;
+    }
+
+    public int getYmin() {
+        return ymin;
+    }
+
+    public int getXmax() {
+        return xmax;
+    }
+
+    public int getYmax() {
+        return ymax;
+    }
+
+    public double getxScale() {
+        return xScale;
+    }
+
+    public double getyScale() {
+        return yScale;
+    }
+
+    public JTextPane getTextPane() {
+        return textPane;
     }
 
     public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)

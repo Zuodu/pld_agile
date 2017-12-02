@@ -12,7 +12,7 @@ import java.util.Set;
 
 /**
  * @author H4401
- * Classe Contrôleur du logiciel
+ * Classe Contrï¿½leur du logiciel
  */
 public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
@@ -33,8 +33,8 @@ public class Controleur {
     }
 
     /**
-     * Méthode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
-     * @param filePath Le chemin d'accès au fichier xml
+     * Mï¿½thode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
+     * @param filePath Le chemin d'accï¿½s au fichier xml
      */
     public void chargerPlan (String filePath)
     {
@@ -50,8 +50,8 @@ public class Controleur {
     }
 
     /**
-     * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
-     * @param filePath Le chemin d'accès au fichier xml
+     * Mï¿½thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+     * @param filePath Le chemin d'accï¿½s au fichier xml
      */
     public void chargerLivraison (String filePath){
         ChargeurLivraison.getInstance().parse(tournee, filePath);
@@ -63,7 +63,7 @@ public class Controleur {
     }
 
     /**
-     * Méthode lançant le calcul de la tournée
+     * Mï¿½thode lanï¿½ant le calcul de la tournï¿½e
      */
     public void calculerTournee () {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
@@ -81,6 +81,16 @@ public class Controleur {
 
     }
     public void afficherTournee() {
+
+    }
+
+    public void clickedOnPoint(PointLivraison pointLivraison) {
+        String toShow = "";
+        toShow += pointLivraison.getId() + "\r\n";
+        toShow += pointLivraison.getDebutPlage() + "\r\n";
+        toShow += pointLivraison.getFinPlage() + "\r\n";
+        toShow += pointLivraison.getDuree() + "\r\n";
+        fenetrePrincipale.getVuePlan().getTextPane().setText(toShow);
 
     }
 }

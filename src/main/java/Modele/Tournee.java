@@ -90,9 +90,6 @@ public class Tournee extends Observable {
         this.entrepot = entrepot;
     }
 
-    public static double getVitesse() {
-        return vitesse;
-    }
 
     /**
      * Set

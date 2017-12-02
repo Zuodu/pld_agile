@@ -14,7 +14,7 @@ public class PointLivraison extends Noeud {
      * Get
      * @return debutPage
      */
-    public double getDebutPlage() {
+    public Double getDebutPlage() {
         return debutPlage;
     }
 
@@ -22,7 +22,7 @@ public class PointLivraison extends Noeud {
      * Get
      * @return finPage
      */
-    public double getFinPlage() {
+    public Double getFinPlage() {
         return finPlage;
     }
 
@@ -30,33 +30,6 @@ public class PointLivraison extends Noeud {
      * Get
      * @return heureDepart
      */
-    public double getHeureDepart() {
-        return heureDepart;
-    }
-
-    /**
-     * Set
-     * @param heureDepart
-     */
-    public void setHeureDepart(double heureDepart) {
-        this.heureDepart = heureDepart;
-    }
-
-    /**
-     * Get
-     * @return heureArrivee
-     */
-    public double getHeureArrivee() {
-        return heureArrivee;
-    }
-
-    /**
-     * Set
-     * @param heureArrivee
-     */
-    public void setHeureArrivee(double heureArrivee) {
-        this.heureArrivee = heureArrivee;
-    }
 
     /**
      * Constructeur avec plage horaire

@@ -17,7 +17,7 @@ import java.util.Observer;
 /**
  * 
  * @author H4401
- *	Classe de la fenêtre principale de l'application
+ *	Classe de la fenï¿½tre principale de l'application
  */
 public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CHARGER_PLAN = "Charger Plan";
@@ -30,16 +30,17 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private JButton buttonCalculerTournee;
 
 	private ButtonListener buttonListener;
+	private MouseListener mouseListener;
 	VuePlan vuePlan;
 	private Controleur controleur;
 	private Plan plan;
 	private Tournee tournee;
 	
 	/**
-	 * Crée la fenetre principale
-	 * @param plan Le plan chargé ou non
-	 * @param tournee La tournée, chargée ou non
-	 * @param controleur Le contrôleur
+	 * Crï¿½e la fenetre principale
+	 * @param plan Le plan chargï¿½ ou non
+	 * @param tournee La tournï¿½e, chargï¿½e ou non
+	 * @param controleur Le contrï¿½leur
 	 */
 	public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
 		this.plan = plan;
@@ -79,9 +80,54 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		buttonCalculerTournee.addActionListener(buttonListener);
 		panel.add(buttonCalculerTournee);
 		contentPane.add(panel, BorderLayout.SOUTH);
+
+		mouseListener = new MouseListener(vuePlan, controleur);
+		vuePlan.addMouseListener(mouseListener);
 	}
+
+	public VuePlan getVuePlan() {
+		return vuePlan;
+	}
+
+	@Override
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+
+	public JButton getButtonChargerLivraisons() {
+		return buttonChargerLivraisons;
+	}
+
+	public JButton getButtonChargerPlan() {
+		return buttonChargerPlan;
+	}
+
+	public JButton getButtonCalculerTournee() {
+		return buttonCalculerTournee;
+	}
+
+	public ButtonListener getButtonListener() {
+		return buttonListener;
+	}
+
+	public MouseListener getMouseListener() {
+		return mouseListener;
+	}
+
+	public Controleur getControleur() {
+		return controleur;
+	}
+
+	public Plan getPlan() {
+		return plan;
+	}
+
+	public Tournee getTournee() {
+		return tournee;
+	}
+
 	/**
-	 * Met à jour lorsque que le plan et la tournée sont chargés
+	 * Met ï¿½ jour lorsque que le plan et la tournï¿½e sont chargï¿½s
 	 * @param o
 	 * @param arg 
 	 */
