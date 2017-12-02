@@ -1,34 +1,22 @@
 package Algo;
 
-import Modele.Itineraire;
-import Modele.PointLivraison;
-
 import java.util.*;
 
 /**
  * Created by siyingjiang on 2017/11/22.
  */
 public class Glouton {
-    private PointLivraison[] meilleureSolution;
+    private Integer[] meilleureSolution;
     private double coutMeilleureSolution = 0;
-    private HashMap<PointLivraison, HashMap<PointLivraison, Double>> neiborsDistanceMap;
 
-    public PointLivraison getMeilleureSolution(int i) {
+    public Integer getMeilleureSolution(int i) {
         if ((meilleureSolution == null) || (i < 0) || (i >= meilleureSolution.length))
             return null;
         return meilleureSolution[i];
     }
 
-    public Glouton(HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
-        neiborsDistanceMap = new HashMap<PointLivraison, HashMap<PointLivraison, Double>>();
-        for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : itinerairesMap.entrySet()) {
-            if (neiborsDistanceMap.containsKey(entry.getKey().getKey())) {
-                neiborsDistanceMap.get(entry.getKey().getKey()).put(entry.getKey().getValue(), entry.getValue().getLongueurTotale());
-            } else {
-                neiborsDistanceMap.put(entry.getKey().getKey(), new HashMap<PointLivraison, Double>());
-                neiborsDistanceMap.get(entry.getKey().getKey()).put(entry.getKey().getValue(), entry.getValue().getLongueurTotale());
-            }
-        }
+    public Glouton(int nbSommet) {
+        this.meilleureSolution = new Integer[nbSommet];
         this.coutMeilleureSolution = 0;
     }
 
@@ -36,36 +24,52 @@ public class Glouton {
         return coutMeilleureSolution;
     }
 
-    public void chercheSolution(ArrayList<PointLivraison> listPointLivraisons) {
-        meilleureSolution = new PointLivraison[listPointLivraisons.size()];
-        List<PointLivraison> visited = new ArrayList<PointLivraison>();
-        int numNodes = listPointLivraisons.size();
+    public List<Integer> chercheSolution(double heureDeDepart, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
+        List<Integer> res = new ArrayList<Integer>();
+        Set<Integer> visited = new HashSet<Integer>();
+        int numNodes = cout.length;
         double distanceMin;
-        PointLivraison nextPos = null;
-        int distance = 0;
-        PointLivraison posCurrent = listPointLivraisons.get(0);
+        int nextPos = 0;
+        double distance = heureDeDepart;
+        int posCurrent = 0;
+        double arrivee=0;
+        double depart=0;
         visited.add(posCurrent);
+        res.add(posCurrent);
         while (visited.size() < numNodes) {
-            HashMap<PointLivraison, Double> neighborsDistance = neiborsDistanceMap.get(posCurrent);
-            distanceMin = Double.MAX_VALUE;
-            for (Map.Entry<PointLivraison, Double> neighbor : neighborsDistance.entrySet()) {
+            distanceMin = Integer.MAX_VALUE;
+            for (int i = 0; i < numNodes; i++) {
+                int neighbor = i;
                 if (visited.contains(neighbor)) {
                     continue;
                 } else {
-                    double dNei = neighbor.getValue();
+                    double dNei = cout[posCurrent][i];
                     if (dNei < distanceMin) {
                         distanceMin = dNei;
-                        nextPos = neighbor.getKey();
+                        arrivee=distance+distanceMin;
+                        depart=arrivee+duree[i];
+                        if (plageArrivee[i] != null && plageDepart[i] != null) {
+                            if (arrivee < plageArrivee[i]) {
+                                arrivee = plageArrivee[i];
+                                depart=arrivee+duree[i];
+                            } else if (depart > plageDepart[i]) {
+                                continue;
+                            }
+                        }
+                        nextPos = neighbor;
                     }
                 }
             }
-            distance += distanceMin;
+            distance += depart;
             posCurrent = nextPos;
             visited.add(posCurrent);
+            res.add(posCurrent);
         }
         visited.toArray(meilleureSolution);
+        distance+=cout[posCurrent][0];
         coutMeilleureSolution = distance;
         System.out.println(distance);
+        return res;
     }
 
 }

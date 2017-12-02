@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * @author H4401
- * Classe représentant l'élément Noeud d'un plan, ne contient que des Get, Set et add.
+ * Classe reprÃ©sentant l'Ã©lÃ©ment Noeud d'un plan, ne contient que des Get, Set et add.
  */
 public class Noeud{
     protected Long id;
@@ -27,7 +27,7 @@ public class Noeud{
     }
 
     /**
-     * Ajout de tronçon voisin
+     * Ajout de tronÃ§on voisin
      * @param neighbor
      */
     public void addNeighbor(Troncon neighbor){

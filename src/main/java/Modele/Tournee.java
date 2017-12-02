@@ -1,20 +1,19 @@
 package Modele;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
+import java.util.*;
 
 /**
  * @author H4401
- * Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
- * et une méthode indiquant à l'observeur la fin d'ajouts de points de livraison à la tournée.
+ * Classe reprÃ©sentant une TournÃ©e, extends Observable, contient des Set, des get, des add
+ * et une mÃ©thode indiquant Ã  l'observeur la fin d'ajouts de points de livraison Ã  la tournÃ©e.
  */
 public class Tournee extends Observable {
-    private static final double vitesse = 15 * 1000 / 60 / 60;
     private List<Itineraire> listeItineraires;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
+    private HashMap<PointLivraison, Map.Entry<Double, Double>> horaireLivraison;
+    private static final double vitesse = 4.16;
 
     /**
      * Constructeur
@@ -24,11 +23,13 @@ public class Tournee extends Observable {
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
+        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
     public Tournee() {
+        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
@@ -51,14 +52,14 @@ public class Tournee extends Observable {
 
     /**
      * Get
-     * @return listeItinéraire
+     * @return listeItinÃ©raire
      */
     public List<Itineraire> getListeItineraires() {
         return listeItineraires;
     }
 
     /**
-     * Ajout d'un itinéraire
+     * Ajout d'un itinÃ©raire
      * @param itineraire
      */
     public void addItineraire(Itineraire itineraire) {
@@ -73,12 +74,24 @@ public class Tournee extends Observable {
         this.heureDeDepart = heureDeDepart;
     }
 
+    public HashMap<PointLivraison, Map.Entry<Double, Double>> getHoraireLivraison() {
+        return horaireLivraison;
+    }
+
+    public void addHoraireLivraison(PointLivraison pointLivraison, Map.Entry<Double, Double> horaire) {
+        this.horaireLivraison.put(pointLivraison, horaire);
+    }
+
     /**
      * Set
      * @param entrepot
      */
     public void setEntrepot(PointLivraison entrepot) {
         this.entrepot = entrepot;
+    }
+
+    public static double getVitesse() {
+        return vitesse;
     }
 
     /**
@@ -106,7 +119,7 @@ public class Tournee extends Observable {
     }
 
     /**
-     * Signale la fin des ajouts de points de livraisons à la tournée
+     * Signale la fin des ajouts de points de livraisons Ã  la tournÃ©e
      */
     public void SignalerFinDajoutPointsLivraisons() {
         setChanged();
@@ -119,6 +132,7 @@ public class Tournee extends Observable {
         for (Itineraire itineraire : listeItineraires) {
             toReturn += itineraire.toString();
         }
+        toReturn += horaireLivraison.toString();
         return toReturn;
     }
 }

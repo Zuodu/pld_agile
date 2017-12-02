@@ -73,7 +73,7 @@ public class ChargeurLivraison {
                     String dureeAtt = child.getAttribute("duree");
                     String debutAtt = child.getAttribute("debutPlage");
                     String finAtt = child.getAttribute("finPlage");
-                    System.out.println(debutAtt + " " + finAtt);
+                    //System.out.println(debutAtt + " " + finAtt);
                     double debutPlage = -1, finPlage = -1;
                     if (!debutAtt.isEmpty()) {
                         debutPlage = Double.parseDouble(debutAtt.substring(0, debutAtt.indexOf(':'))) * 3600
@@ -163,7 +163,6 @@ public class ChargeurLivraison {
         PointLivraison pointLivraison = new PointLivraison(Long.parseLong(adr), x, y, 0D);
         pointLivraison.setNeighbors(neighbors);
         tournee.setEntrepot(pointLivraison);
-        System.out.println("entrepot:" + tournee.getEntrepot());
 
         tournee.setHeureDeDepart(heuredepart);
 

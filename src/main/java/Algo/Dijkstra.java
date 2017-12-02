@@ -82,7 +82,7 @@ public class Dijkstra {
      * @return meilleurItineraire
      */
     public Itineraire getMeilleurItineraire() {
-        System.out.println(meilleurItineraire);
+        //System.out.println(meilleurItineraire);
         return meilleurItineraire;
     }
 

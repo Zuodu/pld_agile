@@ -3,14 +3,12 @@ package Modele;
 
 /**
  * @author H4401
- * Classe représentant l'élément PointLivraison d'un plan, ne contient que des Get et des Set.
+ * Classe reprÃ©sentant l'Ã©lÃ©ment PointLivraison d'un plan, ne contient que des Get et des Set.
  */
 public class PointLivraison extends Noeud {
-    private double debutPlage;
-    private double finPlage;
+    private Double debutPlage;
+    private Double finPlage;
     private double duree;
-    private double heureDepart;
-    private double heureArrivee;
 
     /**
      * Get
@@ -87,8 +85,6 @@ public class PointLivraison extends Noeud {
     public PointLivraison(Long id, int x, int y, double duree) {
         super(id, x, y);
         this.duree = duree;
-        this.debutPlage = -1;
-        this.finPlage = -1;
     }
 
     /**

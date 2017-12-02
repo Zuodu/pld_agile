@@ -1,22 +1,17 @@
 package Algo;
 
-import Modele.Itineraire;
-import Modele.PointLivraison;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 public class TSP1 extends TemplateTSP {
 
 	@Override
-	protected Iterator<PointLivraison> iterator(PointLivraison sommetCrt, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+	protected Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree) {
 		return new IteratorSeq(nonVus, sommetCrt);
 	}
 
 	@Override
-	protected int bound(PointLivraison sommetCourant, ArrayList<PointLivraison> nonVus, HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+	protected double bound(Integer sommetCourant, ArrayList<Integer> nonVus, double[][] cout, double[] duree) {
 		return 0;
 	}
 }
