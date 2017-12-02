@@ -13,11 +13,14 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.JTextField;
 
 public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CHARGER_PLAN = "Charger Plan";
 	public static final String CHARGER_LIVRAISONS = "Charger Livraisons";
 	public static final String CALCULER_TOURNEE = "Calculer Tournee";
+	public final int BUTTON_WIDTH=200;
+	public final int BUTTON_HEIGHT=40;
 
 	private JPanel contentPane;
 	private JButton buttonChargerLivraisons;
@@ -29,6 +32,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	private Controleur controleur;
 	private Plan plan;
 	private Tournee tournee;
+	private JPanel infoPanel;
+	private JTextField infoText;
 	/**
 	 * Create the frame.
 	 */
@@ -42,7 +47,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1280, 1280);
+		setBounds(0, 0, 800, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -50,26 +55,43 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		vuePlan = new VuePlan();
 		contentPane.add(vuePlan);
 		
-		JPanel panel = new JPanel();
+		JPanel buttonPanel = new JPanel();
 
 
 		buttonListener = new ButtonListener(controleur);
 
 		buttonChargerPlan = new JButton(CHARGER_PLAN);
-		buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);
+		//buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);
 		buttonChargerPlan.addActionListener(buttonListener);
-		panel.add(buttonChargerPlan);
+		buttonChargerPlan.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
+		buttonPanel.add(buttonChargerPlan);
 
 		buttonChargerLivraisons = new JButton(CHARGER_LIVRAISONS);
-		buttonChargerLivraisons.setHorizontalAlignment(SwingConstants.LEFT);
+	//	buttonChargerLivraisons.setHorizontalAlignment(SwingConstants.LEFT);
 		buttonChargerLivraisons.addActionListener(buttonListener);
-		panel.add(buttonChargerLivraisons);
+		buttonChargerLivraisons.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
+
+		buttonPanel.add(buttonChargerLivraisons);
 
 		buttonCalculerTournee = new JButton(CALCULER_TOURNEE);
-		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
+		//buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
 		buttonCalculerTournee.addActionListener(buttonListener);
-		panel.add(buttonCalculerTournee);
-		contentPane.add(panel, BorderLayout.SOUTH);
+
+		buttonCalculerTournee.setSize(BUTTON_WIDTH,BUTTON_HEIGHT);
+
+		buttonPanel.add(buttonCalculerTournee);
+
+		contentPane.add(buttonPanel, BorderLayout.SOUTH);
+		
+		infoPanel = new JPanel();
+		infoPanel.setSize(200,800);
+
+		contentPane.add(infoPanel, BorderLayout.EAST);
+		
+		infoText = new JTextField();
+		infoText.setText("hello world");
+		infoPanel.add(infoText);
+		infoText.setColumns(10);
 	}
 
 	@Override

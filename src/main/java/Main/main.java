@@ -14,9 +14,9 @@ import java.util.Iterator;
 public class main {
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
-        controleur.chargerPlan("planLyonGrand.xml");
-        controleur.chargerLivraison("DLgrand15.xml");
-        controleur.calculerTournee();
+     //   controleur.chargerPlan("planLyonGrand.xml");
+      //  controleur.chargerLivraison("DLgrand15.xml");
+       // controleur.calculerTournee();
     }
 }
 //Collection<Integer> nonVus, int sommetCrt, double[][] cout;
