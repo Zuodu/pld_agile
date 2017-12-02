@@ -8,7 +8,8 @@ import java.awt.geom.GeneralPath;
 import java.util.Set;
 
 /**
- * Created by flavi on 2017/11/20.
+ * @autor H4401
+ * Classe permettant l'affichage du plan, des points de livraison et de l'itinéraire sur l'interface,
  */
 public class VuePlan extends JPanel {
     private Plan plan;
@@ -24,16 +25,28 @@ public class VuePlan extends JPanel {
 
     }
 
+    /**
+     * Ajoute un plan
+     * @param plan
+     */
     public void addPlan(Plan plan) {
         this.plan = plan;
         repaint();
     }
 
+    /**
+     * Ajoute une tournée
+     * @param tournee
+     */
     public void addTournee(Tournee tournee) {
         this.tournee = tournee;
         repaint();
     }
 
+    /**
+     * Méthode paint
+     * @param g
+     */
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
@@ -107,19 +120,19 @@ public class VuePlan extends JPanel {
     public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
     {
 
-        double H = 10; // 箭头高度
-        double L = 4; // 底边的一半
+        double H = 10; // ç®­å¤´é«˜åº¦
+        double L = 4; // åº•è¾¹çš„ä¸€å�Š
         int x3 = 0;
         int y3 = 0;
         int x4 = 0;
         int y4 = 0;
-        double awrad = Math.atan(L / H); // 箭头角度
-        double arraow_len = Math.sqrt(L * L + H * H); // 箭头的长度
+        double awrad = Math.atan(L / H); // ç®­å¤´è§’åº¦
+        double arraow_len = Math.sqrt(L * L + H * H); // ç®­å¤´çš„é•¿åº¦
         double[] arrXY_1 = rotateVec(ex - sx, ey - sy, awrad, true, arraow_len);
         double[] arrXY_2 = rotateVec(ex - sx, ey - sy, -awrad, true, arraow_len);
-        double x_3 = ex - arrXY_1[0]; // (x3,y3)是第一端点
+        double x_3 = ex - arrXY_1[0]; // (x3,y3)æ˜¯ç¬¬ä¸€ç«¯ç‚¹
         double y_3 = ey - arrXY_1[1];
-        double x_4 = ex - arrXY_2[0]; // (x4,y4)是第二端点
+        double x_4 = ex - arrXY_2[0]; // (x4,y4)æ˜¯ç¬¬äºŒç«¯ç‚¹
         double y_4 = ey - arrXY_2[1];
 
         Double X3 = new Double(x_3);
@@ -130,7 +143,7 @@ public class VuePlan extends JPanel {
         x4 = X4.intValue();
         Double Y4 = new Double(y_4);
         y4 = Y4.intValue();
-        // 画线
+        // ç”»çº¿
         g2.drawLine(sx, sy, ex, ey);
         //
         GeneralPath triangle = new GeneralPath();
@@ -138,19 +151,19 @@ public class VuePlan extends JPanel {
         triangle.lineTo(x3, y3);
         triangle.lineTo(x4, y4);
         triangle.closePath();
-        //实心箭头
+        //å®žå¿ƒç®­å¤´
         g2.fill(triangle);
-        //非实心箭头
+        //é�žå®žå¿ƒç®­å¤´
         //g2.draw(triangle);
 
     }
 
-    // 计算
+    // è®¡ç®—
     public static double[] rotateVec(int px, int py, double ang,
                                      boolean isChLen, double newLen) {
 
         double mathstr[] = new double[2];
-        // 矢量旋转函数，参数含义分别是x分量、y分量、旋转角、是否改变长度、新长度
+        // çŸ¢é‡�æ—‹è½¬å‡½æ•°ï¼Œå�‚æ•°å�«ä¹‰åˆ†åˆ«æ˜¯xåˆ†é‡�ã€�yåˆ†é‡�ã€�æ—‹è½¬è§’ã€�æ˜¯å�¦æ”¹å�˜é•¿åº¦ã€�æ–°é•¿åº¦
         double vx = px * Math.cos(ang) - py * Math.sin(ang);
         double vy = px * Math.sin(ang) + py * Math.cos(ang);
         if (isChLen) {
