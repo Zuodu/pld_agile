@@ -42,7 +42,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 800, 800);
+		setBounds(0, 0, 1280, 1280);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));

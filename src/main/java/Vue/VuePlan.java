@@ -59,12 +59,12 @@ public class VuePlan extends JPanel {
                 if(noeud.getY()<ymin)
                     ymin=noeud.getY();
             }
-            System.out.println("XMIN YMIN"+xmin+" "+ymin);
-            System.out.println("XMAX YMAX"+xmax+" "+ymax);
-            System.out.println("SCALE "+xScale+" "+yScale);
+//            System.out.println("XMIN YMIN"+xmin+" "+ymin);
+//            System.out.println("XMAX YMAX"+xmax+" "+ymax);
+//            System.out.println("SCALE "+xScale+" "+yScale);
 
-             xScale=(xmax-xmin)/700;
-             yScale=(ymax-ymin)/600;
+             xScale=(xmax-xmin)/1150;
+             yScale=(ymax-ymin)/1150;
 
             for (Troncon troncon : plan.getListeTroncons()) {
                 int x1=(int)((troncon.getOrigine().getX() - xmin) / xScale)+30;

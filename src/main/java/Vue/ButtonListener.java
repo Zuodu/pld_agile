@@ -3,6 +3,7 @@ package Vue;
 import Controleur.Controleur;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -22,6 +23,9 @@ public class ButtonListener implements ActionListener {
         String s = e.getActionCommand();
         if (s.equals(FenetrePrincipale.CHARGER_PLAN)) {
             JFileChooser jfc = new JFileChooser();
+            FileSystemView fsv = FileSystemView.getFileSystemView();  //注意了，这里重要的一句
+            //得到桌面路径
+            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);
 
@@ -33,6 +37,9 @@ public class ButtonListener implements ActionListener {
 
         } else if (s.equals(FenetrePrincipale.CHARGER_LIVRAISONS)) {
             JFileChooser jfc = new JFileChooser();
+            FileSystemView fsv = FileSystemView.getFileSystemView();  //注意了，这里重要的一句
+            //得到桌面路径
+            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);
 

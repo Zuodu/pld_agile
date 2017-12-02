@@ -1,35 +1,30 @@
 package Modele;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Observable;
+import java.util.*;
 
 /**
  * Created by flavi on 2017/11/18.
  */
 public class Tournee extends Observable {
-    private static final double vitesse = 15 * 1000 / 60 / 60;
     private List<Itineraire> listeItineraires;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
-    private ArrayList<Map.Entry<Double, Double>> horaireMeilleureSolution;
+    private HashMap<PointLivraison, Map.Entry<Double, Double>> horaireLivraison;
+    private static final double vitesse = 4.16;
 
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
+        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
     public Tournee() {
+        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
-    }
-
-    public static double getVitesse() {
-        return vitesse;
     }
 
     public void addPointLivraisons(PointLivraison pointLivraison) {
@@ -48,8 +43,20 @@ public class Tournee extends Observable {
         this.heureDeDepart = heureDeDepart;
     }
 
+    public HashMap<PointLivraison, Map.Entry<Double, Double>> getHoraireLivraison() {
+        return horaireLivraison;
+    }
+
+    public void addHoraireLivraison(PointLivraison pointLivraison, Map.Entry<Double, Double> horaire) {
+        this.horaireLivraison.put(pointLivraison, horaire);
+    }
+
     public void setEntrepot(PointLivraison entrepot) {
         this.entrepot = entrepot;
+    }
+
+    public static double getVitesse() {
+        return vitesse;
     }
 
     public PointLivraison getEntrepot() {
@@ -64,14 +71,6 @@ public class Tournee extends Observable {
         return heureDeDepart;
     }
 
-    public ArrayList<Map.Entry<Double, Double>> getHoraireMeilleureSolution() {
-        return horaireMeilleureSolution;
-    }
-
-    public void setHoraireMeilleureSolution(ArrayList<Map.Entry<Double, Double>> horaireMeilleureSolution) {
-        this.horaireMeilleureSolution = horaireMeilleureSolution;
-    }
-
     public void SignalerFinDajoutPointsLivraisons() {
         setChanged();
         notifyObservers();
@@ -83,6 +82,7 @@ public class Tournee extends Observable {
         for (Itineraire itineraire : listeItineraires) {
             toReturn += itineraire.toString();
         }
+        toReturn += horaireLivraison.toString();
         return toReturn;
     }
 }

@@ -1,13 +1,11 @@
 package Algo;
 
-import Modele.PointLivraison;
-
 import java.util.Collection;
 import java.util.Iterator;
 
-public class IteratorSeq implements Iterator<PointLivraison> {
+public class IteratorSeq implements Iterator<Integer> {
 
-	private PointLivraison[] candidats;
+	private Integer[] candidats;
 	private int nbCandidats;
 
 	/**
@@ -15,10 +13,10 @@ public class IteratorSeq implements Iterator<PointLivraison> {
 	 * @param nonVus
 	 * @param sommetCrt
 	 */
-	public IteratorSeq(Collection<PointLivraison> nonVus, PointLivraison sommetCrt) {
-		this.candidats = new PointLivraison[nonVus.size()];
+	public IteratorSeq(Collection<Integer> nonVus, int sommetCrt){
+		this.candidats = new Integer[nonVus.size()];
 		nbCandidats = 0;
-		for (PointLivraison s : nonVus) {
+		for (Integer s : nonVus){
 			candidats[nbCandidats++] = s;
 		}
 	}
@@ -29,7 +27,7 @@ public class IteratorSeq implements Iterator<PointLivraison> {
 	}
 
 	@Override
-	public PointLivraison next() {
+	public Integer next() {
 		return candidats[--nbCandidats];
 	}
 
