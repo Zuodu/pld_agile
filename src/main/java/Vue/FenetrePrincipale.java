@@ -64,6 +64,9 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		this.controleur = controleur;
 
+		buttonListener = new ButtonListener(controleur, this);
+
+
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, FENETRE_WIDTH, FENETRE_LENGTH);
@@ -75,13 +78,12 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		vueGraphique = new Vue.VueGraphique();
 		contentPane.add(vueGraphique);
-		vueTextuelle = new VueTextuelle();
+		vueTextuelle = new VueTextuelle(buttonListener);
 		contentPane.add(vueTextuelle);
 
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + ECART, 10, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
-		buttonListener = new ButtonListener(controleur);
 
 		buttonChargerPlan = new JButton(CHARGER_PLAN);
 		buttonChargerPlan.addActionListener(buttonListener);

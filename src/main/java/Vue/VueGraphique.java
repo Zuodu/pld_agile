@@ -2,9 +2,12 @@ package Vue;
 
 import Modele.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.io.File;
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -29,6 +32,11 @@ public class VueGraphique extends JPanel {
     double xScale;
     double yScale;
     private JTextPane textPane;
+    private PointLivraison pointLivraisonChoisi;
+
+    public void setPointLivraisonChoisi(PointLivraison pointLivraisonChoisi) {
+        this.pointLivraisonChoisi = pointLivraisonChoisi;
+    }
 
     public VueGraphique() {
         setLayout(null);
@@ -62,6 +70,10 @@ public class VueGraphique extends JPanel {
         //textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
 
+    }
+
+    public PointLivraison getPointLivraisonChoisi() {
+        return pointLivraisonChoisi;
     }
 
     /**
@@ -112,6 +124,16 @@ public class VueGraphique extends JPanel {
                 }
             }
         }
+        if (pointLivraisonChoisi != null) {
+            try {
+                Image image = ImageIO.read(new File("target.png"));
+                g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                        (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }
 

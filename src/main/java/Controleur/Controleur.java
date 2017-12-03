@@ -89,6 +89,10 @@ public class Controleur {
 
     }
 
+    public Tournee getTournee() {
+        return tournee;
+    }
+
     public void clickedOnPoint(PointLivraison pointLivraison) {
         String toShow = "";
         toShow += pointLivraison.getId() + "\r\n";
@@ -97,6 +101,8 @@ public class Controleur {
         toShow += pointLivraison.getDuree() + "\r\n";
         System.out.println(toShow);
         fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
+        fenetrePrincipale.getVueGraphique().repaint();
         //fenetrePrincipale.getInfoText().setText(toShow);
 
     }
