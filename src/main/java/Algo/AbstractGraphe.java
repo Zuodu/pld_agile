@@ -1,5 +1,6 @@
 package Algo;
 
+import Main.main;
 import Modele.*;
 
 import java.lang.reflect.Array;
@@ -49,7 +50,7 @@ public class AbstractGraphe {
                 Dijkstra dijkstra = new Dijkstra();
                 dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
                 itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
-                cout[m][n] = dijkstra.getMeilleurItineraire().getLongueurTotale() / tournee.getVitesse();
+                cout[m][n] = dijkstra.getMeilleurItineraire().getTemps();
             }
         }
     }

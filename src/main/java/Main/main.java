@@ -9,9 +9,11 @@ import java.util.Iterator;
 
 /**
  * @author H4401
- * Classe Main, lançant le projet
+ * Classe Main, lanï¿½ant le projet
  */
 public class main {
+    public static final double VITESSE=4.16;
+
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
      //   controleur.chargerPlan("planLyonGrand.xml");

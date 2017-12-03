@@ -4,18 +4,18 @@ import java.util.*;
 
 /**
  * @author H4401
- * Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
- * et une méthode indiquant à l'observeur la fin d'ajouts de points de livraison à la tournée.
+ *         Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
+ *         et une méthode indiquant à l'observeur la fin d'ajouts de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
     private List<Itineraire> listeItineraires;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
-    private static final double VITESSE = 4.16;
 
     /**
      * Constructeur
+     *
      * @param entrepot
      * @param heureDeDepart
      */
@@ -31,16 +31,10 @@ public class Tournee extends Observable {
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
-    /**
-     * Get
-     * @return VITESSE
-     */
-    public static double getVitesse() {
-        return VITESSE;
-    }
 
     /**
      * Ajout d'un point de livraison
+     *
      * @param pointLivraison
      */
     public void addPointLivraisons(PointLivraison pointLivraison) {
@@ -49,6 +43,7 @@ public class Tournee extends Observable {
 
     /**
      * Get
+     *
      * @return listeItinéraire
      */
     public List<Itineraire> getListeItineraires() {
@@ -57,6 +52,7 @@ public class Tournee extends Observable {
 
     /**
      * Ajout d'un itinéraire
+     *
      * @param itineraire
      */
     public void addItineraire(Itineraire itineraire) {
@@ -65,6 +61,7 @@ public class Tournee extends Observable {
 
     /**
      * Set
+     *
      * @param heureDeDepart
      */
     public void setHeureDeDepart(double heureDeDepart) {
@@ -75,6 +72,7 @@ public class Tournee extends Observable {
 
     /**
      * Set
+     *
      * @param entrepot
      */
     public void setEntrepot(PointLivraison entrepot) {
@@ -84,6 +82,7 @@ public class Tournee extends Observable {
 
     /**
      * Set
+     *
      * @return
      */
     public PointLivraison getEntrepot() {
@@ -92,6 +91,7 @@ public class Tournee extends Observable {
 
     /**
      * Get
+     *
      * @return listePointLivraisons
      */
     public List<PointLivraison> getListePointLivraisons() {
@@ -100,6 +100,7 @@ public class Tournee extends Observable {
 
     /**
      * Get
+     *
      * @return heureDeDepart
      */
     public double getHeureDeDepart() {
@@ -111,9 +112,13 @@ public class Tournee extends Observable {
         this.listePointLivraisons = listePointLivraisons;
     }
 
-    /**
-     * Signale la fin des ajouts de points de livraisons à la tournée
-     */
+
+
+
+        /**
+         * Signale la fin des ajouts de points de livraisons à la tournée
+         */
+
     public void SignalerFinDajoutPointsLivraisons() {
         setChanged();
         notifyObservers();
