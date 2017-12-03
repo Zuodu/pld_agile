@@ -11,7 +11,7 @@ import java.util.Set;
  * @autor H4401
  * Classe permettant l'affichage du plan, des points de livraison et de l'itinéraire sur l'interface,
  */
-public class VuePlan extends JPanel {
+public class VueGraphique extends JPanel {
 
     public final static int RAYON_POINTLIVRAISON = 10;
     public final static int RAYON_ENTREPOT = 20;
@@ -30,7 +30,7 @@ public class VuePlan extends JPanel {
     double yScale;
     private JTextPane textPane;
 
-    public VuePlan() {
+    public VueGraphique() {
         //textPane=new JTextPane();
         //this.add(textPane);
         this.setBounds(LEFT_OFFSET, UP_OFFSET, VUEPLAN_WIDTH, VUEPLAN_LENGTH);

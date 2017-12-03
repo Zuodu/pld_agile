@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JTextField;
@@ -29,7 +28,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 	private ButtonListener buttonListener;
 	private MouseListener mouseListener;
-	VuePlan vuePlan;
+	Vue.VueGraphique vueGraphique;
 	private Controleur controleur;
 	private Plan plan;
 	private Tournee tournee;
@@ -60,8 +59,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		vuePlan = new VuePlan();
-		contentPane.add(vuePlan);
+		vueGraphique = new Vue.VueGraphique();
+		contentPane.add(vueGraphique);
 
 		buttonPanel = new JPanel();
 
@@ -103,8 +102,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		infoText.setColumns(10);
 
 
-		mouseListener = new MouseListener(vuePlan, controleur);
-		vuePlan.addMouseListener(mouseListener);
+		mouseListener = new MouseListener(vueGraphique, controleur);
+		vueGraphique.addMouseListener(mouseListener);
 
 		contentPane.add(infoPanel, BorderLayout.SOUTH);
 	}
@@ -118,17 +117,17 @@ public class FenetrePrincipale extends JFrame implements Observer {
  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  frame.setBounds(100, 100, 800, 600);
  frame.setVisible(true);
- frame.setContentPane(vuePlan);
+ frame.setContentPane(vueGraphique);
  if (o instanceof Plan)
- vuePlan.addPlan(plan);
+ vueGraphique.addPlan(plan);
  else if (o instanceof Tournee)
- vuePlan.addTournee(tournee);
+ vueGraphique.addTournee(tournee);
  }
  **/
 		if (o instanceof Plan)
-			vuePlan.addPlan(plan);
+			vueGraphique.addPlan(plan);
 		else if (o instanceof Tournee)
-			vuePlan.addTournee(tournee);
+			vueGraphique.addTournee(tournee);
 	}
 
 
