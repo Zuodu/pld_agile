@@ -3,6 +3,7 @@ package Controleur;
 import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
+import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
@@ -71,6 +72,10 @@ public class Controleur {
         tournee.SignalerFinDajoutPointsLivraisons();
        // System.out.println(abstractGraphe.getTournee());
 
+    }
+
+    public void sortirFeuilleDeRoute(String filePath) {
+        FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
     }
 
     public void afficherPlan() {

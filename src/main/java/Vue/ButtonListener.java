@@ -57,7 +57,17 @@ public class ButtonListener implements ActionListener {
 
         } else if (s.equals(FenetrePrincipale.CALCULER_TOURNEE)) {
             controleur.calculerTournee();
-        }
 
+        } else if (s.equals((FenetrePrincipale.GENERER_FEUILLE))) {
+            JFileChooser jfcd = new JFileChooser();
+            jfcd.setCurrentDirectory(new java.io.File("."));
+            jfcd.setDialogTitle("Répertoire de sortie de feuille de route :");
+            jfcd.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            if (jfcd.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = jfcd.getSelectedFile();
+                controleur.sortirFeuilleDeRoute(selectedFile.getAbsolutePath());
+                System.out.println(selectedFile.getAbsolutePath());
+            }
+        }
     }
 }
