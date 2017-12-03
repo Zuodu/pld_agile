@@ -90,7 +90,7 @@ public class Controleur {
         toShow += pointLivraison.getDebutPlage() + "\r\n";
         toShow += pointLivraison.getFinPlage() + "\r\n";
         toShow += pointLivraison.getDuree() + "\r\n";
-        fenetrePrincipale.getVuePlan().getTextPane().setText(toShow);
+        fenetrePrincipale.getInfoText().setText(toShow);
 
     }
 }

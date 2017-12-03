@@ -12,24 +12,34 @@ import java.util.Set;
  * Classe permettant l'affichage du plan, des points de livraison et de l'itinéraire sur l'interface,
  */
 public class VuePlan extends JPanel {
+
+    public final static int RAYON_POINTLIVRAISON = 10;
+    public final static int RAYON_ENTREPOT = 20;
+    public final static float WIDTH_TRONCON = 2.0f;
+    public final static int VUEPLAN_LENGTH = 650;
+    public final static int VUEPLAN_WIDTH = 650;
+    public final static int LEFT_OFFSET = 10;
+    public final static int UP_OFFSET = 10;
     private Plan plan;
     private Tournee tournee;
-    int xmin=9999999;
-    int ymin=9999999;
-    int xmax=0;
-    int ymax=0;
+    int xmin = 9999999;
+    int ymin = 9999999;
+    int xmax = 0;
+    int ymax = 0;
     double xScale;
     double yScale;
     private JTextPane textPane;
 
     public VuePlan() {
-        textPane=new JTextPane();
-        this.add(textPane);
+        //textPane=new JTextPane();
+        //this.add(textPane);
+        this.setBounds(LEFT_OFFSET, UP_OFFSET, VUEPLAN_WIDTH, VUEPLAN_LENGTH);
 
     }
 
     /**
      * Ajoute un plan
+     *
      * @param plan
      */
     public void addPlan(Plan plan) {
@@ -39,91 +49,65 @@ public class VuePlan extends JPanel {
 
     /**
      * Ajoute une tournée
+     *
      * @param tournee
      */
     public void addTournee(Tournee tournee) {
         this.tournee = tournee;
-        textPane.setText("");
+        //textPane.setText("");
         for (Itineraire itineraire : tournee.getListeItineraires()) {
-            textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
+            //  textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
         }
-        textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
+        //textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
 
     }
 
     /**
      * Méthode paint
+     *
      * @param g
      */
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        g2d.setColor(Color.BLACK);
-/**
- for (Noeud noeud:plan.getListeNoeuds()) {
- g2d.drawOval((int)(noeud.getX()-12000)/15,
- (int)(noeud.getY()-20000)/40,
- 3,
- 3)
- ;
- }**/
-        if(plan!=null) {
 
-            for (Noeud noeud:plan.getListeNoeuds()) {
-                if (noeud.getX()>xmax)
-                    xmax=noeud.getX();
-                if(noeud.getY()>ymax)
-                    ymax=noeud.getY();
-                if (noeud.getX()<xmin)
-                    xmin=noeud.getX();
-                if(noeud.getY()<ymin)
-                    ymin=noeud.getY();
+        if (plan != null) {
+            g2d.setColor(Color.BLACK);
+            for (Noeud noeud : plan.getListeNoeuds()) {
+                if (noeud.getX() > xmax)
+                    xmax = noeud.getX();
+                if (noeud.getY() > ymax)
+                    ymax = noeud.getY();
+                if (noeud.getX() < xmin)
+                    xmin = noeud.getX();
+                if (noeud.getY() < ymin)
+                    ymin = noeud.getY();
+                xScale = (xmax - xmin) / VUEPLAN_LENGTH;
+                yScale = (ymax - ymin) / VUEPLAN_WIDTH;
+
+
             }
-//            System.out.println("XMIN YMIN"+xmin+" "+ymin);
-//            System.out.println("XMAX YMAX"+xmax+" "+ymax);
-//            System.out.println("SCALE "+xScale+" "+yScale);
-
-             xScale=(xmax-xmin)/650;
-             yScale=(ymax-ymin)/650;
-
+            g2d.setColor(Color.white);
+            g2d.setStroke(new BasicStroke(WIDTH_TRONCON));
             for (Troncon troncon : plan.getListeTroncons()) {
-                int x1=(int)((troncon.getOrigine().getX() - xmin) / xScale)+30;
-                int y1=(int)((troncon.getOrigine().getY() - ymin) / yScale)+20;
-                int x2=(int) ((troncon.getDestination().getX() - xmin) / xScale)+30;
-                int y2=(int)((troncon.getDestination().getY() - ymin) / yScale)+20;
-                g2d.drawLine(x1,y1,x2,y2
-                );
+                afficheTroncon(troncon, g2d);
             }
         }
-        g2d.setColor(Color.GREEN);
+
         if (tournee != null) {
+
+            g2d.setColor(Color.blue);
             for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-                g2d.fillOval((int) ((pointLivraison.getX() - xmin) / xScale )+25,
-                        (int) ((pointLivraison.getY() - ymin) / yScale )+15,
-                        10,
-                        10);
-                ;
-                System.out.println(pointLivraison.getX());
-                System.out.println(pointLivraison.getY());
+                affichePointLivraison(pointLivraison, g2d);
             }
-            g2d.fillOval((int)( (tournee.getEntrepot().getX() - xmin) / xScale) +20,
-                    (int)((tournee.getEntrepot().getY() - ymin) / yScale )+10,
-                    20,
-                    20);
-            g2d.setColor(Color.RED);
+            afficheEntrepot(tournee.getEntrepot(), g2d);
+
+            g2d.setColor(Color.magenta);
             for (Itineraire itineraire : tournee.getListeItineraires()) {
-
-
                 for (Troncon troncon : itineraire.getListeTroncons()) {
-                    int x1=(int)((troncon.getOrigine().getX() - xmin) / xScale)+30;
-                    int y1=(int)((troncon.getOrigine().getY() - ymin) / yScale)+20;
-                    int x2=(int) ((troncon.getDestination().getX() - xmin) / xScale)+30;
-                    int y2=(int)((troncon.getDestination().getY() - ymin) / yScale)+20;
-                    drawAL(x1,y1,x2,y2,g2d
-
-                    );
+                    afficheTroncon(troncon, g2d);
                 }
             }
         }
@@ -162,12 +146,36 @@ public class VuePlan extends JPanel {
         return yScale;
     }
 
+    public void afficheTroncon(Troncon troncon, Graphics2D g2d) {
+
+        int x1 = (int) ((troncon.getOrigine().getX() - xmin) / xScale) + LEFT_OFFSET;
+        int y1 = (int) ((troncon.getOrigine().getY() - ymin) / yScale) + UP_OFFSET;
+        int x2 = (int) ((troncon.getDestination().getX() - xmin) / xScale) + LEFT_OFFSET;
+        int y2 = (int) ((troncon.getDestination().getY() - ymin) / yScale) + UP_OFFSET;
+        g2d.drawLine(x1, y1, x2, y2
+        );
+    }
+
+    public void affichePointLivraison(PointLivraison pointLivraison, Graphics2D g2d) {
+        g2d.fillOval((int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2,
+                RAYON_POINTLIVRAISON,
+                RAYON_POINTLIVRAISON);
+    }
+
+    public void afficheEntrepot(PointLivraison pointLivraison, Graphics2D g2d) {
+        g2d.fillOval((int) ((tournee.getEntrepot().getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_ENTREPOT / 2,
+                (int) ((tournee.getEntrepot().getY() - ymin) / yScale) + UP_OFFSET - RAYON_ENTREPOT / 2,
+                RAYON_ENTREPOT,
+                RAYON_ENTREPOT);
+    }
+
+
     public JTextPane getTextPane() {
         return textPane;
     }
 
-    public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
-    {
+    public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2) {
 
         double H = 10; // ç®­å¤´é«˜åº¦
         double L = 4; // åº•è¾¹çš„ä¸€å�Š
@@ -224,7 +232,6 @@ public class VuePlan extends JPanel {
         }
         return mathstr;
     }
-
 
 
 }
