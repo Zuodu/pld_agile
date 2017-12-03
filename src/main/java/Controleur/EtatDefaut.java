@@ -32,13 +32,13 @@ public class EtatDefaut implements Etat {
     	l.redo();
     }
 
-    public void cdeAjouterLivraison(PointLivraison pointL) {
+    public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee) {
     }
 
-    public void cdeSupprimerLivraison(PointLivraison pointL) {
+    public void cdeSupprimerLivraison(PointLivraison pointLivraison) {
     }
 
-    public void cdeModifierPlageHoraire(PointLivraison pointL, double debutPlage, double finPlage) {
+    public void cdeModifierPlageHoraire(PointLivraison pointLivraison, double debutPlage, double finPlage) {
     }
 
     //Méthodes qui n'avaient pas de corps

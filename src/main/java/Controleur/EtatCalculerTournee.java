@@ -1,6 +1,6 @@
 package Controleur;
 
-import Modele.PointLivraison;
+import Modele.*;
 
 public class EtatCalculerTournee extends EtatDefaut{
 	/**
@@ -11,16 +11,17 @@ public class EtatCalculerTournee extends EtatDefaut{
 	{
 	}
 	
-	public void cdeAjouterLivraison(PointLivraison pointL)
+	public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee)
 	{
-		
+		CdeAjout commandeAjout = new CdeAjout(pointLivraison, tournee);
+		commandeAjout.doCde();
 	}
 	
-	public void cdeSupprimerLivraison(PointLivraison pointL)
+	public void cdeSupprimerLivraison(PointLivraison pointLivraison)
 	{
 	}
 	
-	public void cdeModifierPlageHoraire(PointLivraison pointL, double debutPlage, double finPlage)
+	public void cdeModifierPlageHoraire(PointLivraison pointLivraison, double debutPlage, double finPlage)
 	{
 	}
 }
