@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * @author H4401
- * La classe LigneFeuille sert Ã  encapsuler les donnÃ©es lors de la gÃ©nÃ©ration de la feuille de route.
+ * La classe LigneFeuille sert à encapsuler les données lors de la génération de la feuille de route.
  */
 public class LigneFeuille {
 
@@ -17,11 +17,11 @@ public class LigneFeuille {
     /**
      * COnstructeur d'une ligne de feuille de route
      *
-     * @param arrivee heure d'arrivÃ©e (ItinÃ©raire)
-     * @param depart  heure de dÃ©part (ItinÃ©raire)
-     * @param indic   indication Ã  suivre
+     * @param arrivee heure d'arrivée (Itinéraire)
+     * @param depart  heure de départ (Itinéraire)
+     * @param indic   indication à suivre
      * @param r       nom de la rue
-     * @param l       longueur de la rue Ã  suivre
+     * @param l       longueur de la rue à suivre
      */
     public LigneFeuille(double arrivee, double depart, String indic, String r, double l) {
         if (depart == 0) this.hDepart = "-";
@@ -40,31 +40,31 @@ public class LigneFeuille {
         }
         this.indication = indic == null ? "-" : indic;
         this.rue = r == null ? "-" : r;
-        this.longueur = l == 0 ? "-" : Double.toString(l);
+        this.longueur = l == 0 ? "-" : Integer.toString((int) l);
     }
 
     /**
-     * Getter heure dÃ©part sous la forme d'un String
+     * Getter heure départ sous la forme d'un String
      *
-     * @return heure de dÃ©part
+     * @return heure de départ
      */
     public String gethDepart() {
         return hDepart;
     }
 
     /**
-     * Getter heure d'arrivÃ©e sous la forme d'un String
+     * Getter heure d'arrivée sous la forme d'un String
      *
-     * @return heure d'arrivÃ©e
+     * @return heure d'arrivée
      */
     public String gethArrivee() {
         return hArrivee;
     }
 
     /**
-     * Getter indication Ã  suivre sous la forme d'un String
+     * Getter indication à suivre sous la forme d'un String
      *
-     * @return indication (par exemple, "tournez Ã  gauche")
+     * @return indication (par exemple, "tournez à gauche")
      */
     public String getIndication() {
         return indication;

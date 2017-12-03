@@ -2,11 +2,12 @@ package FeuilleDeRoute;
 
 public enum Indication {
     ToutDroit("Continuez tout droit pour aller sur"),
-    ADroite("Tournez Ã  droite pour aller sur"),
-    AGauche("Tournez Ã  gauche pour aller sur"),
-    Demarrage("DÃ©marrez et allez sur"),
-    FinItineraire("Stoppez et livrez la la livraison numÃ©ro"),
-    DebutItineraire("DÃ©but de la livraison numÃ©ro");
+    ADroite("Tournez à droite pour aller sur"),
+    AGauche("Tournez à gauche pour aller sur"),
+    Demarrage("Démarrez et allez sur"),
+    FinItineraire("Stoppez et terminez l'itinéraire numéro"),
+    DebutItineraire("Début de l'itinéraire numéro"),
+    FinTournee("Stoppez à l'entrepôt et terminez la tournée");
 
     private String texte;
 

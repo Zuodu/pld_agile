@@ -4,7 +4,7 @@ import Modele.Troncon;
 
 /**
  * @author H4401
- * Cette classe est utilisÃ©e pour garder la liste des tronÃ§ons reprÃ©sentant la mÃªme rue.
+ * Cette classe est utilisée pour garder la liste des tronçons représentant la même rue.
  */
 public class PileTroncon {
 
@@ -13,10 +13,10 @@ public class PileTroncon {
     private Indication indication;
 
     /**
-     * Construit une nouvelle pile de tronÃ§ons Ã  partir d'un nouveau tronÃ§on et de l'indication Indication
+     * Construit une nouvelle pile de tronçons à partir d'un nouveau tronçon et de l'indication Indication
      *
-     * @param t tronÃ§on diffÃ©rent du prÃ©cÃ©dent
-     * @param v Indication calculÃ©e
+     * @param t tronçon différent du précédent
+     * @param v Indication calculée
      */
     public PileTroncon(Troncon t, Indication v) {
         troncon = t;
@@ -25,9 +25,9 @@ public class PileTroncon {
     }
 
     /**
-     * Ajouter un troÃ§on au nom de rue identique Ã  la pile.
+     * Ajouter un troçon au nom de rue identique à la pile.
      *
-     * @param t TronÃ§on Ã  ajouter
+     * @param t Tronçon à ajouter
      */
     public void addTroncon(Troncon t) {
         troncon = t;
@@ -46,7 +46,7 @@ public class PileTroncon {
     /**
      * Get
      *
-     * @return distance totale de la pile de tronÃ§ons
+     * @return distance totale de la pile de tronçons
      */
     public double getDistanceTotale() {
         return distanceTotale;
