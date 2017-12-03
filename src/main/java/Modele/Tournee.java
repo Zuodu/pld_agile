@@ -8,7 +8,7 @@ import java.util.*;
  *         et une méthode indiquant à l'observeur la fin d'ajouts de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
-    private List<Itineraire> listeItineraires;
+    HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
@@ -22,15 +22,20 @@ public class Tournee extends Observable {
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
-        listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
     public Tournee() {
-        listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
+    public HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> getItinerairesMap() {
+        return itinerairesMap;
+    }
+
+    public void setItinerairesMap(HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+        this.itinerairesMap = itinerairesMap;
+    }
 
     /**
      * Ajout d'un point de livraison
@@ -41,23 +46,6 @@ public class Tournee extends Observable {
         listePointLivraisons.add(pointLivraison);
     }
 
-    /**
-     * Get
-     *
-     * @return listeItinéraire
-     */
-    public List<Itineraire> getListeItineraires() {
-        return listeItineraires;
-    }
-
-    /**
-     * Ajout d'un itinéraire
-     *
-     * @param itineraire
-     */
-    public void addItineraire(Itineraire itineraire) {
-        listeItineraires.add(itineraire);
-    }
 
     /**
      * Set
@@ -67,7 +55,6 @@ public class Tournee extends Observable {
     public void setHeureDeDepart(double heureDeDepart) {
         this.heureDeDepart = heureDeDepart;
     }
-
 
 
     /**
@@ -112,12 +99,59 @@ public class Tournee extends Observable {
         this.listePointLivraisons = listePointLivraisons;
     }
 
+    public boolean updateHoraire(PointLivraison pointAModifier, Double plageDebut, Double plageFin) {
+        double heureArrivee;
+        double heureDepart;
+
+        heureArrivee = pointAModifier.getHeureArrivee();
+        if (heureArrivee < plageDebut) {
+            heureArrivee = plageDebut;
+        }
+        heureDepart = heureArrivee + pointAModifier.getDuree();
+        if (heureDepart > plageFin) {
+            return false;
+        } else if (heureDepart == pointAModifier.getHeureDepart()) {
+            pointAModifier.setDebutPlage(plageDebut);
+            pointAModifier.setFinPlage(plageFin);
+            pointAModifier.setHeureArrivee(heureArrivee);
+            return true;
+        } else if (heureDepart < pointAModifier.getHeureDepart()) {
+            if (avanceHoraire(listePointLivraisons.get(listePointLivraisons.indexOf(pointAModifier) + 1), pointAModifier.getHeureDepart() - heureDepart)) {
+                pointAModifier.setDebutPlage(plageDebut);
+                pointAModifier.setFinPlage(plageFin);
+                pointAModifier.setHeureArrivee(heureArrivee);
+                pointAModifier.setHeureDepart(heureDepart);
+            }
+            return true;
+        } else {
+
+        }
+        return false;
+    }
+
+    public boolean avanceHoraire(PointLivraison nextPoint, double temps) {
+        boolean changed = true;
+        double heureArrivee;
+        double heureDepart;
+        heureArrivee = nextPoint.getHeureArrivee() - temps;
+        if (heureArrivee < nextPoint.getDebutPlage()) heureArrivee = nextPoint.getDebutPlage();
+        heureDepart = heureArrivee + nextPoint.getDuree();
+        if (heureDepart == nextPoint.getHeureDepart()) {
+            return true;
+        } else if (avanceHoraire(listePointLivraisons.get(listePointLivraisons.indexOf(nextPoint) + 1), nextPoint.getHeureDepart() - heureDepart)) {
+            nextPoint.setHeureArrivee(heureArrivee);
+            nextPoint.setHeureDepart(heureDepart);
+            return true;
+        }
+        return false;
+    }
 
 
 
-        /**
-         * Signale la fin des ajouts de points de livraisons à la tournée
-         */
+
+    /**
+     * Signale la fin des ajouts de points de livraisons à la tournée
+     */
 
     public void SignalerFinDajoutPointsLivraisons() {
         setChanged();
@@ -126,10 +160,11 @@ public class Tournee extends Observable {
 
     @Override
     public String toString() {
-        String toReturn = "";
-        for (Itineraire itineraire : listeItineraires) {
-            toReturn += itineraire.toString();
-        }
-        return toReturn;
+        return "Tournee{" +
+                "itinerairesMap=" + itinerairesMap +
+                ", entrepot=" + entrepot +
+                ", listePointLivraisons=" + listePointLivraisons +
+                ", heureDeDepart=" + heureDeDepart +
+                '}';
     }
 }
