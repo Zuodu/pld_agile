@@ -1,26 +1,30 @@
 package Vue;
 
 import Controleur.Controleur;
+import Modele.PointLivraison;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Iterator;
 
 /**
  * @author H4401
  * Classe implements ActionListener prmettant aux boutons de l'interface de communiquer avec le logiciel
  */
 public class ButtonListener implements ActionListener {
+    FenetrePrincipale fenetrePrincipale;
     Controleur controleur;
 
-    public ButtonListener(Controleur controleur) {
+    public ButtonListener(Controleur controleur, FenetrePrincipale fenetrePrincipale) {
         this.controleur = controleur;
+        this.fenetrePrincipale = fenetrePrincipale;
     }
 
     /**
-     * Méthode appelant les méthodes adéquates après avoir appuyé sur un bouton de l'interface
+     * Mï¿½thode appelant les mï¿½thodes adï¿½quates aprï¿½s avoir appuyï¿½ sur un bouton de l'interface
      * @param e
      */
     @Override
@@ -57,6 +61,31 @@ public class ButtonListener implements ActionListener {
 
         } else if (s.equals(FenetrePrincipale.CALCULER_TOURNEE)) {
             controleur.calculerTournee();
+        } else if (s.equals(VueTextuelle.PRECEDENT_POINT)) {
+            PointLivraison pointLivraison = fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi();
+            if (pointLivraison != null) {
+                Iterator<PointLivraison> iterator = controleur.getTournee().getListePointLivraisons().iterator();
+                PointLivraison p2 = null;
+                while (iterator.hasNext()) {
+                    PointLivraison p = iterator.next();
+                    if (p.equals(pointLivraison)) {
+                        controleur.clickedOnPoint(p2);
+                    }
+                    p2 = p;
+                }
+            }
+
+        } else if (s.equals(VueTextuelle.PROCHAIN_POINT)) {
+            PointLivraison pointLivraison = fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi();
+            if (pointLivraison != null) {
+                Iterator<PointLivraison> iterator = controleur.getTournee().getListePointLivraisons().iterator();
+                while (iterator.hasNext()) {
+                    PointLivraison p = iterator.next();
+                    if (p.equals(pointLivraison)) {
+                        controleur.clickedOnPoint(iterator.next());
+                    }
+                }
+            }
         }
 
     }

@@ -8,7 +8,12 @@ import javax.swing.*;
  * Created by flavi on 2017/12/3.
  */
 public class VueTextuelle extends JPanel {
-    public final static int LENGTH_VUETEXTUELLE = 350;
+
+    public final static String MODIFIER_POINT = "Modifier";
+    public final static String SUPPRIMER_POINT = "Supprimer";
+    public final static String PROCHAIN_POINT = "Prochain";
+    public final static String PRECEDENT_POINT = "Precedant";
+    public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 20;
     public final static int BUTTON_WIDTH = 100;
@@ -21,6 +26,7 @@ public class VueTextuelle extends JPanel {
     private JLabel labelDepart;
 
 
+
     private JTextField infoPlageDebut;
     private JTextField infoPlageFin;
     private JTextField infoDuree;
@@ -30,7 +36,11 @@ public class VueTextuelle extends JPanel {
     private JButton buttonModifier;
     private JButton buttonSupprimer;
 
-    public VueTextuelle() {
+    private JButton buttonNext;
+    private JButton buttonPrevious;
+
+
+    public VueTextuelle(ButtonListener buttonListener) {
         setLayout(null);
         this.setBounds(ECART + VueGraphique.VUEPLAN_WIDTH, FenetrePrincipale.BUTTONPANEL_LENGTH, WIDTH_VUETEXTUELLE, LENGTH_VUETEXTUELLE);
         infoPlageDebut = new JTextField();
@@ -80,20 +90,32 @@ public class VueTextuelle extends JPanel {
         labelDepart.setBounds(0, 160, 100, 30);
         this.add(labelDepart);
 
-        buttonModifier = new JButton();
-        buttonModifier.setText("Modifier");
+        buttonModifier = new JButton(MODIFIER_POINT);
         buttonModifier.setBounds(0, 220, BUTTON_WIDTH, BUTTON_LENGTH);
         this.add(buttonModifier);
 
-        buttonSupprimer = new JButton();
-        buttonSupprimer.setText("Supprimer");
+        buttonSupprimer = new JButton(SUPPRIMER_POINT);
         buttonSupprimer.setBounds(BUTTON_WIDTH + 50, 220, BUTTON_WIDTH, BUTTON_LENGTH);
         this.add(buttonSupprimer);
 
+        buttonNext = new JButton(PROCHAIN_POINT);
+        buttonNext.setBounds(0, 280, BUTTON_WIDTH, BUTTON_LENGTH);
+        this.add(buttonNext);
+
+
+        buttonPrevious = new JButton(PRECEDENT_POINT);
+        buttonPrevious.setBounds(BUTTON_WIDTH + 50, 280, BUTTON_WIDTH, BUTTON_LENGTH);
+        this.add(buttonPrevious);
+
+        buttonPrevious.addActionListener(buttonListener);
+        buttonNext.addActionListener(buttonListener);
+        buttonSupprimer.addActionListener(buttonListener);
+        buttonModifier.addActionListener(buttonListener);
 
     }
 
     public void clickedOnPoint(PointLivraison pointLivraison) {
+
         if (pointLivraison.getDebutPlage() != null) {
             int h = (int) (pointLivraison.getDebutPlage() / 3600);
             int m = (int) ((pointLivraison.getDebutPlage() % 3600) / 60);
