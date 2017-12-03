@@ -18,6 +18,16 @@ public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
     private Tournee tournee;
+    private static final EtatInit etatInit = new EtatInit();
+    private static final EtatChargerPlan etatChargerPlan = new EtatChargerPlan();
+    private static final EtatChargerLivraison etatChargerLivraison = new EtatChargerLivraison();
+    private static final EtatCalculerTournee etatCalculerTournee = new EtatCalculerTournee();
+    private static final EtatModifier etatModifier = new EtatModifier();
+    private static Etat etatCourant;
+
+    private static void setEtatCourant(Etat etat) {
+        etatCourant = etat;
+    }
     //private static Controleur instance;
 
 
@@ -38,15 +48,7 @@ public class Controleur {
      */
     public void chargerPlan (String filePath)
     {
-        ChargeurPlan.getInstance().parse(plan, filePath);
-        // plan=ChargeurPlan.getInstance().getPlan();
-        for (Noeud noeud : plan.getListeNoeuds()) {
-            //System.out.println(noeud);
-        }
-
-        for (Troncon troncon : plan.getListeTroncons()) {
-           // System.out.println(troncon);
-        }
+        etatCourant.chargerPlan(filePath, plan);
     }
 
     /**
@@ -54,23 +56,14 @@ public class Controleur {
      * @param filePath Le chemin d'accï¿½s au fichier xml
      */
     public void chargerLivraison (String filePath){
-        ChargeurLivraison.getInstance().parse(tournee, filePath);
-
-        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-           // System.out.println(pointLivraison);
-        }
-
+        etatCourant.chargerLivraison(filePath, tournee);
     }
 
     /**
      * Mï¿½thode lanï¿½ant le calcul de la tournï¿½e
      */
     public void calculerTournee () {
-        AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
-        abstractGraphe.getItineraire();
-        tournee.SignalerFinDajoutPointsLivraisons();
-       // System.out.println(abstractGraphe.getTournee());
-
+        etatCourant.calculerTournee(plan, tournee);
     }
 
     public void afficherPlan() {
@@ -85,18 +78,10 @@ public class Controleur {
     }
 
     /**
-     * Méthode permettant d'afficher les informations du point cliqué
+     * Mï¿½thode permettant d'afficher les informations du point cliquï¿½
      * @param pointLivraison
      */
     public void clickedOnPoint(PointLivraison pointLivraison) {
-        String toShow = "";
-        toShow += pointLivraison.getId() + "\r\n";
-        toShow += pointLivraison.getDebutPlage() + "\r\n";
-        toShow += pointLivraison.getFinPlage() + "\r\n";
-        toShow += pointLivraison.getDuree() + "\r\n";
-        System.out.println(toShow);
-        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
-        //fenetrePrincipale.getInfoText().setText(toShow);
-
+        etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
     }
 }
