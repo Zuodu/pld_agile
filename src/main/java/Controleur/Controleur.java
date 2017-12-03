@@ -40,6 +40,7 @@ public class Controleur {
         plan = new Plan();
         tournee = new Tournee();
         fenetrePrincipale = new FenetrePrincipale(plan, tournee, this);
+        setEtatCourant(etatInit);
     }
 
     /**
@@ -49,6 +50,7 @@ public class Controleur {
     public void chargerPlan (String filePath)
     {
         etatCourant.chargerPlan(filePath, plan);
+        setEtatCourant(etatChargerPlan);
     }
 
     /**
@@ -57,6 +59,7 @@ public class Controleur {
      */
     public void chargerLivraison (String filePath){
         etatCourant.chargerLivraison(filePath, tournee);
+        setEtatCourant(etatChargerLivraison);
     }
 
     /**
@@ -64,6 +67,7 @@ public class Controleur {
      */
     public void calculerTournee () {
         etatCourant.calculerTournee(plan, tournee);
+        setEtatCourant(etatCalculerTournee);
     }
 
     public void afficherPlan() {

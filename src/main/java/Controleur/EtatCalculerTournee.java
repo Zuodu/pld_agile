@@ -13,7 +13,9 @@ public class EtatCalculerTournee extends EtatDefaut{
 	
 	public void cdeAjouterLivraison(PointLivraison pointL)
 	{
+		
 	}
+	
 	public void cdeSupprimerLivraison(PointLivraison pointL)
 	{
 	}

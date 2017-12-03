@@ -25,11 +25,11 @@ public class EtatDefaut implements Etat {
     }
 
     public void undo(LstDeCde l) {
-
+    	l.undo();
     }
 
     public void redo(LstDeCde l) {
-
+    	l.redo();
     }
 
     public void cdeAjouterLivraison(PointLivraison pointL) {
