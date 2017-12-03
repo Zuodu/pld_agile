@@ -86,6 +86,17 @@ public class ButtonListener implements ActionListener {
                     }
                 }
             }
+        } else if (s.equals(FenetrePrincipale.GENERER_FEUILLE)) {
+            JFileChooser jfcd = new JFileChooser();
+            jfcd.setDialogTitle("Selection du répertoire de sortie");
+            jfcd.setCurrentDirectory(new File("."));
+            jfcd.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            // int returnValue = jfc.showSaveDialog(null);
+            if (jfcd.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+                File selectedFile = jfcd.getSelectedFile();
+                controleur.sortirFeuilleDeRoute(selectedFile.getAbsolutePath());
+                System.out.println(selectedFile.getAbsolutePath());
+            }
         }
 
     }
