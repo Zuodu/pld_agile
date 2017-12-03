@@ -8,9 +8,11 @@ import javax.swing.*;
  * Created by flavi on 2017/12/3.
  */
 public class VueTextuelle extends JPanel {
-    public final static int LENGTH_VUETEXTUELLE = 200;
+    public final static int LENGTH_VUETEXTUELLE = 350;
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 20;
+    public final static int BUTTON_WIDTH = 100;
+    public final static int BUTTON_LENGTH = 30;
 
     private JLabel labelPlageDebut;
     private JLabel labelPlageFin;
@@ -25,6 +27,8 @@ public class VueTextuelle extends JPanel {
     private JTextField infoHeureArrivee;
     private JTextField infoHeureDepart;
 
+    private JButton buttonModifier;
+    private JButton buttonSupprimer;
 
     public VueTextuelle() {
         setLayout(null);
@@ -75,6 +79,16 @@ public class VueTextuelle extends JPanel {
         labelDepart.setText("Depart prevu : ");
         labelDepart.setBounds(0, 160, 100, 30);
         this.add(labelDepart);
+
+        buttonModifier = new JButton();
+        buttonModifier.setText("Modifier");
+        buttonModifier.setBounds(0, 220, BUTTON_WIDTH, BUTTON_LENGTH);
+        this.add(buttonModifier);
+
+        buttonSupprimer = new JButton();
+        buttonSupprimer.setText("Supprimer");
+        buttonSupprimer.setBounds(BUTTON_WIDTH + 50, 220, BUTTON_WIDTH, BUTTON_LENGTH);
+        this.add(buttonSupprimer);
 
 
     }
