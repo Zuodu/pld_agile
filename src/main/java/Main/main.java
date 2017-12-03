@@ -8,8 +8,8 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Created by flavi on 2017/11/20.
- * public class main {
+ * @author H4401
+ * Classe Main, lançant le projet
  */
 public class main {
     public static void main(String args[]) {

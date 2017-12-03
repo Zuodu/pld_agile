@@ -84,6 +84,10 @@ public class Controleur {
 
     }
 
+    /**
+     * Méthode permettant d'afficher les informations du point cliqué
+     * @param pointLivraison
+     */
     public void clickedOnPoint(PointLivraison pointLivraison) {
         String toShow = "";
         toShow += pointLivraison.getId() + "\r\n";
