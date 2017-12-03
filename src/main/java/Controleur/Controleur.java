@@ -94,12 +94,7 @@ public class Controleur {
     }
 
     public void clickedOnPoint(PointLivraison pointLivraison) {
-        String toShow = "";
-        toShow += pointLivraison.getId() + "\r\n";
-        toShow += pointLivraison.getDebutPlage() + "\r\n";
-        toShow += pointLivraison.getFinPlage() + "\r\n";
-        toShow += pointLivraison.getDuree() + "\r\n";
-        System.out.println(toShow);
+
         fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
         fenetrePrincipale.getVueGraphique().repaint();

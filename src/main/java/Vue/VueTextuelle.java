@@ -121,6 +121,9 @@ public class VueTextuelle extends JPanel {
             int m = (int) ((pointLivraison.getDebutPlage() % 3600) / 60);
             int s = (int) (pointLivraison.getDebutPlage() % 60);
             infoPlageDebut.setText(h + ":" + m + ":" + s);
+        } else
+        {
+            infoPlageDebut.setText("");
         }
         if (pointLivraison.getFinPlage() != null) {
 
@@ -128,6 +131,8 @@ public class VueTextuelle extends JPanel {
             int m = (int) ((pointLivraison.getFinPlage() % 3600) / 60);
             int s = (int) (pointLivraison.getFinPlage() % 60);
             infoPlageFin.setText(h + ":" + m + ":" + s);
+        } else {
+            infoPlageFin.setText("");
         }
 
         {
