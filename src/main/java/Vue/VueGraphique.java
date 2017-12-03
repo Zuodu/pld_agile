@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -65,9 +66,9 @@ public class VueGraphique extends JPanel {
     public void addTournee(Tournee tournee) {
         this.tournee = tournee;
         //textPane.setText("");
-        for (Itineraire itineraire : tournee.getListeItineraires()) {
+        //for (Itineraire itineraire : tournee.getListeItineraires()) {
             //  textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
-        }
+        //}
         //textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
 
@@ -119,8 +120,8 @@ public class VueGraphique extends JPanel {
             afficheEntrepot(tournee.getEntrepot(), g2d);
 
             g2d.setColor(Color.magenta);
-            for (Itineraire itineraire : tournee.getListeItineraires()) {
-                for (Troncon troncon : itineraire.getListeTroncons()) {
+            for (Map.Entry<Map.Entry<PointLivraison,PointLivraison>,Itineraire> itineraireEntry:tournee.getItinerairesMap().entrySet()) {
+                for (Troncon troncon : itineraireEntry.getValue().getListeTroncons()) {
                     afficheTroncon(troncon, g2d);
                 }
             }

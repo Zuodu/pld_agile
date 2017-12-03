@@ -90,6 +90,11 @@ public class Controleur {
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
     }
 
+    public void modifierPlageHoraire(PointLivraison pointLivraison,double debutPlage,double finPlage){
+        etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage);
+        setEtatCourant(etatModifier);
+    }
+
     /**
      * M�thode permettant d'afficher les informations du point cliqu�
      * @param pointLivraison

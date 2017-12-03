@@ -35,10 +35,10 @@ public class ChargeurLivraisonTest {
 		InitTUp();
 		
 		assert(petiteTournee.getListePointLivraisons().size() == 4);
-		assert(petiteTournee.getListeItineraires().isEmpty());
+		assert(petiteTournee.getItinerairesMap().isEmpty());
 	}
 	
-	@Test //Veracité des PintLivraison de DLpetit5.xml
+	@Test //Veracitï¿½ des PintLivraison de DLpetit5.xml
 	public void TUp2() {
 		InitTUp();
 		

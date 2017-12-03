@@ -18,7 +18,7 @@ public class CdeModifierHoraire implements Commande {
 
 	public void doCde()
 	{
-		
+        tournee.updateHoraire(pointLivraison,debutPlage,finPlage);
 	}
 	public void undoCde()
 	{
