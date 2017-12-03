@@ -82,15 +82,18 @@ public class AbstractGraphe {
         long tempsDebut=System.currentTimeMillis();
         TSP tsp = new TSP3();
         tsp.chercheSolution(tournee.getHeureDeDepart(),10, nbSommets, cout, duree,plageArrivee,plageDepart);
+        List<PointLivraison> pointLivraisons=new ArrayList<PointLivraison>();
         for (int i = 0; i < nbSommets - 1; i++) {
             tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)))));
         }
         tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
         for (int i = 0; i < nbSommets; i++) {
             tournee.addHoraireLivraison(pointLivraisonMap.get(tsp.getMeilleureSolution(i)),tsp.getHoraireLivraison().get(i));
+            pointLivraisons.add(pointLivraisonMap.get(tsp.getMeilleureSolution(i)));
             pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureArrivee(tsp.getHoraireLivraison().get(i).getKey());
             pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureDepart(tsp.getHoraireLivraison().get(i).getValue());
         }
+        tournee.setListePointLivraisons(pointLivraisons);
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
         System.out.println(System.currentTimeMillis()-tempsDebut);

@@ -3,6 +3,7 @@ package Controleur;
 import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
+import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
@@ -70,6 +71,10 @@ public class Controleur {
         setEtatCourant(etatCalculerTournee);
     }
 
+    public void sortirFeuilleDeRoute(String filePath) {
+        FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
+    }
+
     public void afficherPlan() {
 
     }
@@ -87,5 +92,17 @@ public class Controleur {
      */
     public void clickedOnPoint(PointLivraison pointLivraison) {
         etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
+
+    public Tournee getTournee() {
+        return tournee;
+    }
+
+    /*public void clickedOnPoint(PointLivraison pointLivraison) {
+
+        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
+        fenetrePrincipale.getVueGraphique().repaint();
+        //fenetrePrincipale.getInfoText().setText(toShow);*/
+
     }
 }

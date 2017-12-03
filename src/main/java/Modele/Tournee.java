@@ -13,7 +13,7 @@ public class Tournee extends Observable {
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
     private HashMap<PointLivraison, Map.Entry<Double, Double>> horaireLivraison;
-    private static final double vitesse = 4.16;
+    private static final double VITESSE = 4.16;
 
     /**
      * Constructeur
@@ -36,10 +36,10 @@ public class Tournee extends Observable {
 
     /**
      * Get
-     * @return vitesse
+     * @return VITESSE
      */
     public static double getVitesse() {
-        return vitesse;
+        return VITESSE;
     }
 
     /**
@@ -113,6 +113,11 @@ public class Tournee extends Observable {
      */
     public double getHeureDeDepart() {
         return heureDeDepart;
+    }
+
+
+    public void setListePointLivraisons(List<PointLivraison> listePointLivraisons) {
+        this.listePointLivraisons = listePointLivraisons;
     }
 
     /**
