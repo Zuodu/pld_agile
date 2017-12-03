@@ -7,6 +7,7 @@ import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -71,7 +72,7 @@ public class Controleur {
         setEtatCourant(etatCalculerTournee);
     }
 
-    public void sortirFeuilleDeRoute(String filePath) {
+    public void sortirFeuilleDeRoute(String filePath) throws IOException {
         FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
     }
 

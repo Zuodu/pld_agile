@@ -9,6 +9,7 @@ import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 
 /**
@@ -95,7 +96,11 @@ public class ButtonListener implements ActionListener {
             // int returnValue = jfc.showSaveDialog(null);
             if (jfcd.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = jfcd.getSelectedFile();
-                controleur.sortirFeuilleDeRoute(selectedFile.getAbsolutePath());
+                try {
+                    controleur.sortirFeuilleDeRoute(selectedFile.getAbsolutePath());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 System.out.println(selectedFile.getAbsolutePath());
             }
         } else if (s.equals(VueTextuelle.SUPPRIMER_POINT)) {
