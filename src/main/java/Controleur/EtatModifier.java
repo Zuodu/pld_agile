@@ -4,13 +4,13 @@ import Modele.PointLivraison;
 import Modele.Tournee;
 
 public class EtatModifier extends EtatDefaut{
-	
+
 	public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee)
 	{
 		CdeAjout commandeAjout = new CdeAjout(pointLivraison, tournee);
 		commandeAjout.doCde();
 	}
-	
+
 	public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee)
 	{
 		CdeSupprimer commandeSupprimer = new CdeSupprimer(pointLivraison,tournee);
