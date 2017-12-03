@@ -92,6 +92,7 @@ public class Controleur {
      */
     public void clickedOnPoint(PointLivraison pointLivraison) {
         etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
+    }
 
     public Tournee getTournee() {
         return tournee;
@@ -104,5 +105,4 @@ public class Controleur {
         fenetrePrincipale.getVueGraphique().repaint();
         //fenetrePrincipale.getInfoText().setText(toShow);*/
 
-    }
 }

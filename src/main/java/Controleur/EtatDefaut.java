@@ -14,7 +14,7 @@ public class EtatDefaut implements Etat {
     }
 
     public void clickedOnPoint(PointLivraison pointLivraison, FenetrePrincipale fenetrePrincipale) {
-        String toShow = "";
+        /*String toShow = "";
         toShow += pointLivraison.getId() + "\r\n";
         toShow += pointLivraison.getDebutPlage() + "\r\n";
         toShow += pointLivraison.getFinPlage() + "\r\n";
@@ -22,6 +22,12 @@ public class EtatDefaut implements Etat {
         System.out.println(toShow);
         fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
         //fenetrePrincipale.getInfoText().setText(toShow);
+        */
+    	
+        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
+        fenetrePrincipale.getVueGraphique().repaint();
+        //fenetrePrincipale.getInfoText().setText(toShow);*/
     }
 
     public void undo(LstDeCde l) {
