@@ -85,8 +85,8 @@ public class VueGraphique extends JPanel {
                     xmin = noeud.getX();
                 if (noeud.getY() < ymin)
                     ymin = noeud.getY();
-                xScale = (xmax - xmin) / VUEPLAN_LENGTH;
-                yScale = (ymax - ymin) / VUEPLAN_WIDTH;
+                xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.9;
+                yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.9;
 
 
             }

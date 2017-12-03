@@ -20,8 +20,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CALCULER_TOURNEE = "Calculer Tournee";
 	public static final int BUTTON_WIDTH = 200;
 	public static final int BUTTON_HEIGHT = 40;
-	public static final int BORDER = 50;
-	public static final int FENETRE_WIDTH = 1280;
+	public static final int ECART = 20;
+	public static final int FENETRE_WIDTH = 1100;
 	public static final int FENETRE_LENGTH = 800;
 	public static final int BUTTONPANEL_WIDTH = 400;
 	public static final int BUTTONPANEL_LENGTH = 400;
@@ -76,7 +76,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
-		buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + 100, 10, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
+		buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + ECART, 10, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
 		buttonListener = new ButtonListener(controleur);
 
 		buttonChargerPlan = new JButton(CHARGER_PLAN);

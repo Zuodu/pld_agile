@@ -101,8 +101,7 @@ public abstract class TemplateTSP implements Algo.TSP {
                     double depart = arrivee + duree[prochainSommet];
                     if (plageArrivee[prochainSommet] != null && plageDepart[prochainSommet] != null) {
                         if (arrivee < plageArrivee[prochainSommet]) {
-                            arrivee = plageArrivee[prochainSommet];
-                            depart = arrivee + duree[prochainSommet];
+                            depart = plageArrivee[prochainSommet] + duree[prochainSommet];
                         } else if (depart > plageDepart[prochainSommet]) {
                             continue;
                         }
