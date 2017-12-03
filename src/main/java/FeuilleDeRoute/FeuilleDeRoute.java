@@ -81,7 +81,7 @@ public class FeuilleDeRoute {
     /**
      * Créée une table afin d'extraire uniquement les données à afficher sur la feuille de route.
      *
-     * @param tournee tournée calculée
+     * @param listeItineraire itinéraires de la tournée rangées dans l'ordre
      * @return la liste des lignes de la feuille de route à faire traiter par le module html
      */
     private static List<LigneFeuille> buildTableDeRoute(List<Itineraire> listeItineraire) {
