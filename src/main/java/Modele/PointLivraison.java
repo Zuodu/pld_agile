@@ -9,6 +9,25 @@ public class PointLivraison extends Noeud {
     private Double debutPlage;
     private Double finPlage;
     private double duree;
+    private double heureArrivee;
+    private double heureDepart;
+
+
+    public double getHeureArrivee() {
+        return heureArrivee;
+    }
+
+    public void setHeureArrivee(double heureArrivee) {
+        this.heureArrivee = heureArrivee;
+    }
+
+    public double getHeureDepart() {
+        return heureDepart;
+    }
+
+    public void setHeureDepart(double heureDepart) {
+        this.heureDepart = heureDepart;
+    }
 
     /**
      * Get

@@ -16,8 +16,8 @@ public class VueGraphique extends JPanel {
     public final static int RAYON_POINTLIVRAISON = 10;
     public final static int RAYON_ENTREPOT = 20;
     public final static float WIDTH_TRONCON = 2.0f;
-    public final static int VUEPLAN_LENGTH = 650;
-    public final static int VUEPLAN_WIDTH = 650;
+    public final static int VUEPLAN_LENGTH = 700;
+    public final static int VUEPLAN_WIDTH = 700;
     public final static int LEFT_OFFSET = 10;
     public final static int UP_OFFSET = 10;
     private Plan plan;
@@ -31,6 +31,7 @@ public class VueGraphique extends JPanel {
     private JTextPane textPane;
 
     public VueGraphique() {
+        setLayout(null);
         //textPane=new JTextPane();
         //this.add(textPane);
         this.setBounds(LEFT_OFFSET, UP_OFFSET, VUEPLAN_WIDTH, VUEPLAN_LENGTH);

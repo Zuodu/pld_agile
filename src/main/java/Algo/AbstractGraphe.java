@@ -88,6 +88,8 @@ public class AbstractGraphe {
         tournee.addItineraire(itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0))));
         for (int i = 0; i < nbSommets; i++) {
             tournee.addHoraireLivraison(pointLivraisonMap.get(tsp.getMeilleureSolution(i)),tsp.getHoraireLivraison().get(i));
+            pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureArrivee(tsp.getHoraireLivraison().get(i).getKey());
+            pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureDepart(tsp.getHoraireLivraison().get(i).getValue());
         }
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
