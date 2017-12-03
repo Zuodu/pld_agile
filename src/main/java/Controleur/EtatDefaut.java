@@ -35,10 +35,10 @@ public class EtatDefaut implements Etat {
     public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee) {
     }
 
-    public void cdeSupprimerLivraison(PointLivraison pointLivraison) {
+    public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee) {
     }
 
-    public void cdeModifierPlageHoraire(PointLivraison pointLivraison, double debutPlage, double finPlage) {
+    public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, double debutPlage, double finPlage) {
     }
 
     //Méthodes qui n'avaient pas de corps
