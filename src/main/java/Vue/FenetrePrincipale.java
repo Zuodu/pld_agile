@@ -22,11 +22,11 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String GENERER_FEUILLE = "Generer Feuille de Route";
 	public static final int BUTTON_WIDTH = 250;
 	public static final int BUTTON_HEIGHT = 40;
-	public static final int ECART = 20;
+	public static final int ECART = 40;
 	public static final int FENETRE_WIDTH = 1100;
 	public static final int FENETRE_LENGTH = 800;
 	public static final int BUTTONPANEL_WIDTH = 400;
-	public static final int BUTTONPANEL_LENGTH = 400;
+	public static final int BUTTONPANEL_LENGTH = 300;
 	private JPanel contentPane;
 	private JButton buttonChargerLivraisons;
 	private JButton buttonChargerPlan;
@@ -83,7 +83,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
-		buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + ECART, 10, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
+		buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + ECART, 20, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
 
 		buttonChargerPlan = new JButton(CHARGER_PLAN);
 		buttonChargerPlan.addActionListener(buttonListener);

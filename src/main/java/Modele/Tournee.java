@@ -12,7 +12,6 @@ public class Tournee extends Observable {
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
-    private HashMap<PointLivraison, Map.Entry<Double, Double>> horaireLivraison;
     private static final double VITESSE = 4.16;
 
     /**
@@ -23,13 +22,11 @@ public class Tournee extends Observable {
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
-        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
     public Tournee() {
-        horaireLivraison = new HashMap<PointLivraison, Map.Entry<Double, Double>>();
         listeItineraires = new ArrayList<Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
@@ -74,13 +71,7 @@ public class Tournee extends Observable {
         this.heureDeDepart = heureDeDepart;
     }
 
-    public HashMap<PointLivraison, Map.Entry<Double, Double>> getHoraireLivraison() {
-        return horaireLivraison;
-    }
 
-    public void addHoraireLivraison(PointLivraison pointLivraison, Map.Entry<Double, Double> horaire) {
-        this.horaireLivraison.put(pointLivraison, horaire);
-    }
 
     /**
      * Set
@@ -134,7 +125,6 @@ public class Tournee extends Observable {
         for (Itineraire itineraire : listeItineraires) {
             toReturn += itineraire.toString();
         }
-        toReturn += horaireLivraison.toString();
         return toReturn;
     }
 }

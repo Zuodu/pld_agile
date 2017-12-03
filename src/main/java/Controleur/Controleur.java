@@ -86,6 +86,10 @@ public class Controleur {
 
     }
 
+    public void supprimerPoint(PointLivraison pointLivraison) {
+        etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
+    }
+
     /**
      * M�thode permettant d'afficher les informations du point cliqu�
      * @param pointLivraison

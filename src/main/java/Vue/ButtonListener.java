@@ -1,6 +1,7 @@
 package Vue;
 
 import Controleur.Controleur;
+import Modele.Plan;
 import Modele.PointLivraison;
 
 import javax.swing.*;
@@ -97,6 +98,8 @@ public class ButtonListener implements ActionListener {
                 controleur.sortirFeuilleDeRoute(selectedFile.getAbsolutePath());
                 System.out.println(selectedFile.getAbsolutePath());
             }
+        } else if (s.equals(VueTextuelle.SUPPRIMER_POINT)) {
+            controleur.supprimerPoint(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi());
         }
 
     }

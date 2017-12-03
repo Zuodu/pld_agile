@@ -40,6 +40,7 @@ public class VueGraphique extends JPanel {
 
     public VueGraphique() {
         setLayout(null);
+
         //textPane=new JTextPane();
         //this.add(textPane);
         this.setBounds(LEFT_OFFSET, UP_OFFSET, VUEPLAN_WIDTH, VUEPLAN_LENGTH);
@@ -97,8 +98,8 @@ public class VueGraphique extends JPanel {
                     xmin = noeud.getX();
                 if (noeud.getY() < ymin)
                     ymin = noeud.getY();
-                xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.9;
-                yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.9;
+                xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.95;
+                yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.95;
 
 
             }

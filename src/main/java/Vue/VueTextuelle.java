@@ -3,6 +3,7 @@ package Vue;
 import Modele.PointLivraison;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by flavi on 2017/12/3.
@@ -15,7 +16,7 @@ public class VueTextuelle extends JPanel {
     public final static String PRECEDENT_POINT = "Precedant";
     public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
-    public final static int ECART = 20;
+    public final static int ECART = 40;
     public final static int BUTTON_WIDTH = 100;
     public final static int BUTTON_LENGTH = 30;
 

@@ -30,13 +30,6 @@ public class EtatInit extends EtatDefaut{
     public void chargerPlan (String filePath, Plan plan)
     {
         ChargeurPlan.getInstance().parse(plan, filePath);
-        // plan=ChargeurPlan.getInstance().getPlan();
-        for (Noeud noeud : plan.getListeNoeuds()) {
-            //System.out.println(noeud);
-        }
 
-        for (Troncon troncon : plan.getListeTroncons()) {
-           // System.out.println(troncon);
-        }
     }
 }
