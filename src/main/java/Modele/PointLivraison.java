@@ -12,7 +12,11 @@ public class PointLivraison extends Noeud {
     private double heureArrivee;
     private double heureDepart;
 
-
+    /**
+     * Méthode permettant de récupérer l'heure d'arrivée à un point de livraison
+     *
+     * @return heureArrivée
+     */
     public double getHeureArrivee() {
         return heureArrivee;
     }
@@ -21,6 +25,10 @@ public class PointLivraison extends Noeud {
         this.heureArrivee = heureArrivee;
     }
 
+    /**
+     * Get
+     * @return heureDepart
+     */
     public double getHeureDepart() {
         return heureDepart;
     }
@@ -31,10 +39,14 @@ public class PointLivraison extends Noeud {
 
     /**
      * Get
-     * @return debutPage
+     * @return debutPlage
      */
     public Double getDebutPlage() {
         return debutPlage;
+    }
+
+    public void setDebutPlage(Double debutPlage) {
+        this.debutPlage = debutPlage;
     }
 
     /**
@@ -45,10 +57,9 @@ public class PointLivraison extends Noeud {
         return finPlage;
     }
 
-    /**
-     * Get
-     * @return heureDepart
-     */
+    public void setFinPlage(Double finPlage) {
+        this.finPlage = finPlage;
+    }
 
     /**
      * Constructeur avec plage horaire
