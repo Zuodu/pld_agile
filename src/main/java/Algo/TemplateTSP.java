@@ -51,7 +51,7 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @return une borne inferieure du cout des permutations commencant par sommetCourant,
      * contenant chaque sommet de nonVus exactement une fois et terminant par le sommet 0
      */
-    protected abstract double bound(Integer sommetCourant, ArrayList<Integer> nonVus, double[][] cout, double[] duree);
+    protected abstract double bound(Integer sommetCourant, Integer entrepot, ArrayList<Integer> nonVus, double[][] cout, double[] duree);
 
     /**
      * Methode devant etre redefinie par les sous-classes de TemplateTSP
@@ -91,7 +91,7 @@ public abstract class TemplateTSP implements Algo.TSP {
         } else {
             double bound = 0;
             if (meilleureSolution != null) {
-                bound = bound(sommetCrt, nonVus, cout, duree);
+                bound = bound(sommetCrt,vus.get(0), nonVus, cout, duree);
             }
             if (coutVus + bound < coutMeilleureSolution) {
                 Iterator<Integer> it = iterator(sommetCrt, nonVus, cout, duree);
