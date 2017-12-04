@@ -107,6 +107,14 @@ public class PointLivraison extends Noeud {
     public double getDuree() {
         return duree;
     }
+    
+    /**
+     * Set
+     * @return duree
+     */
+    public void setDuree(double d) {
+        duree = d;
+    }
 
     @Override
     public String toString() {

@@ -59,9 +59,10 @@ public class TourneeTest3 {
 		PointLivraison point = new PointLivraison(25495299L, 56584, 58632, 900);
 		tournee.addPointLivraisons(point);
 		
-		assert(tournee.getListePointLivraisons().size() == 1);
-		
 		Tournee tourneeCopie = new Tournee(tournee);
+		
+		assert(tournee.getListePointLivraisons().size() == 1);
+		assert(tourneeCopie.getListePointLivraisons().size() == 1);
 		
 		tournee.getListePointLivraisons().clear();
 		
