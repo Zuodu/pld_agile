@@ -15,6 +15,7 @@ public class Tournee extends Observable {
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
     private boolean isCharge;
+
     /**
      * Constructeur
      *
@@ -22,40 +23,42 @@ public class Tournee extends Observable {
      * @param heureDeDepart
      */
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
-        //TODO:set heureDepart de l'entrepot(Siying)
-        isCharge=false;
+        this.isCharge = false;
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
-        listePointLivraisons = new ArrayList<PointLivraison>();
-    }
-
-    public Tournee(Tournee tournee) {
-        this.entrepot = tournee.getEntrepot();
-        this.heureDeDepart = tournee.getHeureDeDepart();
-        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.listePointLivraisons = new ArrayList<PointLivraison>();
-        PointLivraison pointlivraison;
-        for (int i = 0; i < tournee.getListePointLivraisons().size(); i++) {
-            pointlivraison = new PointLivraison(tournee.getListePointLivraisons().get(i));
-            this.listePointLivraisons.add(pointlivraison);
-            this.itinerairesMap = (HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone();
-        }
     }
 
-    public void clone (Tournee tournee,Tournee newTournee) {
+    public Tournee(Tournee uneTournee) {
+        this(new PointLivraison(uneTournee.getEntrepot()), uneTournee.getHeureDeDepart());
+        for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : uneTournee.getItinerairesMap().entrySet()) {
+            this.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(new PointLivraison(entry.getKey().getKey()),new PointLivraison(entry.getKey().getValue())),new Itineraire(entry.getValue()));
+        }
+        for(PointLivraison pointLivraison:uneTournee.getListePointLivraisons()){
+            this.addPointLivraisons(new PointLivraison(pointLivraison));
+        }
+
+    }
+
+    public void clone(Tournee tournee, Tournee newTournee) {
+        newTournee.setCharge(tournee.isCharge());
         newTournee.setHeureDeDepart(tournee.getHeureDeDepart());
         newTournee.setEntrepot(new PointLivraison(tournee.getEntrepot()));
-        for (PointLivraison p:tournee.getListePointLivraisons()) {
-            newTournee.getListePointLivraisons().add(p);
+        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
+            newTournee.addPointLivraisons(new PointLivraison(pointLivraison));
         }
-        newTournee.setItinerairesMap((HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone());
+        for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : tournee.getItinerairesMap().entrySet()) {
+            newTournee.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(new PointLivraison(entry.getKey().getKey()),new PointLivraison(entry.getKey().getValue())),new Itineraire(entry.getValue()));
+        }
     }
 
     public Tournee() {
         listePointLivraisons = new ArrayList<PointLivraison>();
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
     }
+
+
 
     public void setItinerairesMap(HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
         this.itinerairesMap = itinerairesMap;
@@ -157,7 +160,7 @@ public class Tournee extends Observable {
         boolean departNonModifiee = pProchain.getHeureArrivee().equals(arriveePointProchain);
         boolean departAvancee = arriveePointProchain < pProchain.getHeureArrivee() && avanceHoraire(indexASupprimer + 1, pProchain.getHeureArrivee() - arriveePointProchain);
         boolean departRetardee = arriveePointProchain > pProchain.getHeureArrivee() && retardeHoraire(indexASupprimer + 1, arriveePointProchain - pProchain.getHeureArrivee());
-        if (departNonModifiee||departAvancee||departRetardee) {
+        if (departNonModifiee || departAvancee || departRetardee) {
             listePointLivraisons.remove(pointASupprimer);
             itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pointASupprimer));
             itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointASupprimer, pProchain));
@@ -255,11 +258,11 @@ public class Tournee extends Observable {
                 return false;
             }
         }
-            if (retardeHoraire(index + 1, heureDepart - nextPoint.getHeureDepart())) {
-                nextPoint.setHeureArrivee(heureArrivee);
-                nextPoint.setHeureDepart(heureDepart);
-                return true;
-            }
+        if (retardeHoraire(index + 1, heureDepart - nextPoint.getHeureDepart())) {
+            nextPoint.setHeureArrivee(heureArrivee);
+            nextPoint.setHeureDepart(heureDepart);
+            return true;
+        }
 
         return false;
     }
