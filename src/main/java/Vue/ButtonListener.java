@@ -111,10 +111,15 @@ public class ButtonListener implements ActionListener {
             Double debut=null;
             Double fin=null;
             if (!plageDebut.equals("")) {
-                debut = Double.parseDouble(plageDebut);
+                debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
+                        + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
+                        + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
+
             }
             if (!plageFin.equals("")) {
-                fin = Double.parseDouble(plageFin);
+                fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
+                        + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
+                        + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
             }
             controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
         } else if (s.equals(VueTextuelle.UNDO)) {

@@ -39,8 +39,10 @@ public class VueGraphique extends JPanel {
         this.pointLivraisonChoisi = pointLivraisonChoisi;
     }
 
-    public VueGraphique() {
+    public VueGraphique(Plan plan,Tournee tournee) {
         setLayout(null);
+        this.plan=plan;
+        this.tournee=tournee;
 
         //textPane=new JTextPane();
         //this.add(textPane);
@@ -53,7 +55,7 @@ public class VueGraphique extends JPanel {
      *
      * @param plan
      */
-    public void addPlan(Plan plan) {
+    public void setPlan(Plan plan) {
         this.plan = plan;
         repaint();
     }
@@ -63,7 +65,7 @@ public class VueGraphique extends JPanel {
      *
      * @param tournee
      */
-    public void addTournee(Tournee tournee) {
+    public void setTournee(Tournee tournee) {
         this.tournee = tournee;
         //textPane.setText("");
         //for (Itineraire itineraire : tournee.getListeItineraires()) {
@@ -88,7 +90,7 @@ public class VueGraphique extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
 
 
-        if (plan != null) {
+        if (plan .isCharge()) {
             g2d.setColor(Color.BLACK);
             for (Noeud noeud : plan.getListeNoeuds()) {
                 if (noeud.getX() > xmax)
@@ -111,7 +113,7 @@ public class VueGraphique extends JPanel {
             }
         }
 
-        if (tournee != null) {
+        if (tournee .isCharge()) {
 
             g2d.setColor(Color.blue);
             for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
@@ -259,7 +261,4 @@ public class VueGraphique extends JPanel {
     }
 
 
-    public void setTournee(Tournee tournee) {
-        this.tournee = tournee;
-    }
 }

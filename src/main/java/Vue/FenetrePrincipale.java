@@ -76,7 +76,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		setContentPane(contentPane);
 
 
-		vueGraphique = new Vue.VueGraphique();
+		vueGraphique = new Vue.VueGraphique(plan,tournee);
 		contentPane.add(vueGraphique);
 		vueTextuelle = new VueTextuelle(buttonListener);
 		contentPane.add(vueTextuelle);
@@ -123,11 +123,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-
-		if (o instanceof Plan)
-			vueGraphique.addPlan(plan);
-		else if (o instanceof Tournee)
-			vueGraphique.addTournee(tournee);
+		vueGraphique.repaint();
+		vueTextuelle.clickedOnPoint(vueGraphique.getPointLivraisonChoisi());
 	}
 
 

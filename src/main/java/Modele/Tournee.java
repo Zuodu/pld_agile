@@ -14,7 +14,7 @@ public class Tournee extends Observable {
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
-
+    private boolean isCharge;
     /**
      * Constructeur
      *
@@ -23,6 +23,7 @@ public class Tournee extends Observable {
      */
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
         //TODO:set heureDepart de l'entrepot(Siying)
+        isCharge=false;
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
@@ -130,6 +131,16 @@ public class Tournee extends Observable {
         this.listePointLivraisons = listePointLivraisons;
     }
 
+
+    public boolean isCharge() {
+        return isCharge;
+    }
+
+    public void setCharge(boolean charge) {
+        isCharge = charge;
+        setChanged();
+        notifyObservers();
+    }
 
     public boolean supprimerPoint(PointLivraison pointASupprimer) {
         int indexASupprimer = listePointLivraisons.indexOf(pointASupprimer);
@@ -243,11 +254,13 @@ public class Tournee extends Observable {
             if (heureDepart > nextPoint.getFinPlage()) {
                 return false;
             }
-        } else if (retardeHoraire(index + 1, heureDepart - nextPoint.getHeureDepart())) {
-            nextPoint.setHeureArrivee(heureArrivee);
-            nextPoint.setHeureDepart(heureDepart);
-            return true;
         }
+            if (retardeHoraire(index + 1, heureDepart - nextPoint.getHeureDepart())) {
+                nextPoint.setHeureArrivee(heureArrivee);
+                nextPoint.setHeureDepart(heureDepart);
+                return true;
+            }
+
         return false;
     }
 
