@@ -5,6 +5,7 @@ import Modele.Tournee;
 
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
+    Tournee oldTournee;
     PointLivraison pointLivraison;
     double debutPlage;
     double finPlage;
@@ -14,6 +15,7 @@ public class CdeModifierHoraire implements Commande {
         pointLivraison = newPointLivraison;
         debutPlage = newDebutPlage;
         finPlage = newFinPlage;
+        oldTournee = new Tournee(newTournee);
     }
 
 	public void doCde()
@@ -22,6 +24,6 @@ public class CdeModifierHoraire implements Commande {
 	}
 	public void undoCde()
 	{
-		
+		tournee = oldTournee;
 	}
 }

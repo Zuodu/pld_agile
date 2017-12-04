@@ -88,11 +88,13 @@ public class Controleur {
     }
 
     public void supprimerPoint(PointLivraison pointLivraison) {
-        etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
+        lstDeCde.setI(lstDeCde.getI()+1);
+        etatCourant.cdeSupprimerLivraison(pointLivraison,tournee,lstDeCde);
     }
 
     public void modifierPlageHoraire(PointLivraison pointLivraison,double debutPlage,double finPlage){
-        etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage);
+        lstDeCde.setI(lstDeCde.getI()+1);
+        etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage,lstDeCde);
     }
 
     public void undo()
