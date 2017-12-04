@@ -2,10 +2,12 @@ package Main;
 
 import Algo.IteratorMin;
 import Controleur.Controleur;
+import Modele.PointLivraison;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author H4401
@@ -16,6 +18,10 @@ public class main {
 
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
+        PointLivraison pointLivraison=new PointLivraison(1l,1,1,1,1d,1d);
+        List<PointLivraison> list=new ArrayList<>();
+        list.add(pointLivraison);
+        List<PointLivraison> list2=new ArrayList<>(list);
      //   controleur.chargerPlan("planLyonGrand.xml");
       //  controleur.chargerLivraison("DLgrand15.xml");
        // controleur.calculerTournee();

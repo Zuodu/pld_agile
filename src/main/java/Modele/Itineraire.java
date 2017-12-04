@@ -23,6 +23,15 @@ public class Itineraire {
         temps = 0;
     }
 
+    public Itineraire(Itineraire unItineraire){
+        this();
+        this.setNoeudOrigine(new Noeud(unItineraire.getNoeudOrigine()));
+        this.setNoeudDestination(new Noeud(unItineraire.getNoeudDestination()));
+        for(Troncon troncon:unItineraire.getListeTroncons()){
+            this.addTroncon(new Troncon(troncon));
+        }
+    }
+
     /**
      * Ajoute un tron�on
      *

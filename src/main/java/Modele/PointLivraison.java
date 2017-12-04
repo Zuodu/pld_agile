@@ -78,14 +78,14 @@ public class PointLivraison extends Noeud {
         this.finPlage = finPlage;
     }
 
-    public PointLivraison (PointLivraison pointLivraison)
+    public PointLivraison (PointLivraison unPointLivraison)
     {
-        super(pointLivraison);
-        this.duree = pointLivraison.duree;
-        if(pointLivraison.getDebutPlage()!=null)
+        this(unPointLivraison.getId(),unPointLivraison.getX(),unPointLivraison.getY(),unPointLivraison.getDuree());
+
+        if(unPointLivraison.getDebutPlage()!=null)
         {
-            this.debutPlage = pointLivraison.getDebutPlage();
-            this.finPlage = pointLivraison.getFinPlage();
+            this.debutPlage = unPointLivraison.getDebutPlage();
+            this.finPlage = unPointLivraison.getFinPlage();
         }
     }
     /**
