@@ -78,6 +78,16 @@ public class PointLivraison extends Noeud {
         this.finPlage = finPlage;
     }
 
+    public PointLivraison (PointLivraison pointLivraison)
+    {
+        super(pointLivraison);
+        this.duree = pointLivraison.duree;
+        if(pointLivraison.getDebutPlage()!=null)
+        {
+            this.debutPlage = pointLivraison.getDebutPlage();
+            this.finPlage = pointLivraison.getFinPlage();
+        }
+    }
     /**
      * Constructeur sans plage horaire
      * @param id

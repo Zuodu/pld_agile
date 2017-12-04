@@ -20,6 +20,7 @@ public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
     private Tournee tournee;
+    private LstDeCde lstDeCde = new LstDeCde();
     private static final EtatInit etatInit = new EtatInit();
     private static final EtatChargerPlan etatChargerPlan = new EtatChargerPlan();
     private static final EtatChargerLivraison etatChargerLivraison = new EtatChargerLivraison();
@@ -94,6 +95,15 @@ public class Controleur {
         etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage);
     }
 
+    public void undo()
+    {
+        etatCourant.undo(lstDeCde);
+    }
+
+    public void redo()
+    {
+        etatCourant.redo(lstDeCde);
+    }
     /**
      * M�thode permettant d'afficher les informations du point cliqu�
      * @param pointLivraison
