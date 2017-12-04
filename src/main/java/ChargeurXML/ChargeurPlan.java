@@ -15,14 +15,14 @@ import org.xml.sax.SAXException;
 
 /**
  * @author H4401
- * Classe permettant le chargement du fichier xml contenant le plan
+ *         Classe permettant le chargement du fichier xml contenant le plan
  */
 public class ChargeurPlan {
     private Plan plan;
     private static ChargeurPlan instance;
 
     public static ChargeurPlan getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new ChargeurPlan();
         }
         return instance;
@@ -33,14 +33,15 @@ public class ChargeurPlan {
     }
 
     /**
-     * Méthode parsant le fichier xml
-     * @param plan le plan auquel on ajoute les noeuds et tronçons
-     * @param filePath Le chemin d'accès au fichier xml
+     * Mï¿½thode parsant le fichier xml
+     *
+     * @param plan     le plan auquel on ajoute les noeuds et tronï¿½ons
+     * @param filePath Le chemin d'accï¿½s au fichier xml
      */
     public void parse(Plan plan, String filePath) {
         this.plan = plan;
         File xmlPlan = new File(filePath);
-        HashMap<Long, Map.Entry<Integer, Integer>> nodeMap = new HashMap<Long, Map.Entry<Integer, Integer>>();
+        HashMap<Long, Noeud> nodeMap = new HashMap<Long, Noeud>();
 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
@@ -65,9 +66,9 @@ public class ChargeurPlan {
                     Long idAtt = Long.parseLong(child.getAttribute("id"));
                     Integer xAtt = Integer.parseInt(child.getAttribute("x"));
                     Integer yAtt = Integer.parseInt(child.getAttribute("y"));
-
-                    plan.addNoeud(new Noeud(idAtt, xAtt, yAtt));
-                    nodeMap.put(idAtt, new AbstractMap.SimpleEntry<Integer, Integer>(xAtt, yAtt));
+                    Noeud noeud = new Noeud(idAtt, xAtt, yAtt);
+                    plan.addNoeud(noeud);
+                    nodeMap.put(idAtt, noeud);
                 }
             }
 
@@ -83,8 +84,8 @@ public class ChargeurPlan {
                     String rueAtt = child.getAttribute("nomRue");
                     Long origineAtt = Long.parseLong(child.getAttribute("origine"));
 
-                    Noeud noeudOrigine = new Noeud(origineAtt, nodeMap.get(origineAtt).getKey(), nodeMap.get(origineAtt).getValue());
-                    Noeud noeudDestination = new Noeud(destinationAtt, nodeMap.get(destinationAtt).getKey(), nodeMap.get(destinationAtt).getValue());
+                    Noeud noeudOrigine = nodeMap.get(origineAtt);
+                    Noeud noeudDestination = nodeMap.get(destinationAtt);
                     /*Set noeuds = plan.getListeNoeuds();
 
                     Iterator iterator = noeuds.iterator();
@@ -98,7 +99,7 @@ public class ChargeurPlan {
                         }
                         if (noeudOrigine != null && noeudDestination != null) break;
                     }*/
-                    
+
                     Troncon troncon = new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt);
                     noeudOrigine.addNeighbor(troncon);
                     plan.addTroncon(troncon);
@@ -112,11 +113,12 @@ public class ChargeurPlan {
             e.printStackTrace();
         }
     }
-    
+
     /**
-     * Méthode parsant le fichier xml
-     * @param plan le plan auquel on ajoute les noeuds et tronçons
-     * @param filePath Le chemin d'accès au fichier xml
+     * Mï¿½thode parsant le fichier xml
+     *
+     * @param plan     le plan auquel on ajoute les noeuds et tronï¿½ons
+     * @param filePath Le chemin d'accï¿½s au fichier xml
      */
     public void parseAutre(Plan plan, String filePath) {
         this.plan = plan;
@@ -140,7 +142,7 @@ public class ChargeurPlan {
 
             for (int i = 0; i < vertexes.getLength(); i++) {
                 Node node = vertexes.item(i);
-                
+
                 if (node instanceof Element) {
                     Element child = (Element) node;
                     Long destinationAtt = Long.parseLong(child.getAttribute("destination"));
@@ -149,7 +151,7 @@ public class ChargeurPlan {
                     Long origineAtt = Long.parseLong(child.getAttribute("origine"));
 
                     Noeud noeudOrigine = null, noeudDestination = null;
-                    
+
                     for (int j = 0; j < nodes.getLength(); j++) {
                         Node node2 = nodes.item(j);
 
@@ -158,30 +160,32 @@ public class ChargeurPlan {
                             String idAtt = child2.getAttribute("id");
                             String xAtt = child2.getAttribute("x");
                             String yAtt = child2.getAttribute("y");
-                            
+
                             Noeud newNode = new Noeud(Long.parseLong(idAtt), Integer.parseInt(xAtt), Integer.parseInt(yAtt));
-                            
-                            if((long) newNode.getId() == (long) origineAtt) {
-                            	Iterator iterator = plan.getListeNoeuds().iterator(); boolean found = false;
+
+                            if ((long) newNode.getId() == (long) origineAtt) {
+                                Iterator iterator = plan.getListeNoeuds().iterator();
+                                boolean found = false;
                                 while (iterator.hasNext()) {
                                     Noeud n = (Noeud) iterator.next();
-                                    if((long) n.getId() == newNode.getId()) found = true;
+                                    if ((long) n.getId() == newNode.getId()) found = true;
                                 }
-                                if(found == false) plan.addNoeud(newNode);
-                                
+                                if (found == false) plan.addNoeud(newNode);
+
                                 noeudOrigine = newNode;
                             }
-                            if((long) newNode.getId() == (long) destinationAtt) {
-                            	Iterator iterator = plan.getListeNoeuds().iterator(); boolean found = false;
+                            if ((long) newNode.getId() == (long) destinationAtt) {
+                                Iterator iterator = plan.getListeNoeuds().iterator();
+                                boolean found = false;
                                 while (iterator.hasNext()) {
                                     Noeud n = (Noeud) iterator.next();
-                                    if((long) n.getId() == newNode.getId()) found = true;
+                                    if ((long) n.getId() == newNode.getId()) found = true;
                                 }
-                                if(found == false) plan.addNoeud(newNode);
-                                
+                                if (found == false) plan.addNoeud(newNode);
+
                                 noeudDestination = newNode;
                             }
-                            if(noeudOrigine != null && noeudDestination != null) break;
+                            if (noeudOrigine != null && noeudDestination != null) break;
                         }
                     }
 

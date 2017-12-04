@@ -19,6 +19,7 @@ public class TSP2 extends TSP1 {
             bound += duree[i];
         }
         return bound;
+
     }
 
     private double getEvaluateCout(Integer sommet, double[][] cout, ArrayList<Integer> pointsAlivrer) {
