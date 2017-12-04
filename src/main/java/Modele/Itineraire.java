@@ -1,11 +1,13 @@
 package Modele;
 
+import Main.main;
+
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * @author H4401
- * Classe représentant un itinéraire, ne contient que des Get, Set et add.
+ *         Classe reprï¿½sentant un itinï¿½raire, ne contient que des Get, Set et add.
  */
 public class Itineraire {
     private Noeud noeudOrigine;
@@ -22,16 +24,24 @@ public class Itineraire {
     }
 
     /**
-     * Ajoute un tronçon
+     * Ajoute un tronï¿½on
+     *
      * @param troncon
      */
     public void addTroncon(Troncon troncon) {
         listeTroncons.addFirst(troncon);
         longueurTotale += troncon.getLongueur();
+        temps += troncon.getLongueur() / main.VITESSE;
+    }
+
+
+    public double getTemps() {
+        return temps;
     }
 
     /**
      * Get
+     *
      * @return noeudOrigine
      */
     public Noeud getNoeudOrigine() {
@@ -40,6 +50,7 @@ public class Itineraire {
 
     /**
      * Set
+     *
      * @param noeudOrigine
      */
     public void setNoeudOrigine(Noeud noeudOrigine) {
@@ -48,6 +59,7 @@ public class Itineraire {
 
     /**
      * Get
+     *
      * @return noeudDestination
      */
     public Noeud getNoeudDestination() {
@@ -56,6 +68,7 @@ public class Itineraire {
 
     /**
      * Set
+     *
      * @param noeudDestination
      */
     public void setNoeudDestination(Noeud noeudDestination) {
@@ -64,6 +77,7 @@ public class Itineraire {
 
     /**
      * Get
+     *
      * @return longueurTotale
      */
     public double getLongueurTotale() {
@@ -72,7 +86,8 @@ public class Itineraire {
 
     /**
      * Get
-     * @return listeTronçon
+     *
+     * @return listeTronï¿½on
      */
     public LinkedList<Troncon> getListeTroncons() {
         return listeTroncons;
