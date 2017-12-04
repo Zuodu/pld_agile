@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * @author H4401
  *         Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
- *         et une méthode indiquant à l'observeur la fin d'ajouts de points de livraison à la tournée.
+ *         et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
     HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
