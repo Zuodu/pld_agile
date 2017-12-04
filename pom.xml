@@ -8,6 +8,7 @@
     <artifactId>optimodlyon</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
+        <testSourceDirectory>src/main/java/Test</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
