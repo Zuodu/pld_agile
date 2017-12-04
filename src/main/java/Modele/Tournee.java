@@ -26,6 +26,21 @@ public class Tournee extends Observable {
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
+    public Tournee (Tournee tournee)
+    {
+        this.entrepot = tournee.getEntrepot();
+        this.heureDeDepart = tournee.getHeureDeDepart();
+        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
+        this.listePointLivraisons = new ArrayList<PointLivraison>();
+        PointLivraison pointlivraison;
+        for(int i=0;i<tournee.getListePointLivraisons().size();i++)
+        {
+            pointlivraison = new PointLivraison(tournee.getListePointLivraisons().get(i));
+            this.listePointLivraisons.add(pointlivraison);
+            this.itinerairesMap= (HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone();
+        }
+    }
+
     public Tournee() {
         listePointLivraisons = new ArrayList<PointLivraison>();
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();

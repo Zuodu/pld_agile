@@ -2,6 +2,7 @@ package ChargeurXML;
 
 import Modele.Noeud;
 import Modele.Plan;
+import Modele.PointLivraison;
 import Modele.Troncon;
 
 import java.io.*;
@@ -21,8 +22,8 @@ public class ChargeurPlan {
     private static ChargeurPlan instance;
 
     public static ChargeurPlan getInstance() {
-        if (instance==null) {
-            instance=new ChargeurPlan();
+        if(instance == null) {
+            instance = new ChargeurPlan();
         }
         return instance;
     }
@@ -39,6 +40,7 @@ public class ChargeurPlan {
     public void parse(Plan plan, String filePath) {
         this.plan = plan;
         File xmlPlan = new File(filePath);
+        HashMap<Long, Map.Entry<Integer, Integer>> nodeMap = new HashMap<Long, Map.Entry<Integer, Integer>>();
 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
@@ -60,11 +62,12 @@ public class ChargeurPlan {
 
                 if (node instanceof Element) {
                     Element child = (Element) node;
-                    String idAtt = child.getAttribute("id");
-                    String xAtt = child.getAttribute("x");
-                    String yAtt = child.getAttribute("y");
+                    Long idAtt = Long.parseLong(child.getAttribute("id"));
+                    Integer xAtt = Integer.parseInt(child.getAttribute("x"));
+                    Integer yAtt = Integer.parseInt(child.getAttribute("y"));
 
-                    plan.addNoeud(new Noeud(Long.parseLong(idAtt), Integer.parseInt(xAtt), Integer.parseInt(yAtt)));
+                    plan.addNoeud(new Noeud(idAtt, xAtt, yAtt));
+                    nodeMap.put(idAtt, new AbstractMap.SimpleEntry<Integer, Integer>(xAtt, yAtt));
                 }
             }
 
@@ -75,14 +78,14 @@ public class ChargeurPlan {
 
                 if (node instanceof Element) {
                     Element child = (Element) node;
-                    String destinationAtt = child.getAttribute("destination");
+                    Long destinationAtt = Long.parseLong(child.getAttribute("destination"));
                     String longueurAtt = child.getAttribute("longueur");
                     String rueAtt = child.getAttribute("nomRue");
-                    String origineAtt = child.getAttribute("origine");
+                    Long origineAtt = Long.parseLong(child.getAttribute("origine"));
 
-                    Noeud noeudOrigine = null, noeudDestination = null;
-
-                    Set noeuds = plan.getListeNoeuds();
+                    Noeud noeudOrigine = new Noeud(origineAtt, nodeMap.get(origineAtt).getKey(), nodeMap.get(origineAtt).getValue());
+                    Noeud noeudDestination = new Noeud(destinationAtt, nodeMap.get(destinationAtt).getKey(), nodeMap.get(destinationAtt).getValue());
+                    /*Set noeuds = plan.getListeNoeuds();
 
                     Iterator iterator = noeuds.iterator();
                     while (iterator.hasNext()) {
@@ -94,8 +97,9 @@ public class ChargeurPlan {
                             noeudDestination = n;
                         }
                         if (noeudOrigine != null && noeudDestination != null) break;
-                    }
-                    Troncon troncon=new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt);
+                    }*/
+                    
+                    Troncon troncon = new Troncon(noeudOrigine, noeudDestination, Double.parseDouble(longueurAtt), rueAtt);
                     noeudOrigine.addNeighbor(troncon);
                     plan.addTroncon(troncon);
                 }

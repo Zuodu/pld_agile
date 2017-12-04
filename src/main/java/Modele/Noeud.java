@@ -26,6 +26,15 @@ public class Noeud{
         this.neighbors=new HashSet<Troncon>();
     }
 
+    public Noeud(PointLivraison pointLivraison)
+    {
+        this.id = pointLivraison.getId();
+        this.x = pointLivraison.getX();
+        this.y = pointLivraison.getY();
+        this.neighbors = new HashSet<Troncon>();
+        this.getNeighbors().addAll(pointLivraison.getNeighbors());
+    }
+
     /**
      * Ajout de tronçon voisin
      * @param neighbor
