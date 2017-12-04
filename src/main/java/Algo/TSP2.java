@@ -22,22 +22,29 @@ public class TSP2 extends TSP1 {
     }
 
     private double getEvaluateCout(Integer sommet, double[][] cout, ArrayList<Integer> pointsAlivrer) {
+//        double minCoutDepart = Double.MAX_VALUE;
+//        Integer sommetTrouveDepart = sommet;
+//        double minCoutArrivee = Double.MAX_VALUE;
+//        for (Integer point:pointsAlivrer) {
+//            if (cout[sommet][point] < minCoutDepart){
+//                minCoutDepart = cout[sommet][point];
+//                sommetTrouveDepart = point;
+//            }
+//        }
+//        for (Integer point:pointsAlivrer) {
+//            if (point!= sommetTrouveDepart) {
+//                if (cout[point][sommet] < minCoutArrivee) {
+//                    minCoutArrivee = cout[point][sommet];
+//                }
+//            }
+//        }
+//        return (minCoutArrivee + minCoutDepart) / 2;
         double minCoutDepart = Double.MAX_VALUE;
-        Integer sommetTrouveDepart = sommet;
-        double minCoutArrivee = Double.MAX_VALUE;
         for (Integer point:pointsAlivrer) {
             if (cout[sommet][point] < minCoutDepart){
                 minCoutDepart = cout[sommet][point];
-                sommetTrouveDepart = point;
             }
         }
-        for (Integer point:pointsAlivrer) {
-            if (point!= sommetTrouveDepart) {
-                if (cout[point][sommet] < minCoutArrivee) {
-                    minCoutArrivee = cout[point][sommet];
-                }
-            }
-        }
-        return (minCoutArrivee + minCoutDepart) / 2;
+        return  minCoutDepart;
     }
 }

@@ -31,8 +31,8 @@ public class Tournee extends Observable {
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
     }
 
-    public void addItineraire(Map.Entry<PointLivraison,PointLivraison> entry,Itineraire itineraire){
-        itinerairesMap.put(entry,itineraire);
+    public void addItineraire(Map.Entry<PointLivraison, PointLivraison> entry, Itineraire itineraire) {
+        itinerairesMap.put(entry, itineraire);
     }
 
     public HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> getItinerairesMap() {
@@ -101,6 +101,12 @@ public class Tournee extends Observable {
         this.listePointLivraisons = listePointLivraisons;
     }
 
+
+    public boolean supprimerPoint(PointLivraison pointASupprimer) {
+        int index = listePointLivraisons.indexOf(pointASupprimer);
+        return false;
+    }
+
     public boolean updateHoraire(PointLivraison pointAModifier, Double plageDebut, Double plageFin) {
         double heureArrivee;
         double heureDepart;
@@ -145,7 +151,7 @@ public class Tournee extends Observable {
         double heureDepart;
         heureArrivee = nextPoint.getHeureArrivee() - temps;
         heureDepart = heureArrivee + nextPoint.getDuree();
-        if(nextPoint.getDebutPlage()!=null){
+        if (nextPoint.getDebutPlage() != null) {
             if (heureArrivee < nextPoint.getDebutPlage()) {
                 heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
             }
@@ -167,7 +173,7 @@ public class Tournee extends Observable {
         double heureDepart;
         heureArrivee = nextPoint.getHeureArrivee() + temps;
         heureDepart = heureArrivee + nextPoint.getDuree();
-        if(nextPoint.getDebutPlage()!=null){
+        if (nextPoint.getDebutPlage() != null) {
             if (heureArrivee < nextPoint.getDebutPlage()) {
                 heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
             }
@@ -175,7 +181,7 @@ public class Tournee extends Observable {
         if (heureDepart == nextPoint.getHeureDepart() || index == listePointLivraisons.size() - 1) {
             nextPoint.setHeureArrivee(heureArrivee);
             return true;
-        } else if ( nextPoint.getFinPlage()!=null) {
+        } else if (nextPoint.getFinPlage() != null) {
             if (heureDepart > nextPoint.getFinPlage()) {
                 return false;
             }
