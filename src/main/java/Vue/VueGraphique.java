@@ -2,9 +2,13 @@ package Vue;
 
 import Modele.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.GeneralPath;
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -16,8 +20,8 @@ public class VueGraphique extends JPanel {
     public final static int RAYON_POINTLIVRAISON = 10;
     public final static int RAYON_ENTREPOT = 20;
     public final static float WIDTH_TRONCON = 2.0f;
-    public final static int VUEPLAN_LENGTH = 650;
-    public final static int VUEPLAN_WIDTH = 650;
+    public final static int VUEPLAN_LENGTH = 700;
+    public final static int VUEPLAN_WIDTH = 700;
     public final static int LEFT_OFFSET = 10;
     public final static int UP_OFFSET = 10;
     private Plan plan;
@@ -29,8 +33,15 @@ public class VueGraphique extends JPanel {
     double xScale;
     double yScale;
     private JTextPane textPane;
+    private PointLivraison pointLivraisonChoisi;
+
+    public void setPointLivraisonChoisi(PointLivraison pointLivraisonChoisi) {
+        this.pointLivraisonChoisi = pointLivraisonChoisi;
+    }
 
     public VueGraphique() {
+        setLayout(null);
+
         //textPane=new JTextPane();
         //this.add(textPane);
         this.setBounds(LEFT_OFFSET, UP_OFFSET, VUEPLAN_WIDTH, VUEPLAN_LENGTH);
@@ -55,12 +66,16 @@ public class VueGraphique extends JPanel {
     public void addTournee(Tournee tournee) {
         this.tournee = tournee;
         //textPane.setText("");
-        for (Itineraire itineraire : tournee.getListeItineraires()) {
+        //for (Itineraire itineraire : tournee.getListeItineraires()) {
             //  textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
-        }
+        //}
         //textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
 
+    }
+
+    public PointLivraison getPointLivraisonChoisi() {
+        return pointLivraisonChoisi;
     }
 
     /**
@@ -84,8 +99,8 @@ public class VueGraphique extends JPanel {
                     xmin = noeud.getX();
                 if (noeud.getY() < ymin)
                     ymin = noeud.getY();
-                xScale = (xmax - xmin) / VUEPLAN_LENGTH;
-                yScale = (ymax - ymin) / VUEPLAN_WIDTH;
+                xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.95;
+                yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.95;
 
 
             }
@@ -105,12 +120,22 @@ public class VueGraphique extends JPanel {
             afficheEntrepot(tournee.getEntrepot(), g2d);
 
             g2d.setColor(Color.magenta);
-            for (Itineraire itineraire : tournee.getListeItineraires()) {
-                for (Troncon troncon : itineraire.getListeTroncons()) {
+            for (Map.Entry<Map.Entry<PointLivraison,PointLivraison>,Itineraire> itineraireEntry:tournee.getItinerairesMap().entrySet()) {
+                for (Troncon troncon : itineraireEntry.getValue().getListeTroncons()) {
                     afficheTroncon(troncon, g2d);
                 }
             }
         }
+        if (pointLivraisonChoisi != null) {
+            try {
+                Image image = ImageIO.read(new File("target.png"));
+                g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                        (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }
 

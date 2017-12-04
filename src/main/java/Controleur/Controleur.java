@@ -3,9 +3,11 @@ package Controleur;
 import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
+import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,6 +20,15 @@ public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
     private Plan plan;
     private Tournee tournee;
+    private static final EtatInit etatInit = new EtatInit();
+    private static final EtatChargerPlan etatChargerPlan = new EtatChargerPlan();
+    private static final EtatChargerLivraison etatChargerLivraison = new EtatChargerLivraison();
+    private static final EtatCalculerTournee etatCalculerTournee = new EtatCalculerTournee();
+    private static Etat etatCourant;
+
+    private static void setEtatCourant(Etat etat) {
+        etatCourant = etat;
+    }
     //private static Controleur instance;
 
 
@@ -30,6 +41,7 @@ public class Controleur {
         plan = new Plan();
         tournee = new Tournee();
         fenetrePrincipale = new FenetrePrincipale(plan, tournee, this);
+        setEtatCourant(etatInit);
     }
 
     /**
@@ -38,15 +50,8 @@ public class Controleur {
      */
     public void chargerPlan (String filePath)
     {
-        ChargeurPlan.getInstance().parse(plan, filePath);
-        // plan=ChargeurPlan.getInstance().getPlan();
-        for (Noeud noeud : plan.getListeNoeuds()) {
-            //System.out.println(noeud);
-        }
-
-        for (Troncon troncon : plan.getListeTroncons()) {
-           // System.out.println(troncon);
-        }
+        etatCourant.chargerPlan(filePath, plan);
+        setEtatCourant(etatChargerPlan);
     }
 
     /**
@@ -54,23 +59,20 @@ public class Controleur {
      * @param filePath Le chemin d'acc�s au fichier xml
      */
     public void chargerLivraison (String filePath){
-        ChargeurLivraison.getInstance().parse(tournee, filePath);
-
-        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-           // System.out.println(pointLivraison);
-        }
-
+        etatCourant.chargerLivraison(filePath, tournee);
+        setEtatCourant(etatChargerLivraison);
     }
 
     /**
      * M�thode lan�ant le calcul de la tourn�e
      */
     public void calculerTournee () {
-        AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
-        abstractGraphe.getItineraire();
-        tournee.SignalerFinDajoutPointsLivraisons();
-       // System.out.println(abstractGraphe.getTournee());
+        etatCourant.calculerTournee(plan, tournee);
+        setEtatCourant(etatCalculerTournee);
+    }
 
+    public void sortirFeuilleDeRoute(String filePath) throws IOException {
+        FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
     }
 
     public void afficherPlan() {
@@ -84,13 +86,31 @@ public class Controleur {
 
     }
 
-    public void clickedOnPoint(PointLivraison pointLivraison) {
-        String toShow = "";
-        toShow += pointLivraison.getId() + "\r\n";
-        toShow += pointLivraison.getDebutPlage() + "\r\n";
-        toShow += pointLivraison.getFinPlage() + "\r\n";
-        toShow += pointLivraison.getDuree() + "\r\n";
-        fenetrePrincipale.getInfoText().setText(toShow);
-
+    public void supprimerPoint(PointLivraison pointLivraison) {
+        etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
     }
+
+    public void modifierPlageHoraire(PointLivraison pointLivraison,double debutPlage,double finPlage){
+        etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage);
+    }
+
+    /**
+     * M�thode permettant d'afficher les informations du point cliqu�
+     * @param pointLivraison
+     */
+    public void clickedOnPoint(PointLivraison pointLivraison) {
+        etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
+    }
+
+    public Tournee getTournee() {
+        return tournee;
+    }
+
+    /*public void clickedOnPoint(PointLivraison pointLivraison) {
+
+        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
+        fenetrePrincipale.getVueGraphique().repaint();
+        //fenetrePrincipale.getInfoText().setText(toShow);*/
+
 }

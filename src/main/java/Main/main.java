@@ -8,10 +8,12 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Created by flavi on 2017/11/20.
- * public class main {
+ * @author H4401
+ * Classe Main, lan�ant le projet
  */
 public class main {
+    public static final double VITESSE=4.16;
+
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
      //   controleur.chargerPlan("planLyonGrand.xml");

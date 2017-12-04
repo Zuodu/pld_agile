@@ -6,6 +6,9 @@ import Modele.PointLivraison;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import static Vue.VueGraphique.LEFT_OFFSET;
+import static Vue.VueGraphique.RAYON_POINTLIVRAISON;
+
 /**
  * Created by flavi on 2017/12/2.
  */
@@ -20,15 +23,14 @@ public class MouseListener extends MouseAdapter {
 
     public void mouseClicked(MouseEvent evt) {
         if (evt.getButton() == MouseEvent.BUTTON1) {
+            int xClicked = evt.getX();
+            int yClciked = evt.getY();
 
-            double x = (evt.getX() - 25) * vueGraphique.getxScale() + vueGraphique.getXmin();
-            double y = (evt.getY() - 15) * vueGraphique.getyScale() + vueGraphique.getYmin();
-            System.out.println("clicked on " + x);
-            System.out.println("clicked on " + y);
             for (PointLivraison p : vueGraphique.getTournee().getListePointLivraisons()) {
-                if (x > p.getX() - 500 && x < p.getX() + 500) {
-                    if (y > p.getY() - 500 && y < p.getY() + 500) {
-                        System.out.println("clicked : " + p);
+                int x = (int) ((p.getX() - vueGraphique.getXmin()) / vueGraphique.getxScale()) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2;
+                int y = (int) ((p.getY() - vueGraphique.getYmin()) / vueGraphique.getyScale()) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2;
+                if (xClicked > x - 10 && xClicked < x + 10) {
+                    if (yClciked > y - 10 && yClciked < y + 10) {
                         controleur.clickedOnPoint(p);
                     }
                 }
