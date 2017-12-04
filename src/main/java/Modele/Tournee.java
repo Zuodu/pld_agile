@@ -115,6 +115,8 @@ public class Tournee extends Observable {
         } else if (heureDepart == pointAModifier.getHeureDepart() || listePointLivraisons.indexOf(pointAModifier) == listePointLivraisons.size() - 1) {
             pointAModifier.setDebutPlage(plageDebut);
             pointAModifier.setFinPlage(plageFin);
+            setChanged();
+            notifyObservers();
             return true;
         } else if (heureDepart < pointAModifier.getHeureDepart()) {
             if (avanceHoraire(listePointLivraisons.indexOf(pointAModifier) + 1, pointAModifier.getHeureDepart() - heureDepart)) {
@@ -122,14 +124,19 @@ public class Tournee extends Observable {
                 pointAModifier.setFinPlage(plageFin);
                 pointAModifier.setHeureDepart(heureDepart);
             }
+            setChanged();
+            notifyObservers();
             return true;
         } else if (retardeHoraire(listePointLivraisons.indexOf(pointAModifier) + 1, heureDepart - pointAModifier.getHeureDepart())) {
             pointAModifier.setDebutPlage(plageDebut);
             pointAModifier.setFinPlage(plageFin);
             pointAModifier.setHeureDepart(heureDepart);
+            setChanged();
+            notifyObservers();
             return true;
         }
         return false;
+
     }
 
     private boolean avanceHoraire(int index, double temps) {
@@ -138,8 +145,10 @@ public class Tournee extends Observable {
         double heureDepart;
         heureArrivee = nextPoint.getHeureArrivee() - temps;
         heureDepart = heureArrivee + nextPoint.getDuree();
-        if (heureArrivee < nextPoint.getDebutPlage()) {
-            heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
+        if(nextPoint.getDebutPlage()!=null){
+            if (heureArrivee < nextPoint.getDebutPlage()) {
+                heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
+            }
         }
         if (heureDepart == nextPoint.getHeureDepart() || index == listePointLivraisons.size() - 1) {
             nextPoint.setHeureArrivee(heureArrivee);
@@ -158,14 +167,18 @@ public class Tournee extends Observable {
         double heureDepart;
         heureArrivee = nextPoint.getHeureArrivee() + temps;
         heureDepart = heureArrivee + nextPoint.getDuree();
-        if (heureArrivee < nextPoint.getDebutPlage()) {
-            heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
+        if(nextPoint.getDebutPlage()!=null){
+            if (heureArrivee < nextPoint.getDebutPlage()) {
+                heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
+            }
         }
         if (heureDepart == nextPoint.getHeureDepart() || index == listePointLivraisons.size() - 1) {
             nextPoint.setHeureArrivee(heureArrivee);
             return true;
-        } else if (heureDepart > nextPoint.getFinPlage()) {
-            return false;
+        } else if ( nextPoint.getFinPlage()!=null) {
+            if (heureDepart > nextPoint.getFinPlage()) {
+                return false;
+            }
         } else if (retardeHoraire(index + 1, heureDepart - nextPoint.getHeureDepart())) {
             nextPoint.setHeureArrivee(heureArrivee);
             nextPoint.setHeureDepart(heureDepart);

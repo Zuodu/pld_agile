@@ -35,6 +35,19 @@ public class VueTextuelle extends JPanel {
     private JTextField infoHeureDepart;
 
     private JButton buttonModifier;
+
+    public String getInfoPlageDebut() {
+        return infoPlageDebut.getText();
+    }
+
+    public String getInfoPlageFin() {
+        return infoPlageFin.getText();
+    }
+
+    public String getInfoDuree() {
+        return infoDuree.getText();
+    }
+
     private JButton buttonSupprimer;
 
     private JButton buttonNext;

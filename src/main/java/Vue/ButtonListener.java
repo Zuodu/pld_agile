@@ -105,6 +105,18 @@ public class ButtonListener implements ActionListener {
             }
         } else if (s.equals(VueTextuelle.SUPPRIMER_POINT)) {
             controleur.supprimerPoint(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi());
+        } else if (s.equals(VueTextuelle.MODIFIER_POINT)) {
+            String plageDebut=fenetrePrincipale.getVueTextuelle().getInfoPlageDebut();
+            String plageFin=fenetrePrincipale.getVueTextuelle().getInfoPlageFin();
+            Double debut=null;
+            Double fin=null;
+            if (!plageDebut.equals("")) {
+                debut = Double.parseDouble(plageDebut);
+            }
+            if (!plageFin.equals("")) {
+                fin = Double.parseDouble(plageFin);
+            }
+            controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
         }
 
     }

@@ -1,11 +1,14 @@
 package Controleur;
 
 import Algo.Dijkstra;
+import Main.main;
 import Modele.Itineraire;
 import Modele.PointLivraison;
 import Modele.Tournee;
 
+import java.util.AbstractMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class CdeSupprimer implements Commande {
 	Tournee tournee;
@@ -35,6 +38,13 @@ public class CdeSupprimer implements Commande {
 		Dijkstra dijkstra=new Dijkstra();
 		dijkstra.chercheDistanceMin(pPrecedant,pProchain);
 		Itineraire result=dijkstra.getMeilleurItineraire();
+		tournee.getListePointLivraisons().remove(pointLivraison);
+		tournee.addItineraire(new AbstractMap.SimpleEntry(pPrecedant,pProchain),result);
+
+		tournee.getItinerairesMap().remove(new AbstractMap.SimpleEntry(pPrecedant,pointLivraison));
+		tournee.getItinerairesMap().remove(new AbstractMap.SimpleEntry(pointLivraison,pProchain));
+		pProchain.setHeureArrivee(pPrecedant.getHeureDepart()+result.getLongueurTotale()/ main.VITESSE);
+		tournee.SignalerFinDajoutPointsLivraisons();
 	}
 	public void undoCde()
 	{

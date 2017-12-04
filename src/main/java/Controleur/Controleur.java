@@ -89,6 +89,7 @@ public class Controleur {
 
     public void supprimerPoint(PointLivraison pointLivraison) {
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
+        setEtatCourant(etatModifier);
     }
 
     public void modifierPlageHoraire(PointLivraison pointLivraison,double debutPlage,double finPlage){
