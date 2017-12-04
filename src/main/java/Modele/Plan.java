@@ -4,8 +4,8 @@ import java.util.*;
 
 /**
  * @author H4401
- * Classe reprï¿½sentant un plan, extends Observable, contient des Set, des add 
- * et une mï¿½thode indiquant ï¿½ l'observeur la fin d'ajouts de tronï¿½ons et de noeuds au plan.
+ * Classe représentant un plan, extends Observable, contient des Set, des add 
+ * et une méthode indiquant à l'observeur la fin d'ajouts de tronçons et de noeuds au plan.
  */
 public class Plan extends Observable {
     protected Set<Troncon> listeTroncons;
@@ -26,7 +26,7 @@ public class Plan extends Observable {
 
     }
     /**
-     * Ajoute un noeud ï¿½ la liste
+     * Ajoute un noeud à la liste
      * @param noeud
      */
     public void addNoeud(Noeud noeud) {listeNoeuds.add(noeud);}
@@ -48,7 +48,7 @@ public class Plan extends Observable {
     }
 
     /**
-     * Signale la fin des ajouts de tronï¿½on et de noeux au plan
+     * Signale la fin des ajouts de tronçon et de noeux au plan
      */
     public void signalerFin() {
         setChanged();

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="Deleted EtatModifier">
+    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +17,7 @@
       <file leaf-file-name="Tournee.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Tournee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="46">
               <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
               <folding />
             </state>
@@ -188,12 +183,12 @@
             <path>
               <item name="optimodlyon" type="58d84e3e:PackageViewProjectNode" />
               <item name="optimodlyon" type="616d4139:PackageViewModuleNode" />
-              <item name="Controleur" type="1f31426a:PackageElementNode" />
+              <item name="Modele" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="optimodlyon" type="58d84e3e:PackageViewProjectNode" />
               <item name="optimodlyon" type="616d4139:PackageViewModuleNode" />
-              <item name="Modele" type="1f31426a:PackageElementNode" />
+              <item name="Test" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -245,6 +240,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ItineraireTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/PlanTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/TourneeTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/mainTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -252,11 +252,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ItineraireTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/PlanTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/TourneeTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/mainTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -797,7 +792,7 @@
       <workItem from="1512323317407" duration="138000" />
       <workItem from="1512323730546" duration="13828000" />
       <workItem from="1512371436259" duration="348000" />
-      <workItem from="1512371808092" duration="6712000" />
+      <workItem from="1512371808092" duration="7211000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -890,15 +885,28 @@
       <option name="project" value="LOCAL" />
       <updated>1512372591476</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Constructeurs de copie">
+      <created>1512379769710</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1512379769710</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Constructeurs de copie">
+      <created>1512380249915</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512380249915</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72574000" />
+    <option name="totallyTimeSpent" value="73073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -912,7 +920,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -949,7 +957,8 @@
     <MESSAGE value="supprimer point" />
     <MESSAGE value="supprimer point,modifier point" />
     <MESSAGE value="Deleted EtatModifier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted EtatModifier" />
+    <MESSAGE value="Constructeurs de copie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Constructeurs de copie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1312,7 +1321,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Tournee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="46">
           <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
           <folding />
         </state>
