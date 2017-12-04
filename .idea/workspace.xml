@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -461,18 +456,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/compiler.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/optimodlyon.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/AbstractGraphe.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/Controleur.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Tournee.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -480,12 +467,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__com_j2html_j2html_1_2_1.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/test.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -493,9 +474,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_1_0_M1.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_1_0_M1.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/test.html</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -1046,7 +1025,7 @@
       <workItem from="1512163916252" duration="25000" />
       <workItem from="1512248405589" duration="9135000" />
       <workItem from="1512323317407" duration="138000" />
-      <workItem from="1512323730546" duration="13777000" />
+      <workItem from="1512323730546" duration="13828000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1125,15 +1104,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512333119254</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="supprimer point,modifier point">
+      <created>1512370521938</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1512370521938</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65463000" />
+    <option name="totallyTimeSpent" value="65514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1144,7 +1129,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14712824" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14634146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2580645" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1192,7 +1177,8 @@
     <MESSAGE value="sort points livraison at the end of algo" />
     <MESSAGE value="fix IHM plage horaire bug" />
     <MESSAGE value="supprimer point" />
-    <option name="LAST_COMMIT_MESSAGE" value="supprimer point" />
+    <MESSAGE value="supprimer point,modifier point" />
+    <option name="LAST_COMMIT_MESSAGE" value="supprimer point,modifier point" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1435,7 +1421,7 @@
         <state relative-caret-position="352">
           <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding>
-            <marker date="1512338967936" expanded="true" signature="7535:7541" ph="{...}" />
+            <marker date="1512370547803" expanded="true" signature="8829:8835" ph="{...}" />
           </folding>
         </state>
       </provider>
