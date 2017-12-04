@@ -12,11 +12,13 @@ import java.util.Map;
 
 public class CdeSupprimer implements Commande {
 	Tournee tournee;
+	Tournee oldTournee;
 	PointLivraison pointLivraison;
 
 	public CdeSupprimer(PointLivraison newPointLivraison, Tournee newTournee) {
 		tournee = newTournee;
 		pointLivraison = newPointLivraison;
+		oldTournee = new Tournee(newTournee);
 	}
 
 	public void doCde() 
@@ -48,6 +50,6 @@ public class CdeSupprimer implements Commande {
 	}
 	public void undoCde()
 	{
-		
+		tournee = oldTournee;
 	}
 }
