@@ -3,13 +3,6 @@ package Controleur;
 import Modele.*;
 
 public class EtatCalculerTournee extends EtatDefaut{
-	/**
-	 * Le undo n'est pas possible ici
-	 * @param l
-	 */
-	public void undo(LstDeCde l)
-	{
-	}
 	
 	public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee)
 	{
