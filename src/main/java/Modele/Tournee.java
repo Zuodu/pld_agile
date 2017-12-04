@@ -170,7 +170,8 @@ public class Tournee extends Observable {
             notifyObservers();
             return true;
         }
-
+        setChanged();
+        notifyObservers();
         return false;
     }
 

@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -39,10 +40,10 @@ public class VueGraphique extends JPanel {
         this.pointLivraisonChoisi = pointLivraisonChoisi;
     }
 
-    public VueGraphique(Plan plan,Tournee tournee) {
+    public VueGraphique(Plan plan, Tournee tournee) {
         setLayout(null);
-        this.plan=plan;
-        this.tournee=tournee;
+        this.plan = plan;
+        this.tournee = tournee;
 
         //textPane=new JTextPane();
         //this.add(textPane);
@@ -69,7 +70,7 @@ public class VueGraphique extends JPanel {
         this.tournee = tournee;
         //textPane.setText("");
         //for (Itineraire itineraire : tournee.getListeItineraires()) {
-            //  textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
+        //  textPane.setText(textPane.getText() + itineraire.getNoeudOrigine().getId()+" -> ");
         //}
         //textPane.setText(textPane.getText()+tournee.getEntrepot().getId());
         repaint();
@@ -90,7 +91,7 @@ public class VueGraphique extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
 
 
-        if (plan .isCharge()) {
+        if (plan.isCharge()) {
             g2d.setColor(Color.BLACK);
             for (Noeud noeud : plan.getListeNoeuds()) {
                 if (noeud.getX() > xmax)
@@ -113,32 +114,41 @@ public class VueGraphique extends JPanel {
             }
         }
 
-        if (tournee .isCharge()) {
+        if (tournee.isCharge()) {
 
             g2d.setColor(Color.blue);
+            int count = 1;
             for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-                affichePointLivraison(pointLivraison, g2d);
+                affichePointLivraison(pointLivraison, g2d, count);
+                count++;
             }
             afficheEntrepot(tournee.getEntrepot(), g2d);
 
             g2d.setColor(Color.magenta);
-            for (Map.Entry<Map.Entry<PointLivraison,PointLivraison>,Itineraire> itineraireEntry:tournee.getItinerairesMap().entrySet()) {
-                for (Troncon troncon : itineraireEntry.getValue().getListeTroncons()) {
-                    afficheTroncon(troncon, g2d);
+            for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itineraireEntry : tournee.getItinerairesMap().entrySet()) {
+                Iterator<Troncon> it = itineraireEntry.getValue().getListeTroncons().iterator();
+                while (it.hasNext()) {
+                    Troncon troncon = it.next();
+                    if (it.hasNext()) {
+                        afficheTroncon(troncon, g2d);
+
+                    } else {
+                        afficheDernierTroncon(troncon, g2d);
+                    }
                 }
             }
-        }
-        if (pointLivraisonChoisi != null) {
-            try {
-                Image image = ImageIO.read(new File("target.png"));
-                g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
-                        (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (pointLivraisonChoisi != null) {
+                try {
+                    Image image = ImageIO.read(new File("target.png"));
+                    g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                            (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+
+
         }
-
-
     }
 
     public Plan getPlan() {
@@ -182,12 +192,22 @@ public class VueGraphique extends JPanel {
         g2d.drawLine(x1, y1, x2, y2
         );
     }
+    public void afficheDernierTroncon(Troncon troncon,Graphics2D g2d) {
+        int x1 = (int) ((troncon.getOrigine().getX() - xmin) / xScale) + LEFT_OFFSET;
+        int y1 = (int) ((troncon.getOrigine().getY() - ymin) / yScale) + UP_OFFSET;
+        int x2 = (int) ((troncon.getDestination().getX() - xmin) / xScale) + LEFT_OFFSET;
+        int y2 = (int) ((troncon.getDestination().getY() - ymin) / yScale) + UP_OFFSET;
+        drawAL(x1,y1,x2,y2,g2d);
+}
 
-    public void affichePointLivraison(PointLivraison pointLivraison, Graphics2D g2d) {
+    public void affichePointLivraison(PointLivraison pointLivraison, Graphics2D g2d, int count) {
         g2d.fillOval((int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
                 (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2,
                 RAYON_POINTLIVRAISON,
                 RAYON_POINTLIVRAISON);
+        g2d.drawString("No. " + count,
+                (int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2);
     }
 
     public void afficheEntrepot(PointLivraison pointLivraison, Graphics2D g2d) {
@@ -204,8 +224,8 @@ public class VueGraphique extends JPanel {
 
     public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2) {
 
-        double H = 10; // ç®­å¤´é«˜åº¦
-        double L = 4; // åº•è¾¹çš„ä¸€å�Š
+        double H = 20; // ç®­å¤´é«˜åº¦
+        double L = 8; // åº•è¾¹çš„ä¸€å�Š
         int x3 = 0;
         int y3 = 0;
         int x4 = 0;

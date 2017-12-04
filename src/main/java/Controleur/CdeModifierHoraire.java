@@ -3,6 +3,8 @@ package Controleur;
 import Modele.PointLivraison;
 import Modele.Tournee;
 
+import javax.swing.*;
+
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
     Tournee oldTournee;
@@ -15,12 +17,15 @@ public class CdeModifierHoraire implements Commande {
         pointLivraison = newPointLivraison;
         debutPlage = newDebutPlage;
         finPlage = newFinPlage;
-        oldTournee = new Tournee(newTournee);
+        //oldTournee = new Tournee(newTournee);
     }
 
 	public void doCde()
 	{
-        tournee.updateHoraire(pointLivraison,debutPlage,finPlage);
+        if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
+        {
+            JOptionPane.showMessageDialog(null, "Modification non reussie");
+        }
 	}
 	public void undoCde()
 	{
