@@ -15,16 +15,18 @@ public class TSP2 extends TSP1 {
         pointsAlivrer.add(sommetCourant);
         double minCoutDepart = Double.MAX_VALUE;
         double minCoutArrivee = Double.MAX_VALUE;
+        Integer sommetTrouveDepart = sommetCourant;
         for (Integer point : nonVus) {
             if (cout[sommetCourant][point] < minCoutDepart) {
                 minCoutDepart = cout[sommetCourant][point];
             }
         }
         for (Integer point : nonVus) {
-            if (cout[point][entrepot] < minCoutArrivee) {
-                minCoutArrivee = cout[point][entrepot];
+            if (point != sommetTrouveDepart) {
+                if (cout[point][entrepot] < minCoutArrivee) {
+                    minCoutArrivee = cout[point][entrepot];
+                }
             }
-
         }
         double bound = (minCoutDepart + minCoutArrivee) / 2;
         for (int i = 0; i < nonVus.size(); i++) {
