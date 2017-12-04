@@ -83,10 +83,10 @@ public abstract class TemplateTSP implements Algo.TSP {
         }
         if (nonVus.size() == 0) { // tous les sommets ont ete visites
             coutVus += cout[sommetCrt][0];
-            heureLivraison.add(new AbstractMap.SimpleEntry<Double, Double>(coutVus, null));
             if (coutVus < coutMeilleureSolution) { // on a trouve une solution meilleure que meilleureSolution
                 vus.toArray(meilleureSolution);
                 horaireLivraison = new ArrayList<Map.Entry<Double, Double>>(heureLivraison);
+                horaireLivraison.add(new AbstractMap.SimpleEntry<Double, Double>(coutVus, null));
                 coutMeilleureSolution = coutVus;
             }
         } else {
