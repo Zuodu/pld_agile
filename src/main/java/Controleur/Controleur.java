@@ -24,7 +24,6 @@ public class Controleur {
     private static final EtatChargerPlan etatChargerPlan = new EtatChargerPlan();
     private static final EtatChargerLivraison etatChargerLivraison = new EtatChargerLivraison();
     private static final EtatCalculerTournee etatCalculerTournee = new EtatCalculerTournee();
-    private static final EtatModifier etatModifier = new EtatModifier();
     private static Etat etatCourant;
 
     private static void setEtatCourant(Etat etat) {
@@ -89,12 +88,10 @@ public class Controleur {
 
     public void supprimerPoint(PointLivraison pointLivraison) {
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee);
-        setEtatCourant(etatModifier);
     }
 
     public void modifierPlageHoraire(PointLivraison pointLivraison,double debutPlage,double finPlage){
         etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage);
-        setEtatCourant(etatModifier);
     }
 
     /**

@@ -62,7 +62,7 @@ public class ChargeurPlanTest {
 		ChargeurPlan.getInstance().parse(moyenPlan, planLyonMoyen);
 	}
 	
-	@Test //Chargement de planLyonMoyen.xml
+	//@Test //Chargement de planLyonMoyen.xml
 	public void TUm1() {
 		InitTUm();
 		
@@ -70,7 +70,7 @@ public class ChargeurPlanTest {
 		assert(moyenPlan.getListeTroncons().size() == 4021);
 	}
 	
-	@Test //Veracité des Noeuds de planLyonMoyen.xml
+	//@Test //Veracité des Noeuds de planLyonMoyen.xml
 	public void TUm2() {
 		InitTUm();
 		
@@ -85,7 +85,7 @@ public class ChargeurPlanTest {
 		assert(noeudAleatoirePresent);
 	}
 	
-	@Test //Veracité des Troncons de planLyonMoyen.xml
+	//@Test //Veracité des Troncons de planLyonMoyen.xml
 	public void TUm3() {
 		InitTUm();
 		
@@ -104,7 +104,7 @@ public class ChargeurPlanTest {
 		ChargeurPlan.getInstance().parse(grandPlan, planLyonGrand);
 	}
 	
-	@Test //Chargement de planLyonGrand.xml
+	//@Test //Chargement de planLyonGrand.xml
 	public void TUg1() {
 		InitTUg();
 		
@@ -112,7 +112,7 @@ public class ChargeurPlanTest {
 		assert(grandPlan.getListeTroncons().size() == 27395);
 	}
 	
-	@Test //Veracité des Noeuds de planLyonGrand.xml
+	//@Test //Veracité des Noeuds de planLyonGrand.xml
 	public void TUg2() {
 		InitTUg();
 		
@@ -127,7 +127,7 @@ public class ChargeurPlanTest {
 		assert(noeudAleatoirePresent);
 	}
 	
-	@Test //Veracité des Troncons de planLyonGrand.xml
+	//@Test //Veracité des Troncons de planLyonGrand.xml
 	public void TUg3() {
 		InitTUg();
 		
