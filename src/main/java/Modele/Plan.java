@@ -8,16 +8,29 @@ import java.util.*;
  * et une méthode indiquant à l'observeur la fin d'ajouts de tronçons et de noeuds au plan.
  */
 public class Plan extends Observable {
+    protected boolean isCharge;
     protected Set<Troncon> listeTroncons;
     protected Set<Noeud> listeNoeuds;
 
     public Plan () {
+        isCharge=false;
         listeTroncons= new HashSet<Troncon>();
         listeNoeuds= new HashSet<Noeud>();
 
     }
 
+    public boolean isCharge() {
+        return isCharge;
+    }
+
+    public void setCharge(boolean charge) {
+        isCharge = charge;
+        setChanged();
+        notifyObservers();
+    }
+
     /**
+
      * add
      * @param troncon
      */

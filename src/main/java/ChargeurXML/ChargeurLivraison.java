@@ -114,7 +114,7 @@ public class ChargeurLivraison {
                 }
             }
 
-            tournee.SignalerFinDajoutPointsLivraisons();
+            tournee.setCharge(true);
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
