@@ -26,7 +26,7 @@ public class EtatChargerLivraison extends EtatDefaut{
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
-        abstractGraphe.getItineraire();
+        abstractGraphe.chercheSolution();
         tournee.SignalerFinDajoutPointsLivraisons();
        // System.out.println(abstractGraphe.getTournee());
 

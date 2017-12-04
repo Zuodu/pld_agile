@@ -25,7 +25,6 @@ public class AbstractGraphe {
         this.pointLivraisonMap = new HashMap<Integer, PointLivraison>();
         int i = 0;
         pointLivraisonMap.put(i++, tournee.getEntrepot());
-        //TODO:区分entrepot和pointlivraison
         for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
             pointLivraisonMap.put(i++, pointLivraison);
         }
@@ -79,23 +78,31 @@ public class AbstractGraphe {
         }
     }
 
-    public void getItineraire() {
+    public void chercheSolution() {
         long tempsDebut=System.currentTimeMillis();
+        List<PointLivraison> pointLivraisons=new ArrayList<PointLivraison>();
+
         TSP tsp = new TSP3();
         tsp.chercheSolution(tournee.getHeureDeDepart(),10, nbSommets, cout, duree,plageArrivee,plageDepart);
-        List<PointLivraison> pointLivraisons=new ArrayList<PointLivraison>();
+
         for (int i = 0; i < nbSommets - 1; i++) {
             Map.Entry<PointLivraison,PointLivraison> entry=new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)),pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
             tournee.addItineraire(entry,itinerairesMap.get(entry));
         }
         Map.Entry<PointLivraison,PointLivraison> entry=new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0));
         tournee.addItineraire(entry,itinerairesMap.get(entry));
+
+
         for (int i = 0; i < nbSommets; i++) {
             pointLivraisons.add(pointLivraisonMap.get(tsp.getMeilleureSolution(i)));
             pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureArrivee(tsp.getHoraireLivraison().get(i).getKey());
             pointLivraisonMap.get(tsp.getMeilleureSolution(i)).setHeureDepart(tsp.getHoraireLivraison().get(i).getValue());
         }
+        pointLivraisons.add(tournee.getEntrepot());
+        tournee.getEntrepot().setHeureArrivee(tsp.getHoraireLivraison().get(nbSommets).getKey());
+        tournee.getEntrepot().setHeureDepart(tournee.getHeureDeDepart());
         tournee.setListePointLivraisons(pointLivraisons);
+
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
         System.out.println(System.currentTimeMillis()-tempsDebut);
@@ -114,5 +121,8 @@ public class AbstractGraphe {
 
     public Tournee getTournee() {
         return tournee;
+    }
+    public Itineraire getItineraire(PointLivraison pointDepart,PointLivraison pointArrivee){
+        return itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointDepart,pointArrivee));
     }
 }

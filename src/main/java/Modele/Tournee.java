@@ -1,5 +1,7 @@
 package Modele;
 
+import Algo.Dijkstra;
+
 import java.util.*;
 
 /**
@@ -20,24 +22,23 @@ public class Tournee extends Observable {
      * @param heureDeDepart
      */
     public Tournee(PointLivraison entrepot, double heureDeDepart) {
+        //TODO:set heureDepart de l'entrepot(Siying)
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
-    public Tournee (Tournee tournee)
-    {
+    public Tournee(Tournee tournee) {
         this.entrepot = tournee.getEntrepot();
         this.heureDeDepart = tournee.getHeureDeDepart();
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.listePointLivraisons = new ArrayList<PointLivraison>();
         PointLivraison pointlivraison;
-        for(int i=0;i<tournee.getListePointLivraisons().size();i++)
-        {
+        for (int i = 0; i < tournee.getListePointLivraisons().size(); i++) {
             pointlivraison = new PointLivraison(tournee.getListePointLivraisons().get(i));
             this.listePointLivraisons.add(pointlivraison);
-            this.itinerairesMap= (HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone();
+            this.itinerairesMap = (HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone();
         }
     }
 
@@ -118,9 +119,32 @@ public class Tournee extends Observable {
 
 
     public boolean supprimerPoint(PointLivraison pointASupprimer) {
-        int index = listePointLivraisons.indexOf(pointASupprimer);
+        int indexASupprimer = listePointLivraisons.indexOf(pointASupprimer);
+        PointLivraison pPrecedant = listePointLivraisons.get(indexASupprimer - 1);
+        PointLivraison pProchain = listePointLivraisons.get(indexASupprimer + 1);
+
+        Dijkstra dijkstra = new Dijkstra();
+        dijkstra.chercheDistanceMin(pPrecedant, pPrecedant);
+        Itineraire result = dijkstra.getMeilleurItineraire();
+
+        double departPointPrecedent = pPrecedant.getHeureDepart();
+        double arriveePointProchain = departPointPrecedent + result.getTemps();
+
+        boolean departNonModifiee = pProchain.getHeureArrivee().equals(arriveePointProchain);
+        boolean departAvancee = arriveePointProchain < pProchain.getHeureArrivee() && avanceHoraire(indexASupprimer + 1, pProchain.getHeureArrivee() - arriveePointProchain);
+        boolean departRetardee = arriveePointProchain > pProchain.getHeureArrivee() && retardeHoraire(indexASupprimer + 1, arriveePointProchain - pProchain.getHeureArrivee());
+        if (departNonModifiee||departAvancee||departRetardee) {
+            listePointLivraisons.remove(indexASupprimer);
+            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pPrecedant), result);
+
+            setChanged();
+            notifyObservers();
+            return true;
+        }
+
         return false;
     }
+
 
     public boolean updateHoraire(PointLivraison pointAModifier, Double plageDebut, Double plageFin) {
         double heureArrivee;
@@ -133,9 +157,10 @@ public class Tournee extends Observable {
         }
         if (heureDepart > plageFin) {
             return false;
-        } else if (heureDepart == pointAModifier.getHeureDepart() || listePointLivraisons.indexOf(pointAModifier) == listePointLivraisons.size() - 1) {
+        } else if (pointAModifier.getHeureDepart().equals(heureDepart)) {
             pointAModifier.setDebutPlage(plageDebut);
             pointAModifier.setFinPlage(plageFin);
+
             setChanged();
             notifyObservers();
             return true;
@@ -145,6 +170,7 @@ public class Tournee extends Observable {
                 pointAModifier.setFinPlage(plageFin);
                 pointAModifier.setHeureDepart(heureDepart);
             }
+
             setChanged();
             notifyObservers();
             return true;
@@ -152,6 +178,7 @@ public class Tournee extends Observable {
             pointAModifier.setDebutPlage(plageDebut);
             pointAModifier.setFinPlage(plageFin);
             pointAModifier.setHeureDepart(heureDepart);
+
             setChanged();
             notifyObservers();
             return true;
@@ -164,6 +191,7 @@ public class Tournee extends Observable {
         PointLivraison nextPoint = listePointLivraisons.get(index);
         double heureArrivee;
         double heureDepart;
+
         heureArrivee = nextPoint.getHeureArrivee() - temps;
         heureDepart = heureArrivee + nextPoint.getDuree();
         if (nextPoint.getDebutPlage() != null) {
@@ -171,7 +199,7 @@ public class Tournee extends Observable {
                 heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
             }
         }
-        if (heureDepart == nextPoint.getHeureDepart() || index == listePointLivraisons.size() - 1) {
+        if (nextPoint.getHeureDepart().equals(heureDepart) || index == listePointLivraisons.size() - 1) {
             nextPoint.setHeureArrivee(heureArrivee);
             return true;
         } else if (avanceHoraire(index + 1, nextPoint.getHeureDepart() - heureDepart)) {
@@ -193,7 +221,7 @@ public class Tournee extends Observable {
                 heureDepart = nextPoint.getDebutPlage() + nextPoint.getDuree();
             }
         }
-        if (heureDepart == nextPoint.getHeureDepart() || index == listePointLivraisons.size() - 1) {
+        if (nextPoint.getHeureDepart().equals(heureDepart) || index == listePointLivraisons.size() - 1) {
             nextPoint.setHeureArrivee(heureArrivee);
             return true;
         } else if (nextPoint.getFinPlage() != null) {
