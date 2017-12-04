@@ -124,7 +124,7 @@ public class Tournee extends Observable {
         PointLivraison pProchain = listePointLivraisons.get(indexASupprimer + 1);
 
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(pPrecedant, pPrecedant);
+        dijkstra.chercheDistanceMin(pPrecedant, pProchain);
         Itineraire result = dijkstra.getMeilleurItineraire();
 
         double departPointPrecedent = pPrecedant.getHeureDepart();
@@ -135,7 +135,9 @@ public class Tournee extends Observable {
         boolean departRetardee = arriveePointProchain > pProchain.getHeureArrivee() && retardeHoraire(indexASupprimer + 1, arriveePointProchain - pProchain.getHeureArrivee());
         if (departNonModifiee||departAvancee||departRetardee) {
             listePointLivraisons.remove(indexASupprimer);
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pPrecedant), result);
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pointASupprimer));
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointASupprimer, pProchain));
+            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pProchain), result);
 
             setChanged();
             notifyObservers();
