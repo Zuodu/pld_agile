@@ -27,9 +27,6 @@ public class EtatChargerPlan extends EtatDefaut{
     public void chargerLivraison (String filePath,Tournee tournee){
         ChargeurLivraison.getInstance().parse(tournee, filePath);
 
-        for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-           // System.out.println(pointLivraison);
-        }
 
     }
 }

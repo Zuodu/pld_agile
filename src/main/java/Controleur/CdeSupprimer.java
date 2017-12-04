@@ -15,10 +15,12 @@ public class CdeSupprimer implements Commande {
     Tournee oldTournee;
     PointLivraison pointLivraison;
 
-    public CdeSupprimer(PointLivraison newPointLivraison, Tournee newTournee) {
-        tournee = newTournee;
-        pointLivraison = newPointLivraison;
-        oldTournee = new Tournee(newTournee);
+    public CdeSupprimer(PointLivraison pointLivraison, Tournee tournee) {
+        this.tournee = tournee;
+        this.pointLivraison = pointLivraison;
+        oldTournee = new Tournee();
+        oldTournee.clone(tournee,oldTournee);
+
     }
 
     public void doCde() {
@@ -50,6 +52,7 @@ public class CdeSupprimer implements Commande {
     }
 
     public void undoCde() {
-        tournee = oldTournee;
+        tournee.clone(oldTournee,tournee);
+        tournee.SignalerFinDajoutPointsLivraisons();
     }
 }

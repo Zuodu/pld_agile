@@ -10,7 +10,7 @@ import java.util.*;
  *         et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
-    HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
+    private HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
     private PointLivraison entrepot;
     private List<PointLivraison> listePointLivraisons;
     private double heureDeDepart;
@@ -42,9 +42,22 @@ public class Tournee extends Observable {
         }
     }
 
+    public void clone (Tournee tournee,Tournee newTournee) {
+        newTournee.setHeureDeDepart(tournee.getHeureDeDepart());
+        newTournee.setEntrepot(new PointLivraison(tournee.getEntrepot()));
+        for (PointLivraison p:tournee.getListePointLivraisons()) {
+            newTournee.getListePointLivraisons().add(p);
+        }
+        newTournee.setItinerairesMap((HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>) tournee.getItinerairesMap().clone());
+    }
+
     public Tournee() {
         listePointLivraisons = new ArrayList<PointLivraison>();
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
+    }
+
+    public void setItinerairesMap(HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap) {
+        this.itinerairesMap = itinerairesMap;
     }
 
     public void addItineraire(Map.Entry<PointLivraison, PointLivraison> entry, Itineraire itineraire) {
@@ -134,7 +147,7 @@ public class Tournee extends Observable {
         boolean departAvancee = arriveePointProchain < pProchain.getHeureArrivee() && avanceHoraire(indexASupprimer + 1, pProchain.getHeureArrivee() - arriveePointProchain);
         boolean departRetardee = arriveePointProchain > pProchain.getHeureArrivee() && retardeHoraire(indexASupprimer + 1, arriveePointProchain - pProchain.getHeureArrivee());
         if (departNonModifiee||departAvancee||departRetardee) {
-            listePointLivraisons.remove(indexASupprimer);
+            listePointLivraisons.remove(pointASupprimer);
             itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pointASupprimer));
             itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointASupprimer, pProchain));
             itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pProchain), result);
