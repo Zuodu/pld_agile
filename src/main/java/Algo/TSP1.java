@@ -11,7 +11,7 @@ public class TSP1 extends TemplateTSP {
 	}
 
 	@Override
-	protected double bound(Integer sommetCourant, ArrayList<Integer> nonVus, double[][] cout, double[] duree) {
+	protected double bound(Integer sommetCourant, Integer entrepot,ArrayList<Integer> nonVus, double[][] cout, double[] duree) {
 		return 0;
 	}
 }
