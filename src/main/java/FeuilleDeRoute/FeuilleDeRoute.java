@@ -6,6 +6,7 @@ import Modele.Tournee;
 import Modele.Troncon;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -32,7 +33,7 @@ public class FeuilleDeRoute {
         String html = buildHtml(list);
         FileWriter fWriter = null;
         BufferedWriter writer = null;
-        fWriter = new FileWriter(filePath + "\\FeuilleDeRoute.html");
+        fWriter = new FileWriter(filePath + File.separator+"FeuilleDeRoute.html");
         writer = new BufferedWriter(fWriter);
         writer.write(html);
         writer.close();
