@@ -117,6 +117,10 @@ public class ButtonListener implements ActionListener {
                 fin = Double.parseDouble(plageFin);
             }
             controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
+        } else if (s.equals(VueTextuelle.UNDO)) {
+            controleur.undo();
+        } else if (s.equals(VueTextuelle.REDO)) {
+            controleur.redo();
         }
 
     }

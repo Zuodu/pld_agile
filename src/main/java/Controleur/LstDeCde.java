@@ -21,16 +21,18 @@ public class LstDeCde {
 	}
 
 	public void ajouterCommande(Commande newCde) {
-		if(this.liste.get(i)!=null)
-		{
-			liste.remove(i);
-		}
 		liste.add(newCde);
+		if(this.liste.size()==i+1)
+		{
+			liste.remove(i-1);
+		}
 	}
 
 	public void undo() {
-		if(i>=0)
-			liste.get(i--).undoCde();
+		if(i>0) {
+			liste.get(i - 1).undoCde();
+			i--;
+		}
 	}
 	
 	public void redo()
