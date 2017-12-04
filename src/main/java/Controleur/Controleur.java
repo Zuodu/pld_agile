@@ -6,6 +6,7 @@ import ChargeurXML.ChargeurPlan;
 import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
+import Vue.VueGraphique;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -100,6 +101,10 @@ public class Controleur {
     public void undo()
     {
         etatCourant.undo(lstDeCde);
+        fenetrePrincipale.getVueGraphique().repaint();
+        fenetrePrincipale.getVueTextuelle().repaint();
+
+
     }
 
     public void redo()

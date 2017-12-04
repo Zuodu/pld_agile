@@ -259,4 +259,7 @@ public class VueGraphique extends JPanel {
     }
 
 
+    public void setTournee(Tournee tournee) {
+        this.tournee = tournee;
+    }
 }
