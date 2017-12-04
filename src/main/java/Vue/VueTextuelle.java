@@ -14,6 +14,8 @@ public class VueTextuelle extends JPanel {
     public final static String SUPPRIMER_POINT = "Supprimer";
     public final static String PROCHAIN_POINT = "Prochain";
     public final static String PRECEDENT_POINT = "Precedant";
+    public final static String UNDO="Undo";
+    public final static String REDO="Redo";
     public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 40;
@@ -35,6 +37,11 @@ public class VueTextuelle extends JPanel {
     private JTextField infoHeureDepart;
 
     private JButton buttonModifier;
+    private JButton buttonSupprimer;
+    private JButton buttonNext;
+    private JButton buttonPrevious;
+    private JButton buttonUndo;
+    private JButton buttonRedo;
 
     public String getInfoPlageDebut() {
         return infoPlageDebut.getText();
@@ -47,13 +54,6 @@ public class VueTextuelle extends JPanel {
     public String getInfoDuree() {
         return infoDuree.getText();
     }
-
-    private JButton buttonSupprimer;
-
-    private JButton buttonNext;
-    private JButton buttonPrevious;
-
-
     public VueTextuelle(ButtonListener buttonListener) {
         setLayout(null);
         this.setBounds(ECART + VueGraphique.VUEPLAN_WIDTH, FenetrePrincipale.BUTTONPANEL_LENGTH, WIDTH_VUETEXTUELLE, LENGTH_VUETEXTUELLE);
@@ -121,11 +121,20 @@ public class VueTextuelle extends JPanel {
         buttonPrevious.setBounds(BUTTON_WIDTH + 50, 280, BUTTON_WIDTH, BUTTON_LENGTH);
         this.add(buttonPrevious);
 
+        buttonUndo=new JButton(UNDO);
+        buttonUndo.setBounds(0,340,BUTTON_WIDTH,BUTTON_LENGTH);
+        this.add(buttonUndo);
+
+        buttonRedo=new JButton(REDO);
+        buttonRedo.setBounds(BUTTON_WIDTH+50,340,BUTTON_WIDTH,BUTTON_LENGTH);
+        this.add(buttonRedo);
+
         buttonPrevious.addActionListener(buttonListener);
         buttonNext.addActionListener(buttonListener);
         buttonSupprimer.addActionListener(buttonListener);
         buttonModifier.addActionListener(buttonListener);
-
+        buttonRedo.addActionListener(buttonListener);
+        buttonUndo.addActionListener(buttonListener);
     }
 
     public void clickedOnPoint(PointLivraison pointLivraison) {
