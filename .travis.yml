@@ -5,7 +5,7 @@ jdk: oraclejdk8
 env:
   - LANG=fr_FR.ISO-8859-1
   - LC_ALL=fr_FR.ISO-8859-1
-  - JAVA_TOOL_OPTIONS=Dfile.encoding=ISO-8859-1
+  - JAVA_TOOL_OPTIONS=-Dfile.encoding=ISO-8859-1
 
 cache:
   directories:

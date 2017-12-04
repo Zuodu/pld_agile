@@ -133,7 +133,7 @@ public class ChargeurLivraison {
 
     /**
      * Méthode qui parse l'entrepôt à part des autres points de livraison
-     * @param rootElement 
+     * @param rootElement
      */
     private void parseEntrepot(Element rootElement) {
         NodeList entrepotNodeListe = rootElement.getElementsByTagName("entrepot");
