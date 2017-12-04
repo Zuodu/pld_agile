@@ -8,27 +8,26 @@ import Modele.Troncon;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import static j2html.TagCreator.*;
 
 /**
  * @author H4401
- * Classe utilisÃ©e pour gÃ©nÃ©rer une feuille de route aprÃ¨s le calcul d'une tournÃ©e
+ * Classe utilisée pour générer une feuille de route après le calcul d'une tournée
  */
 public class FeuilleDeRoute {
 
     /**
-     * GÃ©nÃ¨re une feuille de route HTML Ã  partir d'un Path choisi et d'une Tournee.
+     * Génère une feuille de route HTML à partir d'un Path choisi et d'une Tournee.
      *
-     * @param filePath Path choisie par l'utilisateur depuis la boÃ®te de dialogue associÃ©e
-     * @param tournee  la tournÃ©e calculÃ©e par le logiciel
+     * @param filePath Path choisie par l'utilisateur depuis la boîte de dialogue associée
+     * @param tournee  la tournée calculée par le logiciel
      */
     public static void sortirFeuilleDeRoute(String filePath, Tournee tournee) throws IOException {
-        List<Itineraire> listeOrdonneeItineraire = ordonnerItineraires(tournee);
+        LinkedList<Itineraire> listeOrdonneeItineraire = ordonnerItineraires(tournee);
         List<LigneFeuille> list = buildTableDeRoute(listeOrdonneeItineraire);
         String html = buildHtml(list);
         FileWriter fWriter = null;
@@ -40,65 +39,76 @@ public class FeuilleDeRoute {
     }
 
     /**
-     * Constuit le texte HTML sous la forme d'un string pour une tournÃ©e donnÃ©e.
+     * Constuit le texte HTML sous la forme d'un string pour une tournée donnée.
      *
-     * @param list Liste de listes contenant les champs Ã  Ã©crire
+     * @param list Liste de listes contenant les champs à écrire
      * @return html le contenu html
      */
     private static String buildHtml(List<LigneFeuille> list) {
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String html = html(
                 head(
                         meta().withCharset("ISO-8859-1"),
+                        link().withRel("stylesheet").withHref("https://unpkg.com/spectre.css/dist/spectre.min.css"),
+                        link().withRel("stylesheet").withHref("https://unpkg.com/spectre.css/dist/spectre-exp.min.css"),
                         title("Feuille de route")
                 ),
                 body(
                         main(attrs("#main.content"),
-                                h1("Feuille de route OptimodLyon")
+                                h1("Feuille de route Optimod'IF"),
+                                h2("Tournée du " + dateFormat.format(today.getTime()))
                         ),
-                        table(attrs("#table")),
-                        tbody(
-                                tr(
-                                        th("Heure d'arrivÃ©e"),
-                                        th("Heure de dÃ©part"),
-                                        th("Indication"),
-                                        th("Emplacement"),
-                                        th("Longueur du trajet")
+                        table(attrs(".table table-striped table-hover"),
+                                thead(
+                                        tr(
+                                                th("Heure d'arrivée"),
+                                                th("Heure de départ"),
+                                                th("Directive"),
+                                                th("Indication"),
+                                                th("Longueur du trajet (m)")
+                                        )
                                 ),
-                                each(list, row -> tr(
-                                        td(row.gethDepart()),
-                                        td(row.gethArrivee()),
-                                        td(row.getIndication()),
-                                        td(row.getRue()),
-                                        td(row.getLongueur())
+                                tbody(
+                                        each(list, row -> tr(
+                                                td(row.gethArrivee()),
+                                                td(row.gethDepart()),
+                                                td(row.getIndication()),
+                                                td(row.getRue()),
+                                                td(row.getLongueur())
+                                                )
                                         )
                                 )
-                        )
+                        ).withStyle("width:60%")
                 )
         ).render();
         return html;
     }
 
     /**
-     * CrÃ©Ã©e une table afin d'extraire uniquement les donnÃ©es Ã  afficher sur la feuille de route.
+     * Créée une table afin d'extraire uniquement les données à afficher sur la feuille de route.
      *
-     * @param listeItineraire itinÃ©raires de la tournÃ©e rangÃ©es dans l'ordre
-     * @return la liste des lignes de la feuille de route Ã  faire traiter par le module html
+     * @param listeItineraire itinéraires de la tournée rangées dans l'ordre
+     * @return la liste des lignes de la feuille de route à faire traiter par le module html
      */
-    private static List<LigneFeuille> buildTableDeRoute(List<Itineraire> listeItineraire) {
+    private static List<LigneFeuille> buildTableDeRoute(LinkedList<Itineraire> listeItineraire) {
         List<LigneFeuille> mainList = new ArrayList<LigneFeuille>();
         int livraisonId = 1;
-        //boucle itinÃ©raire
+        Boolean lastIti = false;
+        //boucle itinéraire
         for (Itineraire i : listeItineraire) {
+            if (listeItineraire.getLast() == i) lastIti = true;
             PileTroncon lastPile = null;
             //add depart
             LigneFeuille ligneDepart = new LigneFeuille(
-                    ((PointLivraison) i.getNoeudOrigine()).getHeureArrivee(),
+                    0,
                     ((PointLivraison) i.getNoeudOrigine()).getHeureDepart(),
                     Indication.DebutItineraire.getTexte(),
                     Integer.toString(livraisonId),
                     0);
             mainList.add(ligneDepart);
-            //foreach tronÃ§on
+            //foreach tronçon
             for (Troncon t : i.getListeTroncons()) {
                 if ((lastPile == null) || !(t.getNomRue().equals(lastPile.getTroncon().getNomRue()))) {
                     //premier troncon
@@ -132,47 +142,58 @@ public class FeuilleDeRoute {
                     lastPile.getIndication().getTexte(),
                     lastPile.getTroncon().getNomRue(),
                     lastPile.getDistanceTotale());
-            //add arrivee itineraire
-            LigneFeuille ligneArrivee = new LigneFeuille(
-                    ((PointLivraison) i.getNoeudDestination()).getHeureArrivee(),
-                    ((PointLivraison) i.getNoeudDestination()).getHeureDepart(),
-                    Indication.FinItineraire.getTexte(),
-                    Integer.toString(livraisonId++),
-                    0);
             mainList.add(ligneDernierePile);
-            mainList.add(ligneDepart);
+            //add arrivee itineraire
+            if (lastIti) {
+                LigneFeuille ligneArrivee = new LigneFeuille(
+                        0,
+                        0,
+                        Indication.FinTournee.getTexte(),
+                        "-",
+                        0);
+                mainList.add(ligneArrivee);
+            } else {
+                LigneFeuille ligneArrivee = new LigneFeuille(
+                        ((PointLivraison) i.getNoeudDestination()).getHeureArrivee(),
+                        0,
+                        Indication.FinItineraire.getTexte(),
+                        Integer.toString(livraisonId++),
+                        0);
+                mainList.add(ligneArrivee);
+            }
         }
 
         return mainList;
     }
 
     /**
-     * Calcule l'indication Ã  prendre depuis une Ã©numÃ©ration Indication
+     * Calcule l'indication à prendre depuis une énumération Indication
      *
-     * @param u Vecteur reprÃ©sentant le tronÃ§on de dÃ©part
-     * @param v Vecteur reprÃ©sentant le tronÃ§on Ã  prendre
-     * @return Item de l'Ã©numÃ©ration Indication
+     * @param u Vecteur représentant le tronçon de départ
+     * @param v Vecteur représentant le tronçon à prendre
+     * @return Item de l'énumération Indication
      */
     private static Indication calculerIndication(Vecteur u, Vecteur v) {
         double angle = Math.toDegrees(Math.atan2((u.x * v.y) - (u.y * v.x), (u.x * v.x) + (u.y * v.y)));
-        if ((angle >= 170 && angle <= 190) || (angle <= -170 && angle >= -190)) return Indication.ToutDroit;
-        else if (angle > 0) return Indication.AGauche;
-        else return Indication.ADroite;
+        if (angle >= -10 && angle <= 10) return Indication.ToutDroit;
+        else if (angle > 0) return Indication.ADroite;
+        else return Indication.AGauche;
     }
 
     /**
-     * RÃ©ordonne les itinÃ©raires d'une tournÃ©e par recherche dans la liste des points de livraison
-     *
-     * @param tournee la tournÃ©e calculÃ©e
-     * @return la liste ordonnÃ©e des itinÃ©raires
+     * Réordonne les itinéraires d'une tournée par recherche dans la liste des points de livraison
+     * @param tournee la tournée calculée
+     * @return la liste ordonnée des itinéraires
      */
-    private static List<Itineraire> ordonnerItineraires(Tournee tournee) {
+    private static LinkedList<Itineraire> ordonnerItineraires(Tournee tournee) {
         List<PointLivraison> listePoints = tournee.getListePointLivraisons();
-        List<Itineraire> listeOrdonnee = new ArrayList<>();
+        LinkedList<Itineraire> listeOrdonnee = new LinkedList<>();
         for (int i = 1; i < listePoints.size(); i++) {
             Map.Entry<PointLivraison, PointLivraison> key = new AbstractMap.SimpleEntry<>(listePoints.get(i - 1), listePoints.get(i));
             listeOrdonnee.add(tournee.getItinerairesMap().get(key));
         }
+        Map.Entry<PointLivraison, PointLivraison> key = new AbstractMap.SimpleEntry<>(listePoints.get(listePoints.size() - 1), listePoints.get(0));
+        listeOrdonnee.add(tournee.getItinerairesMap().get(key));
         return listeOrdonnee;
     }
 }
