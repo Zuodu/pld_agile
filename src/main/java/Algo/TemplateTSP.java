@@ -90,7 +90,7 @@ public abstract class TemplateTSP implements Algo.TSP {
             }
         } else {
             double bound = 0;
-            if (meilleureSolution != null) {
+            if (meilleureSolution[0] != null) {
                 bound = bound(sommetCrt,vus.get(0), nonVus, cout, duree);
             }
             if (coutVus + bound < coutMeilleureSolution) {

@@ -44,6 +44,9 @@ public class TSP2 extends TSP1 {
                 sommetTrouveDepart = point;
             }
         }
+        if (nonVus.size() == 2) {
+            return minCoutDepart;
+        }
         for (Integer point : nonVus) {
             if (point != sommetTrouveDepart) {
                 if (cout[point][sommet] < minCoutArrivee) {
