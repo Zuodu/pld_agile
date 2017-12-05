@@ -50,7 +50,7 @@ public class CdeSupprimer implements Commande {
 //		pProchain.setHeureArrivee(pPrecedant.getHeureDepart()+result.getLongueurTotale()/ main.VITESSE);
 //		tournee.SignalerFinDajoutPointsLivraisons();
         if(tourneeRedo.getListePointLivraisons().size()==0) {
-            boolean res = tournee.supprimerPoint(pointLivraison);
+            boolean res = tournee.supprimerPoint(pointLivraison.getId());
         }
         else{
             tournee.clone(tourneeRedo,tournee);

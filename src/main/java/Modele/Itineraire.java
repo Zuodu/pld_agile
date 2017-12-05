@@ -25,10 +25,10 @@ public class Itineraire {
 
     public Itineraire(Itineraire unItineraire){
         this();
-        this.setNoeudOrigine(new Noeud(unItineraire.getNoeudOrigine()));
-        this.setNoeudDestination(new Noeud(unItineraire.getNoeudDestination()));
+        this.setNoeudOrigine(unItineraire.getNoeudOrigine());
+        this.setNoeudDestination(unItineraire.getNoeudDestination());
         for(Troncon troncon:unItineraire.getListeTroncons()){
-            this.addTroncon(new Troncon(troncon));
+            this.addTroncon(troncon);
         }
     }
 

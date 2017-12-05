@@ -106,8 +106,12 @@ public class AbstractGraphe {
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
         System.out.println(System.currentTimeMillis()-tempsDebut);
+    }
 
-
+    public void getPlusCourtItineraire(Noeud src,Noeud target){
+        Dijkstra dijkstra = new Dijkstra();
+        dijkstra.chercheDistanceMin(src, target);
+        Itineraire result = dijkstra.getMeilleurItineraire();
     }
 
 //    public void getItineraireGlouton() {

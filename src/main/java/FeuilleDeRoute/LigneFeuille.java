@@ -8,6 +8,16 @@ import java.util.ArrayList;
  */
 public class LigneFeuille {
 
+    private static final String ICON_DROITE = "icon-forward";
+    private static final String ICON_GAUCHE = "icon-back";
+    private static final String ICON_AVANT = "icon-upward";
+    private static final String ICON_LIVRER = "icon-flag";
+    private static final String ICON_DEMARRER = "icon-upload";
+    private static final String ICON_ARRET = "icon-shutdown";
+    private static final String ICON_COMMENCER = "icon-plus";
+
+
+
     private String hDepart;
     private String hArrivee;
     private String indication;
@@ -86,5 +96,16 @@ public class LigneFeuille {
      */
     public String getLongueur() {
         return longueur;
+    }
+
+    public String getIconString() {
+        if(indication.equals(Indication.ADroite.getTexte())) return ICON_DROITE;
+        if(indication.equals(Indication.AGauche.getTexte())) return ICON_GAUCHE;
+        if(indication.equals(Indication.ToutDroit.getTexte())) return ICON_AVANT;
+        if(indication.equals(Indication.DebutItineraire.getTexte())) return ICON_COMMENCER;
+        if(indication.equals(Indication.FinItineraire.getTexte())) return ICON_LIVRER;
+        if(indication.equals(Indication.FinTournee.getTexte())) return ICON_ARRET;
+        if(indication.equals(Indication.Demarrage.getTexte())) return ICON_DEMARRER;
+        return "";
     }
 }

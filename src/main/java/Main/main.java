@@ -18,10 +18,15 @@ public class main {
 
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
-        PointLivraison pointLivraison=new PointLivraison(1l,1,1,1,1d,1d);
-        List<PointLivraison> list=new ArrayList<>();
-        list.add(pointLivraison);
-        List<PointLivraison> list2=new ArrayList<>(list);
+       // Double d1=1d;
+        //Double d2=2d;
+        //Double d3=d1;
+        //d3=3d;
+       // System.out.println(d1+d2+d3);
+//        PointLivraison pointLivraison=new PointLivraison(1l,1,1,1,1d,1d);
+//        List<PointLivraison> list=new ArrayList<>();
+//        list.add(pointLivraison);
+//        List<PointLivraison> list2=new ArrayList<>(list);
      //   controleur.chargerPlan("planLyonGrand.xml");
       //  controleur.chargerLivraison("DLgrand15.xml");
        // controleur.calculerTournee();

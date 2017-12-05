@@ -6,13 +6,12 @@ import Modele.Tournee;
 
 import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
-import javax.swing.JTextField;
 
 public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CHARGER_PLAN = "Charger Plan";
@@ -88,22 +87,52 @@ public class FenetrePrincipale extends JFrame implements Observer {
 		buttonChargerPlan = new JButton(CHARGER_PLAN);
 		buttonChargerPlan.addActionListener(buttonListener);
 		buttonChargerPlan.setBounds(0, 0, BUTTON_WIDTH, BUTTON_HEIGHT);
+		try {
+			Image img = ImageIO.read(new File("resources"+File.separator+"ChargerPlan.png"));
+			buttonChargerPlan.setIcon(new ImageIcon(img));
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 		buttonChargerLivraisons = new JButton(CHARGER_LIVRAISONS);
 		buttonChargerLivraisons.addActionListener(buttonListener);
 		buttonChargerLivraisons.setBounds(0, 50, BUTTON_WIDTH, BUTTON_HEIGHT);
+		try {
+			Image img = ImageIO.read(new File("resources"+File.separator+"ChargerLivraisons.png"));
+			buttonChargerLivraisons.setIcon(new ImageIcon(img));
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 		buttonCalculerTournee = new JButton(CALCULER_TOURNEE);
 		buttonCalculerTournee.addActionListener(buttonListener);
 		buttonCalculerTournee.setBounds(0, 100, BUTTON_WIDTH, BUTTON_HEIGHT);
+		try {
+			Image img = ImageIO.read(new File("resources"+ File.separator+"CalculerTournee.png"));
+			buttonCalculerTournee.setIcon(new ImageIcon(img));
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 		buttonAddPoint = new JButton(AJOUTER_POINT);
 		buttonAddPoint.addActionListener(buttonListener);
 		buttonAddPoint.setBounds(0, 150, BUTTON_WIDTH, BUTTON_HEIGHT);
+		try {
+			Image img = ImageIO.read(new File("resources"+File.separator+"AjouterPtLivraison.png"));
+			buttonAddPoint.setIcon(new ImageIcon(img));
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 		buttonGenerate = new JButton(GENERER_FEUILLE);
 		buttonGenerate.addActionListener(buttonListener);
 		buttonGenerate.setBounds(0, 200, BUTTON_WIDTH, BUTTON_HEIGHT);
+		try {
+			Image img = ImageIO.read(new File("resources"+File.separator+"GenererFeuille.png"));
+			buttonGenerate.setIcon(new ImageIcon(img));
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 
 		buttonPanel.add(buttonChargerPlan);
