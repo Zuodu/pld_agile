@@ -129,4 +129,32 @@ public class AbstractGraphe {
     public Itineraire getItineraire(PointLivraison pointDepart,PointLivraison pointArrivee){
         return itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointDepart,pointArrivee));
     }
+
+	/**
+	 * @return the cout
+	 */
+	public double[][] getTableCout() {
+		return cout;
+	}
+
+	/**
+	 * @return the duree
+	 */
+	public double[] getTableDuree() {
+		return duree;
+	}
+
+	/**
+	 * @return the plageArrivee
+	 */
+	public Double[] getTablePlageArrivee() {
+		return plageArrivee;
+	}
+
+	/**
+	 * @return the plageDepart
+	 */
+	public Double[] getTablePlageDepart() {
+		return plageDepart;
+	}
 }
