@@ -37,7 +37,9 @@ public class LstDeCde {
 	
 	public void redo()
 	{
-		if(i<liste.size()-1)
-			liste.get(++i).doCde();
+		if(i<liste.size()) {
+			liste.get(i).doCde();
+			i++;
+		}
 	}
 }

@@ -13,6 +13,7 @@ import java.util.Map;
 public class CdeSupprimer implements Commande {
     Tournee tournee;
     Tournee oldTournee;
+    Tournee tourneeRedo;
     PointLivraison pointLivraison;
 
     public CdeSupprimer(PointLivraison pointLivraison, Tournee tournee) {
@@ -20,7 +21,7 @@ public class CdeSupprimer implements Commande {
         this.pointLivraison = pointLivraison;
         oldTournee = new Tournee();
         oldTournee.clone(tournee,oldTournee);
-
+        tourneeRedo = new Tournee();
     }
 
     public void doCde() {
@@ -48,10 +49,17 @@ public class CdeSupprimer implements Commande {
 //		tournee.getItinerairesMap().remove(new AbstractMap.SimpleEntry(pointLivraison,pProchain));
 //		pProchain.setHeureArrivee(pPrecedant.getHeureDepart()+result.getLongueurTotale()/ main.VITESSE);
 //		tournee.SignalerFinDajoutPointsLivraisons();
-        boolean res = tournee.supprimerPoint(pointLivraison);
+        if(tourneeRedo.getListePointLivraisons().size()==0) {
+            boolean res = tournee.supprimerPoint(pointLivraison);
+        }
+        else{
+            tournee.clone(tourneeRedo,tournee);
+            tournee.SignalerFinDajoutPointsLivraisons();
+        }
     }
 
     public void undoCde() {
+        tourneeRedo.clone(tournee,tourneeRedo);
         tournee.clone(oldTournee,tournee);
         tournee.SignalerFinDajoutPointsLivraisons();
     }

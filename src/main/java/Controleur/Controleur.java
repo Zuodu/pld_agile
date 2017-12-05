@@ -106,8 +106,6 @@ public class Controleur {
         etatCourant.undo(lstDeCde);
         fenetrePrincipale.getVueGraphique().repaint();
         fenetrePrincipale.getVueTextuelle().repaint();
-
-
     }
 
     public void redo()
