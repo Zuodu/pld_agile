@@ -81,16 +81,6 @@ public class Controleur {
         FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
     }
 
-    public void afficherPlan() {
-
-    }
-
-    public void afficherLivraison() {
-
-    }
-    public void afficherTournee() {
-
-    }
 
     public void supprimerPoint(PointLivraison pointLivraison) {
         lstDeCde.setI(lstDeCde.getI()+1);
@@ -121,6 +111,15 @@ public class Controleur {
         etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
     }
 
+    public void rightClickedOnPoint (Noeud noeud) {
+        etatCourant.rightClickedOnPoint(noeud,this);
+
+    }
+
+    public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
+        lstDeCde.setI(lstDeCde.getI()+1);
+        etatCourant.cdeAjouterLivraison(noeud,debut,fin,duree,tournee,lstDeCde);
+    }
     public Tournee getTournee() {
         return tournee;
     }

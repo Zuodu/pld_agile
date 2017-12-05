@@ -28,7 +28,7 @@ public class CdeModifierHoraire implements Commande {
             ancientFin = pointLivraison.getFinPlage();
         } catch (NullPointerException npe) {
         }
-        if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
+        if (!tournee.updateHoraire(pointLivraison.getId(),debutPlage,finPlage))
         {
             JOptionPane.showMessageDialog(null, "Modification echouee");
         } else {
@@ -37,7 +37,7 @@ public class CdeModifierHoraire implements Commande {
 	}
 	public void undoCde()
 	{
-        if (!tournee.updateHoraire(pointLivraison,ancientDebut,ancientFin))
+        if (!tournee.updateHoraire(pointLivraison.getId(),ancientDebut,ancientFin))
         {
             JOptionPane.showMessageDialog(null, "Undo echouee");
         } else {

@@ -54,7 +54,7 @@ public class EtatDefaut implements Etat {
     	l.redo();
     }
 
-    public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee,LstDeCde lstDeCde) {
+    public void cdeAjouterLivraison(Noeud noeud,Double debut, Double fin, double duree, Tournee tournee,LstDeCde lstDeCde) {
 
     }
 
@@ -73,4 +73,6 @@ public class EtatDefaut implements Etat {
 
     public void afficherTournee() {
     }
+
+    public boolean rightClickedOnPoint(Noeud noeud,Controleur controleur){return false;}
 }
