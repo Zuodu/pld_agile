@@ -125,6 +125,7 @@ public class ButtonListener implements ActionListener {
             }}
             catch (StringIndexOutOfBoundsException se) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                return;
             }
             controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
         } else if (s.equals(VueTextuelle.UNDO)) {

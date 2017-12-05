@@ -22,7 +22,7 @@ public class EtatCalculerTournee extends EtatDefaut{
 		lstDeCde.ajouterCommande(commandeSupprimer);
 	}
 	
-	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, double debutPlage, double finPlage,LstDeCde lstDeCde)
+	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, Double debutPlage,Double finPlage,LstDeCde lstDeCde)
 	{
 		CdeModifierHoraire commandeModifier = new CdeModifierHoraire(pointLivraison,tournee,debutPlage,finPlage);
 		commandeModifier.doCde();

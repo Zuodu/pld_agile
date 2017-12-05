@@ -68,6 +68,8 @@ public class Tournee extends Observable {
             PointLivraison pointArrivee = entry.getKey().getValue();
             newTournee.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonHashMap.get(pointDepart.getId()), pointLivraisonHashMap.get(pointArrivee.getId())), new Itineraire(entry.getValue()));
         }
+        newTournee.setChanged();
+        newTournee.notifyObservers();
     }
 
     public Tournee() {
@@ -319,6 +321,8 @@ public class Tournee extends Observable {
         heureDepart = heureArrivee + duree;
 
         if (pointAModifier.getFinPlage()!=null&& heureDepart > pointAModifier.getFinPlage()) {
+            setChanged();
+            notifyObservers();
             return false;
         } else if (heureDepart < pointAModifier.getHeureDepart()) {
             if (avanceHoraire(listePointLivraisons.indexOf(pointAModifier) + 1, pointAModifier.getHeureDepart() - heureDepart)) {
@@ -337,6 +341,8 @@ public class Tournee extends Observable {
             notifyObservers();
             return true;
         }
+        setChanged();
+        notifyObservers();
         return false;
 
     }
@@ -347,17 +353,29 @@ public class Tournee extends Observable {
         double heureDepart;
 
         PointLivraison pointAModifier = null;
+
         for (PointLivraison pointLivraison : listePointLivraisons) {
             if (pointLivraison.getId().equals(id)) {
                 pointAModifier = pointLivraison;
             }
         }
+
+        if(plageDebut==null&&plageFin==null){
+            pointAModifier.setDebutPlage(null);
+            pointAModifier.setFinPlage(null);
+            setChanged();
+            notifyObservers();
+            return true;
+        }
+
         heureArrivee = pointAModifier.getHeureArrivee();
         heureDepart = heureArrivee + pointAModifier.getDuree();
         if (heureArrivee < plageDebut) {
             heureDepart = plageDebut + pointAModifier.getDuree();
         }
         if (heureDepart > plageFin) {
+            setChanged();
+            notifyObservers();
             return false;
         } else if (pointAModifier.getHeureDepart().equals(heureDepart)) {
             pointAModifier.setDebutPlage(plageDebut);
@@ -385,6 +403,8 @@ public class Tournee extends Observable {
             notifyObservers();
             return true;
         }
+        setChanged();
+        notifyObservers();
         return false;
 
     }
