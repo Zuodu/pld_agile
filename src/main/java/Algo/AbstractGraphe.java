@@ -106,8 +106,12 @@ public class AbstractGraphe {
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
         System.out.println(System.currentTimeMillis()-tempsDebut);
+    }
 
-
+    public void getPlusCourtItineraire(Noeud src,Noeud target){
+        Dijkstra dijkstra = new Dijkstra();
+        dijkstra.chercheDistanceMin(src, target);
+        Itineraire result = dijkstra.getMeilleurItineraire();
     }
 
 //    public void getItineraireGlouton() {
@@ -125,4 +129,32 @@ public class AbstractGraphe {
     public Itineraire getItineraire(PointLivraison pointDepart,PointLivraison pointArrivee){
         return itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointDepart,pointArrivee));
     }
+
+	/**
+	 * @return the cout
+	 */
+	public double[][] getTableCout() {
+		return cout;
+	}
+
+	/**
+	 * @return the duree
+	 */
+	public double[] getTableDuree() {
+		return duree;
+	}
+
+	/**
+	 * @return the plageArrivee
+	 */
+	public Double[] getTablePlageArrivee() {
+		return plageArrivee;
+	}
+
+	/**
+	 * @return the plageDepart
+	 */
+	public Double[] getTablePlageDepart() {
+		return plageDepart;
+	}
 }

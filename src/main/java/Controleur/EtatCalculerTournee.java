@@ -2,14 +2,15 @@ package Controleur;
 
 import ChargeurXML.ChargeurLivraison;
 import Modele.*;
+import Vue.VueAjouterPoint;
 
 import javax.swing.*;
 
 public class EtatCalculerTournee extends EtatDefaut{
 	
-	public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee,LstDeCde lstDeCde)
-	{
-		CdeAjout commandeAjout = new CdeAjout(pointLivraison, tournee);
+	public void cdeAjouterLivraison(Noeud noeud,Double debut, Double fin, double duree, Tournee tournee,LstDeCde lstDeCde) {
+
+		CdeAjout commandeAjout = new CdeAjout(noeud,debut,fin,duree, tournee,lstDeCde);
 		commandeAjout.doCde();
 		lstDeCde.ajouterCommande(commandeAjout);
 	}
@@ -36,6 +37,11 @@ public class EtatCalculerTournee extends EtatDefaut{
 		if(ChargeurLivraison.getInstance().parse(tournee, filePath))
 			return true;
 		JOptionPane.showMessageDialog(null,"Echec du chargement, réessayez");
+		return false;
+	}
+
+	public boolean rightClickedOnPoint (Noeud noeud,Controleur controleur) {
+		VueAjouterPoint vueAjouterPoint=new VueAjouterPoint(noeud,controleur);
 		return false;
 	}
 }

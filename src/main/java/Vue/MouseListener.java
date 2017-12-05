@@ -1,6 +1,7 @@
 package Vue;
 
 import Controleur.Controleur;
+import Modele.Noeud;
 import Modele.PointLivraison;
 
 import java.awt.event.MouseAdapter;
@@ -36,6 +37,21 @@ public class MouseListener extends MouseAdapter {
                 }
             }
 
+        } else if (evt.getButton()==MouseEvent.BUTTON3) {
+            int xClicked = evt.getX();
+            int yClciked = evt.getY();
+
+            for (Noeud noeud:vueGraphique.getPlan().getListeNoeuds()) {
+                int x = (int) ((noeud.getX() - vueGraphique.getXmin()) / vueGraphique.getxScale()) + LEFT_OFFSET ;
+                int y = (int) ((noeud.getY() - vueGraphique.getYmin()) / vueGraphique.getyScale()) + LEFT_OFFSET ;
+                if (xClicked > x - 5 && xClicked < x + 5) {
+                    if (yClciked > y - 5 && yClciked < y + 5) {
+                        controleur.rightClickedOnPoint(noeud);
+                        System.out.println("rightClicked");
+                        break;
+                    }
+                }
+            }
         }
     }
 
