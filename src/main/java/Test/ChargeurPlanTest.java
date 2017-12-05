@@ -7,13 +7,15 @@ import org.junit.Test;
 import ChargeurXML.ChargeurPlan;
 import Modele.*;
 
+import java.io.File;
+
 public class ChargeurPlanTest {
 	private Plan petitPlan;
-	private String planLyonPetit = ".\\fichiersXML\\planLyonPetit.xml";
+	private String planLyonPetit = "."+ File.separator+"fichiersXML"+File.separator+"planLyonPetit.xml";
 	private Plan moyenPlan;
-	private String planLyonMoyen = ".\\fichiersXML\\planLyonMoyen.xml";
+	private String planLyonMoyen = "."+ File.separator+"fichiersXML"+File.separator+"planLyonMoyen.xml";
 	private Plan grandPlan;
-	private String planLyonGrand = ".\\fichiersXML\\planLyonGrand.xml";
+	private String planLyonGrand = "."+ File.separator+"fichiersXML"+ File.separator+"planLyonGrand.xml";
 
 	public void InitTUp() {
 		petitPlan = new Plan();

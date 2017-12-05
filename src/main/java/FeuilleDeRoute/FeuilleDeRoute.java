@@ -21,6 +21,10 @@ import static j2html.TagCreator.*;
  */
 public class FeuilleDeRoute {
 
+    private static String METRES = " mètres";
+    private static String PENDANT = "pendant ";
+    private static String RUE_INCONNUE = "Rue inconnue";
+
     /**
      * Génère une feuille de route HTML à partir d'un Path choisi et d'une Tournee.
      *
@@ -77,7 +81,7 @@ public class FeuilleDeRoute {
                                                 td(row.gethDepart()),
                                                 td(row.getIndication()),
                                                 td(row.getRue()),
-                                                td(row.getLongueur())
+                                                td(row.getLongueur().equals("-") ? row.getLongueur() :PENDANT+row.getLongueur()+METRES)
                                                 )
                                         )
                                 )
@@ -125,7 +129,7 @@ public class FeuilleDeRoute {
                                 0,
                                 0,
                                 lastPile.getIndication().getTexte(),
-                                lastPile.getTroncon().getNomRue(),
+                                lastPile.getTroncon().getNomRue().equals("")?RUE_INCONNUE : lastPile.getTroncon().getNomRue(),
                                 lastPile.getDistanceTotale());
                         //ajout ligne feuille
                         mainList.add(ligne);
@@ -147,7 +151,7 @@ public class FeuilleDeRoute {
             //add arrivee itineraire
             if (lastIti) {
                 LigneFeuille ligneArrivee = new LigneFeuille(
-                        0,
+                        ((PointLivraison) i.getNoeudDestination()).getHeureArrivee(),
                         0,
                         Indication.FinTournee.getTexte(),
                         "-",
@@ -193,8 +197,6 @@ public class FeuilleDeRoute {
             Map.Entry<PointLivraison, PointLivraison> key = new AbstractMap.SimpleEntry<>(listePoints.get(i - 1), listePoints.get(i));
             listeOrdonnee.add(tournee.getItinerairesMap().get(key));
         }
-        Map.Entry<PointLivraison, PointLivraison> key = new AbstractMap.SimpleEntry<>(listePoints.get(listePoints.size() - 1), listePoints.get(0));
-        listeOrdonnee.add(tournee.getItinerairesMap().get(key));
         return listeOrdonnee;
     }
 }
