@@ -10,38 +10,39 @@ public class CdeModifierHoraire implements Commande {
     PointLivraison pointLivraison;
     double debutPlage;
     double finPlage;
-    double ancientDebut;
-    double ancientFin;
+    Tournee oldTournee;
+    Tournee tourneeRedo;
+
 
     public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, double newDebutPlage, double newFinPlage) {
         tournee = newTournee;
         pointLivraison = newPointLivraison;
         debutPlage = newDebutPlage;
         finPlage = newFinPlage;
-        //oldTournee = new Tournee(newTournee);
+        oldTournee = new Tournee();
+        oldTournee.clone(tournee,oldTournee);
+        tourneeRedo = new Tournee();
     }
 
 	public void doCde()
 	{
-	    try {
-            ancientDebut = pointLivraison.getDebutPlage();
-            ancientFin = pointLivraison.getFinPlage();
-        } catch (NullPointerException npe) {
+        if(tourneeRedo.getListePointLivraisons().size()==0) {
+            if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
+            {
+                JOptionPane.showMessageDialog(null, "Modification echouee");
+            } else {
+                JOptionPane.showMessageDialog(null, "Modification reussie");
+            }
         }
-        if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
+        else
         {
-            JOptionPane.showMessageDialog(null, "Modification echouee");
-        } else {
-            JOptionPane.showMessageDialog(null, "Modification reussie");
+            tournee.clone(tourneeRedo,tournee);
         }
+
 	}
 	public void undoCde()
 	{
-        if (!tournee.updateHoraire(pointLivraison,ancientDebut,ancientFin))
-        {
-            JOptionPane.showMessageDialog(null, "Undo echouee");
-        } else {
-            JOptionPane.showMessageDialog(null, "Undo reussi");
-        }
+        tourneeRedo.clone(tournee,tourneeRedo);
+        tournee.clone(oldTournee,tournee);
 	}
 }
