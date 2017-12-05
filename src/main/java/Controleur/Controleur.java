@@ -111,6 +111,8 @@ public class Controleur {
     public void redo()
     {
         etatCourant.redo(lstDeCde);
+        fenetrePrincipale.getVueGraphique().repaint();
+        fenetrePrincipale.getVueTextuelle().repaint();
     }
     /**
      * M�thode permettant d'afficher les informations du point cliqu�
