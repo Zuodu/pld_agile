@@ -38,7 +38,7 @@ public class ChargeurPlan {
      * @param plan     le plan auquel on ajoute les noeuds et tron�ons
      * @param filePath Le chemin d'acc�s au fichier xml
      */
-    public void parse(Plan plan, String filePath) {
+    public boolean parse(Plan plan, String filePath) {
         this.plan = plan;
         File xmlPlan = new File(filePath);
         HashMap<Long, Noeud> nodeMap = new HashMap<Long, Noeud>();
@@ -113,6 +113,7 @@ public class ChargeurPlan {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return true;
     }
 
     /**
