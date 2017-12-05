@@ -9,11 +9,11 @@ import Modele.*;
 
 public class ChargeurPlanTest {
 	private Plan petitPlan;
-	private String planLyonPetit = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonPetit.xml";
+	private String planLyonPetit = ".\\fichiersXML\\planLyonPetit.xml";
 	private Plan moyenPlan;
-	private String planLyonMoyen = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonMoyen.xml";
+	private String planLyonMoyen = ".\\fichiersXML\\planLyonMoyen.xml";
 	private Plan grandPlan;
-	private String planLyonGrand = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonGrand.xml";
+	private String planLyonGrand = ".\\fichiersXML\\planLyonGrand.xml";
 
 	public void InitTUp() {
 		petitPlan = new Plan();

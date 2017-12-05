@@ -13,19 +13,19 @@ import Modele.Troncon;
 
 public class ChargeurLivraisonTest2 {
 	private Plan petitPlan;
-	private String planLyonPetit = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonPetit.xml";
+	private String planLyonPetit = ".\\fichiersXML\\planLyonPetit.xml";
 	private Tournee petiteTournee;
-	private String detailsLivraisonPetit = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLpetit5.xml";
+	private String detailsLivraisonPetit = ".\\fichiersXML\\DLpetit5.xml";
 	
 	private Plan moyenPlan;
-	private String planLyonMoyen = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonMoyen.xml";
+	private String planLyonMoyen = ".\\fichiersXML\\planLyonMoyen.xml";
 	private Tournee moyenneTournee;
-	private String detailsLivraisonMoyen = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLmoyen10TW3.xml";
+	private String detailsLivraisonMoyen = ".\\fichiersXML\\DLmoyen10TW3.xml";
 	
 	private Plan grandPlan;
-	private String planLyonGrand = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonGrand.xml";
+	private String planLyonGrand = ".\\fichiersXML\\planLyonGrand.xml";
 	private Tournee grandeTournee;
-	private String detailsLivraisonGrand = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLgrand20TW.xml";
+	private String detailsLivraisonGrand = ".\\fichiersXML\\DLgrand20TW.xml";
 
 	public void InitTUp() {
 		petitPlan = new Plan();
