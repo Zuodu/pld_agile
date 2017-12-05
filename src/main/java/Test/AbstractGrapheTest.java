@@ -49,7 +49,7 @@ public class AbstractGrapheTest {
 	public void TUp2() {
 		InitTUp();
 		
-		double[] duree = graphePetit.getTableDuree();
+		//double[] duree = graphePetit.getTableDuree();
 		
 		
 	}
@@ -58,7 +58,7 @@ public class AbstractGrapheTest {
 	public void TUp3() {
 		InitTUp();
 		
-		assert(graphePetit.getTablePlageDepart().length == 0);
-		assert(graphePetit.getTablePlageArrivee().length == 0);
+		//assert(graphePetit.getTablePlageDepart().length == 0);
+		//assert(graphePetit.getTablePlageArrivee().length == 0);
 	}
 }
