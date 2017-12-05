@@ -39,14 +39,14 @@ public class LigneFeuille {
             int h = (int) (depart / 3600);
             int m = (int) ((depart % 3600) / 60);
             int s = (int) (depart % 60);
-            this.hDepart = h + ":" + m + ":" + s;
+            this.hDepart = h + ":" + String.format("%02d",m) + ":" + String.format("%02d",s);
         }
         if (arrivee == 0) this.hArrivee = "-";
         else {
             int h = (int) (arrivee / 3600);
             int m = (int) ((arrivee % 3600) / 60);
             int s = (int) (arrivee % 60);
-            this.hArrivee = h + ":" + m + ":" + s;
+            this.hArrivee = h + ":" + String.format("%02d",m) + ":" + String.format("%02d",s);
         }
         this.indication = indic == null ? "-" : indic;
         this.rue = r == null ? "-" : r;

@@ -30,8 +30,8 @@ public class EtatCalculerTournee extends EtatDefaut{
 	}
 
 	/**
-	 * M?thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
-	 * @param filePath Le chemin d'acc?s au fichier xml
+	 * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+	 * @param filePath Le chemin d'accès au fichier xml
 	 */
 	public boolean chargerLivraison (String filePath,Tournee tournee){
 		if(ChargeurLivraison.getInstance().parse(tournee, filePath))
