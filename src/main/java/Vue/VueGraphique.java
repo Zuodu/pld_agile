@@ -28,10 +28,10 @@ public class VueGraphique extends JPanel {
     public final static int UP_OFFSET = 10;
     private Plan plan;
     private Tournee tournee;
-    int xmin = 9999999;
-    int ymin = 9999999;
-    int xmax = 0;
-    int ymax = 0;
+    int xmin ;
+    int ymin ;
+    int xmax ;
+    int ymax ;
     double xScale;
     double yScale;
     private JTextPane textPane;
@@ -100,6 +100,10 @@ public class VueGraphique extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
+         xmin = 9999999;
+        ymin = 9999999;
+        xmax = 0;
+        ymax = 0;
 
         if (isLoading) {
             try {

@@ -19,6 +19,14 @@ public class Plan extends Observable {
 
     }
 
+    public void reinitialise () {
+        isCharge=false;
+        listeTroncons= new HashSet<Troncon>();
+        listeNoeuds= new HashSet<Noeud>();
+        setChanged();
+        notifyObservers();
+    }
+
     public boolean isCharge() {
         return isCharge;
     }

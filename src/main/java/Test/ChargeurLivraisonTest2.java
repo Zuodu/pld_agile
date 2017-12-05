@@ -11,21 +11,23 @@ import Modele.PointLivraison;
 import Modele.Tournee;
 import Modele.Troncon;
 
+import java.io.File;
+
 public class ChargeurLivraisonTest2 {
 	private Plan petitPlan;
-	private String planLyonPetit = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonPetit.xml";
+	private String planLyonPetit = "."+ File.separator+"fichiersXML"+File.separator+"planLyonPetit.xml";
 	private Tournee petiteTournee;
-	private String detailsLivraisonPetit = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLpetit5.xml";
+	private String detailsLivraisonPetit = "."+ File.separator+"fichiersXML"+File.separator+"DLpetit5.xml";
 	
 	private Plan moyenPlan;
-	private String planLyonMoyen = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonMoyen.xml";
+	private String planLyonMoyen = "."+ File.separator+"fichiersXML"+File.separator+"planLyonMoyen.xml";
 	private Tournee moyenneTournee;
-	private String detailsLivraisonMoyen = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLmoyen10TW3.xml";
+	private String detailsLivraisonMoyen = "."+ File.separator+"fichiersXML"+File.separator+"DLmoyen10TW3.xml";
 	
 	private Plan grandPlan;
-	private String planLyonGrand = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\planLyonGrand.xml";
+	private String planLyonGrand = "."+ File.separator+"fichiersXML"+File.separator+"planLyonGrand.xml";
 	private Tournee grandeTournee;
-	private String detailsLivraisonGrand = "C:\\Users\\Cal\\Documents\\INFO\\AGILE\\fichiersXML\\DLgrand20TW.xml";
+	private String detailsLivraisonGrand = "."+ File.separator+"fichiersXML"+File.separator+"DLgrand20TW.xml";
 
 	public void InitTUp() {
 		petitPlan = new Plan();

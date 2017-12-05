@@ -52,7 +52,8 @@ public class Controleur {
      */
     public void chargerPlan (String filePath)
     {
-
+        plan.reinitialise();
+        tournee.reinitialise();
         if(etatCourant.chargerPlan(filePath, plan))
             setEtatCourant(etatChargerPlan);
 
@@ -63,7 +64,7 @@ public class Controleur {
      * @param filePath Le chemin d'acc�s au fichier xml
      */
     public void chargerLivraison (String filePath){
-
+        tournee.reinitialise();
         if(etatCourant.chargerLivraison(filePath, tournee))
             setEtatCourant(etatChargerLivraison);
     }

@@ -14,7 +14,6 @@ public class EtatDefaut implements Etat {
      */
     public boolean chargerPlan (String filePath, Plan plan)
     {
-
         if(ChargeurPlan.getInstance().parse(plan, filePath))
             return true;
         JOptionPane.showMessageDialog(null,"Le chargement a échoué, veuillez réessayer");

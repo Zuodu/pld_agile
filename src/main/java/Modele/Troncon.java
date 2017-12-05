@@ -64,4 +64,5 @@ public class Troncon {
     public String toString() {
         return "Troncon " + origine.getId() + " " + destination.getId() + " " + nomRue + " " + longueur;
     }
+
 }

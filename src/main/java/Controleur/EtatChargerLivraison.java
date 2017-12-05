@@ -1,8 +1,11 @@
 package Controleur;
 
 import Algo.AbstractGraphe;
+import ChargeurXML.ChargeurLivraison;
 import Modele.Plan;
 import Modele.Tournee;
+
+import javax.swing.*;
 
 public class EtatChargerLivraison extends EtatDefaut{
 	/**
@@ -31,4 +34,15 @@ public class EtatChargerLivraison extends EtatDefaut{
        // System.out.println(abstractGraphe.getTournee());
 
     }
+
+	/**
+	 * M�thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+	 * @param filePath Le chemin d'acc�s au fichier xml
+	 */
+	public boolean chargerLivraison (String filePath,Tournee tournee){
+		if(ChargeurLivraison.getInstance().parse(tournee, filePath))
+			return true;
+		JOptionPane.showMessageDialog(null,"Echec du chargement, réessayez");
+		return false;
+	}
 }
