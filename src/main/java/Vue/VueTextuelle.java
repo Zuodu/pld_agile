@@ -12,15 +12,15 @@ public class VueTextuelle extends JPanel {
 
     public final static String MODIFIER_POINT = "Modifier";
     public final static String SUPPRIMER_POINT = "Supprimer";
-    public final static String PROCHAIN_POINT = "Prochain";
-    public final static String PRECEDENT_POINT = "Precedant";
+    public final static String PROCHAIN_POINT = "Suivant";
+    public final static String PRECEDENT_POINT = "Précédent";
     public final static String UNDO="Undo";
     public final static String REDO="Redo";
     public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 40;
     public final static int BUTTON_WIDTH = 100;
-    public final static int BUTTON_LENGTH = 50;
+    public final static int BUTTON_LENGTH = 30;
 
     private JLabel labelPlageDebut;
     private JLabel labelPlageFin;
@@ -80,7 +80,7 @@ public class VueTextuelle extends JPanel {
         this.add(infoHeureDepart);
 
         labelPlageDebut = new JLabel();
-        labelPlageDebut.setText("Plage debut: ");
+        labelPlageDebut.setText("Plage début: ");
         labelPlageDebut.setBounds(0, 0, 100, 30);
         this.add(labelPlageDebut);
 
@@ -90,17 +90,17 @@ public class VueTextuelle extends JPanel {
         this.add(labelPlageFin);
 
         labelDuree = new JLabel();
-        labelDuree.setText("Duree : ");
+        labelDuree.setText("Durée : ");
         labelDuree.setBounds(0, 80, 100, 30);
         this.add(labelDuree);
 
         labelArrivee = new JLabel();
-        labelArrivee.setText("Arrivee prevue : ");
+        labelArrivee.setText("Arrivée prévue : ");
         labelArrivee.setBounds(0, 120, 100, 30);
         this.add(labelArrivee);
 
         labelDepart = new JLabel();
-        labelDepart.setText("Depart prevu : ");
+        labelDepart.setText("Départ prévu : ");
         labelDepart.setBounds(0, 160, 100, 30);
         this.add(labelDepart);
 
@@ -112,14 +112,13 @@ public class VueTextuelle extends JPanel {
         buttonSupprimer.setBounds(BUTTON_WIDTH + 50, 220, BUTTON_WIDTH, BUTTON_LENGTH);
         this.add(buttonSupprimer);
 
-        buttonNext = new JButton(PROCHAIN_POINT);
-        buttonNext.setBounds(0, 280, BUTTON_WIDTH, BUTTON_LENGTH);
-        this.add(buttonNext);
-
-
         buttonPrevious = new JButton(PRECEDENT_POINT);
-        buttonPrevious.setBounds(BUTTON_WIDTH + 50, 280, BUTTON_WIDTH, BUTTON_LENGTH);
+        buttonPrevious.setBounds(0, 280, BUTTON_WIDTH, BUTTON_LENGTH);
         this.add(buttonPrevious);
+
+        buttonNext = new JButton(PROCHAIN_POINT);
+        buttonNext.setBounds(BUTTON_WIDTH + 50, 280, BUTTON_WIDTH, BUTTON_LENGTH);
+        this.add(buttonNext);
 
         buttonUndo=new JButton(UNDO);
         buttonUndo.setBounds(0,340,BUTTON_WIDTH,BUTTON_LENGTH);
