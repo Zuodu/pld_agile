@@ -21,9 +21,9 @@ import static j2html.TagCreator.*;
  */
 public class FeuilleDeRoute {
 
-    private static String METRES = " mètres";
-    private static String PENDANT = "pendant ";
-    private static String RUE_INCONNUE = "Rue inconnue";
+    private static final String METRES = " mètres";
+    private static final String PENDANT = "pendant ";
+    private static final String RUE_INCONNUE = "Rue inconnue";
 
     /**
      * Génère une feuille de route HTML à partir d'un Path choisi et d'une Tournee.
@@ -58,6 +58,7 @@ public class FeuilleDeRoute {
                         meta().withCharset("ISO-8859-1"),
                         link().withRel("stylesheet").withHref("https://unpkg.com/spectre.css/dist/spectre.min.css"),
                         link().withRel("stylesheet").withHref("https://unpkg.com/spectre.css/dist/spectre-exp.min.css"),
+                        link().withRel("stylesheet").withHref("https://unpkg.com/spectre.css/dist/spectre-icons.min.css"),
                         title("Feuille de route")
                 ),
                 body(
@@ -70,6 +71,7 @@ public class FeuilleDeRoute {
                                         tr(
                                                 th("Heure d'arrivée"),
                                                 th("Heure de départ"),
+                                                th(),
                                                 th("Directive"),
                                                 th("Indication"),
                                                 th("Longueur du trajet (m)")
@@ -79,6 +81,11 @@ public class FeuilleDeRoute {
                                         each(list, row -> tr(
                                                 td(row.gethArrivee()),
                                                 td(row.gethDepart()),
+                                                td(button(
+                                                        attrs(".btn btn-primary btn-action"),
+                                                        i(attrs(".icon "+row.getIconString()))
+                                                        ).withStyle("pointer-events:none")
+                                                ),
                                                 td(row.getIndication()),
                                                 td(row.getRue()),
                                                 td(row.getLongueur().equals("-") ? row.getLongueur() :PENDANT+row.getLongueur()+METRES)

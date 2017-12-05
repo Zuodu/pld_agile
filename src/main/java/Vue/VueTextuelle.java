@@ -2,8 +2,10 @@ package Vue;
 
 import Modele.PointLivraison;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 /**
  * Created by flavi on 2017/12/3.
@@ -14,11 +16,11 @@ public class VueTextuelle extends JPanel {
     public final static String SUPPRIMER_POINT = "Supprimer";
     public final static String PROCHAIN_POINT = "Suivant";
     public final static String PRECEDENT_POINT = "Précédent";
-    public final static String UNDO="Undo";
-    public final static String REDO="Redo";
+    public final static String UNDO="";
+    public final static String REDO="";
     public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
-    public final static int ECART = 40;
+    public final static int ECART = 30;
     public final static int BUTTON_WIDTH = 100;
     public final static int BUTTON_LENGTH = 30;
 
@@ -122,10 +124,22 @@ public class VueTextuelle extends JPanel {
 
         buttonUndo=new JButton(UNDO);
         buttonUndo.setBounds(0,340,BUTTON_WIDTH,BUTTON_LENGTH);
+        try {
+            Image img = ImageIO.read(new File("resources"+File.separator+"Undo.png"));
+            buttonUndo.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
         this.add(buttonUndo);
 
         buttonRedo=new JButton(REDO);
         buttonRedo.setBounds(BUTTON_WIDTH+50,340,BUTTON_WIDTH,BUTTON_LENGTH);
+        try {
+            Image img = ImageIO.read(new File("resources"+File.separator+"Redo.png"));
+            buttonRedo.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
         this.add(buttonRedo);
 
         buttonPrevious.addActionListener(buttonListener);
