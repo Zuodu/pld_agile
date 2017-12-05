@@ -16,8 +16,8 @@ public class VueTextuelle extends JPanel {
     public final static String SUPPRIMER_POINT = "Supprimer";
     public final static String PROCHAIN_POINT = "Suivant";
     public final static String PRECEDENT_POINT = "Précédent";
-    public final static String UNDO="";
-    public final static String REDO="";
+    public final static String UNDO="Undo";
+    public final static String REDO="Redo";
     public final static int LENGTH_VUETEXTUELLE = 400;
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 30;
