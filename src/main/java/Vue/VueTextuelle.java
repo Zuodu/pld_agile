@@ -20,7 +20,7 @@ public class VueTextuelle extends JPanel {
     public final static int WIDTH_VUETEXTUELLE = 250;
     public final static int ECART = 40;
     public final static int BUTTON_WIDTH = 100;
-    public final static int BUTTON_LENGTH = 30;
+    public final static int BUTTON_LENGTH = 50;
 
     private JLabel labelPlageDebut;
     private JLabel labelPlageFin;

@@ -29,6 +29,7 @@ public class EtatInit extends EtatDefaut{
      */
     public void chargerPlan (String filePath, Plan plan)
     {
+
         ChargeurPlan.getInstance().parse(plan, filePath);
 
     }

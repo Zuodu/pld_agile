@@ -24,7 +24,9 @@ public class CdeModifierHoraire implements Commande {
 	{
         if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
         {
-            JOptionPane.showMessageDialog(null, "Modification non reussie");
+            JOptionPane.showMessageDialog(null, "Modification echouee");
+        } else {
+            JOptionPane.showMessageDialog(null, "Modification reussie");
         }
 	}
 	public void undoCde()

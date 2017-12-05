@@ -3,14 +3,18 @@ package Controleur;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
+import javax.swing.*;
+
 public class EtatDefaut implements Etat {
     public void chargerPlan(String filePath, Plan plan) {
     }
 
     public void chargerLivraison(String filePath, Tournee tournee) {
+        JOptionPane.showMessageDialog(null,"Veuillez charger un plan");
     }
 
     public void calculerTournee(Plan plan, Tournee tournee) {
+        JOptionPane.showMessageDialog(null,"Veuillez charger un plan et des livraisons");
     }
 
     public void clickedOnPoint(PointLivraison pointLivraison, FenetrePrincipale fenetrePrincipale) {
@@ -39,6 +43,7 @@ public class EtatDefaut implements Etat {
     }
 
     public void cdeAjouterLivraison(PointLivraison pointLivraison, Tournee tournee,LstDeCde lstDeCde) {
+
     }
 
     public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee,LstDeCde lstDeCde) {

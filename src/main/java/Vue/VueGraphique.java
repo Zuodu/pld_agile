@@ -1,5 +1,6 @@
 package Vue;
 
+import Algo.IteratorMin;
 import Modele.*;
 
 import javax.imageio.ImageIO;
@@ -35,14 +36,24 @@ public class VueGraphique extends JPanel {
     double yScale;
     private JTextPane textPane;
     private PointLivraison pointLivraisonChoisi;
+    private boolean isLoading;
 
     public void setPointLivraisonChoisi(PointLivraison pointLivraisonChoisi) {
         this.pointLivraisonChoisi = pointLivraisonChoisi;
     }
 
+    public boolean isLoading() {
+        return isLoading;
+    }
+
+    public void setLoading(boolean loading) {
+        isLoading = loading;
+    }
+
     public VueGraphique(Plan plan, Tournee tournee) {
         setLayout(null);
         this.plan = plan;
+
         this.tournee = tournee;
 
         //textPane=new JTextPane();
@@ -90,64 +101,78 @@ public class VueGraphique extends JPanel {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
 
-
-        if (plan.isCharge()) {
-            g2d.setColor(Color.BLACK);
-            for (Noeud noeud : plan.getListeNoeuds()) {
-                if (noeud.getX() > xmax)
-                    xmax = noeud.getX();
-                if (noeud.getY() > ymax)
-                    ymax = noeud.getY();
-                if (noeud.getX() < xmin)
-                    xmin = noeud.getX();
-                if (noeud.getY() < ymin)
-                    ymin = noeud.getY();
-                xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.95;
-                yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.95;
-
-
+        if (isLoading) {
+            try {
+                Image image = ImageIO.read(new File("Spinner.gif"));
+                g2d.drawImage(image,0,0,this);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            g2d.setColor(Color.white);
-            g2d.setStroke(new BasicStroke(WIDTH_TRONCON));
-            for (Troncon troncon : plan.getListeTroncons()) {
-                afficheTroncon(troncon, g2d);
+
+        } else {
+
+            if (plan.isCharge()) {
+                g2d.setColor(Color.BLACK);
+                for (Noeud noeud : plan.getListeNoeuds()) {
+                    if (noeud.getX() > xmax)
+                        xmax = noeud.getX();
+                    if (noeud.getY() > ymax)
+                        ymax = noeud.getY();
+                    if (noeud.getX() < xmin)
+                        xmin = noeud.getX();
+                    if (noeud.getY() < ymin)
+                        ymin = noeud.getY();
+                    xScale = (xmax - xmin) / VUEPLAN_LENGTH / 0.95;
+                    yScale = (ymax - ymin) / VUEPLAN_WIDTH / 0.95;
+
+
+                }
+                g2d.setColor(Color.white);
+                g2d.setStroke(new BasicStroke(WIDTH_TRONCON));
+                for (Troncon troncon : plan.getListeTroncons()) {
+                    afficheTroncon(troncon, g2d);
+                }
             }
-        }
 
-        if (tournee.isCharge()) {
+            if (tournee.isCharge()) {
 
-            g2d.setColor(Color.blue);
-            int count = 1;
-            for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
-                affichePointLivraison(pointLivraison, g2d, count);
-                count++;
-            }
-            afficheEntrepot(tournee.getEntrepot(), g2d);
-
-            g2d.setColor(Color.magenta);
-            for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itineraireEntry : tournee.getItinerairesMap().entrySet()) {
-                Iterator<Troncon> it = itineraireEntry.getValue().getListeTroncons().iterator();
-                while (it.hasNext()) {
-                    Troncon troncon = it.next();
-                    if (it.hasNext()) {
-                        afficheTroncon(troncon, g2d);
-
-                    } else {
-                        afficheDernierTroncon(troncon, g2d);
+                g2d.setColor(Color.blue);
+                int count = 1;
+                Iterator<PointLivraison> pointLivraisonIterator = tournee.getListePointLivraisons().iterator();
+                while (pointLivraisonIterator.hasNext()) {
+                    PointLivraison tmp = pointLivraisonIterator.next();
+                    if (pointLivraisonIterator.hasNext()) {
+                        affichePointLivraison(tmp, g2d, count);
+                        count++;
                     }
                 }
-            }
-            if (pointLivraisonChoisi != null) {
-                try {
-                    Image image = ImageIO.read(new File("target.png"));
-                    g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
-                            (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                afficheEntrepot(tournee.getEntrepot(), g2d);
+
+                g2d.setColor(Color.magenta);
+                for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itineraireEntry : tournee.getItinerairesMap().entrySet()) {
+                    Iterator<Troncon> it = itineraireEntry.getValue().getListeTroncons().iterator();
+                    while (it.hasNext()) {
+                        Troncon troncon = it.next();
+                        if (it.hasNext()) {
+                            afficheTroncon(troncon, g2d);
+
+                        } else {
+                            afficheDernierTroncon(troncon, g2d);
+                        }
+                    }
                 }
+                if (pointLivraisonChoisi != null) {
+                    try {
+                        Image image = ImageIO.read(new File("target.png"));
+                        g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                                (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
             }
-
-
         }
     }
 
@@ -224,8 +249,8 @@ public class VueGraphique extends JPanel {
 
     public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2) {
 
-        double H = 20; // ç®­å¤´é«˜åº¦
-        double L = 8; // åº•è¾¹çš„ä¸€å�Š
+        double H = 14; // ç®­å¤´é«˜åº¦
+        double L = 6; // åº•è¾¹çš„ä¸€å�Š
         int x3 = 0;
         int y3 = 0;
         int x4 = 0;

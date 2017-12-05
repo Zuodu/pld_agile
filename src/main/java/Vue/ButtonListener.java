@@ -85,6 +85,7 @@ public class ButtonListener implements ActionListener {
                     PointLivraison p = iterator.next();
                     if (p.equals(pointLivraison)) {
                         controleur.clickedOnPoint(iterator.next());
+                        break;
                     }
                 }
             }
@@ -110,6 +111,7 @@ public class ButtonListener implements ActionListener {
             String plageFin=fenetrePrincipale.getVueTextuelle().getInfoPlageFin();
             Double debut=null;
             Double fin=null;
+            try {
             if (!plageDebut.equals("")) {
                 debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
                         + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
@@ -120,6 +122,9 @@ public class ButtonListener implements ActionListener {
                 fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
                         + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
                         + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+            }}
+            catch (StringIndexOutOfBoundsException se) {
+                JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
             }
             controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
         } else if (s.equals(VueTextuelle.UNDO)) {

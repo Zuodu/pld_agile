@@ -41,7 +41,13 @@ public class Tournee extends Observable {
 
     }
 
+    public void reinitialise () {
+        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
+        this.listePointLivraisons = new ArrayList<PointLivraison>();
+    }
+
     public void clone(Tournee tournee, Tournee newTournee) {
+        newTournee.reinitialise();
         newTournee.setCharge(tournee.isCharge());
         newTournee.setHeureDeDepart(tournee.getHeureDeDepart());
         newTournee.setEntrepot(new PointLivraison(tournee.getEntrepot()));

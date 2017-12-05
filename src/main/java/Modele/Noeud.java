@@ -29,7 +29,7 @@ public class Noeud{
     public Noeud(Noeud unNoeud) {
         this(unNoeud.getId(),unNoeud.getX(),unNoeud.getY());
         for(Troncon troncon:unNoeud.getNeighbors()){
-            this.addNeighbor(new Troncon(troncon));
+            this.addNeighbor(troncon);
         }
     }
 

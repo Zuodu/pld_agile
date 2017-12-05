@@ -3,7 +3,7 @@ package Modele;
 
 /**
  * @author H4401
- * Classe représentant l'élément PointLivraison d'un plan, ne contient que des Get et des Set.
+ *         Classe représentant l'élément PointLivraison d'un plan, ne contient que des Get et des Set.
  */
 public class PointLivraison extends Noeud {
     private Double debutPlage;
@@ -27,6 +27,7 @@ public class PointLivraison extends Noeud {
 
     /**
      * Get
+     *
      * @return heureDepart
      */
     public Double getHeureDepart() {
@@ -39,6 +40,7 @@ public class PointLivraison extends Noeud {
 
     /**
      * Get
+     *
      * @return debutPlage
      */
     public Double getDebutPlage() {
@@ -51,6 +53,7 @@ public class PointLivraison extends Noeud {
 
     /**
      * Get
+     *
      * @return finPage
      */
     public Double getFinPlage() {
@@ -63,6 +66,7 @@ public class PointLivraison extends Noeud {
 
     /**
      * Constructeur avec plage horaire
+     *
      * @param id
      * @param x
      * @param y
@@ -73,23 +77,25 @@ public class PointLivraison extends Noeud {
     public PointLivraison(Long id, int x, int y, double duree, Double debutPlage, Double finPlage) {
 
         super(id, x, y);
-        this.duree=duree;
+        this.duree = duree;
         this.debutPlage = debutPlage;
         this.finPlage = finPlage;
     }
 
-    public PointLivraison (PointLivraison unPointLivraison)
-    {
-        this(unPointLivraison.getId(),unPointLivraison.getX(),unPointLivraison.getY(),unPointLivraison.getDuree());
-
-        if(unPointLivraison.getDebutPlage()!=null)
-        {
+    public PointLivraison(PointLivraison unPointLivraison) {
+        super(unPointLivraison);
+        this.duree = unPointLivraison.getDuree();
+        this.heureDepart = unPointLivraison.getHeureDepart();
+        this.heureArrivee = unPointLivraison.getHeureArrivee();
+        if (unPointLivraison.getDebutPlage() != null) {
             this.debutPlage = unPointLivraison.getDebutPlage();
             this.finPlage = unPointLivraison.getFinPlage();
         }
     }
+
     /**
      * Constructeur sans plage horaire
+     *
      * @param id
      * @param x
      * @param y
@@ -102,14 +108,16 @@ public class PointLivraison extends Noeud {
 
     /**
      * Get
+     *
      * @return duree
      */
     public double getDuree() {
         return duree;
     }
-    
+
     /**
      * Set
+     *
      * @return duree
      */
     public void setDuree(double d) {
