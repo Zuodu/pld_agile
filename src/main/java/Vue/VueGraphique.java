@@ -52,6 +52,7 @@ public class VueGraphique extends JPanel {
 
     public VueGraphique(Plan plan, Tournee tournee) {
         setLayout(null);
+        setBackground(new Color(166,170,173));
         this.plan = plan;
 
         this.tournee = tournee;
@@ -104,7 +105,6 @@ public class VueGraphique extends JPanel {
         ymin = 9999999;
         xmax = 0;
         ymax = 0;
-
         if (isLoading) {
             try {
                 Image image = ImageIO.read(new File("Spinner.gif"));

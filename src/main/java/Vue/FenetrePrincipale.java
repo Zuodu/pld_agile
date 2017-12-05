@@ -17,9 +17,9 @@ import javax.swing.JTextField;
 public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String CHARGER_PLAN = "Charger Plan";
 	public static final String CHARGER_LIVRAISONS = "Charger Livraisons";
-	public static final String CALCULER_TOURNEE = "Calculer Tournee";
+	public static final String CALCULER_TOURNEE = "Calculer Tournée";
 	public static final String AJOUTER_POINT = "Ajouter Point de Livraison";
-	public static final String GENERER_FEUILLE = "Generer Feuille de Route";
+	public static final String GENERER_FEUILLE = "Générer Feuille de Route";
 	public static final int BUTTON_WIDTH = 250;
 	public static final int BUTTON_HEIGHT = 40;
 	public static final int ECART = 40;
