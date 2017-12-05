@@ -1,12 +1,22 @@
 package Controleur;
 
+import ChargeurXML.ChargeurPlan;
 import Modele.*;
 import Vue.FenetrePrincipale;
 
 import javax.swing.*;
 
 public class EtatDefaut implements Etat {
-    public void chargerPlan(String filePath, Plan plan) {
+
+    /**
+     * M�thode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
+     * @param filePath Le chemin d'acc�s au fichier xml
+     */
+    public void chargerPlan (String filePath, Plan plan)
+    {
+
+        ChargeurPlan.getInstance().parse(plan, filePath);
+
     }
 
     public void chargerLivraison(String filePath, Tournee tournee) {

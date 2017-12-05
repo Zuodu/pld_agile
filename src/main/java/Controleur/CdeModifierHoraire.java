@@ -7,10 +7,11 @@ import javax.swing.*;
 
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
-    Tournee oldTournee;
     PointLivraison pointLivraison;
     double debutPlage;
     double finPlage;
+    double ancientDebut;
+    double ancientFin;
 
     public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, double newDebutPlage, double newFinPlage) {
         tournee = newTournee;
@@ -22,6 +23,8 @@ public class CdeModifierHoraire implements Commande {
 
 	public void doCde()
 	{
+	    ancientDebut = pointLivraison.getDebutPlage();
+	    ancientFin = pointLivraison.getFinPlage();
         if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
         {
             JOptionPane.showMessageDialog(null, "Modification echouee");
@@ -31,6 +34,11 @@ public class CdeModifierHoraire implements Commande {
 	}
 	public void undoCde()
 	{
-		tournee = oldTournee;
+        if (!tournee.updateHoraire(pointLivraison,ancientDebut,ancientFin))
+        {
+            JOptionPane.showMessageDialog(null, "Undo echouee");
+        } else {
+            JOptionPane.showMessageDialog(null, "Undo reussi");
+        }
 	}
 }
