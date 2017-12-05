@@ -27,7 +27,7 @@ public class CdeModifierHoraire implements Commande {
 	public void doCde()
 	{
         if(tourneeRedo.getListePointLivraisons().size()==0) {
-            if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
+            if (!tournee.updateHoraire(pointLivraison.getId(),debutPlage,finPlage))
             {
                 JOptionPane.showMessageDialog(null, "Modification echouee");
             } else {
