@@ -12,15 +12,18 @@ public class EtatDefaut implements Etat {
      * M�thode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
      * @param filePath Le chemin d'acc�s au fichier xml
      */
-    public void chargerPlan (String filePath, Plan plan)
+    public boolean chargerPlan (String filePath, Plan plan)
     {
 
-        ChargeurPlan.getInstance().parse(plan, filePath);
-
+        if(ChargeurPlan.getInstance().parse(plan, filePath))
+            return true;
+        JOptionPane.showMessageDialog(null,"Le chargement a échoué, veuillez réessayer");
+        return false;
     }
 
-    public void chargerLivraison(String filePath, Tournee tournee) {
+    public boolean chargerLivraison(String filePath, Tournee tournee) {
         JOptionPane.showMessageDialog(null,"Veuillez charger un plan");
+        return false;
     }
 
     public void calculerTournee(Plan plan, Tournee tournee) {

@@ -53,8 +53,8 @@ public class Controleur {
     public void chargerPlan (String filePath)
     {
 
-        etatCourant.chargerPlan(filePath, plan);
-        setEtatCourant(etatChargerPlan);
+        if(etatCourant.chargerPlan(filePath, plan))
+            setEtatCourant(etatChargerPlan);
 
     }
 
@@ -64,8 +64,8 @@ public class Controleur {
      */
     public void chargerLivraison (String filePath){
 
-        etatCourant.chargerLivraison(filePath, tournee);
-        setEtatCourant(etatChargerLivraison);
+        if(etatCourant.chargerLivraison(filePath, tournee))
+            setEtatCourant(etatChargerLivraison);
     }
 
     /**
