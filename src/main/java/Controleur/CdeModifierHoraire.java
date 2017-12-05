@@ -23,8 +23,11 @@ public class CdeModifierHoraire implements Commande {
 
 	public void doCde()
 	{
-	    ancientDebut = pointLivraison.getDebutPlage();
-	    ancientFin = pointLivraison.getFinPlage();
+	    try {
+            ancientDebut = pointLivraison.getDebutPlage();
+            ancientFin = pointLivraison.getFinPlage();
+        } catch (NullPointerException npe) {
+        }
         if (!tournee.updateHoraire(pointLivraison,debutPlage,finPlage))
         {
             JOptionPane.showMessageDialog(null, "Modification echouee");

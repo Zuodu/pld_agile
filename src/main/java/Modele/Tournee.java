@@ -44,6 +44,8 @@ public class Tournee extends Observable {
     public void reinitialise () {
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.listePointLivraisons = new ArrayList<PointLivraison>();
+        setChanged();
+        notifyObservers();
     }
 
     public void clone(Tournee tournee, Tournee newTournee) {
