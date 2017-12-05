@@ -817,7 +817,7 @@
       <workItem from="1511310649755" duration="295000" />
       <workItem from="1511335367970" duration="4674000" />
       <workItem from="1512484118979" duration="5972000" />
-      <workItem from="1512507503881" duration="3140000" />
+      <workItem from="1512507503881" duration="3147000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -868,11 +868,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512510529607</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[YG] Undo/redo modifier interface à retardement">
+      <created>1512510680059</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512510680059</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38014000" />
+    <option name="totallyTimeSpent" value="38021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
