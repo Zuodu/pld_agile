@@ -21,6 +21,7 @@ public class LstDeCde {
 	}
 
 	public void ajouterCommande(Commande newCde) {
+		i++;
 		liste.add(newCde);
 		if(this.liste.size()==i+1)
 		{

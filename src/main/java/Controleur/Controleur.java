@@ -83,12 +83,10 @@ public class Controleur {
 
 
     public void supprimerPoint(PointLivraison pointLivraison) {
-        lstDeCde.setI(lstDeCde.getI()+1);
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee,lstDeCde);
     }
 
     public void modifierPlageHoraire(PointLivraison pointLivraison,Double debutPlage,Double finPlage){
-        lstDeCde.setI(lstDeCde.getI()+1);
         etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage,lstDeCde);
     }
 
@@ -115,11 +113,9 @@ public class Controleur {
 
     public void rightClickedOnPoint (Noeud noeud) {
         etatCourant.rightClickedOnPoint(noeud,this);
-
     }
 
     public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
-        lstDeCde.setI(lstDeCde.getI()+1);
         etatCourant.cdeAjouterLivraison(noeud,debut,fin,duree,tournee,lstDeCde);
     }
     public Tournee getTournee() {

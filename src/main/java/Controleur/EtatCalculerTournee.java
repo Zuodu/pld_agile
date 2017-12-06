@@ -45,13 +45,8 @@ public class EtatCalculerTournee extends EtatDefaut{
 		VueAjouterPoint vueAjouterPoint=new VueAjouterPoint(noeud,controleur);
 		return false;
 	}
-	public void calculerTournee (Plan plan, Tournee tournee) {
-		tournee.reinitialise();
-		AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
-		abstractGraphe.chercheSolution();
-		tournee.SignalerFinDajoutPointsLivraisons();
-		// System.out.println(abstractGraphe.getTournee());
-
+	public void calculerTournee(Plan plan, Tournee tournee) {
+		JOptionPane.showMessageDialog(null,"La tournée est déjà calculée");
 	}
 
 }
