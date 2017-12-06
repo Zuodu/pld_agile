@@ -181,6 +181,7 @@ public class VueGraphique extends JPanel {
                         }
                     }
                     g2d.setColor(Color.RED);
+                    g2d.setStroke(new BasicStroke(4.0f));
                    for (Troncon t: tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tournee.getListePointLivraisons().get(index-1),tournee.getListePointLivraisons().get(index))).getListeTroncons()) {
                        afficheTroncon(t,g2d);
                    }

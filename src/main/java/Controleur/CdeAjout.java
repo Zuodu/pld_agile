@@ -7,15 +7,18 @@ import javax.swing.*;
 public class CdeAjout implements Commande {
 	Tournee tournee;
 	Tournee oldTournee;
+	Tournee tourneeRedo;
 	Double debut;
 	Double fin;
 	double duree;
 	Noeud noeud;
-	public CdeAjout (Noeud noeud,Double debut, Double fin, double duree, Tournee newTournee,LstDeCde lstDeCde)
 
+	public CdeAjout (Noeud noeud,Double debut, Double fin, double duree, Tournee newTournee,LstDeCde lstDeCde)
 	{
 		tournee = newTournee;
 		oldTournee = new Tournee(newTournee);
+		oldTournee.clone(tournee,oldTournee);
+		tourneeRedo = new Tournee();
 		if (debut!=null) {
 			this.debut=debut;
 		} else {
@@ -32,16 +35,22 @@ public class CdeAjout implements Commande {
 	
 	public void doCde()
 	{
-
-		if(tournee.ajouterPoint(noeud,duree,fin,debut)) {
-			JOptionPane.showMessageDialog(null, "Ajout Reussi");
-		} else {
-			JOptionPane.showMessageDialog(null,"Ajout Echoue");
+		if(tourneeRedo.getListePointLivraisons().size()==0) {
+			if(tournee.ajouterPoint(noeud,duree,fin,debut)) {
+				JOptionPane.showMessageDialog(null, "Ajout Reussi");
+			} else {
+				JOptionPane.showMessageDialog(null,"Ajout Echoue");
+			}
+		}
+		else
+		{
+			tournee.clone(tourneeRedo,tournee);
 		}
 	}
 	public void undoCde()
 	{
-		tournee = oldTournee;
+		tourneeRedo.clone(tournee,tourneeRedo);
+		tournee.clone(oldTournee,tournee);
 	}
 
 }
