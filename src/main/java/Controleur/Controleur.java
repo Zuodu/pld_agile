@@ -117,6 +117,7 @@ public class Controleur {
     }
 
     public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeAjouterLivraison(noeud,debut,fin,duree,tournee,lstDeCde);
     }
     public Tournee getTournee() {
