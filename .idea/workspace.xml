@@ -1,26 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="algo ajouter point">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Controleur/EtatPointSelectionne.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand17.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand18.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLmoyen5TW1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Test/TourneeTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Test/TourneeTest2.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/optimodlyon.iml" afterPath="$PROJECT_DIR$/optimodlyon.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/MouseListener.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/MouseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
+    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -945,7 +927,7 @@
       <workItem from="1511335367970" duration="4674000" />
       <workItem from="1512484118979" duration="4776000" />
       <workItem from="1512542117965" duration="20000" />
-      <workItem from="1512553605770" duration="11000" />
+      <workItem from="1512553605770" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1017,15 +999,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512545013656</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="algo ajouter point">
+      <created>1512553632196</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1512553632196</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60520000" />
+    <option name="totallyTimeSpent" value="60580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="23" width="1674" height="1023" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1036,7 +1024,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1104,7 +1092,8 @@
     <MESSAGE value="Ajout point livraison works partially" />
     <MESSAGE value="refresh plage horaire after undo/redo/echec&#10;take off plage horaire" />
     <MESSAGE value="recalculer bug corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="recalculer bug corrected" />
+    <MESSAGE value="algo ajouter point" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo ajouter point" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
