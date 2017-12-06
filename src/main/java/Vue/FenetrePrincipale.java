@@ -22,8 +22,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public static final int BUTTON_WIDTH = 250;
 	public static final int BUTTON_HEIGHT = 40;
 	public static final int ECART = 40;
-	public static final int FENETRE_WIDTH = 1100;
-	public static final int FENETRE_LENGTH = 800;
+	public static final int FENETRE_WIDTH = 1000;
+	public static final int FENETRE_LENGTH = 750;
 	public static final int BUTTONPANEL_WIDTH = 400;
 	public static final int BUTTONPANEL_LENGTH = 300;
 	private JPanel contentPane;
