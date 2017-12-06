@@ -13,10 +13,10 @@ public abstract class TemplateTSP implements Algo.TSP {
         return tempsLimiteAtteint;
     }
 
-    public void chercheSolution(double heureDeDepart, int tpsLimite, int nbSommets, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
+    public void chercheSolution(double coutInit,double heureDeDepart, int tpsLimite, int nbSommets, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
         tempsLimiteAtteint = false;
         horaireLivraison = new ArrayList<Map.Entry<Double, Double>>(nbSommets);
-        coutMeilleureSolution = Integer.MAX_VALUE;
+        coutMeilleureSolution = coutInit;
         meilleureSolution = new Integer[nbSommets];
         ArrayList<Integer> nonVus = new ArrayList<Integer>();
         ArrayList<Map.Entry<Double, Double>> heureLivraison = new ArrayList<Map.Entry<Double, Double>>();
@@ -62,7 +62,7 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 <= i < nbSommets
      * @return un iterateur permettant d'iterer sur tous les sommets de nonVus
      */
-    protected abstract Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree);
+    protected abstract Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart);
 
     /**
      * Methode definissant le patron (template) d'une resolution par separation et evaluation (branch and bound) du TSP
@@ -79,7 +79,7 @@ public abstract class TemplateTSP implements Algo.TSP {
     void branchAndBound(int sommetCrt, ArrayList<Integer> nonVus, ArrayList<Integer> vus, ArrayList<Map.Entry<Double, Double>> heureLivraison, double coutVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart, long tpsDebut, int tpsLimite) {
         if (System.currentTimeMillis() - tpsDebut > tpsLimite) {
             tempsLimiteAtteint = true;
-//            return;
+            return;
         }
         if (nonVus.size() == 0) { // tous les sommets ont ete visites
             coutVus += cout[sommetCrt][0];
@@ -90,12 +90,8 @@ public abstract class TemplateTSP implements Algo.TSP {
                 coutMeilleureSolution = coutVus;
             }
         } else {
-            double bound = 0;
-            if (meilleureSolution[0] != null) {
-                bound = bound(sommetCrt,vus.get(0), nonVus, cout, duree);
-            }
-            if (coutVus + bound < coutMeilleureSolution) {
-                Iterator<Integer> it = iterator(sommetCrt, nonVus, cout, duree);
+            if (coutVus + bound(sommetCrt, vus.get(0), nonVus, cout, duree) < coutMeilleureSolution) {
+                Iterator<Integer> it = iterator(sommetCrt, nonVus, cout, duree, plageArrivee, plageDepart);
                 while (it.hasNext()) {
                     Integer prochainSommet = it.next();
                     double arrivee = coutVus + cout[sommetCrt][prochainSommet];

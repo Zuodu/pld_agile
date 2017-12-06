@@ -18,6 +18,9 @@ public class main {
 
     public static void main(String args[]) {
         Controleur controleur = new Controleur();
+        controleur.chargerPlan("planLyonGrand.xml");
+        controleur.chargerLivraison("DLgrand20TW.xml");
+        controleur.calculerTournee();
        // Double d1=1d;
         //Double d2=2d;
         //Double d3=d1;

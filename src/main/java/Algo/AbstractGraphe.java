@@ -78,12 +78,20 @@ public class AbstractGraphe {
         }
     }
 
+    public double getPremiereSolution(double heureDeDepart, int tpsLimite, int nbSommets, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart){
+        TSP tsp4 = new TSP4();
+        tsp4.chercheSolution(Double.MAX_VALUE,heureDeDepart,tpsLimite, nbSommets, cout, duree, plageArrivee, plageDepart);
+        return tsp4.getCoutMeilleureSolution();
+    }
+
     public void chercheSolution() {
         long tempsDebut=System.currentTimeMillis();
         List<PointLivraison> pointLivraisons=new ArrayList<PointLivraison>();
 
+        double coutInit=getPremiereSolution(tournee.getHeureDeDepart(),30000, nbSommets, cout, duree,plageArrivee,plageDepart);
+        System.out.println(System.currentTimeMillis()-tempsDebut);
         TSP tsp = new TSP3();
-        tsp.chercheSolution(tournee.getHeureDeDepart(),10, nbSommets, cout, duree,plageArrivee,plageDepart);
+        tsp.chercheSolution(coutInit,tournee.getHeureDeDepart(),10, nbSommets, cout, duree,plageArrivee,plageDepart);
 
         for (int i = 0; i < nbSommets - 1; i++) {
             Map.Entry<PointLivraison,PointLivraison> entry=new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)),pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
@@ -103,6 +111,7 @@ public class AbstractGraphe {
         tournee.getEntrepot().setHeureDepart(tournee.getHeureDeDepart());
         tournee.setListePointLivraisons(pointLivraisons);
 
+        if(tsp.getTempsLimiteAtteint()) System.out.println("Temps limite atteint");
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
         System.out.println(System.currentTimeMillis()-tempsDebut);
