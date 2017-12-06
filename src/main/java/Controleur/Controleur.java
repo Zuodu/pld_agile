@@ -67,6 +67,7 @@ public class Controleur {
         tournee.reinitialise();
         if(etatCourant.chargerLivraison(filePath, tournee))
             setEtatCourant(etatChargerLivraison);
+        lstDeCde = new LstDeCde();
     }
 
     /**
