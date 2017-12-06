@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FenetrePrincipale.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FenetrePrincipale.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
@@ -130,7 +130,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VueAjouterPoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VueAjouterPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
@@ -216,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/main/java/Vue/MouseListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
       </list>
     </option>
   </component>
@@ -933,7 +933,7 @@
       <workItem from="1512507503881" duration="3895000" />
       <workItem from="1512512264814" duration="1219000" />
       <workItem from="1512544375762" duration="1486000" />
-      <workItem from="1512545935326" duration="6039000" />
+      <workItem from="1512545935326" duration="6107000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1047,11 +1047,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512551989298</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ajout point format verified before launch service">
+      <created>1512552331621</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1512552331621</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47513000" />
+    <option name="totallyTimeSpent" value="47581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="23" width="1624" height="1027" extended-state="0" />
@@ -1141,7 +1148,8 @@
     <MESSAGE value="deselectionner point before recharge" />
     <MESSAGE value="Duree modification disabled" />
     <MESSAGE value="IHM updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="IHM updated" />
+    <MESSAGE value="ajout point format verified before launch service" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout point format verified before launch service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1464,14 +1472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1523,6 +1523,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding />
         </state>
       </provider>
