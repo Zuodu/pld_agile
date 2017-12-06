@@ -12,22 +12,31 @@ public class EtatCalculerTournee extends EtatDefaut{
 	public void cdeAjouterLivraison(Noeud noeud,Double debut, Double fin, double duree, Tournee tournee,LstDeCde lstDeCde) {
 
 		CdeAjout commandeAjout = new CdeAjout(noeud,debut,fin,duree, tournee,lstDeCde);
-		commandeAjout.doCde();
-		lstDeCde.ajouterCommande(commandeAjout);
+		try {
+			commandeAjout.doCde();
+			lstDeCde.ajouterCommande(commandeAjout);
+		}catch(NullPointerException ne)
+		{
+
+		}
 	}
 
 	public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee,LstDeCde lstDeCde)
 	{
 		CdeSupprimer commandeSupprimer = new CdeSupprimer(pointLivraison,tournee);
-		commandeSupprimer.doCde();
-		lstDeCde.ajouterCommande(commandeSupprimer);
+		try{
+			commandeSupprimer.doCde();
+			lstDeCde.ajouterCommande(commandeSupprimer);
+		}catch(NullPointerException ne) {}
 	}
 
 	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, Double debutPlage,Double finPlage,LstDeCde lstDeCde)
 	{
 		CdeModifierHoraire commandeModifier = new CdeModifierHoraire(pointLivraison,tournee,debutPlage,finPlage);
-		commandeModifier.doCde();
-		lstDeCde.ajouterCommande(commandeModifier);
+		try{
+			commandeModifier.doCde();
+			lstDeCde.ajouterCommande(commandeModifier);
+		}catch(NullPointerException ne) {}
 	}
 
 	/**
