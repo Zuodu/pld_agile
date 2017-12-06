@@ -141,7 +141,7 @@ public class VueGraphique extends JPanel {
             if (tournee.isCharge()) {
 
                 g2d.setColor(Color.blue);
-                int count = 1;
+                int count = 0;
                 Iterator<PointLivraison> pointLivraisonIterator = tournee.getListePointLivraisons().iterator();
                 while (pointLivraisonIterator.hasNext()) {
                     PointLivraison tmp = pointLivraisonIterator.next();
@@ -234,9 +234,11 @@ public class VueGraphique extends JPanel {
                 (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2,
                 RAYON_POINTLIVRAISON,
                 RAYON_POINTLIVRAISON);
-        g2d.drawString("No. " + count,
-                (int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
-                (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2);
+        if (count!=0) {
+            g2d.drawString("No. " + count,
+                    (int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                    (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2);
+        }
     }
 
     public void afficheEntrepot(PointLivraison pointLivraison, Graphics2D g2d) {
