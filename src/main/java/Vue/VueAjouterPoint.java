@@ -89,13 +89,28 @@ public class VueAjouterPoint extends JFrame {
                     }
                     if (!duree.equals("")) {
                         dureeDouble=Double.parseDouble(duree);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Veuillez saisir une duree");
+                        return;
                     }
                 }
                 catch (StringIndexOutOfBoundsException se) {
                     JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
                     return;
                 }
-                    controleur.addPointLivraison(noeud,debut,fin,dureeDouble);
+                catch (NumberFormatException nfe) {
+                    JOptionPane.showMessageDialog(null, "Verifie la duree saisie");
+                    return;
+                }
+                if (debut==null&&fin!=null) {
+                    JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                    return;
+                }
+                if (debut!=null&&fin==null) {
+                    JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                    return;
+                }
+                controleur.addPointLivraison(noeud,debut,fin,dureeDouble);
                 System.out.println("want to add point " );
                 System.out.println(noeud);
                 System.out.println(debut+" "+fin+" "+duree);
