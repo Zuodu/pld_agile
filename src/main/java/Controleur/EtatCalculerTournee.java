@@ -46,6 +46,7 @@ public class EtatCalculerTournee extends EtatDefaut{
 		return false;
 	}
 	public void calculerTournee (Plan plan, Tournee tournee) {
+		tournee.reinitialise();
 		AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
 		abstractGraphe.chercheSolution();
 		tournee.SignalerFinDajoutPointsLivraisons();
