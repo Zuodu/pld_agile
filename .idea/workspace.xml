@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -825,7 +823,7 @@
       <workItem from="1512512264814" duration="1219000" />
       <workItem from="1512544375762" duration="1486000" />
       <workItem from="1512545935326" duration="5209000" />
-      <workItem from="1512552421656" duration="490000" />
+      <workItem from="1512552421656" duration="513000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -925,11 +923,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512550689887</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Bugs">
+      <created>1512552923359</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512552923359</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47173000" />
+    <option name="totallyTimeSpent" value="47196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1017,7 +1022,8 @@
     <MESSAGE value="redo ajout corrected" />
     <MESSAGE value="deselectionner point added" />
     <MESSAGE value="deselectionner point before recharge" />
-    <option name="LAST_COMMIT_MESSAGE" value="deselectionner point before recharge" />
+    <MESSAGE value="Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
