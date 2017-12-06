@@ -153,8 +153,12 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		vueGraphique.repaint();
-		if (vueGraphique.getPointLivraisonChoisi()!=null)
-			vueTextuelle.clickedOnPoint(vueGraphique,vueGraphique.getPointLivraisonChoisi().getId());
+		if (vueGraphique.getPointLivraisonChoisi()!=null) {
+			vueTextuelle.clickedOnPoint(vueGraphique, vueGraphique.getPointLivraisonChoisi().getId());
+		} else {
+			vueTextuelle.clickedOnPoint(null);
+
+		}
 
 	}
 

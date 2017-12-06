@@ -192,6 +192,12 @@ public class VueTextuelle extends JPanel {
                 int s = (int) (pointLivraison.getHeureDepart() % 60);
                 infoHeureDepart.setText(h + ":" + m + ":" + s);
             }
+        }else {
+            infoPlageDebut.setText("");
+            infoPlageFin.setText("");
+            infoDuree.setText("");
+            infoHeureArrivee.setText("");
+            infoHeureDepart.setText("");
         }
 
     }
@@ -241,6 +247,12 @@ public class VueTextuelle extends JPanel {
                 int s = (int) (pointLivraison.getHeureDepart() % 60);
                 infoHeureDepart.setText(h + ":" + m + ":" + s);
             }
+        } else {
+            infoPlageDebut.setText("");
+            infoPlageFin.setText("");
+            infoDuree.setText("");
+            infoHeureArrivee.setText("");
+            infoHeureDepart.setText("");
         }
 
     }

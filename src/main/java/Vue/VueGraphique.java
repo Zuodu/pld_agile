@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
+import java.util.AbstractMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -173,6 +174,16 @@ public class VueGraphique extends JPanel {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    int index=0;
+                    for (int i=1;i<tournee.getListePointLivraisons().size();i++) {
+                        if (tournee.getListePointLivraisons().get(i).getId()==pointLivraisonChoisi.getId()) {
+                            index=i;
+                        }
+                    }
+                    g2d.setColor(Color.RED);
+                   for (Troncon t: tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tournee.getListePointLivraisons().get(index-1),tournee.getListePointLivraisons().get(index))).getListeTroncons()) {
+                       afficheTroncon(t,g2d);
+                   }
                 }
 
 

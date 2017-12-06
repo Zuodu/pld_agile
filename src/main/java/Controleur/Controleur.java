@@ -83,6 +83,7 @@ public class Controleur {
 
 
     public void supprimerPoint(PointLivraison pointLivraison) {
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee,lstDeCde);
     }
 
