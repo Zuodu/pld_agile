@@ -68,6 +68,8 @@ public class Tournee extends Observable {
             PointLivraison pointArrivee = entry.getKey().getValue();
             newTournee.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonHashMap.get(pointDepart.getId()), pointLivraisonHashMap.get(pointArrivee.getId())), new Itineraire(entry.getValue()));
         }
+        newTournee.setChanged();
+        newTournee.notifyObservers();
     }
 
     public Tournee() {
@@ -231,7 +233,7 @@ public class Tournee extends Observable {
 
         Dijkstra dijkstra2 = new Dijkstra();
         dijkstra2.chercheDistanceMin(pointLivraisonAInserer, pointLivraison2);
-        Itineraire itineraire2 = dijkstra1.getMeilleurItineraire();
+        Itineraire itineraire2 = dijkstra2.getMeilleurItineraire();
 
         int positionAInserer=listePointLivraisons.indexOf(pointLivraison2);
 
@@ -243,6 +245,19 @@ public class Tournee extends Observable {
         if(pointLivraisonAInserer.getFinPlage()!=null&&depart>pointLivraisonAInserer.getFinPlage()) {
             return false;
         }
+
+        if(positionAInserer==0){
+            listePointLivraisons.add(listePointLivraisons.size()-1,pointLivraisonAInserer);
+            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraisonAInserer),itineraire1);
+            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonAInserer, pointLivraison2),itineraire2);
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1,pointLivraison2));
+            pointLivraisonAInserer.setHeureDepart(depart);
+            pointLivraisonAInserer.setHeureArrivee(arrivee);
+            entrepot.setHeureArrivee(depart+itineraire2.getTemps());
+            return true;
+        }
+
+
 
         if(retardeHoraire(positionAInserer,depart+itineraire2.getTemps()-pointLivraison2.getHeureArrivee())){
             listePointLivraisons.add(positionAInserer,pointLivraisonAInserer);
@@ -306,6 +321,8 @@ public class Tournee extends Observable {
         heureDepart = heureArrivee + duree;
 
         if (pointAModifier.getFinPlage()!=null&& heureDepart > pointAModifier.getFinPlage()) {
+            setChanged();
+            notifyObservers();
             return false;
         } else if (heureDepart < pointAModifier.getHeureDepart()) {
             if (avanceHoraire(listePointLivraisons.indexOf(pointAModifier) + 1, pointAModifier.getHeureDepart() - heureDepart)) {
@@ -324,6 +341,8 @@ public class Tournee extends Observable {
             notifyObservers();
             return true;
         }
+        setChanged();
+        notifyObservers();
         return false;
 
     }
@@ -334,17 +353,29 @@ public class Tournee extends Observable {
         double heureDepart;
 
         PointLivraison pointAModifier = null;
+
         for (PointLivraison pointLivraison : listePointLivraisons) {
             if (pointLivraison.getId().equals(id)) {
                 pointAModifier = pointLivraison;
             }
         }
+
+        if(plageDebut==null&&plageFin==null){
+            pointAModifier.setDebutPlage(null);
+            pointAModifier.setFinPlage(null);
+            setChanged();
+            notifyObservers();
+            return true;
+        }
+
         heureArrivee = pointAModifier.getHeureArrivee();
         heureDepart = heureArrivee + pointAModifier.getDuree();
         if (heureArrivee < plageDebut) {
             heureDepart = plageDebut + pointAModifier.getDuree();
         }
         if (heureDepart > plageFin) {
+            setChanged();
+            notifyObservers();
             return false;
         } else if (pointAModifier.getHeureDepart().equals(heureDepart)) {
             pointAModifier.setDebutPlage(plageDebut);
@@ -372,6 +403,8 @@ public class Tournee extends Observable {
             notifyObservers();
             return true;
         }
+        setChanged();
+        notifyObservers();
         return false;
 
     }

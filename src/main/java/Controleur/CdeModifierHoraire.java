@@ -8,13 +8,13 @@ import javax.swing.*;
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
     PointLivraison pointLivraison;
-    double debutPlage;
-    double finPlage;
+    Double debutPlage;
+    Double finPlage;
     Tournee oldTournee;
     Tournee tourneeRedo;
 
 
-    public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, double newDebutPlage, double newFinPlage) {
+    public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, Double newDebutPlage, Double newFinPlage) {
         tournee = newTournee;
         pointLivraison = newPointLivraison;
         debutPlage = newDebutPlage;

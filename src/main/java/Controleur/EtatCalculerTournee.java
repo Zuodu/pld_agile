@@ -1,5 +1,6 @@
 package Controleur;
 
+import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import Modele.*;
 import Vue.VueAjouterPoint;
@@ -22,7 +23,7 @@ public class EtatCalculerTournee extends EtatDefaut{
 		lstDeCde.ajouterCommande(commandeSupprimer);
 	}
 	
-	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, double debutPlage, double finPlage,LstDeCde lstDeCde)
+	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, Double debutPlage,Double finPlage,LstDeCde lstDeCde)
 	{
 		CdeModifierHoraire commandeModifier = new CdeModifierHoraire(pointLivraison,tournee,debutPlage,finPlage);
 		commandeModifier.doCde();
@@ -44,4 +45,12 @@ public class EtatCalculerTournee extends EtatDefaut{
 		VueAjouterPoint vueAjouterPoint=new VueAjouterPoint(noeud,controleur);
 		return false;
 	}
+	public void calculerTournee (Plan plan, Tournee tournee) {
+		AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
+		abstractGraphe.chercheSolution();
+		tournee.SignalerFinDajoutPointsLivraisons();
+		// System.out.println(abstractGraphe.getTournee());
+
+	}
+
 }

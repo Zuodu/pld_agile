@@ -61,7 +61,7 @@ public class EtatDefaut implements Etat {
     public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee,LstDeCde lstDeCde) {
     }
 
-    public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, double debutPlage, double finPlage,LstDeCde lstDeCde) {
+    public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, Double debutPlage, Double finPlage,LstDeCde lstDeCde) {
     }
 
     //Méthodes qui n'avaient pas de corps

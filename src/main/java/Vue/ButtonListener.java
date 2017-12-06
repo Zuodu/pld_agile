@@ -5,6 +5,8 @@ import Modele.Plan;
 import Modele.PointLivraison;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,9 +36,10 @@ public class ButtonListener implements ActionListener {
         String s = e.getActionCommand();
         if (s.equals(FenetrePrincipale.CHARGER_PLAN)) {
             JFileChooser jfc = new JFileChooser();
-            FileSystemView fsv = FileSystemView.getFileSystemView();  //注意了，这里重要的一句
-            //得到桌面路径
+            FileFilter filter = new FileNameExtensionFilter("XML File","xml");
+            FileSystemView fsv = FileSystemView.getFileSystemView();
             jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
+            jfc.setFileFilter(filter);
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);
 
@@ -48,6 +51,8 @@ public class ButtonListener implements ActionListener {
 
         } else if (s.equals(FenetrePrincipale.CHARGER_LIVRAISONS)) {
             JFileChooser jfc = new JFileChooser();
+            FileFilter filter = new FileNameExtensionFilter("XML File","xml");
+            jfc.setFileFilter(filter);
             FileSystemView fsv = FileSystemView.getFileSystemView();  //注意了，这里重要的一句
             //得到桌面路径
             jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
@@ -113,18 +118,31 @@ public class ButtonListener implements ActionListener {
             Double fin=null;
             try {
             if (!plageDebut.equals("")) {
+                Double h=Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':')));
+                Double m=Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1)));
+                Double sec= Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
+                if (h>=24||h<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
+                if (m>=60||m<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
+                if (sec>=60||sec<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
                 debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
                         + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
                         + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
 
             }
             if (!plageFin.equals("")) {
+                Double h=Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':')));
+                Double m=Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1)));
+                Double sec= Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+                if (h>=24||h<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
+                if (m>=60||m<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
+                if (sec>=60||sec<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
                 fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
                         + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
                         + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
             }}
             catch (StringIndexOutOfBoundsException se) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                return;
             }
             controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
         } else if (s.equals(VueTextuelle.UNDO)) {
