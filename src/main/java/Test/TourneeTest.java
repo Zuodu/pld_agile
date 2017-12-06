@@ -37,7 +37,7 @@ public class TourneeTest {
 	
 	@Test //Ajout d'un Itineraire
 	public void TU2() {
-/*		InitTU();
+		InitTU();
 		
 		assert(tournee.getListeItineraires().isEmpty());
 		
@@ -49,13 +49,13 @@ public class TourneeTest {
 		}
 		
 		assert(tournee.getListeItineraires().size() == 1);
-		assert(itinerairePresent);*/
+		assert(itinerairePresent);
 	}
 	
 	@Test //Ajout d'un Horaire de Livraison
 	public void TU3() {
 		InitTU();
-/*
+
 		assert(tournee.getHoraireLivraison().isEmpty());
 		
 		PointLivraison point = new PointLivraison(25495299L, 56584, 58632, 900);
@@ -63,6 +63,6 @@ public class TourneeTest {
 		tournee.addHoraireLivraison(point, horaire);
 		
 		assert(tournee.getHoraireLivraison().get(point).getKey().equals(new Double(36000.0)));
-		assert(tournee.getHoraireLivraison().get(point).getValue() == (double) 50400.0);*/
+		assert(tournee.getHoraireLivraison().get(point).getValue() == (double) 50400.0);
 	}
 }

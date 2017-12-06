@@ -37,16 +37,16 @@ public class ChargeurLivraisonTest {
 		ChargeurLivraison.getInstance().parse(petiteTournee, detailsLivraisonPetit);
 	}
 	
-	@Test //Chargement de DLpetit5.xml
+	//@Test //Chargement de DLpetit5.xml
 	public void TUp1() {
 		InitTUp();
 		
 		assert(petiteTournee.getHeureDeDepart() == 28800.0);
 		assert(petiteTournee.getListePointLivraisons().size() == 4);
-		//assert(petiteTournee.getListeItineraires().isEmpty());
+		assert(petiteTournee.getListeItineraires().isEmpty());
 	}
 	
-	@Test //Présence des PointLivraison de DLpetit5.xml
+	//@Test //Présence des PointLivraison de DLpetit5.xml
 	public void TUp2() {
 		InitTUp();
 		
@@ -106,13 +106,13 @@ public class ChargeurLivraisonTest {
 		ChargeurLivraison.getInstance().parse(grandeTournee, detailsLivraisonGrand);
 	}
 	
-	@Test //Chargement de DLgrand20TW.xml
+	//@Test //Chargement de DLgrand20TW.xml
 	public void TUg1() {
 		InitTUg();
 		
 		assert(grandeTournee.getHeureDeDepart() == 28800.0);
 		assert(grandeTournee.getListePointLivraisons().size() == 19);
-		//assert(grandeTournee.getListeItineraires().isEmpty());
+		assert(grandeTournee.getListeItineraires().isEmpty());
 	}
 	
 	@Test //Présence des PointLivraison de DLgrand20TW.xml
