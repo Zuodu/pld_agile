@@ -68,6 +68,7 @@ public class VueTextuelle extends JPanel {
         infoPlageFin.setBounds(100, 40, 150, 30);
         infoDuree = new JTextField();
         infoDuree.setBounds(100, 80, 150, 30);
+        infoDuree.setEnabled(false);
 
         infoHeureArrivee = new JTextField();
         infoHeureArrivee.setBounds(100, 120, 150, 30);
@@ -192,6 +193,12 @@ public class VueTextuelle extends JPanel {
                 int s = (int) (pointLivraison.getHeureDepart() % 60);
                 infoHeureDepart.setText(h + ":" + m + ":" + s);
             }
+        }else {
+            infoPlageDebut.setText("");
+            infoPlageFin.setText("");
+            infoDuree.setText("");
+            infoHeureArrivee.setText("");
+            infoHeureDepart.setText("");
         }
 
     }
@@ -241,6 +248,12 @@ public class VueTextuelle extends JPanel {
                 int s = (int) (pointLivraison.getHeureDepart() % 60);
                 infoHeureDepart.setText(h + ":" + m + ":" + s);
             }
+        } else {
+            infoPlageDebut.setText("");
+            infoPlageFin.setText("");
+            infoDuree.setText("");
+            infoHeureArrivee.setText("");
+            infoHeureDepart.setText("");
         }
 
     }

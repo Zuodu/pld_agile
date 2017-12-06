@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
+import java.util.AbstractMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -141,7 +142,7 @@ public class VueGraphique extends JPanel {
             if (tournee.isCharge()) {
 
                 g2d.setColor(Color.blue);
-                int count = 1;
+                int count = 0;
                 Iterator<PointLivraison> pointLivraisonIterator = tournee.getListePointLivraisons().iterator();
                 while (pointLivraisonIterator.hasNext()) {
                     PointLivraison tmp = pointLivraisonIterator.next();
@@ -173,6 +174,17 @@ public class VueGraphique extends JPanel {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    int index=0;
+                    for (int i=1;i<tournee.getListePointLivraisons().size();i++) {
+                        if (tournee.getListePointLivraisons().get(i).getId()==pointLivraisonChoisi.getId()) {
+                            index=i;
+                        }
+                    }
+                    g2d.setColor(Color.RED);
+                    g2d.setStroke(new BasicStroke(4.0f));
+                   for (Troncon t: tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tournee.getListePointLivraisons().get(index-1),tournee.getListePointLivraisons().get(index))).getListeTroncons()) {
+                       afficheTroncon(t,g2d);
+                   }
                 }
 
 
@@ -234,9 +246,11 @@ public class VueGraphique extends JPanel {
                 (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2,
                 RAYON_POINTLIVRAISON,
                 RAYON_POINTLIVRAISON);
-        g2d.drawString("No. " + count,
-                (int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
-                (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2);
+        if (count!=0) {
+            g2d.drawString("No. " + count,
+                    (int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
+                    (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2);
+        }
     }
 
     public void afficheEntrepot(PointLivraison pointLivraison, Graphics2D g2d) {

@@ -55,7 +55,6 @@ public class EtatDefaut implements Etat {
     }
 
     public void cdeAjouterLivraison(Noeud noeud,Double debut, Double fin, double duree, Tournee tournee,LstDeCde lstDeCde) {
-
     }
 
     public void cdeSupprimerLivraison(PointLivraison pointLivraison,Tournee tournee,LstDeCde lstDeCde) {

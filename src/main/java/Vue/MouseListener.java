@@ -26,16 +26,21 @@ public class MouseListener extends MouseAdapter {
         if (evt.getButton() == MouseEvent.BUTTON1) {
             int xClicked = evt.getX();
             int yClciked = evt.getY();
-
+            boolean found=false;
             for (PointLivraison p : vueGraphique.getTournee().getListePointLivraisons()) {
                 int x = (int) ((p.getX() - vueGraphique.getXmin()) / vueGraphique.getxScale()) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2;
                 int y = (int) ((p.getY() - vueGraphique.getYmin()) / vueGraphique.getyScale()) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2;
                 if (xClicked > x - 10 && xClicked < x + 10) {
                     if (yClciked > y - 10 && yClciked < y + 10) {
                         controleur.clickedOnPoint(p);
+                        found=true;
                     }
                 }
             }
+            if (!found) {
+                controleur.clickedOnPoint(null);
+            }
+
 
         } else if (evt.getButton()==MouseEvent.BUTTON3) {
             int xClicked = evt.getX();

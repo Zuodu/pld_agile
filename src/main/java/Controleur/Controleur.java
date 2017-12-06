@@ -52,6 +52,7 @@ public class Controleur {
      */
     public void chargerPlan (String filePath)
     {
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         plan.reinitialise();
         tournee.reinitialise();
         if(etatCourant.chargerPlan(filePath, plan))
@@ -64,9 +65,11 @@ public class Controleur {
      * @param filePath Le chemin d'acc�s au fichier xml
      */
     public void chargerLivraison (String filePath){
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         tournee.reinitialise();
         if(etatCourant.chargerLivraison(filePath, tournee))
             setEtatCourant(etatChargerLivraison);
+        lstDeCde = new LstDeCde();
     }
 
     /**
@@ -83,12 +86,11 @@ public class Controleur {
 
 
     public void supprimerPoint(PointLivraison pointLivraison) {
-        lstDeCde.setI(lstDeCde.getI()+1);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee,lstDeCde);
     }
 
     public void modifierPlageHoraire(PointLivraison pointLivraison,Double debutPlage,Double finPlage){
-        lstDeCde.setI(lstDeCde.getI()+1);
         etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage,lstDeCde);
     }
 
@@ -102,6 +104,8 @@ public class Controleur {
     public void redo()
     {
         etatCourant.redo(lstDeCde);
+        fenetrePrincipale.getVueGraphique().repaint();
+        fenetrePrincipale.getVueTextuelle().repaint();
     }
     /**
      * M�thode permettant d'afficher les informations du point cliqu�
@@ -113,11 +117,10 @@ public class Controleur {
 
     public void rightClickedOnPoint (Noeud noeud) {
         etatCourant.rightClickedOnPoint(noeud,this);
-
     }
 
     public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
-        lstDeCde.setI(lstDeCde.getI()+1);
+        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeAjouterLivraison(noeud,debut,fin,duree,tournee,lstDeCde);
     }
     public Tournee getTournee() {

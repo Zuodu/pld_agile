@@ -22,8 +22,8 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public static final int BUTTON_WIDTH = 250;
 	public static final int BUTTON_HEIGHT = 40;
 	public static final int ECART = 40;
-	public static final int FENETRE_WIDTH = 1100;
-	public static final int FENETRE_LENGTH = 800;
+	public static final int FENETRE_WIDTH = 1020;
+	public static final int FENETRE_LENGTH = 780;
 	public static final int BUTTONPANEL_WIDTH = 400;
 	public static final int BUTTONPANEL_LENGTH = 300;
 	private JPanel contentPane;
@@ -153,8 +153,12 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		vueGraphique.repaint();
-		if (vueGraphique.getPointLivraisonChoisi()!=null)
-			vueTextuelle.clickedOnPoint(vueGraphique,vueGraphique.getPointLivraisonChoisi().getId());
+		if (vueGraphique.getPointLivraisonChoisi()!=null) {
+			vueTextuelle.clickedOnPoint(vueGraphique, vueGraphique.getPointLivraisonChoisi().getId());
+		} else {
+			vueTextuelle.clickedOnPoint(null);
+
+		}
 
 	}
 
