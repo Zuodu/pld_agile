@@ -2,6 +2,10 @@ package Controleur;
 
 import java.util.LinkedList;
 
+/**
+ * @author H4401
+ * Classe
+ */
 public class LstDeCde {
 	private LinkedList<Commande> liste;
 	private int i;

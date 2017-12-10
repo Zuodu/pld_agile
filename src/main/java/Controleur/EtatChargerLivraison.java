@@ -7,6 +7,11 @@ import Modele.Tournee;
 
 import javax.swing.*;
 
+/**
+ * @author H4401
+ * Classe Etat avec les actions possibles après avoir chargé des livraisons
+ */
+
 public class EtatChargerLivraison extends EtatDefaut{
 	/**
 	 * Le undo n'est pas possible ici
@@ -25,7 +30,7 @@ public class EtatChargerLivraison extends EtatDefaut{
 	}
 	
 	/**
-     * M�thode lan�ant le calcul de la tourn�e
+     * Méthode lançant le calcul de la tournée
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
@@ -36,8 +41,8 @@ public class EtatChargerLivraison extends EtatDefaut{
     }
 
 	/**
-	 * M�thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
-	 * @param filePath Le chemin d'acc�s au fichier xml
+	 * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+	 * @param filePath Le chemin d'accès au fichier xml
 	 */
 	public boolean chargerLivraison (String filePath,Tournee tournee){
 		if(ChargeurLivraison.getInstance().parse(tournee, filePath))

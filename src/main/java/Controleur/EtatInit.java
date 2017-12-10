@@ -1,9 +1,9 @@
 package Controleur;
 
-import ChargeurXML.ChargeurPlan;
-import Modele.Noeud;
-import Modele.Plan;
-import Modele.Troncon;
+/**
+ * @author H4401
+ * Classe Etat par initiale, uniquement active au lancement du logiciel
+ */
 
 public class EtatInit extends EtatDefaut{
 	

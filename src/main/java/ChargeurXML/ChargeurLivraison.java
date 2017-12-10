@@ -24,6 +24,10 @@ public class ChargeurLivraison {
     private Tournee tournee;
     private static ChargeurLivraison instance;
 
+    /**
+     * Méthode Get pour l'instance
+     * @return instance
+     */
     public static ChargeurLivraison getInstance() {
         if (instance == null) {
             instance = new ChargeurLivraison();
@@ -31,6 +35,9 @@ public class ChargeurLivraison {
         return instance;
     }
 
+    /**
+     * Constructeur par défaut vide
+     */
     public ChargeurLivraison() {
 
     }
@@ -125,7 +132,8 @@ public class ChargeurLivraison {
     }
 
     /**
-     * @return la tournée
+     * Get tournée
+     * @return tournee
      */
     public Tournee getTournee() {
         return tournee;

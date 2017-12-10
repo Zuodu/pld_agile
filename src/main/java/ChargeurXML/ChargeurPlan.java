@@ -15,12 +15,16 @@ import org.xml.sax.SAXException;
 
 /**
  * @author H4401
- *         Classe permettant le chargement du fichier xml contenant le plan
+ * Classe permettant le chargement du fichier xml contenant le plan
  */
 public class ChargeurPlan {
     private Plan plan;
     private static ChargeurPlan instance;
 
+    /**
+     * Méthode Get pour l'instance
+     * @return instance
+     */
     public static ChargeurPlan getInstance() {
         if (instance == null) {
             instance = new ChargeurPlan();
@@ -28,15 +32,18 @@ public class ChargeurPlan {
         return instance;
     }
 
+    /**
+     * Constructeur par défaut vide
+     */
     public ChargeurPlan() {
 
     }
 
     /**
-     * M�thode parsant le fichier xml
+     * Méthode parsant le fichier xml
      *
-     * @param plan     le plan auquel on ajoute les noeuds et tron�ons
-     * @param filePath Le chemin d'acc�s au fichier xml
+     * @param plan     le plan auquel on ajoute les noeuds et tronçons
+     * @param filePath Le chemin d'accès au fichier xml
      */
     public boolean parse(Plan plan, String filePath) {
         this.plan = plan;
@@ -117,10 +124,10 @@ public class ChargeurPlan {
     }
 
     /**
-     * M�thode parsant le fichier xml
+     * Méthode parsant le fichier xml
      *
-     * @param plan     le plan auquel on ajoute les noeuds et tron�ons
-     * @param filePath Le chemin d'acc�s au fichier xml
+     * @param plan     le plan auquel on ajoute les noeuds et tronçons
+     * @param filePath Le chemin d'accès au fichier xml
      */
     public void parseAutre(Plan plan, String filePath) {
         this.plan = plan;
@@ -206,7 +213,8 @@ public class ChargeurPlan {
     }
 
     /**
-     * @return le plan
+     * Get plan
+     * @return plan
      */
     public Plan getPlan() {
         return plan;
