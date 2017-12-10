@@ -8,7 +8,7 @@ import java.util.Iterator;
  */
 public class TSP3 extends TSP2 {
     @Override
-    protected Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
+    protected Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart,Boolean hasTW,double coutVus) {
         return new IteratorMin(nonVus, sommetCrt, cout, duree);
     }
 }

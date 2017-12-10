@@ -16,25 +16,38 @@ public class IteratorPlage implements Iterator<Integer> {
      * @param nonVus
      * @param sommetCrt
      */
-    public IteratorPlage(Collection<Integer> nonVus, int sommetCrt, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
+    public IteratorPlage(Collection<Integer> nonVus, int sommetCrt, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart, double coutVus) {
         this.candidats = new Integer[nonVus.size()];
         nbCandidats = 0;
         for (Integer s : nonVus) {
             candidats[nbCandidats++] = s;
         }
-        double[] cost1 = new double[cout.length];
-        double[] cost2 = new double[cout.length];
-        for (int i = 0; i < cost1.length; i++) {
+
+        double[] plageTable = new double[cout.length];
+        double[] cost = new double[cout.length];
+        for (int i = 0; i < plageTable.length; i++) {
             if (plageDepart[i] != null) {
-                cost1[i] = plageDepart[i];
+                plageTable[i] = plageDepart[i];
             } else {
-                cost1[i] = 9999999;
+                plageTable[i] = 9999999;
             }
         }
-        for(int i=0;i<cost2.length;i++){
-            cost2[i]=cout[sommetCrt][i]+duree[i];
+        for (int i = 0; i < cost.length; i++) {
+            cost[i] = cout[sommetCrt][i] + duree[i];
         }
-        bubbleSort(cost1, cost2);
+        bubbleSort(plageTable, cost);
+
+        boolean isLate = false;
+        for (int i = nbCandidats - 1; i >= 0 && !isLate && plageDepart[candidats[i]] != null; i--) {
+            Integer point = candidats[i];
+            if (plageDepart[point] < coutVus + cout[sommetCrt][point] + duree[point]) {
+                isLate = true;
+            }
+        }
+        if (isLate) {
+            nbCandidats = 0;
+        }
+
 
     }
 
