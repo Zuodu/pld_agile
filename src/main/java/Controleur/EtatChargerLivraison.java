@@ -1,6 +1,6 @@
 package Controleur;
 
-import Algo.AbstractGraphe;
+import Algo.TSPFactory;
 import ChargeurXML.ChargeurLivraison;
 import Modele.Plan;
 import Modele.Tournee;
@@ -33,10 +33,10 @@ public class EtatChargerLivraison extends EtatDefaut{
      * Méthode lan�ant le calcul de la tourn�e
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
-        AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
-        abstractGraphe.chercheSolution();
+        TSPFactory TSPFactory = new TSPFactory(plan, tournee);
+        TSPFactory.chercheSolution();
         tournee.SignalerFinDajoutPointsLivraisons();
-       // System.out.println(abstractGraphe.getTournee());
+       // System.out.println(TSPFactory.getTournee());
 
     }
 

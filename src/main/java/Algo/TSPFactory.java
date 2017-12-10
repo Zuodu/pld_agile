@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * Created by flavi on 2017/11/18.
  */
-public class AbstractGraphe {
+public class TSPFactory {
     private double[][] cout;
     private double[] duree;
     private Double[] plageArrivee;
@@ -19,7 +19,7 @@ public class AbstractGraphe {
     Tournee tournee;
     int nbSommets;
 
-    public AbstractGraphe(Plan plan, Tournee tournee) {
+    public TSPFactory(Plan plan, Tournee tournee) {
         this.tournee = tournee;
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.pointLivraisonMap = new HashMap<Integer, PointLivraison>();
@@ -115,11 +115,6 @@ public class AbstractGraphe {
         System.out.println(System.currentTimeMillis()-tempsDebut);
     }
 
-    public void getPlusCourtItineraire(Noeud src,Noeud target){
-        Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(src, target);
-        Itineraire result = dijkstra.getMeilleurItineraire();
-    }
 
 //    public void getItineraireGlouton() {
 //        Glouton glouton = new Glouton(nbSommets);

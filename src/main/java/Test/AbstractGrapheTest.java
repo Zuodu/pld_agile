@@ -1,19 +1,16 @@
 package Test;
 
-import static org.junit.Assert.*;
-
 import java.io.File;
 
-import org.junit.Test;
+import Algo.TSPFactory;
 
-import Algo.AbstractGraphe;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
 import Modele.Plan;
 import Modele.Tournee;
 
 public class AbstractGrapheTest {
-	private AbstractGraphe graphePetit, grapheMoyen, grapheGrand;
+	private TSPFactory graphePetit, grapheMoyen, grapheGrand;
 	
 	private Plan petitPlan;
 	private String planLyonPetit = "."+ File.separator+"fichiersXML"+File.separator+"planLyonPetit.xml";
@@ -37,7 +34,7 @@ public class AbstractGrapheTest {
 		petiteTournee = new Tournee();
 		ChargeurLivraison.getInstance().parse(petiteTournee, detailsLivraisonPetit);
 		
-		AbstractGraphe graphePetit = new AbstractGraphe(petitPlan, petiteTournee);
+		TSPFactory graphePetit = new TSPFactory(petitPlan, petiteTournee);
 	}
 
 	//@Test //Test génération d'une Table de coûts pour un graphe petit

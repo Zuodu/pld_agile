@@ -16,6 +16,7 @@ public class Tournee extends Observable {
     private double heureDeDepart;
     private boolean isCharge;
 
+
     /**
      * Constructeur
      *
