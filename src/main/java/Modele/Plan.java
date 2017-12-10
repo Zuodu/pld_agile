@@ -12,6 +12,9 @@ public class Plan extends Observable {
     protected Set<Troncon> listeTroncons;
     protected Set<Noeud> listeNoeuds;
 
+    /**
+     * Constructeur par défaut
+     */
     public Plan () {
         isCharge=false;
         listeTroncons= new HashSet<Troncon>();
@@ -19,6 +22,9 @@ public class Plan extends Observable {
 
     }
 
+    /**
+     * Réinitialisation du plan
+     */
     public void reinitialise () {
         isCharge=false;
         listeTroncons= new HashSet<Troncon>();
@@ -27,10 +33,18 @@ public class Plan extends Observable {
         notifyObservers();
     }
 
+    /**
+     * Get
+     * @return isCharge
+     */
     public boolean isCharge() {
         return isCharge;
     }
 
+    /**
+     * Set
+     * @param charge
+     */
     public void setCharge(boolean charge) {
         isCharge = charge;
         setChanged();
@@ -38,7 +52,6 @@ public class Plan extends Observable {
     }
 
     /**
-
      * add
      * @param troncon
      */

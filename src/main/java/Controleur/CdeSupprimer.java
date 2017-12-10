@@ -1,21 +1,23 @@
 package Controleur;
 
-import Algo.Dijkstra;
-import Main.main;
-import Modele.Itineraire;
 import Modele.PointLivraison;
 import Modele.Tournee;
 
-import java.util.AbstractMap;
-import java.util.Iterator;
-import java.util.Map;
-
+/**
+ * @author H4401
+ * Classe de Commande de Suppression d'un point de livraison
+ */
 public class CdeSupprimer implements Commande {
     Tournee tournee;
     Tournee oldTournee;
     Tournee tourneeRedo;
     PointLivraison pointLivraison;
 
+    /**
+     * Constructeur prenant en paramètre le point à supprimer et la tournée concernée
+     * @param pointLivraison
+     * @param tournee
+     */
     public CdeSupprimer(PointLivraison pointLivraison, Tournee tournee) {
         this.tournee = tournee;
         this.pointLivraison = pointLivraison;
@@ -24,31 +26,10 @@ public class CdeSupprimer implements Commande {
         tourneeRedo = new Tournee();
     }
 
+    /**
+     * Méthode permettant la suppression (ou le "Redo")
+     */
     public void doCde() {
-//		PointLivraison pPrecedant=null;
-//		PointLivraison pProchain=null;
-//		Iterator<PointLivraison> iterator=tournee.getListePointLivraisons().iterator();
-//		PointLivraison tmp1=null;
-//		PointLivraison tmp2=null;
-//		while (iterator.hasNext()) {
-//			tmp1=iterator.next();
-//			if (tmp1.equals(pointLivraison)) {
-//				pPrecedant=tmp2;
-//				pProchain=iterator.next();
-//				break;
-//			}
-//			tmp2=tmp1;
-//		}
-//		Dijkstra dijkstra=new Dijkstra();
-//		dijkstra.chercheDistanceMin(pPrecedant,pProchain);
-//		Itineraire result=dijkstra.getMeilleurItineraire();
-//		tournee.getListePointLivraisons().remove(pointLivraison);
-//		tournee.addItineraire(new AbstractMap.SimpleEntry(pPrecedant,pProchain),result);
-//
-//		tournee.getItinerairesMap().remove(new AbstractMap.SimpleEntry(pPrecedant,pointLivraison));
-//		tournee.getItinerairesMap().remove(new AbstractMap.SimpleEntry(pointLivraison,pProchain));
-//		pProchain.setHeureArrivee(pPrecedant.getHeureDepart()+result.getLongueurTotale()/ main.VITESSE);
-//		tournee.SignalerFinDajoutPointsLivraisons();
         if(tourneeRedo.getListePointLivraisons().size()==0) {
             boolean res = tournee.supprimerPoint(pointLivraison.getId());
         }
@@ -58,6 +39,9 @@ public class CdeSupprimer implements Commande {
         }
     }
 
+    /**
+     * Méthode permettant de revenir à l'état d'avant modification (Undo)
+     */
     public void undoCde() {
         tourneeRedo.clone(tournee,tourneeRedo);
         tournee.clone(oldTournee,tournee);

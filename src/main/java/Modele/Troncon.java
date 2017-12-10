@@ -2,7 +2,7 @@ package Modele;
 
 /**
  * @author H4401
- * Classe repr�sentant l'�l�ment Tron�on d'un plan, ne contient que des Get.
+ * Classe représentant l'élément Tronçon d'un plan, ne contient que des Get.
  */
 public class Troncon {
     private Noeud origine;
@@ -57,6 +57,10 @@ public class Troncon {
         this.nomRue = nomRue;
     }
 
+    /**
+     * Constructeur par copie
+     * @param unTroncon
+     */
     public Troncon(Troncon unTroncon){
         this(new Noeud(unTroncon.getOrigine()),new Noeud(unTroncon.getDestination()),unTroncon.getLongueur(),unTroncon.getNomRue());
     }

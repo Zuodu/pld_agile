@@ -3,11 +3,10 @@ package Modele;
 import Main.main;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author H4401
- *         Classe repr�sentant un itin�raire, ne contient que des Get, Set et add.
+ * Classe représentant un itinéraire, ne contient que des Get, Set et add.
  */
 public class Itineraire {
     private Noeud noeudOrigine;
@@ -16,13 +15,19 @@ public class Itineraire {
     private double longueurTotale;
     private double temps;
 
-
+    /**
+     * Constructeur par défaut
+     */
     public Itineraire() {
         listeTroncons = new LinkedList<Troncon>();
         longueurTotale = 0;
         temps = 0;
     }
 
+    /**
+     * Constructeur par copie
+     * @param unItineraire
+     */
     public Itineraire(Itineraire unItineraire){
         this();
         this.setNoeudOrigine(unItineraire.getNoeudOrigine());
@@ -43,7 +48,10 @@ public class Itineraire {
         temps += troncon.getLongueur() / main.VITESSE;
     }
 
-
+    /**
+     * Méthode Get
+     * @return temps
+     */
     public double getTemps() {
         return temps;
     }

@@ -30,7 +30,7 @@ public class EtatChargerLivraison extends EtatDefaut{
 	}
 	
 	/**
-     * Méthode lançant le calcul de la tournée
+     * Méthode lan�ant le calcul de la tourn�e
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);
@@ -41,8 +41,8 @@ public class EtatChargerLivraison extends EtatDefaut{
     }
 
 	/**
-	 * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
-	 * @param filePath Le chemin d'accès au fichier xml
+	 * M�thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+	 * @param filePath Le chemin d'acc�s au fichier xml
 	 */
 	public boolean chargerLivraison (String filePath,Tournee tournee){
 		if(ChargeurLivraison.getInstance().parse(tournee, filePath))

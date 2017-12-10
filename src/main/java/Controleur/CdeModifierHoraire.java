@@ -5,6 +5,10 @@ import Modele.Tournee;
 
 import javax.swing.*;
 
+/**
+ * @author H4401
+ * Classe de Commande de modification d'horaire
+ */
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
     PointLivraison pointLivraison;
@@ -13,7 +17,13 @@ public class CdeModifierHoraire implements Commande {
     Tournee oldTournee;
     Tournee tourneeRedo;
 
-
+    /**
+     * Constructeur prenant en paramètre toutes les informations nécessaires à la modification
+     * @param newPointLivraison
+     * @param newTournee
+     * @param newDebutPlage
+     * @param newFinPlage
+     */
     public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, Double newDebutPlage, Double newFinPlage) {
         tournee = newTournee;
         pointLivraison = newPointLivraison;
@@ -24,6 +34,9 @@ public class CdeModifierHoraire implements Commande {
         tourneeRedo = new Tournee();
     }
 
+    /**
+     * Méthode permettant la modification (ou le "Redo")
+     */
 	public void doCde()
 	{
         if(tourneeRedo.getListePointLivraisons().size()==0) {
@@ -40,6 +53,10 @@ public class CdeModifierHoraire implements Commande {
         }
 
 	}
+
+    /**
+     * Méthode permettant de revenir à l'état d'avant modification (Undo)
+     */
 	public void undoCde()
 	{
         tourneeRedo.clone(tournee,tourneeRedo);
