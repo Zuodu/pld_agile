@@ -32,7 +32,7 @@ public class VueAjouterPoint extends JFrame {
         this.controleur=controleur;
         setVisible(true);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(0, 0, 400, 400);
+        setBounds(0, 0, 300, 300);
         contentPane=new JPanel();
         contentPane.setLayout(null);
         this.setContentPane(contentPane);
@@ -63,7 +63,7 @@ public class VueAjouterPoint extends JFrame {
         contentPane.add(labelDuree);
 
         confirmButton=new JButton("ajouter");
-        confirmButton.setBounds(150,200,100,30);
+        confirmButton.setBounds(100,200,100,30);
         contentPane.add(confirmButton);
         confirmButton.addActionListener(new ActionListener() {
             @Override

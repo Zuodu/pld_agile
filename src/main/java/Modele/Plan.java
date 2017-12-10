@@ -81,11 +81,5 @@ public class Plan extends Observable {
         return listeNoeuds;
     }
 
-    /**
-     * Signale la fin des ajouts de tronçon et de noeux au plan
-     */
-    public void signalerFin() {
-        setChanged();
-        notifyObservers(this);
-    }
+
 }

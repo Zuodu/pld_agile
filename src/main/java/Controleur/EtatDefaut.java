@@ -50,7 +50,7 @@ public class EtatDefaut implements Etat {
      * @param fenetrePrincipale
      */
     public void clickedOnPoint(PointLivraison pointLivraison, FenetrePrincipale fenetrePrincipale) {
-        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
+        fenetrePrincipale.getVueTextuelle().afficheDetailPointChoisi(pointLivraison);
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
         fenetrePrincipale.getVueGraphique().repaint();
     }

@@ -8,7 +8,6 @@ import java.awt.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
@@ -21,6 +20,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public static final String GENERER_FEUILLE = "Générer Feuille de Route";
 	public static final int BUTTON_WIDTH = 250;
 	public static final int BUTTON_HEIGHT = 40;
+	public static final int BUTTON_SPACE_VERTICAL=50;
 	public static final int ECART = 40;
 	public static final int FENETRE_WIDTH = 1020;
 	public static final int FENETRE_LENGTH = 780;
@@ -55,17 +55,15 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	 * Create the frame.
 	 */
 	public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
-		setLayout(null);
+
 		this.plan = plan;
 		plan.addObserver(this);
 		this.tournee = tournee;
 		tournee.addObserver(this);
-
 		this.controleur = controleur;
-
 		buttonListener = new ButtonListener(controleur, this);
 
-
+		setLayout(null);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, FENETRE_WIDTH, FENETRE_LENGTH);
@@ -96,7 +94,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonChargerLivraisons = new JButton(CHARGER_LIVRAISONS);
 		buttonChargerLivraisons.addActionListener(buttonListener);
-		buttonChargerLivraisons.setBounds(0, 50, BUTTON_WIDTH, BUTTON_HEIGHT);
+		buttonChargerLivraisons.setBounds(0, BUTTON_SPACE_VERTICAL, BUTTON_WIDTH, BUTTON_HEIGHT);
 		try {
 			Image img = ImageIO.read(new File("resources"+File.separator+"ChargerLivraisons.png"));
 			buttonChargerLivraisons.setIcon(new ImageIcon(img));
@@ -106,7 +104,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonCalculerTournee = new JButton(CALCULER_TOURNEE);
 		buttonCalculerTournee.addActionListener(buttonListener);
-		buttonCalculerTournee.setBounds(0, 100, BUTTON_WIDTH, BUTTON_HEIGHT);
+		buttonCalculerTournee.setBounds(0, BUTTON_SPACE_VERTICAL*2, BUTTON_WIDTH, BUTTON_HEIGHT);
 		try {
 			Image img = ImageIO.read(new File("resources"+ File.separator+"CalculerTournee.png"));
 			buttonCalculerTournee.setIcon(new ImageIcon(img));
@@ -116,7 +114,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonAddPoint = new JButton(AJOUTER_POINT);
 		buttonAddPoint.addActionListener(buttonListener);
-		buttonAddPoint.setBounds(0, 150, BUTTON_WIDTH, BUTTON_HEIGHT);
+		buttonAddPoint.setBounds(0, BUTTON_SPACE_VERTICAL*3, BUTTON_WIDTH, BUTTON_HEIGHT);
 		try {
 			Image img = ImageIO.read(new File("resources"+File.separator+"AjouterPtLivraison.png"));
 			buttonAddPoint.setIcon(new ImageIcon(img));
@@ -126,7 +124,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 		buttonGenerate = new JButton(GENERER_FEUILLE);
 		buttonGenerate.addActionListener(buttonListener);
-		buttonGenerate.setBounds(0, 200, BUTTON_WIDTH, BUTTON_HEIGHT);
+		buttonGenerate.setBounds(0, BUTTON_SPACE_VERTICAL*4, BUTTON_WIDTH, BUTTON_HEIGHT);
 		try {
 			Image img = ImageIO.read(new File("resources"+File.separator+"GenererFeuille.png"));
 			buttonGenerate.setIcon(new ImageIcon(img));
@@ -154,9 +152,9 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	public void update(Observable o, Object arg) {
 		vueGraphique.repaint();
 		if (vueGraphique.getPointLivraisonChoisi()!=null) {
-			vueTextuelle.clickedOnPoint(vueGraphique, vueGraphique.getPointLivraisonChoisi().getId());
+			vueTextuelle.afficheDetailPointChoisi(tournee, vueGraphique.getPointLivraisonChoisi().getId());
 		} else {
-			vueTextuelle.clickedOnPoint(null);
+			vueTextuelle.afficheDetailPointChoisi(null);
 
 		}
 

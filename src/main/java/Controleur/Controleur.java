@@ -48,9 +48,9 @@ public class Controleur {
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         plan.reinitialise();
         tournee.reinitialise();
-        if(etatCourant.chargerPlan(filePath, plan))
+        if(etatCourant.chargerPlan(filePath, plan)) {
             setEtatCourant(etatChargerPlan);
-
+        }
     }
 
     /**
@@ -62,8 +62,9 @@ public class Controleur {
     public void chargerLivraison (String filePath){
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         tournee.reinitialise();
-        if(etatCourant.chargerLivraison(filePath, tournee))
+        if(etatCourant.chargerLivraison(filePath, tournee)) {
             setEtatCourant(etatChargerLivraison);
+        }
         lstDeCde = new LstDeCde();
     }
 

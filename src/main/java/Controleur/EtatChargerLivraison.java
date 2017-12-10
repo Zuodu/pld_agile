@@ -35,7 +35,7 @@ public class EtatChargerLivraison extends EtatDefaut{
     public void calculerTournee (Plan plan, Tournee tournee) {
         TSPFactory TSPFactory = new TSPFactory(plan, tournee);
         TSPFactory.chercheSolution();
-        tournee.SignalerFinDajoutPointsLivraisons();
+        tournee.setCharge(true);
        // System.out.println(TSPFactory.getTournee());
 
     }
@@ -45,8 +45,9 @@ public class EtatChargerLivraison extends EtatDefaut{
 	 * @param filePath Le chemin d'acc�s au fichier xml
 	 */
 	public boolean chargerLivraison (String filePath,Tournee tournee){
-		if(ChargeurLivraison.getInstance().parse(tournee, filePath))
+		if(ChargeurLivraison.getInstance().parse(tournee, filePath)) {
 			return true;
+		}
 		JOptionPane.showMessageDialog(null,"Echec du chargement, réessayez");
 		return false;
 	}

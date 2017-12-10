@@ -203,7 +203,7 @@ public class ChargeurPlan {
                     plan.addTroncon(troncon);
                 }
             }
-            plan.signalerFin();
+            plan.setCharge(true);
 
         } catch (SAXException e) {
             e.printStackTrace();

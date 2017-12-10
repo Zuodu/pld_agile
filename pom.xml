@@ -23,7 +23,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Main.main</mainClass>
+                            <mainClass>Main.OptimodLyon</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

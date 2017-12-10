@@ -1,6 +1,7 @@
 package Vue;
 
 import Modele.PointLivraison;
+import Modele.Tournee;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -154,7 +155,7 @@ public class VueTextuelle extends JPanel {
         buttonUndo.addActionListener(buttonListener);
     }
 
-    public void clickedOnPoint(PointLivraison pointLivraison) {
+    public void afficheDetailPointChoisi(PointLivraison pointLivraison) {
         if(pointLivraison!=null) {
             if (pointLivraison.getDebutPlage() != null) {
                 int h = (int) (pointLivraison.getDebutPlage() / 3600);
@@ -203,9 +204,9 @@ public class VueTextuelle extends JPanel {
 
     }
 
-    public void clickedOnPoint (VueGraphique vueGraphique, long id) {
+    public void afficheDetailPointChoisi(Tournee tournee, long id) {
         PointLivraison pointLivraison=null;
-        for (PointLivraison p : vueGraphique.getTournee().getListePointLivraisons()) {
+        for (PointLivraison p : tournee.getListePointLivraisons()) {
             if (p.getId()==id) {
                 pointLivraison=p;
             }

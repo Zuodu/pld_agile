@@ -35,7 +35,6 @@ public class CdeSupprimer implements Commande {
         }
         else{
             tournee.clone(tourneeRedo,tournee);
-            tournee.SignalerFinDajoutPointsLivraisons();
         }
     }
 
@@ -45,6 +44,5 @@ public class CdeSupprimer implements Commande {
     public void undoCde() {
         tourneeRedo.clone(tournee,tourneeRedo);
         tournee.clone(oldTournee,tournee);
-        tournee.SignalerFinDajoutPointsLivraisons();
     }
 }

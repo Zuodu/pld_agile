@@ -541,14 +541,7 @@ public class Tournee extends Observable {
     }
 
 
-    /**
-     * Signale la fin des ajouts de points de livraisons à la tournée
-     */
 
-    public void SignalerFinDajoutPointsLivraisons() {
-        setChanged();
-        notifyObservers();
-    }
 
     @Override
     public String toString() {

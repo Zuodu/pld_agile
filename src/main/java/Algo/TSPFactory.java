@@ -1,9 +1,7 @@
 package Algo;
 
-import Main.main;
 import Modele.*;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -108,6 +106,7 @@ public class TSPFactory {
         tournee.getEntrepot().setHeureArrivee(tsp.getHoraireLivraison().get(nbSommets).getKey());
         tournee.getEntrepot().setHeureDepart(tournee.getHeureDeDepart());
         tournee.setListePointLivraisons(pointLivraisons);
+
 
         if(tsp.getTempsLimiteAtteint()) System.out.println("Temps limite atteint");
         System.out.println(tsp.getCoutMeilleureSolution());
