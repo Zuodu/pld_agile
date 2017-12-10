@@ -26,22 +26,16 @@ public class Noeud{
         this.neighbors=new HashSet<Troncon>();
     }
 
+    /**
+     * Constructeur par copie
+     * @param unNoeud
+     */
     public Noeud(Noeud unNoeud) {
         this(unNoeud.getId(),unNoeud.getX(),unNoeud.getY());
         for(Troncon troncon:unNoeud.getNeighbors()){
             this.addNeighbor(troncon);
         }
     }
-
-
-//    public Noeud(PointLivraison pointLivraison)
-//    {
-//        this.id = pointLivraison.getId();
-//        this.x = pointLivraison.getX();
-//        this.y = pointLivraison.getY();
-//        this.neighbors = new HashSet<Troncon>();
-//        this.getNeighbors().addAll(pointLivraison.getNeighbors());
-//    }
 
     /**
      * Ajout de tronçon voisin
@@ -52,7 +46,7 @@ public class Noeud{
     }
 
     /**
-     * get
+     * Get
      * @return id
      */
     public Long getId() {
@@ -60,7 +54,7 @@ public class Noeud{
     }
 
     /**
-     * get
+     * Get
      * @return x
      */
     public int getX() {
@@ -68,7 +62,7 @@ public class Noeud{
     }
 
     /**
-     * get
+     * Get
      * @return y
      */
     public int getY() {

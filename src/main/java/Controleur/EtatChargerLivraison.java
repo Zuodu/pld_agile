@@ -7,6 +7,11 @@ import Modele.Tournee;
 
 import javax.swing.*;
 
+/**
+ * @author H4401
+ * Classe Etat avec les actions possibles après avoir chargé des livraisons
+ */
+
 public class EtatChargerLivraison extends EtatDefaut{
 	/**
 	 * Le undo n'est pas possible ici
@@ -25,7 +30,7 @@ public class EtatChargerLivraison extends EtatDefaut{
 	}
 	
 	/**
-     * M�thode lan�ant le calcul de la tourn�e
+     * Méthode lan�ant le calcul de la tourn�e
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
         AbstractGraphe abstractGraphe = new AbstractGraphe(plan, tournee);

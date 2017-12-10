@@ -6,8 +6,8 @@ import java.util.*;
 
 /**
  * @author H4401
- *         Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
- *         et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
+ * Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
+ * et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
     private HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
@@ -30,6 +30,10 @@ public class Tournee extends Observable {
         this.listePointLivraisons = new ArrayList<PointLivraison>();
     }
 
+    /**
+     * Constructeur par copie
+     * @param uneTournee
+     */
     public Tournee(Tournee uneTournee) {
         this(new PointLivraison(uneTournee.getEntrepot()), uneTournee.getHeureDeDepart());
         for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : uneTournee.getItinerairesMap().entrySet()) {
@@ -41,6 +45,9 @@ public class Tournee extends Observable {
 
     }
 
+    /**
+     * Méthode réinitialisant la tournée
+     */
     public void reinitialise() {
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
         this.listePointLivraisons = new ArrayList<PointLivraison>();
@@ -48,6 +55,11 @@ public class Tournee extends Observable {
         notifyObservers();
     }
 
+    /**
+     * Méthode clonant une tournée dans une autre (avec copie en profondeur)
+     * @param tournee
+     * @param newTournee
+     */
     public void clone(Tournee tournee, Tournee newTournee) {
         newTournee.reinitialise();
         HashMap<Long, PointLivraison> pointLivraisonHashMap = new HashMap<>();
@@ -72,16 +84,27 @@ public class Tournee extends Observable {
         newTournee.notifyObservers();
     }
 
+    /**
+     * Constructeur par défaut
+     */
     public Tournee() {
         listePointLivraisons = new ArrayList<PointLivraison>();
         this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
     }
 
-
+    /**
+     * Méthode permettant d'ajouter un itinéraire
+     * @param entry
+     * @param itineraire
+     */
     public void addItineraire(Map.Entry<PointLivraison, PointLivraison> entry, Itineraire itineraire) {
         itinerairesMap.put(entry, itineraire);
     }
 
+    /**
+     * Get
+     * @return itinerairesMap
+     */
     public HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> getItinerairesMap() {
         return itinerairesMap;
     }
@@ -143,22 +166,40 @@ public class Tournee extends Observable {
         return heureDeDepart;
     }
 
-
+    /**
+     * Set
+     * @param listePointLivraisons
+     */
     public void setListePointLivraisons(List<PointLivraison> listePointLivraisons) {
         this.listePointLivraisons = listePointLivraisons;
     }
 
-
+    /**
+     * Get
+     * @return isCharge
+     */
     public boolean isCharge() {
         return isCharge;
     }
 
+    /**
+     * Set
+     * @param charge
+     */
     public void setCharge(boolean charge) {
         isCharge = charge;
         setChanged();
         notifyObservers();
     }
 
+    /**
+     * Méthode permettant l'ajout d'un point de livraison à une tournée
+     * @param noeud
+     * @param duree
+     * @param finPlage
+     * @param debutPlage
+     * @return true si réussi, false si échec
+     */
     public boolean ajouterPoint(Noeud noeud, double duree, Double finPlage, Double debutPlage) {
         PointLivraison pointAAjouter = null;
         if (finPlage != null && debutPlage != null) {
@@ -225,6 +266,13 @@ public class Tournee extends Observable {
         return false;
     }
 
+    /**
+     * Méthode permettant de //TODO
+     * @param pointLivraisonAInserer
+     * @param pointLivraison1
+     * @param pointLivraison2
+     * @return true si réussi, false si échec
+     */
     private boolean insererPoint(PointLivraison pointLivraisonAInserer, PointLivraison pointLivraison1, PointLivraison pointLivraison2) {
         Dijkstra dijkstra1 = new Dijkstra();
         dijkstra1.chercheDistanceMin(pointLivraison1, pointLivraisonAInserer);
@@ -269,6 +317,11 @@ public class Tournee extends Observable {
         return false;
     }
 
+    /**
+     * Méthode permettant la suppression d'un point
+     * @param id
+     * @return true si réussi, false si échec
+     */
     public boolean supprimerPoint(Long id) {
         PointLivraison pointASupprimer = null;
         for (PointLivraison pointLivraison : listePointLivraisons) {
@@ -305,6 +358,12 @@ public class Tournee extends Observable {
         return false;
     }
 
+    /**
+     * Méthode permettant de mettre à jour la durée d'un point de livraison, non utilisée
+     * @param id
+     * @param duree
+     * @return true si réussi, false si échec
+     */
     public boolean updateDuree(Long id, double duree) {
         double heureArrivee;
         double heureDepart;
@@ -345,7 +404,13 @@ public class Tournee extends Observable {
 
     }
 
-
+    /**
+     * Permet de mettre à jour la plage horaire d'un point de livraison
+     * @param id
+     * @param plageDebut
+     * @param plageFin
+     * @return true si réussi, false si échec
+     */
     public boolean updateHoraire(Long id, Double plageDebut, Double plageFin) {
         double heureArrivee;
         double heureDepart;
@@ -414,6 +479,12 @@ public class Tournee extends Observable {
 
     }
 
+    /**
+     * Permet d'avancer un horaire lors d'une modification d'horaire
+     * @param index
+     * @param temps
+     * @return true si réussi, false si échec
+     */
     private boolean avanceHoraire(int index, double temps) {
         PointLivraison nextPoint = listePointLivraisons.get(index);
         double heureArrivee;
@@ -437,6 +508,12 @@ public class Tournee extends Observable {
         return false;
     }
 
+    /**
+     * Permet de retarder un horaire lors d'une modification d'horaire
+     * @param index
+     * @param temps
+     * @return true si réussi, false si échec
+     */
     private boolean retardeHoraire(int index, double temps) {
         PointLivraison nextPoint = listePointLivraisons.get(index);
         double heureArrivee;

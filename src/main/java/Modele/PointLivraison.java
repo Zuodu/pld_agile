@@ -3,7 +3,7 @@ package Modele;
 
 /**
  * @author H4401
- *         Classe représentant l'élément PointLivraison d'un plan, ne contient que des Get et des Set.
+ * Classe représentant l'élément PointLivraison d'un plan, ne contient que des Get et des Set.
  */
 public class PointLivraison extends Noeud {
     private Double debutPlage;
@@ -21,6 +21,10 @@ public class PointLivraison extends Noeud {
         return heureArrivee;
     }
 
+    /**
+     * Set
+     * @param heureArrivee
+     */
     public void setHeureArrivee(Double heureArrivee) {
         this.heureArrivee = heureArrivee;
     }
@@ -34,6 +38,10 @@ public class PointLivraison extends Noeud {
         return heureDepart;
     }
 
+    /**
+     * Set
+     * @param heureDepart
+     */
     public void setHeureDepart(Double heureDepart) {
         this.heureDepart = heureDepart;
     }
@@ -47,6 +55,10 @@ public class PointLivraison extends Noeud {
         return debutPlage;
     }
 
+    /**
+     * Set
+     * @param debutPlage
+     */
     public void setDebutPlage(Double debutPlage) {
         this.debutPlage = debutPlage;
     }
@@ -60,6 +72,10 @@ public class PointLivraison extends Noeud {
         return finPlage;
     }
 
+    /**
+     * Set
+     * @param finPlage
+     */
     public void setFinPlage(Double finPlage) {
         this.finPlage = finPlage;
     }
@@ -82,6 +98,10 @@ public class PointLivraison extends Noeud {
         this.finPlage = finPlage;
     }
 
+    /**
+     * Constructeur par copie
+     * @param unPointLivraison
+     */
     public PointLivraison(PointLivraison unPointLivraison) {
         super(unPointLivraison);
         this.duree = unPointLivraison.getDuree();

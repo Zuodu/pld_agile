@@ -19,9 +19,4 @@ public interface Etat {
 	public void cdeAjouterLivraison(Noeud noeud,Double debut, Double fin, double duree, Tournee tournee,LstDeCde lstDeCde);
 	public void cdeSupprimerLivraison(PointLivraison pointLivraison, Tournee tournee,LstDeCde lstDeCde);
 	public void cdeModifierPlageHoraire(PointLivraison pointLivraison,Tournee tournee, Double debutPlage, Double finPlage,LstDeCde lstDeCde);
-	//M�thodes qui n'avaient pas de corps
-	public void afficherPlan() ;
-	public void afficherLivraison();
-	public void afficherTournee() ;
-
 }

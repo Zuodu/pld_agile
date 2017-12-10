@@ -1,21 +1,13 @@
 package Controleur;
 
-import Algo.AbstractGraphe;
-import ChargeurXML.ChargeurLivraison;
-import ChargeurXML.ChargeurPlan;
 import FeuilleDeRoute.FeuilleDeRoute;
 import Modele.*;
 import Vue.FenetrePrincipale;
-import Vue.VueGraphique;
-
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * @author H4401
- * Classe Contr�leur du logiciel
+ * Classe Contrôleur du logiciel
  */
 public class Controleur {
     private FenetrePrincipale fenetrePrincipale;
@@ -28,17 +20,17 @@ public class Controleur {
     private static final EtatCalculerTournee etatCalculerTournee = new EtatCalculerTournee();
     private static Etat etatCourant;
 
+    /**
+     * Méthode parmettant de changer l'état courant
+     * @param etat
+     */
     private static void setEtatCourant(Etat etat) {
         etatCourant = etat;
     }
-    //private static Controleur instance;
 
-
-    /** public static Controleur getInstance () {
-        if (instance==null) instance=new Controleur();
-        return instance;
-     }**/
-
+    /**
+     * Constructeur par défaut du contrôleur
+     */
     public Controleur() {
         plan = new Plan();
         tournee = new Tournee();
@@ -47,8 +39,9 @@ public class Controleur {
     }
 
     /**
-     * M�thode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
-     * @param filePath Le chemin d'acc�s au fichier xml
+     * Méthode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
+     * L'état est actualisé si le chargement a réussi
+     * @param filePath Le chemin d'accès au fichier xml
      */
     public void chargerPlan (String filePath)
     {
@@ -61,8 +54,10 @@ public class Controleur {
     }
 
     /**
-     * M�thode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
-     * @param filePath Le chemin d'acc�s au fichier xml
+     * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
+     * L'état est actualisé si le chargement a réussi
+     * La liste de commande est réinitialisée
+     * @param filePath Le chemin d'accès au fichier xml
      */
     public void chargerLivraison (String filePath){
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
@@ -73,27 +68,45 @@ public class Controleur {
     }
 
     /**
-     * M�thode lan�ant le calcul de la tourn�e
+     * Méthode lançant le calcul de la tournée
      */
     public void calculerTournee () {
         etatCourant.calculerTournee(plan, tournee);
         setEtatCourant(etatCalculerTournee);
     }
 
+    /**
+     * Méthode générant la feuille de route
+     * @param filePath Le chemin d'accès au fichier généré
+     * @throws IOException
+     */
     public void sortirFeuilleDeRoute(String filePath) throws IOException {
         FeuilleDeRoute.sortirFeuilleDeRoute(filePath, tournee);
     }
 
 
+    /**
+     * Méthode permettant de supprimer un point de livraison de la tournée
+     * @param pointLivraison Point à supprimer
+     */
     public void supprimerPoint(PointLivraison pointLivraison) {
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeSupprimerLivraison(pointLivraison,tournee,lstDeCde);
     }
 
+    /**
+     * Méthode permettant de modifier la plage horaire d'un point de livraison
+     * @param pointLivraison Point à modifier
+     * @param debutPlage
+     * @param finPlage
+     */
     public void modifierPlageHoraire(PointLivraison pointLivraison,Double debutPlage,Double finPlage){
         etatCourant.cdeModifierPlageHoraire(pointLivraison,tournee,debutPlage,finPlage,lstDeCde);
     }
 
+    /**
+     * Méthode permettant d'annuler la dernière modification affectuée (Ajout/Suppression/modification de plage horaire)
+     */
     public void undo()
     {
         etatCourant.undo(lstDeCde);
@@ -101,37 +114,50 @@ public class Controleur {
         fenetrePrincipale.getVueTextuelle().repaint();
     }
 
+    /**
+     * Méthode permettant d'annuler le dernier "Undo" effectué
+     */
     public void redo()
     {
         etatCourant.redo(lstDeCde);
         fenetrePrincipale.getVueGraphique().repaint();
         fenetrePrincipale.getVueTextuelle().repaint();
     }
+
     /**
-     * M�thode permettant d'afficher les informations du point cliqu�
+     * Méthode permettant d'afficher les informations du point cliqué
      * @param pointLivraison
      */
     public void clickedOnPoint(PointLivraison pointLivraison) {
         etatCourant.clickedOnPoint(pointLivraison, fenetrePrincipale);
     }
 
+    /**
+     * Méthode permettant de lancer la fenêtre d'ajout de point de livraison lors d'un clic droit sur un noeud
+     * @param noeud
+     */
     public void rightClickedOnPoint (Noeud noeud) {
         etatCourant.rightClickedOnPoint(noeud,this);
     }
 
+    /**
+     * Méthode ajoutant un noeud à la tournée
+     * @param noeud
+     * @param debut
+     * @param fin
+     * @param duree
+     */
     public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
         etatCourant.cdeAjouterLivraison(noeud,debut,fin,duree,tournee,lstDeCde);
     }
+
+    /**
+     * Méthode Get
+     * @return tournee
+     */
     public Tournee getTournee() {
         return tournee;
     }
-
-    /*public void clickedOnPoint(PointLivraison pointLivraison) {
-
-        fenetrePrincipale.getVueTextuelle().clickedOnPoint(pointLivraison);
-        fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(pointLivraison);
-        fenetrePrincipale.getVueGraphique().repaint();
-        //fenetrePrincipale.getInfoText().setText(toShow);*/
 
 }
