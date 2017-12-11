@@ -86,7 +86,7 @@ public abstract class TemplateTSP implements Algo.TSP {
     void branchAndBound(int sommetCrt, ArrayList<Integer> nonVus, ArrayList<Integer> vus, ArrayList<Map.Entry<Double, Double>> heureLivraison, double coutVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart, long tpsDebut, int tpsLimite) {
         if (System.currentTimeMillis() - tpsDebut > tpsLimite) {
             tempsLimiteAtteint = true;
-//            return;
+            return;
         }
         if (nonVus.size() == 0) { // tous les sommets ont ete visites
             coutVus += cout[sommetCrt][0];
