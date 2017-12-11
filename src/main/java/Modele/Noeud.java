@@ -15,20 +15,20 @@ public class Noeud{
 
     /**
      * Constructeur
-     * @param id
-     * @param x
-     * @param y
+     * @param id :id du noeud
+     * @param x  :position x du noeud
+     * @param y  :position y du noeud
      */
     public Noeud(Long id, int x, int y) {
         this.id = id;
         this.x = x;
         this.y = y;
-        this.neighbors=new HashSet<Troncon>();
+        this.neighbors= new HashSet<>();
     }
 
     /**
      * Constructeur par copie
-     * @param unNoeud
+     * @param unNoeud :le noeud a copier
      */
     public Noeud(Noeud unNoeud) {
         this(unNoeud.getId(),unNoeud.getX(),unNoeud.getY());
@@ -39,7 +39,7 @@ public class Noeud{
 
     /**
      * Ajout de tronçon voisin
-     * @param neighbor
+     * @param neighbor :le troncon voison a ajouter
      */
     public void addNeighbor(Troncon neighbor){
         neighbors.add(neighbor);

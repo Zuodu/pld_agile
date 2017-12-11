@@ -26,7 +26,7 @@ public class ChargeurLivraison {
 
     /**
      * Méthode Get pour l'instance
-     * @return instance
+     * @return instance l'instance de chargeur
      */
     public static ChargeurLivraison getInstance() {
         if (instance == null) {
@@ -97,9 +97,7 @@ public class ChargeurLivraison {
                     Set<Troncon> neighbors = null;
 
                     Set<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
-                    Iterator iterator = noeuds.iterator();
-                    while (iterator.hasNext()) {
-                        Noeud n = (Noeud) iterator.next();
+                    for (Noeud n : noeuds) {
                         if (n.getId() == Long.parseLong(idAtt)) {
                             x = n.getX();
                             y = n.getY();
@@ -122,9 +120,7 @@ public class ChargeurLivraison {
             }
 
             tournee.setCharge(true);
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
 

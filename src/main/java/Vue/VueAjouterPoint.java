@@ -26,6 +26,12 @@ public class VueAjouterPoint extends JFrame {
     private JLabel labelDuree;
 
     private JButton confirmButton;
+
+    /**
+     * Creer la vue pour ajouter un point
+     * @param noeud       :le noeud a ajouter comme point de livraison
+     * @param controleur  :controleur
+     */
     public VueAjouterPoint (Noeud noeud,Controleur controleur) {
         setLayout(null);
         this.noeud=noeud;
@@ -65,56 +71,53 @@ public class VueAjouterPoint extends JFrame {
         confirmButton=new JButton("ajouter");
         confirmButton.setBounds(100,200,100,30);
         contentPane.add(confirmButton);
-        confirmButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String plageDebut=infoPlageDebut.getText();
-                String plageFin=infoPlageFin.getText();
-                String duree=infoDuree.getText();
-                Double debut=null;
-                Double fin=null;
-                double dureeDouble=0;
-                try {
-                    if (!plageDebut.equals("")) {
-                        debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
-                                + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
-                                + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
+        confirmButton.addActionListener(e -> {
+            String plageDebut=infoPlageDebut.getText();
+            String plageFin=infoPlageFin.getText();
+            String duree=infoDuree.getText();
+            Double debut=null;
+            Double fin=null;
+            double dureeDouble=0;
+            try {
+                if (!plageDebut.equals("")) {
+                    debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
+                            + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
+                            + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
 
 
-                    }
-                    if (!plageFin.equals("")) {
-                        fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
-                                + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
-                                + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
-                    }
-                    if (!duree.equals("")) {
-                        dureeDouble=Double.parseDouble(duree);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Veuillez saisir une duree");
-                        return;
-                    }
                 }
-                catch (StringIndexOutOfBoundsException se) {
-                    JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                if (!plageFin.equals("")) {
+                    fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
+                            + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
+                            + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+                }
+                if (!duree.equals("")) {
+                    dureeDouble=Double.parseDouble(duree);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Veuillez saisir une duree");
                     return;
                 }
-                catch (NumberFormatException nfe) {
-                    JOptionPane.showMessageDialog(null, "Verifie la duree saisie");
-                    return;
-                }
-                if (debut==null&&fin!=null) {
-                    JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                    return;
-                }
-                if (debut!=null&&fin==null) {
-                    JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                    return;
-                }
-                controleur.addPointLivraison(noeud,debut,fin,dureeDouble);
-                System.out.println("want to add point " );
-                System.out.println(noeud);
-                System.out.println(debut+" "+fin+" "+duree);
             }
+            catch (StringIndexOutOfBoundsException se) {
+                JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                return;
+            }
+            catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Verifie la duree saisie");
+                return;
+            }
+            if (debut==null&&fin!=null) {
+                JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                return;
+            }
+            if (debut!=null&&fin==null) {
+                JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                return;
+            }
+            controleur.addPointLivraison(noeud,debut,fin,dureeDouble);
+            System.out.println("want to add point " );
+            System.out.println(noeud);
+            System.out.println(debut+" "+fin+" "+duree);
         });
 
 

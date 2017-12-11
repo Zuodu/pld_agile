@@ -29,7 +29,7 @@ public class ButtonListener implements ActionListener {
 
     /**
      * M�thode appelant les m�thodes ad�quates apr�s avoir appuy� sur un bouton de l'interface
-     * @param e
+     * @param e :l'evenement declenchant l'ecouteur
      */
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -53,8 +53,7 @@ public class ButtonListener implements ActionListener {
             JFileChooser jfc = new JFileChooser();
             FileFilter filter = new FileNameExtensionFilter("XML File","xml");
             jfc.setFileFilter(filter);
-            FileSystemView fsv = FileSystemView.getFileSystemView();  //注意了，这里重要的一句
-            //得到桌面路径
+            FileSystemView fsv = FileSystemView.getFileSystemView();
             jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);

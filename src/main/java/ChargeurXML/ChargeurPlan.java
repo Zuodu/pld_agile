@@ -48,7 +48,7 @@ public class ChargeurPlan {
     public boolean parse(Plan plan, String filePath) {
         this.plan = plan;
         File xmlPlan = new File(filePath);
-        HashMap<Long, Noeud> nodeMap = new HashMap<Long, Noeud>();
+        HashMap<Long, Noeud> nodeMap = new HashMap<>();
 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
@@ -115,9 +115,7 @@ public class ChargeurPlan {
             }
             plan.setCharge(true);
 
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
         return true;
@@ -205,9 +203,7 @@ public class ChargeurPlan {
             }
             plan.setCharge(true);
 
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
     }

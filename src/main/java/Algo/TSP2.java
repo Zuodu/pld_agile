@@ -1,6 +1,7 @@
 package Algo;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by flavi on 2017/12/2.
@@ -11,7 +12,7 @@ public class TSP2 extends TSP1 {
         if (nonVus.size() == 1) {
             return 0;
         }
-        ArrayList<Integer> pointsAlivrer = new ArrayList<Integer>(nonVus);
+        ArrayList<Integer> pointsAlivrer = new ArrayList<>(nonVus);
         pointsAlivrer.add(sommetCourant);
         pointsAlivrer.add(entrepot);
         double minCoutDepart = Double.MAX_VALUE;
@@ -23,7 +24,7 @@ public class TSP2 extends TSP1 {
             }
         }
         for (Integer point : nonVus) {
-            if (point != sommetTrouveDepart) {
+            if (!Objects.equals(point, sommetTrouveDepart)) {
                 if (cout[point][entrepot] < minCoutArrivee) {
                     minCoutArrivee = cout[point][entrepot];
                 }
@@ -48,7 +49,7 @@ public class TSP2 extends TSP1 {
             }
         }
         for (Integer point : pointsAlivrer) {
-            if (point != sommetTrouveDepart) {
+            if (!Objects.equals(point, sommetTrouveDepart)) {
                 if (cout[point][sommet] < minCoutArrivee) {
                     minCoutArrivee = cout[point][sommet];
                 }

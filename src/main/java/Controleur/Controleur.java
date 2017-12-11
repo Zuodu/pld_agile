@@ -22,7 +22,7 @@ public class Controleur {
 
     /**
      * Méthode parmettant de changer l'état courant
-     * @param etat
+     * @param etat :nouvel etat
      */
     private static void setEtatCourant(Etat etat) {
         etatCourant = etat;
@@ -41,7 +41,7 @@ public class Controleur {
     /**
      * Méthode chargeant le plan depuis un fichier xml (par appel au package chargeur XML)
      * L'état est actualisé si le chargement a réussi
-     * @param filePath Le chemin d'accès au fichier xml
+     * @param filePath :Le chemin d'accès au fichier xml
      */
     public void chargerPlan (String filePath)
     {
@@ -57,7 +57,7 @@ public class Controleur {
      * Méthode chargeant les points de livraison depuis un fichier xml (par appel au package ChargeurXML)
      * L'état est actualisé si le chargement a réussi
      * La liste de commande est réinitialisée
-     * @param filePath Le chemin d'accès au fichier xml
+     * @param filePath :Le chemin d'accès au fichier xml
      */
     public void chargerLivraison (String filePath){
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
@@ -78,7 +78,7 @@ public class Controleur {
 
     /**
      * Méthode générant la feuille de route
-     * @param filePath Le chemin d'accès au fichier généré
+     * @param filePath :Le chemin d'accès au fichier généré
      * @throws IOException
      */
     public void sortirFeuilleDeRoute(String filePath) throws IOException {
@@ -88,7 +88,7 @@ public class Controleur {
 
     /**
      * Méthode permettant de supprimer un point de livraison de la tournée
-     * @param pointLivraison Point à supprimer
+     * @param pointLivraison :Point à supprimer
      */
     public void supprimerPoint(PointLivraison pointLivraison) {
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
@@ -97,7 +97,7 @@ public class Controleur {
 
     /**
      * Méthode permettant de modifier la plage horaire d'un point de livraison
-     * @param pointLivraison Point à modifier
+     * @param pointLivraison :Point à modifier
      * @param debutPlage
      * @param finPlage
      */
@@ -143,10 +143,10 @@ public class Controleur {
 
     /**
      * Méthode ajoutant un noeud à la tournée
-     * @param noeud
-     * @param debut
-     * @param fin
-     * @param duree
+     * @param noeud :Noeud a ajouter
+     * @param debut :debut de plage horaire
+     * @param fin   :fin de plage horaire
+     * @param duree :duree de livraison
      */
     public void addPointLivraison(Noeud noeud,Double debut, Double fin, Double duree) {
         fenetrePrincipale.getVueGraphique().setPointLivraisonChoisi(null);
@@ -155,7 +155,7 @@ public class Controleur {
 
     /**
      * Méthode Get
-     * @return tournee
+     * @return tournee :la tournee
      */
     public Tournee getTournee() {
         return tournee;

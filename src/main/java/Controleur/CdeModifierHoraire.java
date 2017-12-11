@@ -19,10 +19,10 @@ public class CdeModifierHoraire implements Commande {
 
     /**
      * Constructeur prenant en paramètre toutes les informations nécessaires à la modification
-     * @param newPointLivraison
-     * @param newTournee
-     * @param newDebutPlage
-     * @param newFinPlage
+     * @param newPointLivraison :point de livraison a modifier
+     * @param newTournee        :la tournee a modifier
+     * @param newDebutPlage     :le nouveau debut de plage horaire
+     * @param newFinPlage       :le nouveau fin de plage horaire
      */
     public CdeModifierHoraire(PointLivraison newPointLivraison, Tournee newTournee, Double newDebutPlage, Double newFinPlage) {
         tournee = newTournee;

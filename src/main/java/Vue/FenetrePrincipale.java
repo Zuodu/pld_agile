@@ -52,7 +52,10 @@ public class FenetrePrincipale extends JFrame implements Observer {
 	}
 
 	/**
-	 * Create the frame.
+	 * Creer la fenetre principale
+	 * @param plan
+	 * @param tournee
+	 * @param controleur
 	 */
 	public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
 
@@ -148,6 +151,11 @@ public class FenetrePrincipale extends JFrame implements Observer {
 
 	}
 
+	/**
+	 * la surcharge du methode update du Observer
+	 * @param o
+	 * @param arg
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		vueGraphique.repaint();

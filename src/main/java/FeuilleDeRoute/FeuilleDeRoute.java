@@ -62,7 +62,7 @@ public class FeuilleDeRoute {
                         title("Feuille de route")
                 ),
                 body(
-                        main(attrs("#OptimodLyon.content"),
+                        main(attrs("#main.content"),
                                 h1("Feuille de route Optimod'IF"),
                                 h2("Tournée du " + dateFormat.format(today.getTime()))
                         ),

@@ -1,6 +1,6 @@
 package Modele;
 
-import Main.OptimodLyon;
+import Main.main;
 
 import java.util.LinkedList;
 
@@ -19,14 +19,14 @@ public class Itineraire {
      * Constructeur par défaut
      */
     public Itineraire() {
-        listeTroncons = new LinkedList<Troncon>();
+        listeTroncons = new LinkedList<>();
         longueurTotale = 0;
         temps = 0;
     }
 
     /**
      * Constructeur par copie
-     * @param unItineraire
+     * @param unItineraire :l'itineraire a copier
      */
     public Itineraire(Itineraire unItineraire){
         this();
@@ -40,17 +40,17 @@ public class Itineraire {
     /**
      * Ajoute un tron�on
      *
-     * @param troncon
+     * @param troncon :le troncon a ajouter dans l'itineraire
      */
     public void addTroncon(Troncon troncon) {
         listeTroncons.addFirst(troncon);
         longueurTotale += troncon.getLongueur();
-        temps += troncon.getLongueur() / OptimodLyon.VITESSE;
+        temps += troncon.getLongueur() / main.VITESSE;
     }
 
     /**
      * Méthode Get
-     * @return temps
+     * @return temps :le temps utilise pour parcourir l'itineraire
      */
     public double getTemps() {
         return temps;

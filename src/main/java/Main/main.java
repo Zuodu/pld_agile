@@ -13,7 +13,7 @@ import java.util.List;
  * @author H4401
  * Classe Main, lan�ant le projet
  */
-public class OptimodLyon {
+public class main {
     public static final double VITESSE = 4.166666;
 
     public static void main(String args[]) {

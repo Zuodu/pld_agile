@@ -19,12 +19,12 @@ public class CdeAjout implements Commande {
 
 	/**
 	 * Constructeur prenant en paramètre toutes les informations nécessaires à l'ajout d'un point de livraison
-	 * @param noeud
-	 * @param debut
-	 * @param fin
-	 * @param duree
-	 * @param newTournee
-	 * @param lstDeCde
+	 * @param noeud      :Noeud a ajouter
+	 * @param debut      :debut du plage horaire
+	 * @param fin  	     :fin du plage horaire
+	 * @param duree      :duree de livraison
+	 * @param newTournee :la tournee dans laquelle a ajouter le noeud
+	 * @param lstDeCde   :liste de commande
 	 */
 	public CdeAjout (Noeud noeud,Double debut, Double fin, double duree, Tournee newTournee,LstDeCde lstDeCde)
 	{

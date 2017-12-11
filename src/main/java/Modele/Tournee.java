@@ -27,8 +27,8 @@ public class Tournee extends Observable {
         this.isCharge = false;
         this.entrepot = entrepot;
         this.heureDeDepart = heureDeDepart;
-        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
-        this.listePointLivraisons = new ArrayList<PointLivraison>();
+        this.itinerairesMap = new HashMap<>();
+        this.listePointLivraisons = new ArrayList<>();
     }
 
     /**
@@ -38,7 +38,7 @@ public class Tournee extends Observable {
     public Tournee(Tournee uneTournee) {
         this(new PointLivraison(uneTournee.getEntrepot()), uneTournee.getHeureDeDepart());
         for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : uneTournee.getItinerairesMap().entrySet()) {
-            this.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(new PointLivraison(entry.getKey().getKey()), new PointLivraison(entry.getKey().getValue())), new Itineraire(entry.getValue()));
+            this.addItineraire(new AbstractMap.SimpleEntry<>(new PointLivraison(entry.getKey().getKey()), new PointLivraison(entry.getKey().getValue())), new Itineraire(entry.getValue()));
         }
         for (PointLivraison pointLivraison : uneTournee.getListePointLivraisons()) {
             this.addPointLivraisons(new PointLivraison(pointLivraison));
@@ -50,8 +50,8 @@ public class Tournee extends Observable {
      * Méthode réinitialisant la tournée
      */
     public void reinitialise() {
-        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
-        this.listePointLivraisons = new ArrayList<PointLivraison>();
+        this.itinerairesMap = new HashMap<>();
+        this.listePointLivraisons = new ArrayList<>();
         setChanged();
         notifyObservers();
     }
@@ -79,7 +79,7 @@ public class Tournee extends Observable {
         for (Map.Entry<Map.Entry<PointLivraison, PointLivraison>, Itineraire> entry : tournee.getItinerairesMap().entrySet()) {
             PointLivraison pointDepart = entry.getKey().getKey();
             PointLivraison pointArrivee = entry.getKey().getValue();
-            newTournee.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonHashMap.get(pointDepart.getId()), pointLivraisonHashMap.get(pointArrivee.getId())), new Itineraire(entry.getValue()));
+            newTournee.addItineraire(new AbstractMap.SimpleEntry<>(pointLivraisonHashMap.get(pointDepart.getId()), pointLivraisonHashMap.get(pointArrivee.getId())), new Itineraire(entry.getValue()));
         }
         newTournee.setChanged();
         newTournee.notifyObservers();
@@ -89,8 +89,8 @@ public class Tournee extends Observable {
      * Constructeur par défaut
      */
     public Tournee() {
-        listePointLivraisons = new ArrayList<PointLivraison>();
-        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
+        listePointLivraisons = new ArrayList<>();
+        this.itinerairesMap = new HashMap<>();
     }
 
     /**
@@ -296,9 +296,9 @@ public class Tournee extends Observable {
 
         if (positionAInserer == 0) {
             listePointLivraisons.add(listePointLivraisons.size() - 1, pointLivraisonAInserer);
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraisonAInserer), itineraire1);
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonAInserer, pointLivraison2), itineraire2);
-            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraison2));
+            itinerairesMap.put(new AbstractMap.SimpleEntry<>(pointLivraison1, pointLivraisonAInserer), itineraire1);
+            itinerairesMap.put(new AbstractMap.SimpleEntry<>(pointLivraisonAInserer, pointLivraison2), itineraire2);
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<>(pointLivraison1, pointLivraison2));
             pointLivraisonAInserer.setHeureDepart(depart);
             pointLivraisonAInserer.setHeureArrivee(arrivee);
             entrepot.setHeureArrivee(depart + itineraire2.getTemps());
@@ -308,9 +308,9 @@ public class Tournee extends Observable {
 
         if (retardeHoraire(positionAInserer, depart + itineraire2.getTemps() - pointLivraison2.getHeureArrivee())) {
             listePointLivraisons.add(positionAInserer, pointLivraisonAInserer);
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraisonAInserer), itineraire1);
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonAInserer, pointLivraison2), itineraire2);
-            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraison1, pointLivraison2));
+            itinerairesMap.put(new AbstractMap.SimpleEntry<>(pointLivraison1, pointLivraisonAInserer), itineraire1);
+            itinerairesMap.put(new AbstractMap.SimpleEntry<>(pointLivraisonAInserer, pointLivraison2), itineraire2);
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<>(pointLivraison1, pointLivraison2));
             pointLivraisonAInserer.setHeureDepart(depart);
             pointLivraisonAInserer.setHeureArrivee(arrivee);
             return true;
@@ -346,9 +346,9 @@ public class Tournee extends Observable {
         boolean departRetardee = arriveePointProchain > pProchain.getHeureArrivee() && retardeHoraire(indexASupprimer + 1, arriveePointProchain - pProchain.getHeureArrivee());
         if (departNonModifiee || departAvancee || departRetardee) {
             listePointLivraisons.remove(pointASupprimer);
-            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pointASupprimer));
-            itinerairesMap.remove(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointASupprimer, pProchain));
-            itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pPrecedant, pProchain), result);
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<>(pPrecedant, pointASupprimer));
+            itinerairesMap.remove(new AbstractMap.SimpleEntry<>(pointASupprimer, pProchain));
+            itinerairesMap.put(new AbstractMap.SimpleEntry<>(pPrecedant, pProchain), result);
 
             setChanged();
             notifyObservers();

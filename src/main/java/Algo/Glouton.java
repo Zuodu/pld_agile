@@ -25,8 +25,8 @@ public class Glouton {
     }
 
     public List<Integer> chercheSolution(double heureDeDepart, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
-        List<Integer> res = new ArrayList<Integer>();
-        Set<Integer> visited = new HashSet<Integer>();
+        List<Integer> res = new ArrayList<>();
+        Set<Integer> visited = new HashSet<>();
         int numNodes = cout.length;
         double distanceMin;
         int nextPos = 0;

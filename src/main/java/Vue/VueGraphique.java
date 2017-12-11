@@ -9,10 +9,7 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
-import java.util.AbstractMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @autor H4401
@@ -40,6 +37,10 @@ public class VueGraphique extends JPanel {
     double yScale;
     private PointLivraison pointLivraisonChoisi;
 
+    /**
+     * setter point livraison choisi
+     * @param pointLivraisonChoisi
+     */
     public void setPointLivraisonChoisi(PointLivraison pointLivraisonChoisi) {
         this.pointLivraisonChoisi = pointLivraisonChoisi;
     }
@@ -82,6 +83,10 @@ public class VueGraphique extends JPanel {
 
     }
 
+    /**
+     * getter pointLivraisonChoisi
+     * @return
+     */
     public PointLivraison getPointLivraisonChoisi() {
         return pointLivraisonChoisi;
     }
@@ -160,13 +165,13 @@ public class VueGraphique extends JPanel {
                 }
                 int index = 0;
                 for (int i = 1; i < tournee.getListePointLivraisons().size(); i++) {
-                    if (tournee.getListePointLivraisons().get(i).getId() == pointLivraisonChoisi.getId()) {
+                    if (Objects.equals(tournee.getListePointLivraisons().get(i).getId(), pointLivraisonChoisi.getId())) {
                         index = i;
                     }
                 }
                 g2d.setColor(Color.RED);
                 g2d.setStroke(new BasicStroke(4.0f));
-                for (Troncon t : tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(tournee.getListePointLivraisons().get(index - 1), tournee.getListePointLivraisons().get(index))).getListeTroncons()) {
+                for (Troncon t : tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<>(tournee.getListePointLivraisons().get(index - 1), tournee.getListePointLivraisons().get(index))).getListeTroncons()) {
                     afficheTroncon(t, g2d);
                 }
             }
@@ -175,39 +180,59 @@ public class VueGraphique extends JPanel {
         }
     }
 
-
+    /**
+     * getter
+     * @return
+     */
     public Plan getPlan() {
         return plan;
     }
 
+    /**
+     * getter
+     * @return
+     */
     public Tournee getTournee() {
         return tournee;
     }
 
+    /**
+     * getter
+     * @return
+     */
     public int getXmin() {
         return xmin;
     }
 
+    /**
+     * getter
+     * @return
+     */
     public int getYmin() {
         return ymin;
     }
 
-    public int getXmax() {
-        return xmax;
-    }
-
-    public int getYmax() {
-        return ymax;
-    }
-
+    /**
+     * getter
+     * @return
+     */
     public double getxScale() {
         return xScale;
     }
 
+    /**
+     * getter
+     * @return
+     */
     public double getyScale() {
         return yScale;
     }
 
+    /**
+     * afficher un troncon sous forme d'une ligne
+     * @param troncon :le troncon a afficher
+     * @param g2d     :instance Graphics2D
+     */
     private void afficheTroncon(Troncon troncon, Graphics2D g2d) {
 
         int x1 = (int) ((troncon.getOrigine().getX() - xmin) / xScale) + LEFT_OFFSET;
@@ -217,7 +242,11 @@ public class VueGraphique extends JPanel {
         g2d.drawLine(x1, y1, x2, y2
         );
     }
-
+    /**
+     * afficher le dernier troncon d'un itineraire, afficher un fleche a la fin.
+     * @param troncon :le troncon a afficher
+     * @param g2d     :instance Graphics2D
+     */
     private void afficheDernierTroncon(Troncon troncon, Graphics2D g2d) {
         int x1 = (int) ((troncon.getOrigine().getX() - xmin) / xScale) + LEFT_OFFSET;
         int y1 = (int) ((troncon.getOrigine().getY() - ymin) / yScale) + UP_OFFSET;
@@ -226,6 +255,12 @@ public class VueGraphique extends JPanel {
         drawAL(x1, y1, x2, y2, g2d);
     }
 
+    /**
+     * afficher un point de livraison avec un cercle et le numero de parcours dans la tournee
+     * @param pointLivraison :le point a afficher
+     * @param g2d            :instance de Grapics2D
+     * @param count          :le numero dans la tournee
+     */
     private void affichePointLivraison(PointLivraison pointLivraison, Graphics2D g2d, int count) {
         g2d.fillOval((int) ((pointLivraison.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
                 (int) ((pointLivraison.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2,
@@ -238,6 +273,11 @@ public class VueGraphique extends JPanel {
         }
     }
 
+    /**
+     * afficher l'entrepot sous forme d'un cercle
+     * @param pointLivraison
+     * @param g2d
+     */
     private void afficheEntrepot(PointLivraison pointLivraison, Graphics2D g2d) {
         g2d.fillOval((int) ((tournee.getEntrepot().getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_ENTREPOT / 2,
                 (int) ((tournee.getEntrepot().getY() - ymin) / yScale) + UP_OFFSET - RAYON_ENTREPOT / 2,
@@ -246,7 +286,14 @@ public class VueGraphique extends JPanel {
     }
 
 
-
+    /**
+     * draw une ligne avec un fleche a la fin
+     * @param sx :start x
+     * @param sy :start y
+     * @param ex :end x
+     * @param ey :end y
+     * @param g2 :instance Graphics2D
+     */
     private static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2) {
 
         double H = 14;
@@ -264,13 +311,13 @@ public class VueGraphique extends JPanel {
         double x_4 = ex - arrXY_2[0];
         double y_4 = ey - arrXY_2[1];
 
-        Double X3 = new Double(x_3);
+        Double X3 = x_3;
         x3 = X3.intValue();
-        Double Y3 = new Double(y_3);
+        Double Y3 = y_3;
         y3 = Y3.intValue();
-        Double X4 = new Double(x_4);
+        Double X4 = x_4;
         x4 = X4.intValue();
-        Double Y4 = new Double(y_4);
+        Double Y4 = y_4;
         y4 = Y4.intValue();
         g2.drawLine(sx, sy, ex, ey);
         GeneralPath triangle = new GeneralPath();
@@ -284,6 +331,15 @@ public class VueGraphique extends JPanel {
 
     }
 
+    /**
+     * calculer l'angle de rotation pour le fleche a la fin d'une ligne
+     * @param px
+     * @param py
+     * @param ang
+     * @param isChLen
+     * @param newLen
+     * @return
+     */
     private static double[] rotateVec(int px, int py, double ang,
                                      boolean isChLen, double newLen) {
 

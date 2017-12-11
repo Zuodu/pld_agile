@@ -1,7 +1,9 @@
 package Algo;
 
+import Main.main;
 import Modele.*;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -19,8 +21,8 @@ public class TSPFactory {
 
     public TSPFactory(Plan plan, Tournee tournee) {
         this.tournee = tournee;
-        this.itinerairesMap = new HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire>();
-        this.pointLivraisonMap = new HashMap<Integer, PointLivraison>();
+        this.itinerairesMap = new HashMap<>();
+        this.pointLivraisonMap = new HashMap<>();
         int i = 0;
         pointLivraisonMap.put(i++, tournee.getEntrepot());
         for (PointLivraison pointLivraison : tournee.getListePointLivraisons()) {
@@ -46,7 +48,7 @@ public class TSPFactory {
                 }
                 Dijkstra dijkstra = new Dijkstra();
                 dijkstra.chercheDistanceMin(pointLivraisonMap.get(m), pointLivraisonMap.get(n));
-                itinerairesMap.put(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
+                itinerairesMap.put(new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(m), pointLivraisonMap.get(n)), dijkstra.getMeilleurItineraire());
                 cout[m][n] = dijkstra.getMeilleurItineraire().getTemps();
             }
         }
@@ -84,16 +86,16 @@ public class TSPFactory {
 
     public void chercheSolution() {
         long tempsDebut=System.currentTimeMillis();
-        List<PointLivraison> pointLivraisons=new ArrayList<PointLivraison>();
+        List<PointLivraison> pointLivraisons= new ArrayList<>();
 
         TSP tsp = new TSP4();
         tsp.chercheSolution(Double.MAX_VALUE,tournee.getHeureDeDepart(),30000, nbSommets, cout, duree,plageArrivee,plageDepart);
 
         for (int i = 0; i < nbSommets - 1; i++) {
-            Map.Entry<PointLivraison,PointLivraison> entry=new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)),pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
+            Map.Entry<PointLivraison,PointLivraison> entry= new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
             tournee.addItineraire(entry,itinerairesMap.get(entry));
         }
-        Map.Entry<PointLivraison,PointLivraison> entry=new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0));
+        Map.Entry<PointLivraison,PointLivraison> entry= new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0));
         tournee.addItineraire(entry,itinerairesMap.get(entry));
 
 
@@ -128,7 +130,7 @@ public class TSPFactory {
         return tournee;
     }
     public Itineraire getItineraire(PointLivraison pointDepart,PointLivraison pointArrivee){
-        return itinerairesMap.get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(pointDepart,pointArrivee));
+        return itinerairesMap.get(new AbstractMap.SimpleEntry<>(pointDepart, pointArrivee));
     }
 
 	/**

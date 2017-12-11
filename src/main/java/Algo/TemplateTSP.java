@@ -22,15 +22,15 @@ public abstract class TemplateTSP implements Algo.TSP {
                 hasTW = true;
             }
         }
-        horaireLivraison = new ArrayList<Map.Entry<Double, Double>>(nbSommets);
+        horaireLivraison = new ArrayList<>(nbSommets);
         coutMeilleureSolution = boundInit;
         meilleureSolution = new Integer[nbSommets];
-        ArrayList<Integer> nonVus = new ArrayList<Integer>();
-        ArrayList<Map.Entry<Double, Double>> heureLivraison = new ArrayList<Map.Entry<Double, Double>>();
+        ArrayList<Integer> nonVus = new ArrayList<>();
+        ArrayList<Map.Entry<Double, Double>> heureLivraison = new ArrayList<>();
         for (int i = 1; i < nbSommets; i++) nonVus.add(i);
-        ArrayList<Integer> vus = new ArrayList<Integer>(nbSommets);
+        ArrayList<Integer> vus = new ArrayList<>(nbSommets);
         vus.add(0); // le premier sommet visite est 0
-        heureLivraison.add(new AbstractMap.SimpleEntry<Double, Double>(heureDeDepart, heureDeDepart));
+        heureLivraison.add(new AbstractMap.SimpleEntry<>(heureDeDepart, heureDeDepart));
         branchAndBound(0, nonVus, vus, heureLivraison, heureDeDepart, cout, duree, plageArrivee, plageDepart, System.currentTimeMillis(), tpsLimite);
     }
 
@@ -92,11 +92,11 @@ public abstract class TemplateTSP implements Algo.TSP {
             coutVus += cout[sommetCrt][0];
             if (coutVus < coutMeilleureSolution) { // on a trouve une solution meilleure que meilleureSolution
                 vus.toArray(meilleureSolution);
-                horaireLivraison = new ArrayList<Map.Entry<Double, Double>>(heureLivraison);
-                horaireLivraison.add(new AbstractMap.SimpleEntry<Double, Double>(coutVus, null));
+                horaireLivraison = new ArrayList<>(heureLivraison);
+                horaireLivraison.add(new AbstractMap.SimpleEntry<>(coutVus, null));
                 coutMeilleureSolution = coutVus;
-                System.out.println("temps: " + (System.currentTimeMillis() - tpsDebut));
-                System.out.println("cout: " + coutMeilleureSolution);
+               // System.out.println("temps: " + (System.currentTimeMillis() - tpsDebut));
+               // System.out.println("cout: " + coutMeilleureSolution);
             }
         } else {
             double bound = 0;
@@ -116,7 +116,7 @@ public abstract class TemplateTSP implements Algo.TSP {
                             return;
                         }
                     }
-                    Map.Entry<Double, Double> horaireEntry = new AbstractMap.SimpleEntry<Double, Double>(arrivee, depart);
+                    Map.Entry<Double, Double> horaireEntry = new AbstractMap.SimpleEntry<>(arrivee, depart);
                     heureLivraison.add(horaireEntry);
                     vus.add(prochainSommet);
                     nonVus.remove(prochainSommet);

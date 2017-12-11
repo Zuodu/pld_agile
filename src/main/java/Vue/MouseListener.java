@@ -17,11 +17,20 @@ public class MouseListener extends MouseAdapter {
     private VueGraphique vueGraphique;
     private Controleur controleur;
 
+    /**
+     * Constructeur
+     * @param vueGraphique
+     * @param controleur
+     */
     public MouseListener(VueGraphique vueGraphique, Controleur controleur) {
         this.vueGraphique = vueGraphique;
         this.controleur = controleur;
     }
 
+    /**
+     * surcharge de methode mouseClicked
+      * @param evt :l'evenement
+     */
     public void mouseClicked(MouseEvent evt) {
         if (evt.getButton() == MouseEvent.BUTTON1) {
             int xClicked = evt.getX();

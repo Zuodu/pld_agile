@@ -49,17 +49,34 @@ public class VueTextuelle extends JPanel {
     private JButton buttonUndo;
     private JButton buttonRedo;
 
+    /**
+     * getter
+     * @return
+     */
     public String getInfoPlageDebut() {
         return infoPlageDebut.getText();
     }
 
+    /**
+     * getter
+     * @return
+     */
     public String getInfoPlageFin() {
         return infoPlageFin.getText();
     }
 
+    /**
+     * getter
+     * @return
+     */
     public String getInfoDuree() {
         return infoDuree.getText();
     }
+
+    /**
+     * constructeur
+     * @param buttonListener
+     */
     public VueTextuelle(ButtonListener buttonListener) {
         setLayout(null);
         this.setBounds(ECART + VueGraphique.VUEPLAN_WIDTH, FenetrePrincipale.BUTTONPANEL_LENGTH, WIDTH_VUETEXTUELLE, LENGTH_VUETEXTUELLE);
@@ -155,6 +172,10 @@ public class VueTextuelle extends JPanel {
         buttonUndo.addActionListener(buttonListener);
     }
 
+    /**
+     * afficher un l'info detaille d'un point de livraison
+     * @param pointLivraison
+     */
     public void afficheDetailPointChoisi(PointLivraison pointLivraison) {
         if(pointLivraison!=null) {
             if (pointLivraison.getDebutPlage() != null) {
@@ -204,6 +225,11 @@ public class VueTextuelle extends JPanel {
 
     }
 
+    /**
+     * afficher un l'info detaille d'un point de livraison
+     * @param tournee
+     * @param id
+     */
     public void afficheDetailPointChoisi(Tournee tournee, long id) {
         PointLivraison pointLivraison=null;
         for (PointLivraison p : tournee.getListePointLivraisons()) {

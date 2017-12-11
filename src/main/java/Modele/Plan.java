@@ -17,8 +17,8 @@ public class Plan extends Observable {
      */
     public Plan () {
         isCharge=false;
-        listeTroncons= new HashSet<Troncon>();
-        listeNoeuds= new HashSet<Noeud>();
+        listeTroncons= new HashSet<>();
+        listeNoeuds= new HashSet<>();
 
     }
 
@@ -27,8 +27,8 @@ public class Plan extends Observable {
      */
     public void reinitialise () {
         isCharge=false;
-        listeTroncons= new HashSet<Troncon>();
-        listeNoeuds= new HashSet<Noeud>();
+        listeTroncons= new HashSet<>();
+        listeNoeuds= new HashSet<>();
         setChanged();
         notifyObservers();
     }

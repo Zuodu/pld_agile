@@ -15,8 +15,8 @@ public class CdeSupprimer implements Commande {
 
     /**
      * Constructeur prenant en paramètre le point à supprimer et la tournée concernée
-     * @param pointLivraison
-     * @param tournee
+     * @param pointLivraison :le point de livraison a supprimer
+     * @param tournee        :la tournee a modifier
      */
     public CdeSupprimer(PointLivraison pointLivraison, Tournee tournee) {
         this.tournee = tournee;

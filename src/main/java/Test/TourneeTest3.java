@@ -44,10 +44,10 @@ public class TourneeTest3 {
 		Itineraire itineraire = new Itineraire();
 		PointLivraison point1 = new PointLivraison(25495299L, 56584, 58632, 900);
 		PointLivraison point2 = new PointLivraison(54803121L, 195365, 250340, 300, 39600.0, 46800.0);
-		tournee.addItineraire(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(point1, point2), itineraire);
+		tournee.addItineraire(new AbstractMap.SimpleEntry<>(point1, point2), itineraire);
 		
 		assert(tournee.getItinerairesMap().size() == 1);
-		assert(tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<PointLivraison, PointLivraison>(point1, point2)).equals(itineraire));
+		assert(tournee.getItinerairesMap().get(new AbstractMap.SimpleEntry<>(point1, point2)).equals(itineraire));
 	}
 	
 	@Test //Test d'une contruction par copie
