@@ -84,11 +84,10 @@ public class TSPFactory {
 //        return tsp4.getCoutMeilleureSolution();
 //    }
 
-    public void chercheSolution() {
+    public void chercheSolution(TSP tsp) {
         long tempsDebut=System.currentTimeMillis();
         List<PointLivraison> pointLivraisons= new ArrayList<>();
 
-        TSP tsp = new TSP4();
         tsp.chercheSolution(Double.MAX_VALUE,tournee.getHeureDeDepart(),30000, nbSommets, cout, duree,plageArrivee,plageDepart);
 
         for (int i = 0; i < nbSommets - 1; i++) {

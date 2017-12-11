@@ -1,5 +1,7 @@
 package Controleur;
 
+import Algo.TSP;
+import Algo.TSP4;
 import Algo.TSPFactory;
 import ChargeurXML.ChargeurLivraison;
 import Modele.Plan;
@@ -34,7 +36,8 @@ public class EtatChargerLivraison extends EtatDefaut{
      */
     public void calculerTournee (Plan plan, Tournee tournee) {
         TSPFactory TSPFactory = new TSPFactory(plan, tournee);
-        TSPFactory.chercheSolution();
+        TSP tsp=new TSP4();
+        TSPFactory.chercheSolution(tsp);
         tournee.setCharge(true);
        // System.out.println(TSPFactory.getTournee());
 
