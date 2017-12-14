@@ -57,16 +57,20 @@ public class TourneeTest3 {
 		assert(tournee.getItinerairesMap().isEmpty());
 		
 		PointLivraison point = new PointLivraison(25495299L, 56584, 58632, 900);
+		PointLivraison entrepot =new PointLivraison(25395299L, 56484, 58672, 900);
+		tournee.addPointLivraisons(entrepot);
 		tournee.addPointLivraisons(point);
+		tournee.addPointLivraisons(entrepot);
+		tournee.setEntrepot(entrepot);
+		Tournee tourneeCopie = new Tournee();
+		tourneeCopie.clone(tournee,tourneeCopie);
 		
-		Tournee tourneeCopie = new Tournee(tournee);
-		
-		assert(tournee.getListePointLivraisons().size() == 1);
-		assert(tourneeCopie.getListePointLivraisons().size() == 1);
+		assert(tournee.getListePointLivraisons().size() == 3);
+		assert(tourneeCopie.getListePointLivraisons().size() == 3);
 		
 		tournee.getListePointLivraisons().clear();
 		
-		assert(tourneeCopie.getListePointLivraisons().size() == 1);
+		assert(tourneeCopie.getListePointLivraisons().size() == 3);
 		assert(tournee.getListePointLivraisons().size() == 0);
 	}
 }
