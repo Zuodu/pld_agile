@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @autor H4401
+ * @author H4401
  * Classe permettant l'affichage du plan, des points de livraison et de l'itinéraire sur l'interface,
  */
 public class VueGraphique extends JPanel {

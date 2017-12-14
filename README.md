@@ -1,4 +1,11 @@
 # pld_agile
-repo du pld agile
+Statut du build : [![Build Status](https://travis-ci.org/Zuodu/pld_agile.svg?branch=dev)](https://travis-ci.org/Zuodu/pld_agile)
 
-[![Build Status](https://travis-ci.org/Zuodu/pld_agile.svg?branch=dev)](https://travis-ci.org/Zuodu/pld_agile)
+**H4401 - OptimodLyon**
+**Pour 4IF-PLD-AGILE**
+##Description des dossiers
+**src** : contient le code source de notre solution  
+**resources** : les ressources utilisées (principalement images)  
+**fichiersXML** : les données format xml pour utiliser l'application
+
+##Guide pour compiler et exécuter la solution

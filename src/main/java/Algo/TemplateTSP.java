@@ -56,8 +56,8 @@ public abstract class TemplateTSP implements Algo.TSP {
      *
      * @param sommetCourant
      * @param nonVus        : tableau des sommets restant a visiter
-     * @param cout          : cout[i][j] = duree pour aller de i a j, avec 0 <= i < nbSommets et 0 <= j < nbSommets
-     * @param duree         : duree[i] = duree pour visiter le sommet i, avec 0 <= i < nbSommets
+     * @param cout          : cout[i][j] = duree pour aller de i a j, avec 0 &lt;= i &lt; nbSommets et 0 &lt;= j &lt; nbSommets
+     * @param duree         : duree[i] = duree pour visiter le sommet i, avec 0 &lt;= i &lt; nbSommets
      * @return une borne inferieure du cout des permutations commencant par sommetCourant,
      * contenant chaque sommet de nonVus exactement une fois et terminant par le sommet 0
      */
@@ -68,8 +68,8 @@ public abstract class TemplateTSP implements Algo.TSP {
      *
      * @param sommetCrt
      * @param nonVus    : tableau des sommets restant a visiter
-     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 <= i < nbSommets et 0 <= j < nbSommets
-     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 <= i < nbSommets
+     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 &lt;= i &lt; nbSommets et 0 &lt;= j &lt; nbSommets
+     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 &lt;= i &lt; nbSommets
      * @return un iterateur permettant d'iterer sur tous les sommets de nonVus
      */
     protected abstract Iterator<Integer> iterator(Integer sommetCrt, ArrayList<Integer> nonVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart, Boolean hasTW, double coutVus);
@@ -81,8 +81,8 @@ public abstract class TemplateTSP implements Algo.TSP {
      * @param nonVus    la liste des sommets qui n'ont pas encore ete visites
      * @param vus       la liste des sommets visites (y compris sommetCrt)
      * @param coutVus   la somme des couts des arcs du chemin passant par tous les sommets de vus + la somme des duree des sommets de vus
-     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 <= i < nbSommets et 0 <= j < nbSommets
-     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 <= i < nbSommets
+     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 &lt;= i &lt; nbSommets et 0 &lt;= j &lt; nbSommets
+     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 &lt;= i &lt; nbSommets
      * @param tpsDebut  : moment ou la resolution a commence
      * @param tpsLimite : limite de temps pour la resolution
      */

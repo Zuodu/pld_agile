@@ -141,9 +141,9 @@ public class PointLivraison extends Noeud {
     }
 
     /**
-     * Set
+     * Set de la durée
      *
-     * @return duree
+     * @param d durée
      */
     public void setDuree(double d) {
         duree = d;

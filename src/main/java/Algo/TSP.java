@@ -15,8 +15,8 @@ public interface TSP {
      *
      * @param tpsLimite : limite (en millisecondes) sur le temps d'execution de chercheSolution
      * @param nbSommets : nombre de sommets du graphe
-     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 <= i < nbSommets et 0 <= j < nbSommets
-     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 <= i < nbSommets
+     * @param cout      : cout[i][j] = duree pour aller de i a j, avec 0 &lt;= i &lt; nbSommets et 0 &lt;= j &lt; nbSommets
+     * @param duree     : duree[i] = duree pour visiter le sommet i, avec 0 &lt;= i &lt; nbSommets
      */
     public void chercheSolution(double coutInit, double heureDeDepart, int tpsLimite, int nbSommets, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart);
 

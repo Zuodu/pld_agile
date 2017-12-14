@@ -22,7 +22,7 @@ public class LigneFeuille {
     private String longueur;
 
     /**
-     * COnstructeur d'une ligne de feuille de route
+     * Constructeur d'une ligne de feuille de route
      *
      * @param arrivee heure d'arrivée (Itinéraire)
      * @param depart  heure de départ (Itinéraire)
