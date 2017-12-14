@@ -1,33 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/Algo/TSP4.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP4.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Algo/TSPFactory.html" afterPath="$PROJECT_DIR$/doc/Algo/TSPFactory.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Algo/package-frame.html" afterPath="$PROJECT_DIR$/doc/Algo/package-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Algo/package-summary.html" afterPath="$PROJECT_DIR$/doc/Algo/package-summary.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Algo/package-tree.html" afterPath="$PROJECT_DIR$/doc/Algo/package-tree.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Main/main.html" afterPath="$PROJECT_DIR$/doc/Main/main.html" />
-      <change beforePath="$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html" afterPath="$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
-      <change beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-12.html" afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-14.html" afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-16.html" afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-17.html" afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-3.html" afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-4.html" afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" />
-      <change beforePath="$PROJECT_DIR$/doc/index-files/index-9.html" afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" />
-      <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algo/TSPFactory.java" afterPath="$PROJECT_DIR$/src/main/java/Algo/ChercherSolution.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controleur/EtatChargerLivraison.java" afterPath="$PROJECT_DIR$/src/main/java/Controleur/EtatChargerLivraison.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java" afterPath="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/main.java" afterPath="$PROJECT_DIR$/src/main/java/Main/OptimodLyon.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modele/Itineraire.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/Itineraire.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java" afterPath="$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java" />
+    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="ajout javadoc et okok">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/ChercherSolution.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Main/OptimodLyon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/Dijkstra.html" afterPath="$PROJECT_DIR$/doc/Algo/Dijkstra.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/IteratorMin.html" afterPath="$PROJECT_DIR$/doc/Algo/IteratorMin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/IteratorPlage.html" afterPath="$PROJECT_DIR$/doc/Algo/IteratorPlage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/IteratorSeq.html" afterPath="$PROJECT_DIR$/doc/Algo/IteratorSeq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TSP.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TSP1.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TSP2.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TSP3.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TSP4.html" afterPath="$PROJECT_DIR$/doc/Algo/TSP4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/TemplateTSP.html" afterPath="$PROJECT_DIR$/doc/Algo/TemplateTSP.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/package-frame.html" afterPath="$PROJECT_DIR$/doc/Algo/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/package-summary.html" afterPath="$PROJECT_DIR$/doc/Algo/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Algo/package-tree.html" afterPath="$PROJECT_DIR$/doc/Algo/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurLivraison.html" afterPath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurLivraison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurPlan.html" afterPath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurPlan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ChargeurXML/package-frame.html" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ChargeurXML/package-summary.html" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ChargeurXML/package-tree.html" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/CdeAjout.html" afterPath="$PROJECT_DIR$/doc/Controleur/CdeAjout.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/CdeModifierHoraire.html" afterPath="$PROJECT_DIR$/doc/Controleur/CdeModifierHoraire.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/CdeSupprimer.html" afterPath="$PROJECT_DIR$/doc/Controleur/CdeSupprimer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/Commande.html" afterPath="$PROJECT_DIR$/doc/Controleur/Commande.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/Controleur.html" afterPath="$PROJECT_DIR$/doc/Controleur/Controleur.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/Etat.html" afterPath="$PROJECT_DIR$/doc/Controleur/Etat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/EtatCalculerTournee.html" afterPath="$PROJECT_DIR$/doc/Controleur/EtatCalculerTournee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/EtatChargerLivraison.html" afterPath="$PROJECT_DIR$/doc/Controleur/EtatChargerLivraison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/EtatChargerPlan.html" afterPath="$PROJECT_DIR$/doc/Controleur/EtatChargerPlan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/EtatDefaut.html" afterPath="$PROJECT_DIR$/doc/Controleur/EtatDefaut.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/EtatInit.html" afterPath="$PROJECT_DIR$/doc/Controleur/EtatInit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/LstDeCde.html" afterPath="$PROJECT_DIR$/doc/Controleur/LstDeCde.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/package-frame.html" afterPath="$PROJECT_DIR$/doc/Controleur/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/package-summary.html" afterPath="$PROJECT_DIR$/doc/Controleur/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Controleur/package-tree.html" afterPath="$PROJECT_DIR$/doc/Controleur/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/FeuilleDeRoute.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/FeuilleDeRoute.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/Indication.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/Indication.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/LigneFeuille.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/LigneFeuille.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/PileTroncon.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/PileTroncon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/Vecteur.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/Vecteur.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-frame.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-summary.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-tree.html" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Main/package-frame.html" afterPath="$PROJECT_DIR$/doc/Main/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Main/package-summary.html" afterPath="$PROJECT_DIR$/doc/Main/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Main/package-tree.html" afterPath="$PROJECT_DIR$/doc/Main/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/Itineraire.html" afterPath="$PROJECT_DIR$/doc/Modele/Itineraire.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/Noeud.html" afterPath="$PROJECT_DIR$/doc/Modele/Noeud.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/Plan.html" afterPath="$PROJECT_DIR$/doc/Modele/Plan.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/PointLivraison.html" afterPath="$PROJECT_DIR$/doc/Modele/PointLivraison.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/Tournee.html" afterPath="$PROJECT_DIR$/doc/Modele/Tournee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/Troncon.html" afterPath="$PROJECT_DIR$/doc/Modele/Troncon.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/package-frame.html" afterPath="$PROJECT_DIR$/doc/Modele/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/package-summary.html" afterPath="$PROJECT_DIR$/doc/Modele/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Modele/package-tree.html" afterPath="$PROJECT_DIR$/doc/Modele/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html" afterPath="$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/ChargeurLivraisonTest2.html" afterPath="$PROJECT_DIR$/doc/Test/ChargeurLivraisonTest2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/ChargeurPlanTest.html" afterPath="$PROJECT_DIR$/doc/Test/ChargeurPlanTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/DijkstraTest.html" afterPath="$PROJECT_DIR$/doc/Test/DijkstraTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/ItineraireTest.html" afterPath="$PROJECT_DIR$/doc/Test/ItineraireTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/PlanTest.html" afterPath="$PROJECT_DIR$/doc/Test/PlanTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/PointLivraisonTest.html" afterPath="$PROJECT_DIR$/doc/Test/PointLivraisonTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/TourneeTest3.html" afterPath="$PROJECT_DIR$/doc/Test/TourneeTest3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/TspTest.html" afterPath="$PROJECT_DIR$/doc/Test/TspTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/package-frame.html" afterPath="$PROJECT_DIR$/doc/Test/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/package-summary.html" afterPath="$PROJECT_DIR$/doc/Test/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Test/package-tree.html" afterPath="$PROJECT_DIR$/doc/Test/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/ButtonListener.html" afterPath="$PROJECT_DIR$/doc/Vue/ButtonListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/FenetrePrincipale.html" afterPath="$PROJECT_DIR$/doc/Vue/FenetrePrincipale.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/MouseListener.html" afterPath="$PROJECT_DIR$/doc/Vue/MouseListener.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/VueAjouterPoint.html" afterPath="$PROJECT_DIR$/doc/Vue/VueAjouterPoint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/VueGraphique.html" afterPath="$PROJECT_DIR$/doc/Vue/VueGraphique.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/VueTextuelle.html" afterPath="$PROJECT_DIR$/doc/Vue/VueTextuelle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/package-frame.html" afterPath="$PROJECT_DIR$/doc/Vue/package-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/package-summary.html" afterPath="$PROJECT_DIR$/doc/Vue/package-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Vue/package-tree.html" afterPath="$PROJECT_DIR$/doc/Vue/package-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/constant-values.html" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/deprecated-list.html" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/help-doc.html" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-1.html" afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-10.html" afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-11.html" afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-12.html" afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-13.html" afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-14.html" afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-15.html" afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-16.html" afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-17.html" afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-18.html" afterPath="$PROJECT_DIR$/doc/index-files/index-18.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-19.html" afterPath="$PROJECT_DIR$/doc/index-files/index-19.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-2.html" afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-20.html" afterPath="$PROJECT_DIR$/doc/index-files/index-20.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-21.html" afterPath="$PROJECT_DIR$/doc/index-files/index-21.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-22.html" afterPath="$PROJECT_DIR$/doc/index-files/index-22.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-3.html" afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-4.html" afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-5.html" afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-6.html" afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-7.html" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-8.html" afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index-files/index-9.html" afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,33 +130,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VueTextuelle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3278">
-              <caret line="161" column="13" lean-forward="false" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LigneFeuille.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-              <folding>
-                <element signature="e#2068#2069#0" expanded="true" />
-                <element signature="e#2098#2099#0" expanded="true" />
-                <element signature="e#2243#2244#0" expanded="true" />
-                <element signature="e#2274#2275#0" expanded="true" />
-                <element signature="e#2454#2455#0" expanded="true" />
-                <element signature="e#2487#2488#0" expanded="true" />
-                <element signature="e#2623#2624#0" expanded="true" />
-                <element signature="e#2649#2650#0" expanded="true" />
-                <element signature="e#2800#2801#0" expanded="true" />
-                <element signature="e#2831#2832#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -79,62 +143,19 @@
       <file leaf-file-name="FenetrePrincipale.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2332">
-              <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+            <state relative-caret-position="374">
+              <caret line="119" column="75" lean-forward="false" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VueGraphique.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="159" column="17" lean-forward="false" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+            <state relative-caret-position="204">
+              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChercherSolution.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algo/ChercherSolution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OptimodLyon.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main/OptimodLyon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Indication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PointLivraison.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2750">
-              <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
-              <folding>
-                <element signature="e#2997#2998#0" expanded="true" />
-                <element signature="e#3022#3023#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -152,15 +173,7 @@
     <findStrings>
       <find>return false</find>
       <find>setchanged</find>
-      <find>&lt;</find>
-      <find>plageDebut</find>
-      <find>img</find>
     </findStrings>
-    <replaceStrings>
-      <replace>&amp;lt;</replace>
-      <replace>plage</replace>
-      <replace>getClass().getResource()</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -186,37 +199,34 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonChargerPlanListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonChargerLivraisonsListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Modele/Plan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Modele/Itineraire.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/AbstractGraphe.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/Vue.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VuePlan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatChargerPlan.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main/main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java" />
         <option value="$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurPlan.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/Etat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/Controleur.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/Commande.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatChargerPlan.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Algo/TSP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modele/Itineraire.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modele/Noeud.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modele/Plan.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/Modele/Troncon.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatChargerLivraison.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Modele/Tournee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main/OptimodLyon.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -225,13 +235,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -271,19 +274,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="optimodlyon" type="58d84e3e:PackageViewProjectNode" />
-              <item name="optimodlyon" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -295,6 +285,11 @@
             <path>
               <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
               <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
+              <item name="Backup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,30 +304,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Algo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Controleur" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
@@ -342,22 +313,368 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="optimodlyon" type="58d84e3e:PackageViewProjectNode" />
+              <item name="optimodlyon" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="optimodlyon" type="58d84e3e:PackageViewProjectNode" />
+              <item name="optimodlyon" type="616d4139:PackageViewModuleNode" />
+              <item name="Modele" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projets\pld_agile\src\main" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yohan\IdeaProjects\pld_agile\backup" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/Dijkstra.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/IteratorMin.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/IteratorPlage.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/IteratorSeq.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TSP.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TSP1.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TSP2.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TSP3.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TSP4.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurPlan.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/Commande.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/Controleur.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/Etat.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/EtatChargerLivraison.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/EtatChargerPlan.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Itineraire.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Noeud.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Plan.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Tournee.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Modele/Troncon.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest2.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ChargeurPlanTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/ItineraireTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/PlanTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/PointLivraisonTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/TourneeTest3.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/MouseListener.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/Dijkstra.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/Glouton.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/IteratorMin.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/IteratorPlage.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/IteratorSeq.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSP1.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSP2.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSP3.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSP4.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TSPFactory.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/TemplateTSP.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Algo/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/ChargeurXML/ChargeurLivraison.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/ChargeurXML/ChargeurPlan.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/ChargeurXML/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/ChargeurXML/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/ChargeurXML/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/CdeAjout.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/CdeModifierHoraire.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/CdeSupprimer.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/Commande.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/Controleur.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/Etat.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/EtatCalculerTournee.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/EtatChargerLivraison.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/EtatChargerPlan.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/EtatDefaut.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/EtatInit.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/LstDeCde.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Controleur/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/FeuilleDeRoute.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/Indication.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/LigneFeuille.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/PileTroncon.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/Vecteur.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/FeuilleDeRoute/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Main/main.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Main/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Main/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Main/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/Itineraire.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/Noeud.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/Plan.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/PointLivraison.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/Tournee.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/Troncon.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Modele/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/ChargeurLivraisonTest2.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/ChargeurPlanTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/DijkstraTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/ItineraireTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/PlanTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/PointLivraisonTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/TourneeTest3.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/TspTest.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Test/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/ButtonListener.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/FenetrePrincipale.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/MouseListener.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/VueAjouterPoint.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/VueGraphique.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/VueTextuelle.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/package-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/package-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/Vue/package-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/allclasses-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/allclasses-noframe.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/constant-values.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/deprecated-list.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/help-doc.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-1.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-10.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-11.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-12.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-13.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-14.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-15.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-16.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-17.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-18.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-19.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-2.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-20.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-21.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-22.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-3.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-4.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-5.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-6.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-7.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-8.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index-files/index-9.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/overview-frame.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/overview-summary.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/overview-tree.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/package-list</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/script.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/serialized-form.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/stylesheet.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/ChercherSolution.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Main/OptimodLyon.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/DijkstraTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Test/TspTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/CalculerTournee.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/ChargerLivraisons.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/ChargerPlan.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Colors.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/GenererFeuille.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Modifier.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Precedent.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Redo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Suivant.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Supprimer.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/Undo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/ajouterPtLivraison.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/target.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/target_old.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/._planLyonGrand.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/._planLyonMoyen.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/._planLyonPetit.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/DLgrand10TW2.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/DLgrand20.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/DLgrand20TW.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/planLyonGrand.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/CalculerTournee.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ChargerLivraisons.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ChargerPlan.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Colors.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/GenererFeuille.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Modifier.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Precedent.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Redo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Suivant.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Supprimer.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/Undo.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/ajouterPtLivraison.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/target.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/target_old.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/AbstractGraphe.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/Edge.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/Glouton.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Algo/Vertex.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/Main/main.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -372,16 +689,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Unnamed">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main.OptimodLyon" />
+      <option name="MAIN_CLASS_NAME" value="Main.main" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -411,6 +721,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="optimodlyon" />
       <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -481,80 +798,13 @@
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
     </configuration>
-    <configuration name="AbstractGrapheTest.TUp2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="optimodlyon" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.AbstractGrapheTest" />
-      <option name="METHOD_NAME" value="TUp2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
       <envs />
-      <patterns />
-    </configuration>
-    <configuration name="AbstractGrapheTest.TUp3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="optimodlyon" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.AbstractGrapheTest" />
-      <option name="METHOD_NAME" value="TUp3" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ChargeurLivraisonTest.TUp2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="optimodlyon" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.ChargeurLivraisonTest" />
-      <option name="METHOD_NAME" value="TUp2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -575,6 +825,12 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -609,12 +865,6 @@
       <envs />
       <properties />
       <listeners />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -849,35 +1099,18 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-    </configuration>
-    <list size="5">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
       <item index="1" class="java.lang.String" itemvalue="Application.Vue" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ChargeurLivraisonTest.TUp2" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AbstractGrapheTest.TUp2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.AbstractGrapheTest.TUp3" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.AbstractGrapheTest.TUp3" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.AbstractGrapheTest.TUp2" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ChargeurLivraisonTest.TUp2" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Vue" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Vue" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -892,11 +1125,9 @@
       <workItem from="1511310649755" duration="295000" />
       <workItem from="1511335367970" duration="4674000" />
       <workItem from="1512484118979" duration="5972000" />
-      <workItem from="1512507503881" duration="3895000" />
-      <workItem from="1512511759231" duration="3176000" />
-      <workItem from="1512640883510" duration="11000" />
-      <workItem from="1513263001332" duration="7358000" />
-      <workItem from="1513285440224" duration="99000" />
+      <workItem from="1512507503881" duration="6389000" />
+      <workItem from="1512905542459" duration="5718000" />
+      <workItem from="1513290346026" duration="650000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -961,142 +1192,67 @@
       <option name="project" value="LOCAL" />
       <updated>1512510686368</updated>
     </task>
-    <task id="LOCAL-00010" summary="[YG] Undo/redo modifier interface à retardement">
-      <created>1512512014874</created>
+    <task id="LOCAL-00010" summary="[YG] Merge bien fait">
+      <created>1512511445304</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1512512014874</updated>
+      <updated>1512511445304</updated>
     </task>
-    <task id="LOCAL-00011" summary="tests : graphepetit null, en commentaire pour le moment">
-      <created>1512512482835</created>
+    <task id="LOCAL-00011" summary="[YG] Javadoc Controleur + ChargeurXML">
+      <created>1512908311607</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1512512482835</updated>
+      <updated>1512908311607</updated>
     </task>
-    <task id="LOCAL-00012" summary="correction texte undo redo">
-      <created>1512512987733</created>
+    <task id="LOCAL-00012" summary="[YG] Javadoc Controleur fini + Modele">
+      <created>1512914454556</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1512512987733</updated>
+      <updated>1512914454556</updated>
     </task>
-    <task id="LOCAL-00013" summary="ajout javadoc">
-      <created>1513271166834</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1513271166834</updated>
-    </task>
-    <task id="LOCAL-00014" summary="ajout javadoc et refactoring du code">
-      <created>1513272251988</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1513272251988</updated>
-    </task>
-    <task id="LOCAL-00015" summary="readme">
-      <created>1513274681410</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1513274681410</updated>
-    </task>
-    <task id="LOCAL-00016" summary="readme">
-      <created>1513274738939</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1513274738939</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="AbstractGrapheTest_TUp2 - 2017.12.05 at 23h 20m 01s.xml">
-      <configuration name="AbstractGrapheTest.TUp2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractGrapheTest_TUp2 - 2017.12.05 at 23h 20m 48s.xml">
-      <configuration name="AbstractGrapheTest.TUp2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractGrapheTest_TUp3 - 2017.12.05 at 23h 21m 02s.xml">
-      <configuration name="AbstractGrapheTest.TUp3" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AbstractGrapheTest_TUp3 - 2017.12.05 at 23h 26m 50s.xml">
-      <configuration name="AbstractGrapheTest.TUp3" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ChargeurLivraisonTest_TUp2 - 2017.12.05 at 23h 17m 54s.xml">
-      <configuration name="ChargeurLivraisonTest.TUp2" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49413000" />
+    <option name="totallyTimeSpent" value="47631000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32730132" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19804688" sideWeight="0.49005848" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19804688" sideWeight="0.5099415" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37888888" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37900552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281768" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.49791667" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1112,12 +1268,10 @@
     <MESSAGE value="[YG] Undo/Redo pour modifier" />
     <MESSAGE value="[YG] Messages d'erreurs si échec de chargement livraisons" />
     <MESSAGE value="[YG] Undo/redo modifier interface à retardement" />
-    <MESSAGE value="tests : graphepetit null, en commentaire pour le moment" />
-    <MESSAGE value="correction texte undo redo" />
-    <MESSAGE value="ajout javadoc" />
-    <MESSAGE value="ajout javadoc et refactoring du code" />
-    <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="[YG] Merge bien fait" />
+    <MESSAGE value="[YG] Javadoc Controleur + ChargeurXML" />
+    <MESSAGE value="[YG] Javadoc Controleur fini + Modele" />
+    <option name="LAST_COMMIT_MESSAGE" value="[YG] Javadoc Controleur fini + Modele" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1128,14 +1282,8 @@
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1144,36 +1292,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Edge.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/IteratorSeq.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerPlanListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerLivraisonsListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Controleur.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Vertex.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Observable.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TSP1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/AbstractGraphe.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/ListePointLivraisons.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Troncon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Dijkstra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+        <state relative-caret-position="195">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1182,140 +1306,312 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/Vue.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonCalculerTourneeListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Plan.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Edge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Itineraire.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/IteratorSeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VuePlan.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Noeud.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerPlanListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerLivraisonsListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/Observable.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TSP1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state relative-caret-position="60">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Etat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TSP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatChargerPlan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="102" column="54" lean-forward="false" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurPlan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="95" column="45" lean-forward="false" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/ChargeurLivraisonTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="61" lean-forward="false" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Tournee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="124" column="0" lean-forward="false" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="62" column="42" lean-forward="false" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="113" lean-forward="true" selection-start-line="26" selection-start-column="113" selection-end-line="26" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Controleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="96" column="35" lean-forward="false" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FeuilleDeRoute.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="24" column="92" lean-forward="false" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
-          <folding />
+        <state relative-caret-position="195">
+          <caret line="13" column="53" lean-forward="true" selection-start-line="13" selection-start-column="53" selection-end-line="13" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1059">
-          <caret line="88" column="49" lean-forward="false" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="49" />
+        <state relative-caret-position="120">
+          <caret line="9" column="39" lean-forward="true" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/ListePointLivraisons.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Dijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/Vue.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonCalculerTourneeListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VuePlan.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerPlanListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonChargerLivraisonsListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TSP.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="148" column="24" lean-forward="false" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurLivraison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="37" column="3" lean-forward="true" selection-start-line="37" selection-start-column="3" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ChargeurXML/ChargeurPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="216" column="14" lean-forward="false" selection-start-line="216" selection-start-column="14" selection-end-line="216" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Etat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="141" lean-forward="false" selection-start-line="20" selection-start-column="141" selection-end-line="20" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatChargerPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatPointSelectionne.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatDefaut.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Commande.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Controleur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="96" column="2" lean-forward="false" selection-start-line="96" selection-start-column="2" selection-end-line="101" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="40" lean-forward="false" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/CdeAjout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="20" column="110" lean-forward="false" selection-start-line="20" selection-start-column="110" selection-end-line="20" selection-end-column="110" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Itineraire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Noeud.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Plan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="7" lean-forward="false" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="105" column="29" lean-forward="false" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+          <folding>
+            <marker date="1513290454365" expanded="true" signature="18:42" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Troncon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="29" lean-forward="false" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding>
+            <marker date="1513290454380" expanded="true" signature="17:41" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/AbstractGraphe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_66/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="652" column="0" lean-forward="false" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/EtatChargerLivraison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <marker date="1513290454318" expanded="true" signature="1434:1435" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/Tournee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4692">
+          <caret line="278" column="35" lean-forward="false" selection-start-line="278" selection-start-column="35" selection-end-line="278" selection-end-column="35" />
+          <folding>
+            <element signature="e#4165#4166#0" expanded="true" />
+            <element signature="e#4202#4203#0" expanded="true" />
+            <element signature="e#4360#4361#0" expanded="true" />
+            <element signature="e#4416#4417#0" expanded="true" />
+            <element signature="e#4537#4538#0" expanded="true" />
+            <element signature="e#4587#4588#0" expanded="true" />
+            <element signature="e#4701#4702#0" expanded="true" />
+            <element signature="e#4741#4742#0" expanded="true" />
+            <element signature="e#4834#4835#0" expanded="true" />
+            <element signature="e#4865#4866#0" expanded="true" />
+            <element signature="e#4996#4997#0" expanded="true" />
+            <element signature="e#5039#5040#0" expanded="true" />
+            <element signature="e#5142#5143#0" expanded="true" />
+            <element signature="e#5178#5179#0" expanded="true" />
+            <element signature="e#5488#5489#0" expanded="true" />
+            <element signature="e#5519#5520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1323,145 +1619,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2750">
-          <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
-          <folding>
-            <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#3022#3023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/MouseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1284">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="143" column="119" lean-forward="false" selection-start-line="143" selection-start-column="119" selection-end-line="143" selection-end-column="119" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3278">
-          <caret line="161" column="13" lean-forward="false" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="170">
-            <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <element signature="e#2068#2069#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-            <element signature="e#2623#2624#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#2831#2832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2332">
-          <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+        <state relative-caret-position="374">
+          <caret line="119" column="75" lean-forward="false" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="159" column="17" lean-forward="false" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Algo/ChercherSolution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main/OptimodLyon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="204">
+          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>

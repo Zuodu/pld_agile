@@ -117,7 +117,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonAddPoint.addActionListener(buttonListener);
         buttonAddPoint.setBounds(0, BUTTON_SPACE_VERTICAL * 3, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            buttonAddPoint.setIcon(new ImageIcon(getClass().getResource("/AjouterPtLivraison.png")));
+            buttonAddPoint.setIcon(new ImageIcon(getClass().getResource("/ajouterPtLivraison.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
