@@ -1,131 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="ajout javadoc">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/Dijkstra.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/Glouton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/IteratorMin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/IteratorPlage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/IteratorSeq.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSP.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSP1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSP2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSP3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSP4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TSPFactory.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/TemplateTSP.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Algo/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurLivraison.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/ChargeurXML/ChargeurPlan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/ChargeurXML/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/CdeAjout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/CdeModifierHoraire.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/CdeSupprimer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/Commande.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/Controleur.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/Etat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/EtatCalculerTournee.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/EtatChargerLivraison.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/EtatChargerPlan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/EtatDefaut.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/EtatInit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/LstDeCde.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Controleur/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/FeuilleDeRoute.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/Indication.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/LigneFeuille.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/PileTroncon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/Vecteur.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/FeuilleDeRoute/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Main/main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Main/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Main/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Main/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/Itineraire.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/Noeud.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/Plan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/PointLivraison.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/Tournee.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/Troncon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Modele/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/AbstractGrapheTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/ChargeurLivraisonTest2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/ChargeurPlanTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/DijkstraTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/ItineraireTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/PlanTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/PointLivraisonTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/TourneeTest3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/TspTest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Test/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/ButtonListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/FenetrePrincipale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/MouseListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/VueAjouterPoint.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/VueGraphique.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/VueTextuelle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/Vue/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/allclasses-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/allclasses-noframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/constant-values.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/help-doc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-11.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-12.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-13.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-14.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-15.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-16.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-17.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-18.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-19.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-20.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-21.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-22.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-5.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-6.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-7.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-8.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index-files/index-9.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/overview-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/overview-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/overview-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/package-list" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/serialized-form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/stylesheet.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand10TW2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand20.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/DLgrand20TW.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/planLyonGrand.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Algo/TSP.java" afterPath="$PROJECT_DIR$/src/main/java/Algo/TSP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java" afterPath="$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java" afterPath="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" afterPath="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -143,15 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FeuilleDeRoute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
+      <file leaf-file-name="VueTextuelle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2992">
-              <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4951#4965#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1326">
+              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -159,8 +34,8 @@
       <file leaf-file-name="LigneFeuille.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="425">
+              <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding>
                 <element signature="e#2068#2069#0" expanded="true" />
                 <element signature="e#2098#2099#0" expanded="true" />
@@ -177,22 +52,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MouseListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/MouseListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="187">
-                <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="68" lean-forward="false" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -200,31 +65,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractGrapheTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java">
+      <file leaf-file-name="PileTroncon.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="24" column="92" lean-forward="false" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
+            <state relative-caret-position="935">
+              <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+              <folding>
+                <element signature="e#1270#1271#0" expanded="true" />
+                <element signature="e#1303#1304#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vecteur.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VueGraphique.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
+      <file leaf-file-name="FeuilleDeRoute.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="-128">
+              <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4951#4965#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TemplateTSP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java">
+      <file leaf-file-name="Indication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1059">
-              <caret line="88" column="49" lean-forward="false" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="49" />
+            <state relative-caret-position="34">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -267,9 +148,11 @@
       <find>return false</find>
       <find>setchanged</find>
       <find>&lt;</find>
+      <find>plageDebut</find>
     </findStrings>
     <replaceStrings>
       <replace>&amp;lt;</replace>
+      <replace>plage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -318,14 +201,14 @@
         <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/TSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -376,11 +259,6 @@
             <path>
               <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
               <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -395,6 +273,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="FeuilleDeRoute" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1066,7 +960,7 @@
       <workItem from="1512507503881" duration="3895000" />
       <workItem from="1512511759231" duration="3176000" />
       <workItem from="1512640883510" duration="11000" />
-      <workItem from="1513263001332" duration="3495000" />
+      <workItem from="1513263001332" duration="5267000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1152,7 +1046,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512512987733</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ajout javadoc">
+      <created>1513271166834</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1513271166834</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ajout javadoc et refactoring du code">
+      <created>1513272251988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1513272251988</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1173,7 +1081,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45451000" />
+    <option name="totallyTimeSpent" value="47223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1181,13 +1089,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32777777" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32777777" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1258,7 +1166,8 @@
     <MESSAGE value="tests : graphepetit null, en commentaire pour le moment" />
     <MESSAGE value="correction texte undo redo" />
     <MESSAGE value="ajout javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout javadoc" />
+    <MESSAGE value="ajout javadoc et refactoring du code" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout javadoc et refactoring du code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1285,13 +1194,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controleur/Controleur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/Vue.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonCalculerTourneeListener.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Algo/Edge.java">
@@ -1473,113 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-          <folding>
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <marker date="1513267101655" expanded="true" signature="49:170" ph="/**...*/" />
-            <marker date="1513267101655" expanded="true" signature="560:654" ph="{...}" />
-            <marker date="1513267101655" expanded="true" signature="811:882" ph="{...}" />
-            <marker date="1513267101655" expanded="false" signature="972:983" ph=" { " />
-            <marker date="1513267101655" expanded="false" signature="998:1004" ph=" }" />
-            <marker date="1513267101655" expanded="true" signature="1131:1142" ph=" { " />
-            <marker date="1513267101655" expanded="true" signature="1164:1170" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="130" column="46" lean-forward="false" selection-start-line="130" selection-start-column="46" selection-end-line="130" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2992">
-          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4951#4965#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <element signature="e#2068#2069#0" expanded="true" />
-            <element signature="e#2098#2099#0" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-            <element signature="e#2623#2624#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#2831#2832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/MouseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="187">
-            <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FeuilleDeRoute.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1631,11 +1426,119 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Indication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+          <folding>
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1921">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="38" column="38" lean-forward="false" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueAjouterPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1284">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-1343">
           <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4951#4965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="143" column="119" lean-forward="false" selection-start-line="143" selection-start-column="119" selection-end-line="143" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+          <folding>
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2623#2624#0" expanded="true" />
+            <element signature="e#2649#2650#0" expanded="true" />
+            <element signature="e#2800#2801#0" expanded="true" />
+            <element signature="e#2831#2832#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="68" lean-forward="false" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -7,5 +7,3 @@ Statut du build : [![Build Status](https://travis-ci.org/Zuodu/pld_agile.svg?bra
 **src** : contient le code source de notre solution  
 **resources** : les ressources utilisées (principalement images)  
 **fichiersXML** : les données format xml pour utiliser l'application
-
-##Guide pour compiler et exécuter la solution
