@@ -2,7 +2,7 @@ package Controleur;
 
 import Algo.TSP;
 import Algo.TSP4;
-import Algo.TSPFactory;
+import Algo.ChercherSolution;
 import ChargeurXML.ChargeurLivraison;
 import Modele.Plan;
 import Modele.Tournee;
@@ -35,12 +35,12 @@ public class EtatChargerLivraison extends EtatDefaut {
      * Méthode lan�ant le calcul de la tourn�e
      */
     public void calculerTournee(Plan plan, Tournee tournee) {
-        TSPFactory TSPFactory = new TSPFactory(plan, tournee);
+        ChercherSolution ChercherSolution = new ChercherSolution(plan, tournee);
         TSP tsp = new TSP4();
-        TSPFactory.setTsp(tsp);
-        TSPFactory.chercheSolution();
+        ChercherSolution.setTsp(tsp);
+        ChercherSolution.chercheSolution();
         tournee.setCharge(true);
-        // System.out.println(TSPFactory.getTournee());
+        // System.out.println(ChercherSolution.getTournee());
 
     }
 

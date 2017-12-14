@@ -1,6 +1,6 @@
 package Test;
 
-import Algo.TSPFactory;
+import Algo.ChercherSolution;
 import ChargeurXML.ChargeurLivraison;
 import ChargeurXML.ChargeurPlan;
 import Modele.Plan;
@@ -9,7 +9,7 @@ import Modele.Tournee;
 import java.io.File;
 
 public class AbstractGrapheTest {
-    private TSPFactory graphePetit, grapheMoyen, grapheGrand;
+    private ChercherSolution graphePetit, grapheMoyen, grapheGrand;
 
     private Plan petitPlan;
     private String planLyonPetit = "." + File.separator + "fichiersXML" + File.separator + "planLyonPetit.xml";
@@ -33,7 +33,7 @@ public class AbstractGrapheTest {
         petiteTournee = new Tournee();
         ChargeurLivraison.getInstance().parse(petiteTournee, detailsLivraisonPetit);
 
-        TSPFactory graphePetit = new TSPFactory(petitPlan, petiteTournee);
+        ChercherSolution graphePetit = new ChercherSolution(petitPlan, petiteTournee);
     }
 
     //@Test //Test génération d'une Table de coûts pour un graphe petit

@@ -6,11 +6,11 @@ import Controleur.Controleur;
  * @author H4401
  *         Classe Main, lan�ant le projet
  */
-public class main {
+public class OptimodLyon {
     public static final double VITESSE = 4.166666;
 
     /**
-     * methode main
+     * methode OptimodLyon
      * @param args
      */
     public static void main(String args[]) {

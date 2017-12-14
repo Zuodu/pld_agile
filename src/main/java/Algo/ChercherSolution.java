@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Created by flavi on 2017/11/18.
  */
-public class TSPFactory {
+public class ChercherSolution {
     private double[][] cout;
     private double[] duree;
     private Double[] plageArrivee;
@@ -21,7 +21,7 @@ public class TSPFactory {
     int nbSommets;
     TSP tsp;
 
-    public TSPFactory(Plan plan, Tournee tournee) {
+    public ChercherSolution(Plan plan, Tournee tournee) {
         this.tournee = tournee;
         this.itinerairesMap = new HashMap<>();
         this.pointLivraisonMap = new HashMap<>();

@@ -1,6 +1,6 @@
 package Modele;
 
-import Main.main;
+import Main.OptimodLyon;
 
 import java.util.LinkedList;
 
@@ -46,7 +46,7 @@ public class Itineraire {
     public void addTroncon(Troncon troncon) {
         listeTroncons.addFirst(troncon);
         longueurTotale += troncon.getLongueur();
-        temps += troncon.getLongueur() / main.VITESSE;
+        temps += troncon.getLongueur() / OptimodLyon.VITESSE;
     }
 
     /**
