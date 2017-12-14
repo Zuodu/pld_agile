@@ -3,7 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="c2ac123e-bec3-49f8-88d7-11d201afa4b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" afterPath="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/CalculerTournee.png" afterPath="$PROJECT_DIR$/src/main/resources/CalculerTournee.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/ChargerLivraisons.png" afterPath="$PROJECT_DIR$/src/main/resources/ChargerLivraisons.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/ChargerPlan.png" afterPath="$PROJECT_DIR$/src/main/resources/ChargerPlan.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Colors.txt" afterPath="$PROJECT_DIR$/src/main/resources/Colors.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/GenererFeuille.png" afterPath="$PROJECT_DIR$/src/main/resources/GenererFeuille.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Modifier.png" afterPath="$PROJECT_DIR$/src/main/resources/Modifier.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Precedent.png" afterPath="$PROJECT_DIR$/src/main/resources/Precedent.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Redo.png" afterPath="$PROJECT_DIR$/src/main/resources/Redo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Suivant.png" afterPath="$PROJECT_DIR$/src/main/resources/Suivant.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Supprimer.png" afterPath="$PROJECT_DIR$/src/main/resources/Supprimer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Undo.png" afterPath="$PROJECT_DIR$/src/main/resources/Undo.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/ajouterPtLivraison.png" afterPath="$PROJECT_DIR$/src/main/resources/ajouterPtLivraison.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/target.png" afterPath="$PROJECT_DIR$/src/main/resources/target.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/target_old.png" afterPath="$PROJECT_DIR$/src/main/resources/target_old.png" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,8 +40,8 @@
       <file leaf-file-name="VueTextuelle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1326">
-              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+            <state relative-caret-position="-1031">
+              <caret line="161" column="13" lean-forward="false" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -52,51 +68,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="170">
-                <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PileTroncon.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
+      <file leaf-file-name="FenetrePrincipale.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-              <folding>
-                <element signature="e#1270#1271#0" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vecteur.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="159">
+              <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeuilleDeRoute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
+      <file leaf-file-name="VueGraphique.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-128">
-              <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4951#4965#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="159" column="17" lean-forward="true" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,16 +93,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TSP.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Algo/TSP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,10 +126,12 @@
       <find>setchanged</find>
       <find>&lt;</find>
       <find>plageDebut</find>
+      <find>img</find>
     </findStrings>
     <replaceStrings>
       <replace>&amp;lt;</replace>
       <replace>plage</replace>
+      <replace>getClass().getResource()</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Algo/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/Vue.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/VuePlan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/LstDeCde.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeSupprimer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatInit.java" />
@@ -200,15 +178,16 @@
         <option value="$PROJECT_DIR$/src/main/java/Controleur/CdeModifierHoraire.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controleur/EtatCalculerTournee.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test/AbstractGrapheTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/LigneFeuille.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/TemplateTSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/Algo/TSP.java" />
         <option value="$PROJECT_DIR$/src/main/java/Modele/PointLivraison.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
         <option value="$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java" />
       </list>
     </option>
   </component>
@@ -224,6 +203,22 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="optimodlyon" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="optimodlyon" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="55" />
@@ -280,14 +275,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="FeuilleDeRoute" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="optimodlyon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pld_agile" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -309,10 +296,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projets\pld_agile\src\main" />
+    </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -960,7 +952,7 @@
       <workItem from="1512507503881" duration="3895000" />
       <workItem from="1512511759231" duration="3176000" />
       <workItem from="1512640883510" duration="11000" />
-      <workItem from="1513263001332" duration="5329000" />
+      <workItem from="1513263001332" duration="7358000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1067,7 +1059,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513274681410</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="readme">
+      <created>1513274738939</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1513274738939</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1088,7 +1087,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47285000" />
+    <option name="totallyTimeSpent" value="49314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1101,7 +1100,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32777777" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32777777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1442,29 +1441,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-          <folding>
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/Vecteur.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1921">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1485,14 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1343">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/FeuilleDeRoute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-128">
@@ -1504,19 +1476,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326">
-          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Vue/ButtonListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
           <caret line="143" column="119" lean-forward="false" selection-start-line="143" selection-start-column="119" selection-end-line="143" selection-end-column="119" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueTextuelle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1031">
+          <caret line="161" column="13" lean-forward="false" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1539,14 +1522,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="170">
-            <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/FenetrePrincipale.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="119" column="46" lean-forward="false" selection-start-line="119" selection-start-column="46" selection-end-line="119" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeuilleDeRoute/PileTroncon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="59" column="22" lean-forward="false" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
+          <folding>
+            <element signature="e#1270#1271#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Vue/VueGraphique.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="159" column="17" lean-forward="true" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -160,8 +160,7 @@ public class VueTextuelle extends JPanel {
         buttonUndo = new JButton(UNDO);
         buttonUndo.setBounds(BUTTON_LEFT_POS, BUTTON_VECART*2+BUTTON_TOP_POS, BUTTON_WIDTH, BUTTON_LENGTH);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "Undo.png"));
-            buttonUndo.setIcon(new ImageIcon(img));
+            buttonUndo.setIcon(new ImageIcon(getClass().getResource("/Undo.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -170,8 +169,7 @@ public class VueTextuelle extends JPanel {
         buttonRedo = new JButton(REDO);
         buttonRedo.setBounds(BUTTON_LEFT_POS+BUTTON_WIDTH + BUTTON_HECART, BUTTON_VECART*2+BUTTON_TOP_POS, BUTTON_WIDTH, BUTTON_LENGTH);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "Redo.png"));
-            buttonRedo.setIcon(new ImageIcon(img));
+            buttonRedo.setIcon(new ImageIcon(getClass().getResource("/Redo.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }

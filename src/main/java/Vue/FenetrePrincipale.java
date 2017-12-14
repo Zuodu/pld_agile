@@ -90,8 +90,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonChargerPlan.addActionListener(buttonListener);
         buttonChargerPlan.setBounds(0, 0, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "ChargerPlan.png"));
-            buttonChargerPlan.setIcon(new ImageIcon(img));
+            buttonChargerPlan.setIcon(new ImageIcon(getClass().getResource("/ChargerPlan.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -100,8 +99,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonChargerLivraisons.addActionListener(buttonListener);
         buttonChargerLivraisons.setBounds(0, BUTTON_SPACE_VERTICAL, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "ChargerLivraisons.png"));
-            buttonChargerLivraisons.setIcon(new ImageIcon(img));
+            buttonChargerLivraisons.setIcon(new ImageIcon(getClass().getResource("/ChargerLivraisons.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -110,8 +108,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonCalculerTournee.addActionListener(buttonListener);
         buttonCalculerTournee.setBounds(0, BUTTON_SPACE_VERTICAL * 2, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "CalculerTournee.png"));
-            buttonCalculerTournee.setIcon(new ImageIcon(img));
+            buttonCalculerTournee.setIcon(new ImageIcon(getClass().getResource("/CalculerTournee.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -120,8 +117,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonAddPoint.addActionListener(buttonListener);
         buttonAddPoint.setBounds(0, BUTTON_SPACE_VERTICAL * 3, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "AjouterPtLivraison.png"));
-            buttonAddPoint.setIcon(new ImageIcon(img));
+            buttonAddPoint.setIcon(new ImageIcon(getClass().getResource("/AjouterPtLivraison.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -130,8 +126,7 @@ public class FenetrePrincipale extends JFrame implements Observer {
         buttonGenerate.addActionListener(buttonListener);
         buttonGenerate.setBounds(0, BUTTON_SPACE_VERTICAL * 4, BUTTON_WIDTH, BUTTON_HEIGHT);
         try {
-            Image img = ImageIO.read(new File("resources" + File.separator + "GenererFeuille.png"));
-            buttonGenerate.setIcon(new ImageIcon(img));
+            buttonGenerate.setIcon(new ImageIcon(getClass().getResource("/GenererFeuille.png")));
         } catch (Exception ex) {
             System.out.println(ex);
         }
