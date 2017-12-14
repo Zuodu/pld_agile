@@ -11,7 +11,7 @@ public class IteratorMin implements Iterator<Integer> {
     private int nbCandidats;
 
     /**
-     * Cree un iterateur pour iterer sur l'ensemble des sommets de nonVus
+     * Cree un iterateur pour iterer sur l'ensemble des sommets de nonVus du cout min au cout max
      *
      * @param nonVus
      * @param sommetCrt

@@ -13,10 +13,25 @@ public abstract class TemplateTSP implements Algo.TSP {
     private Boolean hasTW;
     private ArrayList<Map.Entry<Double, Double>> horaireLivraison;
 
+    /**
+     * getter
+     * @return
+     */
     public Boolean getTempsLimiteAtteint() {
         return tempsLimiteAtteint;
     }
 
+    /**
+     * chercher la solution de Dijkstra plus TSP
+     * @param boundInit
+     * @param heureDeDepart : heure de depart de la livraison
+     * @param tpsLimite     : limite (en millisecondes) sur le temps d'execution de chercheSolution
+     * @param nbSommets     : nombre de sommets du graphe
+     * @param cout          : cout[i][j] = duree pour aller de i a j, avec 0 &lt;= i &lt; nbSommets et 0 &lt;= j &lt; nbSommets
+     * @param duree         : duree[i] = duree pour visiter le sommet i, avec 0 &lt;= i &lt; nbSommets
+     * @param plageArrivee  : plageArrivee[i] = debut plage de sommet i
+     * @param plageDepart   : plageDepart[i] = fin plage de sommet i
+     */
     public void chercheSolution(double boundInit, double heureDeDepart, int tpsLimite, int nbSommets, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart) {
         tempsLimiteAtteint = false;
         hasTW = false;
@@ -37,6 +52,11 @@ public abstract class TemplateTSP implements Algo.TSP {
         branchAndBound(0, nonVus, vus, heureLivraison, heureDeDepart, cout, duree, plageArrivee, plageDepart, System.currentTimeMillis(), tpsLimite);
     }
 
+    /**
+     * getter
+     * @param i l'index
+     * @return
+     */
     public Integer getMeilleureSolution(int i) {
         if ((meilleureSolution == null) || (i < 0) || (i >= meilleureSolution.length))
             return null;
@@ -89,7 +109,7 @@ public abstract class TemplateTSP implements Algo.TSP {
     void branchAndBound(int sommetCrt, ArrayList<Integer> nonVus, ArrayList<Integer> vus, ArrayList<Map.Entry<Double, Double>> heureLivraison, double coutVus, double[][] cout, double[] duree, Double[] plageArrivee, Double[] plageDepart, long tpsDebut, int tpsLimite) {
         if (System.currentTimeMillis() - tpsDebut > tpsLimite) {
             tempsLimiteAtteint = true;
-            return;
+            //return;
         }
         if (nonVus.size() == 0) { // tous les sommets ont ete visites
             coutVus += cout[sommetCrt][0];

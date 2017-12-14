@@ -12,6 +12,7 @@ public class IteratorPlage implements Iterator<Integer> {
 
     /**
      * Cree un iterateur pour iterer sur l'ensemble des sommets de nonVus
+     * iterer d'abord les points avec plage horaire
      *
      * @param nonVus
      * @param sommetCrt

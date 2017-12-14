@@ -1,8 +1,6 @@
 package Controleur;
 
-import Algo.TSP;
-import Algo.TSP4;
-import Algo.ChercherSolution;
+import Algo.*;
 import ChargeurXML.ChargeurLivraison;
 import Modele.Plan;
 import Modele.Tournee;
