@@ -17,7 +17,7 @@ import static j2html.TagCreator.*;
 
 /**
  * @author H4401
- * Classe utilisée pour générer une feuille de route après le calcul d'une tournée
+ *         Classe utilisée pour générer une feuille de route après le calcul d'une tournée
  */
 public class FeuilleDeRoute {
 
@@ -37,7 +37,7 @@ public class FeuilleDeRoute {
         String html = buildHtml(list);
         FileWriter fWriter = null;
         BufferedWriter writer = null;
-        fWriter = new FileWriter(filePath + File.separator+"FeuilleDeRoute.html");
+        fWriter = new FileWriter(filePath + File.separator + "FeuilleDeRoute.html");
         writer = new BufferedWriter(fWriter);
         writer.write(html);
         writer.close();
@@ -83,12 +83,12 @@ public class FeuilleDeRoute {
                                                 td(row.gethDepart()),
                                                 td(button(
                                                         attrs(".btn btn-primary btn-action"),
-                                                        i(attrs(".icon "+row.getIconString()))
+                                                        i(attrs(".icon " + row.getIconString()))
                                                         ).withStyle("pointer-events:none")
                                                 ),
                                                 td(row.getIndication()),
                                                 td(row.getRue()),
-                                                td(row.getLongueur().equals("-") ? row.getLongueur() :PENDANT+row.getLongueur()+METRES)
+                                                td(row.getLongueur().equals("-") ? row.getLongueur() : PENDANT + row.getLongueur() + METRES)
                                                 )
                                         )
                                 )
@@ -136,7 +136,7 @@ public class FeuilleDeRoute {
                                 0,
                                 0,
                                 lastPile.getIndication().getTexte(),
-                                lastPile.getTroncon().getNomRue().equals("")?RUE_INCONNUE : lastPile.getTroncon().getNomRue(),
+                                lastPile.getTroncon().getNomRue().equals("") ? RUE_INCONNUE : lastPile.getTroncon().getNomRue(),
                                 lastPile.getDistanceTotale());
                         //ajout ligne feuille
                         mainList.add(ligne);
@@ -194,6 +194,7 @@ public class FeuilleDeRoute {
 
     /**
      * Réordonne les itinéraires d'une tournée par recherche dans la liste des points de livraison
+     *
      * @param tournee la tournée calculée
      * @return la liste ordonnée des itinéraires
      */

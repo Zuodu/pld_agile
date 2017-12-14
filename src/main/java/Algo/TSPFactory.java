@@ -1,9 +1,10 @@
 package Algo;
 
-import Main.main;
-import Modele.*;
+import Modele.Itineraire;
+import Modele.Plan;
+import Modele.PointLivraison;
+import Modele.Tournee;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -18,6 +19,7 @@ public class TSPFactory {
     HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
     Tournee tournee;
     int nbSommets;
+    TSP tsp;
 
     public TSPFactory(Plan plan, Tournee tournee) {
         this.tournee = tournee;
@@ -62,19 +64,19 @@ public class TSPFactory {
 
     private void generateTablePlageDepart() {
         for (int i = 0; i < nbSommets; i++) {
-            if(pointLivraisonMap.get(i).getFinPlage()!=null)
-                plageDepart[i]=pointLivraisonMap.get(i).getFinPlage();
+            if (pointLivraisonMap.get(i).getFinPlage() != null)
+                plageDepart[i] = pointLivraisonMap.get(i).getFinPlage();
             else
-                plageDepart[i]=null;
+                plageDepart[i] = null;
         }
     }
 
     private void generateTablePlageArrivee() {
         for (int i = 0; i < nbSommets; i++) {
-            if(pointLivraisonMap.get(i).getDebutPlage()!=null)
-                plageArrivee[i]=pointLivraisonMap.get(i).getDebutPlage();
+            if (pointLivraisonMap.get(i).getDebutPlage() != null)
+                plageArrivee[i] = pointLivraisonMap.get(i).getDebutPlage();
             else
-                plageArrivee[i]=null;
+                plageArrivee[i] = null;
         }
     }
 
@@ -84,18 +86,18 @@ public class TSPFactory {
 //        return tsp4.getCoutMeilleureSolution();
 //    }
 
-    public void chercheSolution(TSP tsp) {
-        long tempsDebut=System.currentTimeMillis();
-        List<PointLivraison> pointLivraisons= new ArrayList<>();
+    public void chercheSolution() {
+        long tempsDebut = System.currentTimeMillis();
+        List<PointLivraison> pointLivraisons = new ArrayList<>();
 
-        tsp.chercheSolution(Double.MAX_VALUE,tournee.getHeureDeDepart(),30000, nbSommets, cout, duree,plageArrivee,plageDepart);
+        tsp.chercheSolution(Double.MAX_VALUE, tournee.getHeureDeDepart(), 30000, nbSommets, cout, duree, plageArrivee, plageDepart);
 
         for (int i = 0; i < nbSommets - 1; i++) {
-            Map.Entry<PointLivraison,PointLivraison> entry= new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
-            tournee.addItineraire(entry,itinerairesMap.get(entry));
+            Map.Entry<PointLivraison, PointLivraison> entry = new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(i)), pointLivraisonMap.get(tsp.getMeilleureSolution(i + 1)));
+            tournee.addItineraire(entry, itinerairesMap.get(entry));
         }
-        Map.Entry<PointLivraison,PointLivraison> entry= new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0));
-        tournee.addItineraire(entry,itinerairesMap.get(entry));
+        Map.Entry<PointLivraison, PointLivraison> entry = new AbstractMap.SimpleEntry<>(pointLivraisonMap.get(tsp.getMeilleureSolution(nbSommets - 1)), pointLivraisonMap.get(0));
+        tournee.addItineraire(entry, itinerairesMap.get(entry));
 
 
         for (int i = 0; i < nbSommets; i++) {
@@ -109,10 +111,10 @@ public class TSPFactory {
         tournee.setListePointLivraisons(pointLivraisons);
 
 
-        if(tsp.getTempsLimiteAtteint()) System.out.println("Temps limite atteint");
+        if (tsp.getTempsLimiteAtteint()) System.out.println("Temps limite atteint");
         System.out.println(tsp.getCoutMeilleureSolution());
         System.out.println(tournee);
-        System.out.println(System.currentTimeMillis()-tempsDebut);
+        System.out.println(System.currentTimeMillis() - tempsDebut);
     }
 
 
@@ -128,35 +130,40 @@ public class TSPFactory {
     public Tournee getTournee() {
         return tournee;
     }
-    public Itineraire getItineraire(PointLivraison pointDepart,PointLivraison pointArrivee){
+
+    public Itineraire getItineraire(PointLivraison pointDepart, PointLivraison pointArrivee) {
         return itinerairesMap.get(new AbstractMap.SimpleEntry<>(pointDepart, pointArrivee));
     }
 
-	/**
-	 * @return the cout
-	 */
-	public double[][] getTableCout() {
-		return cout;
-	}
+    public void setTsp(TSP tsp) {
+        this.tsp = tsp;
+    }
 
-	/**
-	 * @return the duree
-	 */
-	public double[] getTableDuree() {
-		return duree;
-	}
+    /**
+     * @return the cout
+     */
+    public double[][] getTableCout() {
+        return cout;
+    }
 
-	/**
-	 * @return the plageArrivee
-	 */
-	public Double[] getTablePlageArrivee() {
-		return plageArrivee;
-	}
+    /**
+     * @return the duree
+     */
+    public double[] getTableDuree() {
+        return duree;
+    }
 
-	/**
-	 * @return the plageDepart
-	 */
-	public Double[] getTablePlageDepart() {
-		return plageDepart;
-	}
+    /**
+     * @return the plageArrivee
+     */
+    public Double[] getTablePlageArrivee() {
+        return plageArrivee;
+    }
+
+    /**
+     * @return the plageDepart
+     */
+    public Double[] getTablePlageDepart() {
+        return plageDepart;
+    }
 }

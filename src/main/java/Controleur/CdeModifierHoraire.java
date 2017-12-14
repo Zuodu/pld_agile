@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  * @author H4401
- * Classe de Commande de modification d'horaire
+ *         Classe de Commande de modification d'horaire
  */
 public class CdeModifierHoraire implements Commande {
     Tournee tournee;
@@ -19,6 +19,7 @@ public class CdeModifierHoraire implements Commande {
 
     /**
      * Constructeur prenant en paramètre toutes les informations nécessaires à la modification
+     *
      * @param newPointLivraison :point de livraison a modifier
      * @param newTournee        :la tournee a modifier
      * @param newDebutPlage     :le nouveau debut de plage horaire
@@ -30,36 +31,31 @@ public class CdeModifierHoraire implements Commande {
         debutPlage = newDebutPlage;
         finPlage = newFinPlage;
         oldTournee = new Tournee();
-        oldTournee.clone(tournee,oldTournee);
+        oldTournee.clone(tournee, oldTournee);
         tourneeRedo = new Tournee();
     }
 
     /**
      * Méthode permettant la modification (ou le "Redo")
      */
-	public void doCde()
-	{
-        if(tourneeRedo.getListePointLivraisons().size()==0) {
-            if (!tournee.updateHoraire(pointLivraison.getId(),debutPlage,finPlage))
-            {
+    public void doCde() {
+        if (tourneeRedo.getListePointLivraisons().size() == 0) {
+            if (!tournee.updateHoraire(pointLivraison.getId(), debutPlage, finPlage)) {
                 JOptionPane.showMessageDialog(null, "Modification echouee");
             } else {
                 JOptionPane.showMessageDialog(null, "Modification reussie");
             }
-        }
-        else
-        {
-            tournee.clone(tourneeRedo,tournee);
+        } else {
+            tournee.clone(tourneeRedo, tournee);
         }
 
-	}
+    }
 
     /**
      * Méthode permettant de revenir à l'état d'avant modification (Undo)
      */
-	public void undoCde()
-	{
-        tourneeRedo.clone(tournee,tourneeRedo);
-        tournee.clone(oldTournee,tournee);
-	}
+    public void undoCde() {
+        tourneeRedo.clone(tournee, tourneeRedo);
+        tournee.clone(oldTournee, tournee);
+    }
 }

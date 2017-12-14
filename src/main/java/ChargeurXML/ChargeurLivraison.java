@@ -2,23 +2,24 @@ package ChargeurXML;
 
 import Modele.Noeud;
 import Modele.PointLivraison;
-
-import java.io.*;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
-import javax.xml.parsers.*;
-
 import Modele.Tournee;
 import Modele.Troncon;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.util.Set;
 
 /**
  * @author H4401
- * Classe permettant le chargement du fichier xml contenant les livraisons
+ *         Classe permettant le chargement du fichier xml contenant les livraisons
  */
 public class ChargeurLivraison {
     private Tournee tournee;
@@ -26,6 +27,7 @@ public class ChargeurLivraison {
 
     /**
      * Méthode Get pour l'instance
+     *
      * @return instance l'instance de chargeur
      */
     public static ChargeurLivraison getInstance() {
@@ -44,7 +46,8 @@ public class ChargeurLivraison {
 
     /**
      * Méthode parsant le fichier xml
-     * @param tournee La tournée à laquelle on ajoute les points de livraison
+     *
+     * @param tournee  La tournée à laquelle on ajoute les points de livraison
      * @param filePath Le chemin d'accès au fichier xml
      * @return return true si l'execution se déroule bien
      */
@@ -129,6 +132,7 @@ public class ChargeurLivraison {
 
     /**
      * Get tournée
+     *
      * @return tournee
      */
     public Tournee getTournee() {
@@ -137,6 +141,7 @@ public class ChargeurLivraison {
 
     /**
      * Méthode qui parse l'entrepôt à part des autres points de livraison
+     *
      * @param rootElement
      */
     private void parseEntrepot(Element rootElement) {

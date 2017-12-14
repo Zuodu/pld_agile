@@ -12,37 +12,51 @@ public class IteratorMin implements Iterator<Integer> {
 
     /**
      * Cree un iterateur pour iterer sur l'ensemble des sommets de nonVus
+     *
      * @param nonVus
      * @param sommetCrt
      */
-    public IteratorMin(Collection<Integer> nonVus, int sommetCrt, double[][] cout,double[]duree){
+    public IteratorMin(Collection<Integer> nonVus, int sommetCrt, double[][] cout, double[] duree) {
         this.candidats = new Integer[nonVus.size()];
         nbCandidats = 0;
-        for (Integer s : nonVus){
+        for (Integer s : nonVus) {
             candidats[nbCandidats++] = s;
         }
-        double[]cost=new double[cout.length];
-        for(int i=0;i<cost.length;i++){
-            cost[i]=cout[sommetCrt][i]+duree[i];
+        double[] cost = new double[cout.length];
+        for (int i = 0; i < cost.length; i++) {
+            cost[i] = cout[sommetCrt][i] + duree[i];
         }
         bubbleSort(cost);
 
     }
 
+    /**
+     * Surcharge hasNext()
+     * @return si il existe encore des candidats
+     */
     @Override
     public boolean hasNext() {
         return nbCandidats > 0;
     }
 
+    /**
+     * Surcharge next()
+     * @return le prochain candidat
+     */
     @Override
     public Integer next() {
         return candidats[--nbCandidats];
     }
 
     @Override
-    public void remove() {}
+    public void remove() {
+    }
 
-    public void bubbleSort(double[] cost) {
+    /**
+     * Trier un tableau de cout du plus haut au plus bas
+     * @param cost le tableau de cout
+     */
+    private void bubbleSort(double[] cost) {
         int i, temp, len = candidats.length;
         boolean changed;
         do {

@@ -4,7 +4,7 @@ import Modele.Troncon;
 
 /**
  * @author H4401
- * Cette classe est utilisée pour garder la liste des tronçons représentant la même rue.
+ *         Cette classe est utilisée pour garder la liste des tronçons représentant la même rue.
  */
 public class PileTroncon {
 

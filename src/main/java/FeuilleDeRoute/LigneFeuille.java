@@ -1,10 +1,8 @@
 package FeuilleDeRoute;
 
-import java.util.ArrayList;
-
 /**
  * @author H4401
- * La classe LigneFeuille sert à encapsuler les données lors de la génération de la feuille de route.
+ *         La classe LigneFeuille sert à encapsuler les données lors de la génération de la feuille de route.
  */
 public class LigneFeuille {
 
@@ -15,7 +13,6 @@ public class LigneFeuille {
     private static final String ICON_DEMARRER = "icon-upload";
     private static final String ICON_ARRET = "icon-shutdown";
     private static final String ICON_COMMENCER = "icon-plus";
-
 
 
     private String hDepart;
@@ -39,14 +36,14 @@ public class LigneFeuille {
             int h = (int) (depart / 3600);
             int m = (int) ((depart % 3600) / 60);
             int s = (int) (depart % 60);
-            this.hDepart = h + ":" + String.format("%02d",m) + ":" + String.format("%02d",s);
+            this.hDepart = h + ":" + String.format("%02d", m) + ":" + String.format("%02d", s);
         }
         if (arrivee == 0) this.hArrivee = "-";
         else {
             int h = (int) (arrivee / 3600);
             int m = (int) ((arrivee % 3600) / 60);
             int s = (int) (arrivee % 60);
-            this.hArrivee = h + ":" + String.format("%02d",m) + ":" + String.format("%02d",s);
+            this.hArrivee = h + ":" + String.format("%02d", m) + ":" + String.format("%02d", s);
         }
         this.indication = indic == null ? "-" : indic;
         this.rue = r == null ? "-" : r;
@@ -99,13 +96,13 @@ public class LigneFeuille {
     }
 
     public String getIconString() {
-        if(indication.equals(Indication.ADroite.getTexte())) return ICON_DROITE;
-        if(indication.equals(Indication.AGauche.getTexte())) return ICON_GAUCHE;
-        if(indication.equals(Indication.ToutDroit.getTexte())) return ICON_AVANT;
-        if(indication.equals(Indication.DebutItineraire.getTexte())) return ICON_COMMENCER;
-        if(indication.equals(Indication.FinItineraire.getTexte())) return ICON_LIVRER;
-        if(indication.equals(Indication.FinTournee.getTexte())) return ICON_ARRET;
-        if(indication.equals(Indication.Demarrage.getTexte())) return ICON_DEMARRER;
+        if (indication.equals(Indication.ADroite.getTexte())) return ICON_DROITE;
+        if (indication.equals(Indication.AGauche.getTexte())) return ICON_GAUCHE;
+        if (indication.equals(Indication.ToutDroit.getTexte())) return ICON_AVANT;
+        if (indication.equals(Indication.DebutItineraire.getTexte())) return ICON_COMMENCER;
+        if (indication.equals(Indication.FinItineraire.getTexte())) return ICON_LIVRER;
+        if (indication.equals(Indication.FinTournee.getTexte())) return ICON_ARRET;
+        if (indication.equals(Indication.Demarrage.getTexte())) return ICON_DEMARRER;
         return "";
     }
 }

@@ -2,20 +2,24 @@ package ChargeurXML;
 
 import Modele.Noeud;
 import Modele.Plan;
-import Modele.PointLivraison;
 import Modele.Troncon;
-
-import java.io.*;
-import java.util.*;
-
-import javax.xml.parsers.*;
-
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
 
 /**
  * @author H4401
- * Classe permettant le chargement du fichier xml contenant le plan
+ *         Classe permettant le chargement du fichier xml contenant le plan
  */
 public class ChargeurPlan {
     private Plan plan;
@@ -23,6 +27,7 @@ public class ChargeurPlan {
 
     /**
      * Méthode Get pour l'instance
+     *
      * @return instance
      */
     public static ChargeurPlan getInstance() {
@@ -210,6 +215,7 @@ public class ChargeurPlan {
 
     /**
      * Get plan
+     *
      * @return plan
      */
     public Plan getPlan() {

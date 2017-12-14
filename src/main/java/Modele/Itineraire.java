@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 /**
  * @author H4401
- * Classe représentant un itinéraire, ne contient que des Get, Set et add.
+ *         Classe représentant un itinéraire, ne contient que des Get, Set et add.
  */
 public class Itineraire {
     private Noeud noeudOrigine;
@@ -26,13 +26,14 @@ public class Itineraire {
 
     /**
      * Constructeur par copie
+     *
      * @param unItineraire :l'itineraire a copier
      */
-    public Itineraire(Itineraire unItineraire){
+    public Itineraire(Itineraire unItineraire) {
         this();
         this.setNoeudOrigine(unItineraire.getNoeudOrigine());
         this.setNoeudDestination(unItineraire.getNoeudDestination());
-        for(Troncon troncon:unItineraire.getListeTroncons()){
+        for (Troncon troncon : unItineraire.getListeTroncons()) {
             this.addTroncon(troncon);
         }
     }
@@ -50,6 +51,7 @@ public class Itineraire {
 
     /**
      * Méthode Get
+     *
      * @return temps :le temps utilise pour parcourir l'itineraire
      */
     public double getTemps() {

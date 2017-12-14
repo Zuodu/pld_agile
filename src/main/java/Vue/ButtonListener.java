@@ -1,7 +1,6 @@
 package Vue;
 
 import Controleur.Controleur;
-import Modele.Plan;
 import Modele.PointLivraison;
 
 import javax.swing.*;
@@ -16,7 +15,7 @@ import java.util.Iterator;
 
 /**
  * @author H4401
- * Classe implements ActionListener prmettant aux boutons de l'interface de communiquer avec le logiciel
+ *         Classe implements ActionListener prmettant aux boutons de l'interface de communiquer avec le logiciel
  */
 public class ButtonListener implements ActionListener {
     FenetrePrincipale fenetrePrincipale;
@@ -29,6 +28,7 @@ public class ButtonListener implements ActionListener {
 
     /**
      * M�thode appelant les m�thodes ad�quates apr�s avoir appuy� sur un bouton de l'interface
+     *
      * @param e :l'evenement declenchant l'ecouteur
      */
     @Override
@@ -36,9 +36,9 @@ public class ButtonListener implements ActionListener {
         String s = e.getActionCommand();
         if (s.equals(FenetrePrincipale.CHARGER_PLAN)) {
             JFileChooser jfc = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("XML File","xml");
+            FileFilter filter = new FileNameExtensionFilter("XML File", "xml");
             FileSystemView fsv = FileSystemView.getFileSystemView();
-            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
+            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString() + File.separator + "PlanLyon"));
             jfc.setFileFilter(filter);
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);
@@ -51,10 +51,10 @@ public class ButtonListener implements ActionListener {
 
         } else if (s.equals(FenetrePrincipale.CHARGER_LIVRAISONS)) {
             JFileChooser jfc = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("XML File","xml");
+            FileFilter filter = new FileNameExtensionFilter("XML File", "xml");
             jfc.setFileFilter(filter);
             FileSystemView fsv = FileSystemView.getFileSystemView();
-            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString()+File.separator+"PlanLyon"));
+            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString() + File.separator + "PlanLyon"));
             int returnValue = jfc.showOpenDialog(null);
             // int returnValue = jfc.showSaveDialog(null);
 
@@ -111,39 +111,57 @@ public class ButtonListener implements ActionListener {
         } else if (s.equals(VueTextuelle.SUPPRIMER_POINT)) {
             controleur.supprimerPoint(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi());
         } else if (s.equals(VueTextuelle.MODIFIER_POINT)) {
-            String plageDebut=fenetrePrincipale.getVueTextuelle().getInfoPlageDebut();
-            String plageFin=fenetrePrincipale.getVueTextuelle().getInfoPlageFin();
-            Double debut=null;
-            Double fin=null;
+            String plageDebut = fenetrePrincipale.getVueTextuelle().getInfoPlageDebut();
+            String plageFin = fenetrePrincipale.getVueTextuelle().getInfoPlageFin();
+            Double debut = null;
+            Double fin = null;
             try {
-            if (!plageDebut.equals("")) {
-                Double h=Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':')));
-                Double m=Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1)));
-                Double sec= Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
-                if (h>=24||h<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                if (m>=60||m<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                if (sec>=60||sec<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
-                        + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
-                        + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
+                if (!plageDebut.equals("")) {
+                    Double h = Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':')));
+                    Double m = Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1)));
+                    Double sec = Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
+                    if (h >= 24 || h < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    if (m >= 60 || m < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    if (sec >= 60 || sec < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    debut = Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
+                            + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
+                            + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
 
-            }
-            if (!plageFin.equals("")) {
-                Double h=Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':')));
-                Double m=Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1)));
-                Double sec= Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
-                if (h>=24||h<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                if (m>=60||m<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                if (sec>=60||sec<0) {JOptionPane.showMessageDialog(null, "Verifie la plage saisie");return;}
-                fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
-                        + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
-                        + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
-            }}
-            catch (StringIndexOutOfBoundsException se) {
+                }
+                if (!plageFin.equals("")) {
+                    Double h = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':')));
+                    Double m = Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1)));
+                    Double sec = Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+                    if (h >= 24 || h < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    if (m >= 60 || m < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    if (sec >= 60 || sec < 0) {
+                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+                        return;
+                    }
+                    fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
+                            + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
+                            + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+                }
+            } catch (StringIndexOutOfBoundsException se) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
                 return;
             }
-            controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(),debut,fin);
+            controleur.modifierPlageHoraire(fenetrePrincipale.getVueGraphique().getPointLivraisonChoisi(), debut, fin);
         } else if (s.equals(VueTextuelle.UNDO)) {
             controleur.undo();
         } else if (s.equals(VueTextuelle.REDO)) {

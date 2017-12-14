@@ -1,7 +1,6 @@
 package Test;
 
 import Algo.Dijkstra;
-import Modele.Itineraire;
 import Modele.Noeud;
 import Modele.Troncon;
 import org.junit.Test;
@@ -39,32 +38,32 @@ public class DijkstraTest {
     public void TU1() {
         InitTU();
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(noeud0,noeud1);
-        assert(dijkstra.getMeilleurItineraire().getLongueurTotale()==70);
+        dijkstra.chercheDistanceMin(noeud0, noeud1);
+        assert (dijkstra.getMeilleurItineraire().getLongueurTotale() == 70);
     }
 
     @Test //Calcul du plus court chemin de 0 vers 2
     public void TU2() {
         InitTU();
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(noeud0,noeud2);
-        assert(dijkstra.getMeilleurItineraire().getLongueurTotale()==30);
+        dijkstra.chercheDistanceMin(noeud0, noeud2);
+        assert (dijkstra.getMeilleurItineraire().getLongueurTotale() == 30);
     }
 
     @Test //Calcul du plus court chemin de 0 vers 3
     public void TU3() {
         InitTU();
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(noeud0,noeud3);
-        assert(dijkstra.getMeilleurItineraire().getLongueurTotale()==60);
+        dijkstra.chercheDistanceMin(noeud0, noeud3);
+        assert (dijkstra.getMeilleurItineraire().getLongueurTotale() == 60);
     }
 
     @Test //Calcul du plus court chemin de 0 vers 4
     public void TU4() {
         InitTU();
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.chercheDistanceMin(noeud0,noeud4);
-        assert(dijkstra.getMeilleurItineraire().getLongueurTotale()==10);
+        dijkstra.chercheDistanceMin(noeud0, noeud4);
+        assert (dijkstra.getMeilleurItineraire().getLongueurTotale() == 10);
     }
 
 

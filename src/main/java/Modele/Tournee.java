@@ -6,8 +6,8 @@ import java.util.*;
 
 /**
  * @author H4401
- * Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
- * et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
+ *         Classe représentant une Tournée, extends Observable, contient des Set, des get, des add
+ *         et une méthode indiquant à l'observeur la fin d'ajouts/mis à jour de points de livraison à la tournée.
  */
 public class Tournee extends Observable {
     private HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> itinerairesMap;
@@ -33,6 +33,7 @@ public class Tournee extends Observable {
 
     /**
      * Constructeur par copie
+     *
      * @param uneTournee
      */
     public Tournee(Tournee uneTournee) {
@@ -58,6 +59,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode clonant une tournée dans une autre (avec copie en profondeur)
+     *
      * @param tournee
      * @param newTournee
      */
@@ -95,6 +97,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode permettant d'ajouter un itinéraire
+     *
      * @param entry
      * @param itineraire
      */
@@ -104,6 +107,7 @@ public class Tournee extends Observable {
 
     /**
      * Get
+     *
      * @return itinerairesMap
      */
     public HashMap<Map.Entry<PointLivraison, PointLivraison>, Itineraire> getItinerairesMap() {
@@ -169,6 +173,7 @@ public class Tournee extends Observable {
 
     /**
      * Set
+     *
      * @param listePointLivraisons
      */
     public void setListePointLivraisons(List<PointLivraison> listePointLivraisons) {
@@ -177,6 +182,7 @@ public class Tournee extends Observable {
 
     /**
      * Get
+     *
      * @return isCharge
      */
     public boolean isCharge() {
@@ -185,6 +191,7 @@ public class Tournee extends Observable {
 
     /**
      * Set
+     *
      * @param charge
      */
     public void setCharge(boolean charge) {
@@ -195,6 +202,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode permettant l'ajout d'un point de livraison à une tournée
+     *
      * @param noeud
      * @param duree
      * @param finPlage
@@ -269,6 +277,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode permettant de //TODO
+     *
      * @param pointLivraisonAInserer
      * @param pointLivraison1
      * @param pointLivraison2
@@ -320,6 +329,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode permettant la suppression d'un point
+     *
      * @param id
      * @return true si réussi, false si échec
      */
@@ -361,6 +371,7 @@ public class Tournee extends Observable {
 
     /**
      * Méthode permettant de mettre à jour la durée d'un point de livraison, non utilisée
+     *
      * @param id
      * @param duree
      * @return true si réussi, false si échec
@@ -407,6 +418,7 @@ public class Tournee extends Observable {
 
     /**
      * Permet de mettre à jour la plage horaire d'un point de livraison
+     *
      * @param id
      * @param plageDebut
      * @param plageFin
@@ -482,6 +494,7 @@ public class Tournee extends Observable {
 
     /**
      * Permet d'avancer un horaire lors d'une modification d'horaire
+     *
      * @param index
      * @param temps
      * @return true si réussi, false si échec
@@ -511,6 +524,7 @@ public class Tournee extends Observable {
 
     /**
      * Permet de retarder un horaire lors d'une modification d'horaire
+     *
      * @param index
      * @param temps
      * @return true si réussi, false si échec
@@ -541,15 +555,4 @@ public class Tournee extends Observable {
     }
 
 
-
-
-    @Override
-    public String toString() {
-        return "Tournee{" +
-                "itinerairesMap=" + itinerairesMap +
-                ", entrepot=" + entrepot +
-                ", listePointLivraisons=" + listePointLivraisons +
-                ", heureDeDepart=" + heureDeDepart +
-                '}';
-    }
 }

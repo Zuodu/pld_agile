@@ -2,7 +2,7 @@ package Modele;
 
 /**
  * @author H4401
- * Classe représentant l'élément Tronçon d'un plan, ne contient que des Get.
+ *         Classe représentant l'élément Tronçon d'un plan, ne contient que des Get.
  */
 public class Troncon {
     private Noeud origine;
@@ -12,6 +12,7 @@ public class Troncon {
 
     /**
      * Get
+     *
      * @return origine
      */
     public Noeud getOrigine() {
@@ -20,6 +21,7 @@ public class Troncon {
 
     /**
      * Get
+     *
      * @return destination
      */
     public Noeud getDestination() {
@@ -28,6 +30,7 @@ public class Troncon {
 
     /**
      * Get
+     *
      * @return longueur
      */
     public double getLongueur() {
@@ -36,6 +39,7 @@ public class Troncon {
 
     /**
      * Get
+     *
      * @return nomRue
      */
     public String getNomRue() {
@@ -43,7 +47,8 @@ public class Troncon {
     }
 
     /**
-     * Constructeur 
+     * Constructeur
+     *
      * @param origine
      * @param destination
      * @param longueur
@@ -59,14 +64,12 @@ public class Troncon {
 
     /**
      * Constructeur par copie
+     *
      * @param unTroncon
      */
-    public Troncon(Troncon unTroncon){
-        this(new Noeud(unTroncon.getOrigine()),new Noeud(unTroncon.getDestination()),unTroncon.getLongueur(),unTroncon.getNomRue());
+    public Troncon(Troncon unTroncon) {
+        this(new Noeud(unTroncon.getOrigine()), new Noeud(unTroncon.getDestination()), unTroncon.getLongueur(), unTroncon.getNomRue());
     }
 
-    public String toString() {
-        return "Troncon " + origine.getId() + " " + destination.getId() + " " + nomRue + " " + longueur;
-    }
 
 }

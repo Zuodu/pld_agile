@@ -1,6 +1,5 @@
 package Vue;
 
-import Algo.IteratorMin;
 import Modele.*;
 
 import javax.imageio.ImageIO;
@@ -9,7 +8,10 @@ import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.AbstractMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @autor H4401
@@ -39,6 +41,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * setter point livraison choisi
+     *
      * @param pointLivraisonChoisi
      */
     public void setPointLivraisonChoisi(PointLivraison pointLivraisonChoisi) {
@@ -85,6 +88,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter pointLivraisonChoisi
+     *
      * @return
      */
     public PointLivraison getPointLivraisonChoisi() {
@@ -182,6 +186,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public Plan getPlan() {
@@ -190,6 +195,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public Tournee getTournee() {
@@ -198,6 +204,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public int getXmin() {
@@ -206,6 +213,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public int getYmin() {
@@ -214,6 +222,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public double getxScale() {
@@ -222,6 +231,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * getter
+     *
      * @return
      */
     public double getyScale() {
@@ -230,6 +240,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * afficher un troncon sous forme d'une ligne
+     *
      * @param troncon :le troncon a afficher
      * @param g2d     :instance Graphics2D
      */
@@ -242,8 +253,10 @@ public class VueGraphique extends JPanel {
         g2d.drawLine(x1, y1, x2, y2
         );
     }
+
     /**
      * afficher le dernier troncon d'un itineraire, afficher un fleche a la fin.
+     *
      * @param troncon :le troncon a afficher
      * @param g2d     :instance Graphics2D
      */
@@ -257,6 +270,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * afficher un point de livraison avec un cercle et le numero de parcours dans la tournee
+     *
      * @param pointLivraison :le point a afficher
      * @param g2d            :instance de Grapics2D
      * @param count          :le numero dans la tournee
@@ -275,6 +289,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * afficher l'entrepot sous forme d'un cercle
+     *
      * @param pointLivraison
      * @param g2d
      */
@@ -288,6 +303,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * draw une ligne avec un fleche a la fin
+     *
      * @param sx :start x
      * @param sy :start y
      * @param ex :end x
@@ -333,6 +349,7 @@ public class VueGraphique extends JPanel {
 
     /**
      * calculer l'angle de rotation pour le fleche a la fin d'une ligne
+     *
      * @param px
      * @param py
      * @param ang
@@ -341,7 +358,7 @@ public class VueGraphique extends JPanel {
      * @return
      */
     private static double[] rotateVec(int px, int py, double ang,
-                                     boolean isChLen, double newLen) {
+                                      boolean isChLen, double newLen) {
 
         double mathstr[] = new double[2];
         double vx = px * Math.cos(ang) - py * Math.sin(ang);

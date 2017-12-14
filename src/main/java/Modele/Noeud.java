@@ -5,9 +5,9 @@ import java.util.Set;
 
 /**
  * @author H4401
- * Classe représentant l'élément Noeud d'un plan, ne contient que des Get, Set et add.
+ *         Classe représentant l'élément Noeud d'un plan, ne contient que des Get, Set et add.
  */
-public class Noeud{
+public class Noeud {
     protected Long id;
     protected int x;
     protected int y;
@@ -15,6 +15,7 @@ public class Noeud{
 
     /**
      * Constructeur
+     *
      * @param id :id du noeud
      * @param x  :position x du noeud
      * @param y  :position y du noeud
@@ -23,30 +24,33 @@ public class Noeud{
         this.id = id;
         this.x = x;
         this.y = y;
-        this.neighbors= new HashSet<>();
+        this.neighbors = new HashSet<>();
     }
 
     /**
      * Constructeur par copie
+     *
      * @param unNoeud :le noeud a copier
      */
     public Noeud(Noeud unNoeud) {
-        this(unNoeud.getId(),unNoeud.getX(),unNoeud.getY());
-        for(Troncon troncon:unNoeud.getNeighbors()){
+        this(unNoeud.getId(), unNoeud.getX(), unNoeud.getY());
+        for (Troncon troncon : unNoeud.getNeighbors()) {
             this.addNeighbor(troncon);
         }
     }
 
     /**
      * Ajout de tronçon voisin
+     *
      * @param neighbor :le troncon voison a ajouter
      */
-    public void addNeighbor(Troncon neighbor){
+    public void addNeighbor(Troncon neighbor) {
         neighbors.add(neighbor);
     }
 
     /**
      * Get
+     *
      * @return id
      */
     public Long getId() {
@@ -55,6 +59,7 @@ public class Noeud{
 
     /**
      * Get
+     *
      * @return x
      */
     public int getX() {
@@ -63,6 +68,7 @@ public class Noeud{
 
     /**
      * Get
+     *
      * @return y
      */
     public int getY() {
@@ -71,6 +77,7 @@ public class Noeud{
 
     /**
      * Set
+     *
      * @param neighbors
      */
     public void setNeighbors(Set<Troncon> neighbors) {
@@ -78,7 +85,8 @@ public class Noeud{
     }
 
     /**
-     * Get 
+     * Get
+     *
      * @return neighbors
      */
     public Set<Troncon> getNeighbors() {
@@ -89,7 +97,7 @@ public class Noeud{
     public String toString() {
         return
                 "id=" + id +
-                ", x=" + x +
+                        ", x=" + x +
                         ", y=" + y;
     }
 }

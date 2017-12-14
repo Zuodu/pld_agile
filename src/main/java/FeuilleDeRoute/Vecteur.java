@@ -4,7 +4,7 @@ import Modele.Noeud;
 
 /**
  * @author H4401
- * Classe Util permettant de modéliser des vecteurs de noeuds pour le calcul des virages
+ *         Classe Util permettant de modéliser des vecteurs de noeuds pour le calcul des virages
  */
 public class Vecteur {
 

@@ -1,6 +1,9 @@
 package Algo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by siyingjiang on 2017/11/22.
@@ -32,8 +35,8 @@ public class Glouton {
         int nextPos = 0;
         double distance = heureDeDepart;
         int posCurrent = 0;
-        double arrivee=0;
-        double depart=0;
+        double arrivee = 0;
+        double depart = 0;
         visited.add(posCurrent);
         res.add(posCurrent);
         while (visited.size() < numNodes) {
@@ -46,12 +49,12 @@ public class Glouton {
                     double dNei = cout[posCurrent][i];
                     if (dNei < distanceMin) {
                         distanceMin = dNei;
-                        arrivee=distance+distanceMin;
-                        depart=arrivee+duree[i];
+                        arrivee = distance + distanceMin;
+                        depart = arrivee + duree[i];
                         if (plageArrivee[i] != null && plageDepart[i] != null) {
                             if (arrivee < plageArrivee[i]) {
                                 arrivee = plageArrivee[i];
-                                depart=arrivee+duree[i];
+                                depart = arrivee + duree[i];
                             } else if (depart > plageDepart[i]) {
                                 continue;
                             }
@@ -66,7 +69,7 @@ public class Glouton {
             res.add(posCurrent);
         }
         visited.toArray(meilleureSolution);
-        distance+=cout[posCurrent][0];
+        distance += cout[posCurrent][0];
         coutMeilleureSolution = distance;
         System.out.println(distance);
         return res;

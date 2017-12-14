@@ -5,8 +5,6 @@ import Modele.Noeud;
 import Modele.PointLivraison;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by flavi on 2017/12/5.
@@ -29,17 +27,18 @@ public class VueAjouterPoint extends JFrame {
 
     /**
      * Creer la vue pour ajouter un point
-     * @param noeud       :le noeud a ajouter comme point de livraison
-     * @param controleur  :controleur
+     *
+     * @param noeud      :le noeud a ajouter comme point de livraison
+     * @param controleur :controleur
      */
-    public VueAjouterPoint (Noeud noeud,Controleur controleur) {
+    public VueAjouterPoint(Noeud noeud, Controleur controleur) {
         setLayout(null);
-        this.noeud=noeud;
-        this.controleur=controleur;
+        this.noeud = noeud;
+        this.controleur = controleur;
         setVisible(true);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(0, 0, 300, 300);
-        contentPane=new JPanel();
+        contentPane = new JPanel();
         contentPane.setLayout(null);
         this.setContentPane(contentPane);
 
@@ -68,19 +67,19 @@ public class VueAjouterPoint extends JFrame {
         labelDuree.setBounds(0, 80, 100, 30);
         contentPane.add(labelDuree);
 
-        confirmButton=new JButton("ajouter");
-        confirmButton.setBounds(100,200,100,30);
+        confirmButton = new JButton("ajouter");
+        confirmButton.setBounds(100, 200, 100, 30);
         contentPane.add(confirmButton);
         confirmButton.addActionListener(e -> {
-            String plageDebut=infoPlageDebut.getText();
-            String plageFin=infoPlageFin.getText();
-            String duree=infoDuree.getText();
-            Double debut=null;
-            Double fin=null;
-            double dureeDouble=0;
+            String plageDebut = infoPlageDebut.getText();
+            String plageFin = infoPlageFin.getText();
+            String duree = infoDuree.getText();
+            Double debut = null;
+            Double fin = null;
+            double dureeDouble = 0;
             try {
                 if (!plageDebut.equals("")) {
-                    debut =  Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
+                    debut = Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
                             + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
                             + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
 
@@ -92,34 +91,31 @@ public class VueAjouterPoint extends JFrame {
                             + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
                 }
                 if (!duree.equals("")) {
-                    dureeDouble=Double.parseDouble(duree);
+                    dureeDouble = Double.parseDouble(duree);
                 } else {
                     JOptionPane.showMessageDialog(null, "Veuillez saisir une duree");
                     return;
                 }
-            }
-            catch (StringIndexOutOfBoundsException se) {
+            } catch (StringIndexOutOfBoundsException se) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
                 return;
-            }
-            catch (NumberFormatException nfe) {
+            } catch (NumberFormatException nfe) {
                 JOptionPane.showMessageDialog(null, "Verifie la duree saisie");
                 return;
             }
-            if (debut==null&&fin!=null) {
+            if (debut == null && fin != null) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
                 return;
             }
-            if (debut!=null&&fin==null) {
+            if (debut != null && fin == null) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
                 return;
             }
-            controleur.addPointLivraison(noeud,debut,fin,dureeDouble);
-            System.out.println("want to add point " );
+            controleur.addPointLivraison(noeud, debut, fin, dureeDouble);
+            System.out.println("want to add point ");
             System.out.println(noeud);
-            System.out.println(debut+" "+fin+" "+duree);
+            System.out.println(debut + " " + fin + " " + duree);
         });
-
 
 
     }

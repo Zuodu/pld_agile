@@ -2,15 +2,13 @@ package Algo;
 
 import Modele.Itineraire;
 import Modele.Noeud;
-import Modele.PointLivraison;
 import Modele.Troncon;
-import jdk.nashorn.internal.objects.annotations.Function;
 
 import java.util.*;
 
 /**
  * @author H4401
- * Classe implémentant les méthodes nécessaires à l'application de l'algorythme de Dijkstra adapté à notre plan.
+ *         Classe implémentant les méthodes nécessaires à l'application de l'algorythme de Dijkstra adapté à notre plan.
  */
 @SuppressWarnings("ALL")
 public class Dijkstra {
@@ -18,6 +16,9 @@ public class Dijkstra {
     private HashMap<Noeud, Double> distance;
     private Itineraire meilleurItineraire;
 
+    /**
+     * Constructeur
+     */
     public Dijkstra() {
         this.parent = new HashMap<Noeud, Map.Entry<Noeud, Troncon>>();
         this.distance = new HashMap<Noeud, Double>();
@@ -26,7 +27,8 @@ public class Dijkstra {
 
     /**
      * Méthode cherchant la distance minimale entre 2 noeuds
-     * @param src Noeud source
+     *
+     * @param src    Noeud source
      * @param target Noeud cible
      */
     public void chercheDistanceMin(Noeud src, Noeud target) {
@@ -78,7 +80,8 @@ public class Dijkstra {
     }
 
     /**
-     * Get
+     * Methode qui retourne le meilleur itineraire trouvee
+     *
      * @return meilleurItineraire
      */
     public Itineraire getMeilleurItineraire() {
@@ -88,6 +91,7 @@ public class Dijkstra {
 
     /**
      * Renvoie la distance pour un noeud
+     *
      * @param noeud
      * @return distance
      */
@@ -99,7 +103,10 @@ public class Dijkstra {
         return Double.MAX_VALUE;
     }
 
-    public static Comparator<Map.Entry<Double, Noeud>> longueurComparator = new Comparator<Map.Entry<Double, Noeud>>() {
+    /**
+     * Surcharge Comparator
+     */
+    private static Comparator<Map.Entry<Double, Noeud>> longueurComparator = new Comparator<Map.Entry<Double, Noeud>>() {
         public int compare(Map.Entry<Double, Noeud> o1, Map.Entry<Double, Noeud> o2) {
             return (int) (o1.getKey() - o2.getKey());
         }

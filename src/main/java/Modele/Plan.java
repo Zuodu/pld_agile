@@ -1,11 +1,13 @@
 package Modele;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Observable;
+import java.util.Set;
 
 /**
  * @author H4401
- * Classe représentant un plan, extends Observable, contient des Set, des add 
- * et une méthode indiquant à l'observeur la fin d'ajouts de tronçons et de noeuds au plan.
+ *         Classe représentant un plan, extends Observable, contient des Set, des add
+ *         et une méthode indiquant à l'observeur la fin d'ajouts de tronçons et de noeuds au plan.
  */
 public class Plan extends Observable {
     protected boolean isCharge;
@@ -15,26 +17,27 @@ public class Plan extends Observable {
     /**
      * Constructeur par défaut
      */
-    public Plan () {
-        isCharge=false;
-        listeTroncons= new HashSet<>();
-        listeNoeuds= new HashSet<>();
+    public Plan() {
+        isCharge = false;
+        listeTroncons = new HashSet<>();
+        listeNoeuds = new HashSet<>();
 
     }
 
     /**
-     * Réinitialisation du plan
+     * Réinitialisation du plan, reinitialise tous les attributs
      */
-    public void reinitialise () {
-        isCharge=false;
-        listeTroncons= new HashSet<>();
-        listeNoeuds= new HashSet<>();
+    public void reinitialise() {
+        isCharge = false;
+        listeTroncons = new HashSet<>();
+        listeNoeuds = new HashSet<>();
         setChanged();
         notifyObservers();
     }
 
     /**
      * Get
+     *
      * @return isCharge
      */
     public boolean isCharge() {
@@ -43,6 +46,7 @@ public class Plan extends Observable {
 
     /**
      * Set
+     *
      * @param charge
      */
     public void setCharge(boolean charge) {
@@ -53,20 +57,26 @@ public class Plan extends Observable {
 
     /**
      * add
+     *
      * @param troncon
      */
-    public void addTroncon (Troncon troncon) {
+    public void addTroncon(Troncon troncon) {
         listeTroncons.add(troncon);
 
     }
+
     /**
      * Ajoute un noeud à la liste
+     *
      * @param noeud
      */
-    public void addNoeud(Noeud noeud) {listeNoeuds.add(noeud);}
+    public void addNoeud(Noeud noeud) {
+        listeNoeuds.add(noeud);
+    }
 
     /**
      * Get
+     *
      * @return listeTroncon
      */
     public Set<Troncon> getListeTroncons() {
@@ -75,6 +85,7 @@ public class Plan extends Observable {
 
     /**
      * Get
+     *
      * @return listeNoeuds
      */
     public Set<Noeud> getListeNoeuds() {
