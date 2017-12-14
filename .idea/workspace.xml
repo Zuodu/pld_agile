@@ -56,8 +56,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="136">
-                <caret line="8" column="68" lean-forward="false" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+              <first_editor relative-caret-position="170">
+                <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -960,7 +960,7 @@
       <workItem from="1512507503881" duration="3895000" />
       <workItem from="1512511759231" duration="3176000" />
       <workItem from="1512640883510" duration="11000" />
-      <workItem from="1513263001332" duration="5267000" />
+      <workItem from="1513263001332" duration="5329000" />
     </task>
     <task id="LOCAL-00001" summary="addNeighbors">
       <created>1511203375619</created>
@@ -1060,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513272251988</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="readme">
+      <created>1513274681410</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1513274681410</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1081,7 +1088,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47223000" />
+    <option name="totallyTimeSpent" value="47285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1167,7 +1174,8 @@
     <MESSAGE value="correction texte undo redo" />
     <MESSAGE value="ajout javadoc" />
     <MESSAGE value="ajout javadoc et refactoring du code" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout javadoc et refactoring du code" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1534,8 +1542,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="136">
-            <caret line="8" column="68" lean-forward="false" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="66" lean-forward="false" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
             <folding />
           </first_editor>
           <second_editor />
