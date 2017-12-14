@@ -3,10 +3,20 @@ package Main;
 import Controleur.Controleur;
 
 /**
- * Created by flavi on 2017/11/20.
+ * @author H4401
+ *         Classe Main, lan�ant le projet
  */
 public class main {
+    public static final double VITESSE = 4.166666;
+
+    /**
+     * methode main
+     * @param args
+     */
     public static void main(String args[]) {
-        Controleur controleur = Controleur.getInstance();
+        Controleur controleur = new Controleur();
     }
 }
+
+
+

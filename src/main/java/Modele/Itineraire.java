@@ -1,10 +1,12 @@
 package Modele;
 
+import Main.main;
+
 import java.util.LinkedList;
-import java.util.List;
 
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ *         Classe représentant un itinéraire, ne contient que des Get, Set et add.
  */
 public class Itineraire {
     private Noeud noeudOrigine;
@@ -13,38 +15,99 @@ public class Itineraire {
     private double longueurTotale;
     private double temps;
 
-
+    /**
+     * Constructeur par défaut
+     */
     public Itineraire() {
-        listeTroncons = new LinkedList<Troncon>();
+        listeTroncons = new LinkedList<>();
         longueurTotale = 0;
         temps = 0;
     }
 
+    /**
+     * Constructeur par copie
+     *
+     * @param unItineraire :l'itineraire a copier
+     */
+    public Itineraire(Itineraire unItineraire) {
+        this();
+        this.setNoeudOrigine(unItineraire.getNoeudOrigine());
+        this.setNoeudDestination(unItineraire.getNoeudDestination());
+        for (Troncon troncon : unItineraire.getListeTroncons()) {
+            this.addTroncon(troncon);
+        }
+    }
+
+    /**
+     * Ajoute un tron�on
+     *
+     * @param troncon :le troncon a ajouter dans l'itineraire
+     */
     public void addTroncon(Troncon troncon) {
         listeTroncons.addFirst(troncon);
         longueurTotale += troncon.getLongueur();
+        temps += troncon.getLongueur() / main.VITESSE;
     }
 
+    /**
+     * Méthode Get
+     *
+     * @return temps :le temps utilise pour parcourir l'itineraire
+     */
+    public double getTemps() {
+        return temps;
+    }
+
+    /**
+     * Get
+     *
+     * @return noeudOrigine
+     */
     public Noeud getNoeudOrigine() {
         return noeudOrigine;
     }
 
+    /**
+     * Set
+     *
+     * @param noeudOrigine
+     */
     public void setNoeudOrigine(Noeud noeudOrigine) {
         this.noeudOrigine = noeudOrigine;
     }
 
+    /**
+     * Get
+     *
+     * @return noeudDestination
+     */
     public Noeud getNoeudDestination() {
         return noeudDestination;
     }
 
+    /**
+     * Set
+     *
+     * @param noeudDestination
+     */
     public void setNoeudDestination(Noeud noeudDestination) {
         this.noeudDestination = noeudDestination;
     }
 
+    /**
+     * Get
+     *
+     * @return longueurTotale
+     */
     public double getLongueurTotale() {
         return longueurTotale;
     }
 
+    /**
+     * Get
+     *
+     * @return listeTron�on
+     */
     public LinkedList<Troncon> getListeTroncons() {
         return listeTroncons;
     }

@@ -1,94 +1,174 @@
 package Vue;
 
+import Controleur.Controleur;
 import Modele.Plan;
 import Modele.Tournee;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 
 public class FenetrePrincipale extends JFrame implements Observer {
+    public static final String CHARGER_PLAN = "Charger Plan";
+    public static final String CHARGER_LIVRAISONS = "Charger Livraisons";
+    public static final String CALCULER_TOURNEE = "Calculer Tournée";
+    public static final String AJOUTER_POINT = "Ajouter Point de Livraison";
+    public static final String GENERER_FEUILLE = "Générer Feuille de Route";
+    public static final int BUTTON_WIDTH = 250;
+    public static final int BUTTON_HEIGHT = 40;
+    public static final int BUTTON_SPACE_VERTICAL = 50;
+    public static final int ECART = 40;
+    public static final int FENETRE_WIDTH = 1020;
+    public static final int FENETRE_LENGTH = 780;
+    public static final int BUTTONPANEL_WIDTH = 400;
+    public static final int BUTTONPANEL_LENGTH = 300;
+    private JPanel contentPane;
+    private JButton buttonChargerLivraisons;
+    private JButton buttonChargerPlan;
+    private JButton buttonCalculerTournee;
+    private JButton buttonAddPoint;
+    private JButton buttonGenerate;
 
-	private JPanel contentPane;
-	private JButton buttonChargerLivraisons;
-	private JButton buttonChargerPlan;
-	private JButton buttonCalculerTournee;
-	private ButtonChargerLivraisonsListener buttonChargerLivraisonsListener;
-	private ButtonChargerPlanListener buttonChargerPlanListener;
-	private ButtonCalculerTourneeListener buttonCalculerTourneeListener;
-	VuePlan vuePlan;
+    private ButtonListener buttonListener;
+    private MouseListener mouseListener;
+    private VueGraphique vueGraphique;
+    private VueTextuelle vueTextuelle;
+    private Controleur controleur;
+    private Plan plan;
+    private Tournee tournee;
+    private JPanel buttonPanel;
 
-	private Plan plan;
-	private Tournee tournee;
-	/**
-	 * Create the frame.
-	 */
-	public FenetrePrincipale(Plan plan, Tournee tournee) {
-		this.plan = plan;
-		plan.addObserver(this);
-		this.tournee = tournee;
-		tournee.addObserver(this);
 
-		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 800, 800);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
-		vuePlan = new VuePlan();
-		contentPane.add(vuePlan);
-		
-		JPanel panel = new JPanel();
+    public VueGraphique getVueGraphique() {
+        return vueGraphique;
+    }
 
-		buttonChargerLivraisonsListener=new ButtonChargerLivraisonsListener();
-		buttonChargerPlanListener=new ButtonChargerPlanListener();
-		buttonCalculerTourneeListener = new ButtonCalculerTourneeListener();
-		
-		buttonChargerPlan = new JButton("Charger Plan");
-		buttonChargerPlan.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonChargerPlan.addActionListener(buttonChargerPlanListener);
-		panel.add(buttonChargerPlan);
-		
-		buttonChargerLivraisons = new JButton("Charger Livraisons");
-		buttonChargerLivraisons.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonChargerLivraisons.addActionListener(buttonChargerLivraisonsListener);
-		panel.add(buttonChargerLivraisons);
-		
-		buttonCalculerTournee = new JButton("Calculer Tournee");
-		buttonCalculerTournee.setHorizontalAlignment(SwingConstants.LEFT);
-		buttonCalculerTournee.addActionListener(buttonCalculerTourneeListener);
-		panel.add(buttonCalculerTournee);
-		contentPane.add(panel, BorderLayout.SOUTH);
-	}
+    public VueTextuelle getVueTextuelle() {
+        return vueTextuelle;
+    }
 
-	@Override
-	public void update(Observable o, Object arg) {
+    /**
+     * Constructeur
+     * Creer la fenetre principale
+     *
+     * @param plan
+     * @param tournee
+     * @param controleur
+     */
+    public FenetrePrincipale(Plan plan, Tournee tournee, Controleur controleur) {
 
-/**
+        this.plan = plan;
+        plan.addObserver(this);
+        this.tournee = tournee;
+        tournee.addObserver(this);
+        this.controleur = controleur;
+        buttonListener = new ButtonListener(controleur, this);
 
- JFrame frame = new JFrame();
- frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- frame.setBounds(100, 100, 800, 600);
- frame.setVisible(true);
- frame.setContentPane(vuePlan);
- if (o instanceof Plan)
- vuePlan.addPlan(plan);
- else if (o instanceof Tournee)
- vuePlan.addTournee(tournee);
- }
- **/
-		if (o instanceof Plan)
-			vuePlan.addPlan(plan);
-		else if (o instanceof Tournee)
-			vuePlan.addTournee(tournee);
-	}
+        setLayout(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(0, 0, FENETRE_WIDTH, FENETRE_LENGTH);
+
+        contentPane = new JPanel();
+        contentPane.setLayout(null);
+        setContentPane(contentPane);
+
+
+        vueGraphique = new Vue.VueGraphique(plan, tournee);
+        contentPane.add(vueGraphique);
+        vueTextuelle = new VueTextuelle(buttonListener);
+        contentPane.add(vueTextuelle);
+
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(null);
+        buttonPanel.setBounds(VueGraphique.VUEPLAN_WIDTH + ECART, 20, BUTTONPANEL_WIDTH, BUTTONPANEL_LENGTH);
+
+        buttonChargerPlan = new JButton(CHARGER_PLAN);
+        buttonChargerPlan.addActionListener(buttonListener);
+        buttonChargerPlan.setBounds(0, 0, BUTTON_WIDTH, BUTTON_HEIGHT);
+        try {
+            Image img = ImageIO.read(new File("resources" + File.separator + "ChargerPlan.png"));
+            buttonChargerPlan.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+        buttonChargerLivraisons = new JButton(CHARGER_LIVRAISONS);
+        buttonChargerLivraisons.addActionListener(buttonListener);
+        buttonChargerLivraisons.setBounds(0, BUTTON_SPACE_VERTICAL, BUTTON_WIDTH, BUTTON_HEIGHT);
+        try {
+            Image img = ImageIO.read(new File("resources" + File.separator + "ChargerLivraisons.png"));
+            buttonChargerLivraisons.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+        buttonCalculerTournee = new JButton(CALCULER_TOURNEE);
+        buttonCalculerTournee.addActionListener(buttonListener);
+        buttonCalculerTournee.setBounds(0, BUTTON_SPACE_VERTICAL * 2, BUTTON_WIDTH, BUTTON_HEIGHT);
+        try {
+            Image img = ImageIO.read(new File("resources" + File.separator + "CalculerTournee.png"));
+            buttonCalculerTournee.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+        buttonAddPoint = new JButton(AJOUTER_POINT);
+        buttonAddPoint.addActionListener(buttonListener);
+        buttonAddPoint.setBounds(0, BUTTON_SPACE_VERTICAL * 3, BUTTON_WIDTH, BUTTON_HEIGHT);
+        try {
+            Image img = ImageIO.read(new File("resources" + File.separator + "AjouterPtLivraison.png"));
+            buttonAddPoint.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+        buttonGenerate = new JButton(GENERER_FEUILLE);
+        buttonGenerate.addActionListener(buttonListener);
+        buttonGenerate.setBounds(0, BUTTON_SPACE_VERTICAL * 4, BUTTON_WIDTH, BUTTON_HEIGHT);
+        try {
+            Image img = ImageIO.read(new File("resources" + File.separator + "GenererFeuille.png"));
+            buttonGenerate.setIcon(new ImageIcon(img));
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+
+        buttonPanel.add(buttonChargerPlan);
+        buttonPanel.add(buttonChargerLivraisons);
+        buttonPanel.add(buttonCalculerTournee);
+        buttonPanel.add(buttonAddPoint);
+        buttonPanel.add(buttonGenerate);
+        contentPane.add(buttonPanel);
+
+        mouseListener = new MouseListener(vueGraphique, controleur);
+        vueGraphique.addMouseListener(mouseListener);
+
+        repaint();
+        contentPane.repaint();
+
+    }
+
+    /**
+     * la surcharge du methode update du Observer
+     *
+     * @param o
+     * @param arg
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        vueGraphique.repaint();
+        if (vueGraphique.getPointLivraisonChoisi() != null) {
+            vueTextuelle.afficheDetailPointChoisi(tournee, vueGraphique.getPointLivraisonChoisi().getId());
+        } else {
+            vueTextuelle.afficheDetailPointChoisi(null);
+
+        }
+
+    }
 
 
 }

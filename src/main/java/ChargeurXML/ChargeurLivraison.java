@@ -2,27 +2,34 @@ package ChargeurXML;
 
 import Modele.Noeud;
 import Modele.PointLivraison;
-
-import java.io.*;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
-import javax.xml.parsers.*;
-
 import Modele.Tournee;
 import Modele.Troncon;
-import org.w3c.dom.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
+import java.io.IOException;
+import java.util.Set;
+
 /**
- * Created by flavi on 2017/11/18.
+ * @author H4401
+ *         Classe permettant le chargement du fichier xml contenant les livraisons
  */
 public class ChargeurLivraison {
     private Tournee tournee;
     private static ChargeurLivraison instance;
 
+    /**
+     * Méthode Get pour l'instance
+     *
+     * @return instance l'instance de chargeur
+     */
     public static ChargeurLivraison getInstance() {
         if (instance == null) {
             instance = new ChargeurLivraison();
@@ -30,11 +37,20 @@ public class ChargeurLivraison {
         return instance;
     }
 
+    /**
+     * Constructeur par défaut vide
+     */
     public ChargeurLivraison() {
 
     }
 
-
+    /**
+     * Méthode parsant le fichier xml
+     *
+     * @param tournee  La tournée à laquelle on ajoute les points de livraison
+     * @param filePath Le chemin d'accès au fichier xml
+     * @return return true si l'execution se déroule bien
+     */
     public boolean parse(Tournee tournee, String filePath) {
         this.tournee = tournee;
         if (ChargeurPlan.getInstance().getPlan().getListeNoeuds().size() == 0) return false;
@@ -67,7 +83,7 @@ public class ChargeurLivraison {
                     String dureeAtt = child.getAttribute("duree");
                     String debutAtt = child.getAttribute("debutPlage");
                     String finAtt = child.getAttribute("finPlage");
-                    System.out.println(debutAtt + " " + finAtt);
+                    //System.out.println(debutAtt + " " + finAtt);
                     double debutPlage = -1, finPlage = -1;
                     if (!debutAtt.isEmpty()) {
                         debutPlage = Double.parseDouble(debutAtt.substring(0, debutAtt.indexOf(':'))) * 3600
@@ -84,9 +100,7 @@ public class ChargeurLivraison {
                     Set<Troncon> neighbors = null;
 
                     Set<Noeud> noeuds = ChargeurPlan.getInstance().getPlan().getListeNoeuds();
-                    Iterator iterator = noeuds.iterator();
-                    while (iterator.hasNext()) {
-                        Noeud n = (Noeud) iterator.next();
+                    for (Noeud n : noeuds) {
                         if (n.getId() == Long.parseLong(idAtt)) {
                             x = n.getX();
                             y = n.getY();
@@ -108,20 +122,28 @@ public class ChargeurLivraison {
                 }
             }
 
-            tournee.SignalerFinDajoutPointsLivraisons();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            tournee.setCharge(true);
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
 
         return true;
     }
 
+    /**
+     * Get tournée
+     *
+     * @return tournee
+     */
     public Tournee getTournee() {
         return tournee;
     }
 
+    /**
+     * Méthode qui parse l'entrepôt à part des autres points de livraison
+     *
+     * @param rootElement
+     */
     private void parseEntrepot(Element rootElement) {
         NodeList entrepotNodeListe = rootElement.getElementsByTagName("entrepot");
 
@@ -150,7 +172,6 @@ public class ChargeurLivraison {
         PointLivraison pointLivraison = new PointLivraison(Long.parseLong(adr), x, y, 0D);
         pointLivraison.setNeighbors(neighbors);
         tournee.setEntrepot(pointLivraison);
-        System.out.println("entrepot:" + tournee.getEntrepot());
 
         tournee.setHeureDeDepart(heuredepart);
 
