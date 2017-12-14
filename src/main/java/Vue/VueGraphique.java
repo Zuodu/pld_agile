@@ -161,7 +161,7 @@ public class VueGraphique extends JPanel {
             }
             if (pointLivraisonChoisi != null) {
                 try {
-                    Image image = ImageIO.read(new File("target.png"));
+                    Image image = ImageIO.read(new File("resources"+File.separator+"target.png"));
                     g2d.drawImage(image, (int) ((pointLivraisonChoisi.getX() - xmin) / xScale) + LEFT_OFFSET - RAYON_POINTLIVRAISON / 2,
                             (int) ((pointLivraisonChoisi.getY() - ymin) / yScale) + UP_OFFSET - RAYON_POINTLIVRAISON / 2, this);
                 } catch (IOException e) {
