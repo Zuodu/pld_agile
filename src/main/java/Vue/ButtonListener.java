@@ -27,22 +27,16 @@ public class ButtonListener implements ActionListener {
     }
 
     /**
-     * M�thode appelant les m�thodes ad�quates apr�s avoir appuy� sur un bouton de l'interface
+     * Méthode appelant les méthodes adéquates après avoir appuyé sur un bouton de l'interface
      *
-     * @param e :l'evenement declenchant l'ecouteur
+     * @param e :l'evenement déclenchant l'écouteur
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         String s = e.getActionCommand();
         if (s.equals(FenetrePrincipale.CHARGER_PLAN)) {
-            JFileChooser jfc = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("XML File", "xml");
-            FileSystemView fsv = FileSystemView.getFileSystemView();
-            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString() + File.separator + "PlanLyon"));
-            jfc.setFileFilter(filter);
+            JFileChooser jfc = FileChooserFactory("PlanLyon");
             int returnValue = jfc.showOpenDialog(null);
-            // int returnValue = jfc.showSaveDialog(null);
-
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = jfc.getSelectedFile();
                 controleur.chargerPlan(selectedFile.getAbsolutePath());
@@ -50,20 +44,13 @@ public class ButtonListener implements ActionListener {
             }
 
         } else if (s.equals(FenetrePrincipale.CHARGER_LIVRAISONS)) {
-            JFileChooser jfc = new JFileChooser();
-            FileFilter filter = new FileNameExtensionFilter("XML File", "xml");
-            jfc.setFileFilter(filter);
-            FileSystemView fsv = FileSystemView.getFileSystemView();
-            jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString() + File.separator + "PlanLyon"));
+            JFileChooser jfc = FileChooserFactory("PlanLyon");
             int returnValue = jfc.showOpenDialog(null);
-            // int returnValue = jfc.showSaveDialog(null);
-
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = jfc.getSelectedFile();
                 controleur.chargerLivraison(selectedFile.getAbsolutePath());
                 System.out.println(selectedFile.getAbsolutePath());
             }
-
 
         } else if (s.equals(FenetrePrincipale.CALCULER_TOURNEE)) {
             controleur.calculerTournee();
@@ -117,45 +104,12 @@ public class ButtonListener implements ActionListener {
             Double fin = null;
             try {
                 if (!plageDebut.equals("")) {
-                    Double h = Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':')));
-                    Double m = Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1)));
-                    Double sec = Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
-                    if (h >= 24 || h < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    if (m >= 60 || m < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    if (sec >= 60 || sec < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    debut = Double.parseDouble(plageDebut.substring(0, plageDebut.indexOf(':'))) * 3600
-                            + Double.parseDouble(plageDebut.substring(plageDebut.indexOf(':') + 1, plageDebut.indexOf(':', plageDebut.indexOf(':') + 1))) * 60
-                            + Double.parseDouble(plageDebut.substring(plageDebut.lastIndexOf(':') + 1, plageDebut.length()));
-
+                    debut = PlageParser(plageDebut);
+                    if(debut == null) return;
                 }
                 if (!plageFin.equals("")) {
-                    Double h = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':')));
-                    Double m = Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1)));
-                    Double sec = Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
-                    if (h >= 24 || h < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    if (m >= 60 || m < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    if (sec >= 60 || sec < 0) {
-                        JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
-                        return;
-                    }
-                    fin = Double.parseDouble(plageFin.substring(0, plageFin.indexOf(':'))) * 3600
-                            + Double.parseDouble(plageFin.substring(plageFin.indexOf(':') + 1, plageFin.indexOf(':', plageFin.indexOf(':') + 1))) * 60
-                            + Double.parseDouble(plageFin.substring(plageFin.lastIndexOf(':') + 1, plageFin.length()));
+                    fin = PlageParser(plageFin);
+                    if(fin == null) return;
                 }
             } catch (StringIndexOutOfBoundsException se) {
                 JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
@@ -168,5 +122,45 @@ public class ButtonListener implements ActionListener {
             controleur.redo();
         }
 
+    }
+
+    /**
+     * Construit un objet JFileChooser pour l'application
+     * @param directoryName nom du répertoire par défaut
+     * @return un JFileChooser paramétré pour l'application
+     */
+    private JFileChooser FileChooserFactory(String directoryName){
+        JFileChooser jfc = new JFileChooser();
+        FileFilter filter = new FileNameExtensionFilter("XML File", "xml");
+        FileSystemView fsv = FileSystemView.getFileSystemView();
+        jfc.setCurrentDirectory(new File(fsv.getDefaultDirectory().toString() + File.separator + directoryName));
+        jfc.setFileFilter(filter);
+        return jfc;
+    }
+
+    /**
+     * Converti une plage format string ("xx:xx:xx") en un objet Double
+     * @param plage le String contenant le temps choisi
+     * @return un Double représentant le temps, ou null si l'opération a échouée, en cas de mauvaise saisie par exemple
+     */
+    private Double PlageParser(String plage){
+        Double h = Double.parseDouble(plage.substring(0, plage.indexOf(':')));
+        Double m = Double.parseDouble(plage.substring(plage.indexOf(':') + 1, plage.indexOf(':', plage.indexOf(':') + 1)));
+        Double sec = Double.parseDouble(plage.substring(plage.lastIndexOf(':') + 1, plage.length()));
+        if (h >= 24 || h < 0) {
+            JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+            return null;
+        }
+        if (m >= 60 || m < 0) {
+            JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+            return null;
+        }
+        if (sec >= 60 || sec < 0) {
+            JOptionPane.showMessageDialog(null, "Verifie la plage saisie");
+            return null;
+        }
+        return Double.parseDouble(plage.substring(0, plage.indexOf(':'))) * 3600
+                + Double.parseDouble(plage.substring(plage.indexOf(':') + 1, plage.indexOf(':', plage.indexOf(':') + 1))) * 60
+                + Double.parseDouble(plage.substring(plage.lastIndexOf(':') + 1, plage.length()));
     }
 }
